@@ -8,10 +8,10 @@ description: >-
 type: Index
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 tags:
-  - Industrial IoT
-  - Remote Access
-  - Machine Connectivity
   - IIoT
+  - Industrial IoT
+  - Machine Connectivity
+  - Remote Access
 url: >-
   https://raw.githubusercontent.com/api-evangelist/ixon/refs/heads/main/apis.yml
 created: '2026-03-16'
@@ -27,8 +27,8 @@ apis:
     humanURL: https://developer.ixon.cloud/docs
     tags:
       - Industrial IoT
-      - Remote Access
       - Machine Data
+      - Remote Access
     properties:
       - type: Documentation
         url: https://developer.ixon.cloud/docs
