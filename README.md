@@ -35,7 +35,7 @@ The IXON Cloud API is an open, public REST API that provides programmatic access
 
 - [Documentation](https://developer.ixon.cloud/docs)
 - [API Reference](https://developer.ixon.cloud/v2/reference)
-- [OpenAPI](https://raw.githubusercontent.com/api-evangelist/ixon/refs/heads/main/apis/ixon-api/openapi/openapi.json)
+- [OpenAPI](https://raw.githubusercontent.com/api-evangelist/ixon/refs/heads/main/openapi/ixon-openapi.json)
 
 ## Common Properties
 

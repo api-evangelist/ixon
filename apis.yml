@@ -39,7 +39,7 @@ apis:
       - type: API Reference
         url: https://developer.ixon.cloud/v2/reference
       - type: OpenAPI
-        url: https://raw.githubusercontent.com/api-evangelist/ixon/refs/heads/main/apis/ixon-api/openapi/openapi.json
+        url: https://raw.githubusercontent.com/api-evangelist/ixon/refs/heads/main/openapi/ixon-openapi.json
 common:
   - type: Website
     url: https://www.ixon.cloud/
