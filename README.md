@@ -11,33 +11,37 @@ IXON is an industrial IoT platform that enables machine builders and end-users t
 
 ## Tags:
 
- - Industrial IoT, Remote Access, Machine Connectivity, IIoT
+ - IIoT, Industrial IoT, Machine Connectivity, Remote Access
 
 ## Timestamps
 
 - **Created:** 2026-03-16 
-- **Modified:** 2026-03-16 
+- **Modified:** 2026-04-28 
 
 ## APIs
 
 ### IXON Cloud API
-The IXON Cloud API provides programmatic access to the IXON industrial IoT platform, enabling management of devices, agents, and machine connectivity.
+The IXON Cloud API is an open, public REST API that provides programmatic access to the IXON industrial IoT platform, enabling management of devices, agents, access requests, machine data, and remote access connectivity. The API exposes 359 endpoints across the IXON Cloud platform.
 
 **Human URL:** [https://developer.ixon.cloud/docs](https://developer.ixon.cloud/docs)
 
+**Base URL:** `https://portal.ixon.cloud/api/`
 
 #### Tags:
 
- - Industrial IoT, Remote Access, Machine Data
+ - Industrial IoT, Machine Data, Remote Access, Device Management
 
 #### Properties
 
 - [Documentation](https://developer.ixon.cloud/docs)
+- [API Reference](https://developer.ixon.cloud/v2/reference)
+- [OpenAPI](https://raw.githubusercontent.com/api-evangelist/ixon/refs/heads/main/apis/ixon-api/openapi/openapi.json)
 
 ## Common Properties
 
 - [Website](https://www.ixon.cloud/)
 - [Portal](https://developer.ixon.cloud/)
+- [Documentation](https://developer.ixon.cloud/docs)
 - [Support](https://support.ixon.cloud/)
 
 ## Maintainers
