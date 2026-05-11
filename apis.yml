@@ -49,6 +49,81 @@ common:
     url: https://developer.ixon.cloud/docs
   - type: Support
     url: https://support.ixon.cloud/
+  - type: Integrations
+    url: https://marketplace.ixon.cloud/en/apps
+integrations:
+  - name: IXON
+  - name: Service Logbook
+  - name: Visual Twin
+  - name: Power BI Connector
+  - name: Spare Parts Webshop
+  - name: Virtual HMI
+  - name: Document Management
+  - name: Dataray AI
+  - name: Alarm Analysis
+  - name: Calculate Single Value
+  - name: OEE Performance
+  - name: YouTube Player
+  - name: Wear & Tear
+  - name: Grafana Connector
+  - name: User Access Graph
+  - name: Batch Period Selection
+  - name: AFAS Connector
+  - name: Bulk firmware upgrade
+  - name: Post to Local Device
+  - name: Total of Multiple Devices
+  - name: Format Value as Time
+  - name: Nosco Connector
+  - name: OEE Display
+  - name: Mail Form
+  - name: Hexagon Connector
+  - name: BI Data Connector
+  - name: Normal Distribution
+  - name: IoT Asset Management
+  - name: SIGNL4 Mobile Alerting
+  - name: Pre-Failure Video Snapshot
+  - name: TensorFlow Lite AI Modeling
+  - name: Grafana
+  - name: Node-RED
+  - name: FTP File Explorer
+  - name: PLC Settings Backups
+  - name: InfluxDB
+  - name: Mosquitto MQTT Broker
+  - name: Zabbix Proxy
+  - name: MicroSocks
+  - name: IXON Data Logger
+  - name: AnyWare Smart Maintenance
+  - name: Support Ticket Connector
+  - name: Banner
+  - name: Yearly MoM Comparison
+  - name: Hierarchical User Groups
+  - name: logiccloud Control
+  - name: Live Value Overlay
+  - name: WAN File Generator
+  - name: File Browser
+  - name: Visual Studio Code
+  - name: go2rtc
+  - name: Remote Access Analysis
+  - name: Custom Logs
+  - name: DAQORE Studio
+  - name: Settings Tracking
+  - name: Remote API Gateway
+  - name: Calculate Live Value
+  - name: Open Link Button
+  - name: DIALOGO Base
+  - name: GPS Data Logger
+  - name: GPS Tracking
+  - name: Ridder iQ Connector
+  - name: State Analysis
+  - name: Pronetiqs Industrial Diagnostics
+  - name: FieldBuddy Field Service
+  - name: DIALOGO Advanced
+  - name: Data Logging Checker
+  - name: Soply work instructions
+  - name: Active Connections
+  - name: Historical Connections
+  - name: Data Export
+  - name: IXON Cloud
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
