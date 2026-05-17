@@ -36,7 +36,7 @@ apis:
     properties:
       - type: Documentation
         url: https://developer.ixon.cloud/docs
-      - type: API Reference
+      - type: APIReference
         url: https://developer.ixon.cloud/v2/reference
       - type: OpenAPI
         url: https://raw.githubusercontent.com/api-evangelist/ixon/refs/heads/main/openapi/ixon-openapi.json
