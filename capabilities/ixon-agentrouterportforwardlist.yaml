@@ -1,0 +1,202 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: IXON API — AgentRouterPortForwardList
+  description: 'IXON API — AgentRouterPortForwardList. 4 operations. Lead operation: AgentRouterPortForwardList. Self-contained
+    Naftiko capability covering one Ixon business surface.'
+  tags:
+  - Ixon
+  - AgentRouterPortForwardList
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    IXON_API_KEY: IXON_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: ixon-agentrouterportforwardlist
+    baseUri: https://portal.ixon.cloud:443/api
+    description: IXON API — AgentRouterPortForwardList business capability. Self-contained, no shared references.
+    resources:
+    - name: agents-agentId-router-port-forwards
+      path: /agents/{agentId}/router-port-forwards
+      operations:
+      - name: get
+        method: GET
+        description: AgentRouterPortForwardList
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: agentId
+          in: path
+          type: string
+          required: true
+      - name: post
+        method: POST
+        description: AgentRouterPortForwardList
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: agentId
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+      - name: patch
+        method: PATCH
+        description: AgentRouterPortForwardList
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: agentId
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+      - name: delete
+        method: DELETE
+        description: AgentRouterPortForwardList
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: agentId
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    authentication:
+      type: bearer
+      token: '{{env.IXON_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: ixon-agentrouterportforwardlist-rest
+    port: 8080
+    description: REST adapter for IXON API — AgentRouterPortForwardList. One Spectral-compliant resource per consumed operation,
+      prefixed with /v1.
+    resources:
+    - path: /v1/agents/{agentid}/router-port-forwards
+      name: agents-agentid-router-port-forwards
+      description: REST surface for agents-agentId-router-port-forwards.
+      operations:
+      - method: GET
+        name: get
+        description: AgentRouterPortForwardList
+        call: ixon-agentrouterportforwardlist.get
+        with:
+          agentId: rest.agentId
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: post
+        description: AgentRouterPortForwardList
+        call: ixon-agentrouterportforwardlist.post
+        with:
+          agentId: rest.agentId
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: PATCH
+        name: patch
+        description: AgentRouterPortForwardList
+        call: ixon-agentrouterportforwardlist.patch
+        with:
+          agentId: rest.agentId
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: DELETE
+        name: delete
+        description: AgentRouterPortForwardList
+        call: ixon-agentrouterportforwardlist.delete
+        with:
+          agentId: rest.agentId
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: ixon-agentrouterportforwardlist-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for IXON API — AgentRouterPortForwardList. One tool per consumed operation, routed inline through
+      this capability's consumes block.
+    tools:
+    - name: agentrouterportforwardlist
+      description: AgentRouterPortForwardList
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: ixon-agentrouterportforwardlist.get
+      with:
+        agentId: tools.agentId
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: agentrouterportforwardlist-2
+      description: AgentRouterPortForwardList
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: ixon-agentrouterportforwardlist.post
+      with:
+        agentId: tools.agentId
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: agentrouterportforwardlist-3
+      description: AgentRouterPortForwardList
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: ixon-agentrouterportforwardlist.patch
+      with:
+        agentId: tools.agentId
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: agentrouterportforwardlist-4
+      description: AgentRouterPortForwardList
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: ixon-agentrouterportforwardlist.delete
+      with:
+        agentId: tools.agentId
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.

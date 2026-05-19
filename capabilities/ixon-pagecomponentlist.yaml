@@ -1,0 +1,175 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: IXON API — PageComponentList
+  description: 'IXON API — PageComponentList. 4 operations. Lead operation: PageComponentList. Self-contained Naftiko capability
+    covering one Ixon business surface.'
+  tags:
+  - Ixon
+  - PageComponentList
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    IXON_API_KEY: IXON_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: ixon-pagecomponentlist
+    baseUri: https://portal.ixon.cloud:443/api
+    description: IXON API — PageComponentList business capability. Self-contained, no shared references.
+    resources:
+    - name: page-components
+      path: /page-components
+      operations:
+      - name: get
+        method: GET
+        description: PageComponentList
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: post
+        method: POST
+        description: PageComponentList
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+      - name: patch
+        method: PATCH
+        description: PageComponentList
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+      - name: delete
+        method: DELETE
+        description: PageComponentList
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    authentication:
+      type: bearer
+      token: '{{env.IXON_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: ixon-pagecomponentlist-rest
+    port: 8080
+    description: REST adapter for IXON API — PageComponentList. One Spectral-compliant resource per consumed operation, prefixed
+      with /v1.
+    resources:
+    - path: /v1/page-components
+      name: page-components
+      description: REST surface for page-components.
+      operations:
+      - method: GET
+        name: get
+        description: PageComponentList
+        call: ixon-pagecomponentlist.get
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: post
+        description: PageComponentList
+        call: ixon-pagecomponentlist.post
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: PATCH
+        name: patch
+        description: PageComponentList
+        call: ixon-pagecomponentlist.patch
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: DELETE
+        name: delete
+        description: PageComponentList
+        call: ixon-pagecomponentlist.delete
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: ixon-pagecomponentlist-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for IXON API — PageComponentList. One tool per consumed operation, routed inline through this
+      capability's consumes block.
+    tools:
+    - name: pagecomponentlist
+      description: PageComponentList
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: ixon-pagecomponentlist.get
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: pagecomponentlist-2
+      description: PageComponentList
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: ixon-pagecomponentlist.post
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: pagecomponentlist-3
+      description: PageComponentList
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: ixon-pagecomponentlist.patch
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: pagecomponentlist-4
+      description: PageComponentList
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: ixon-pagecomponentlist.delete
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.

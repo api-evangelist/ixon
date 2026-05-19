@@ -1,0 +1,113 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: IXON API — ControlledDeviceMembership
+  description: 'IXON API — ControlledDeviceMembership. 2 operations. Lead operation: ControlledDeviceMembership. Self-contained
+    Naftiko capability covering one Ixon business surface.'
+  tags:
+  - Ixon
+  - ControlledDeviceMembership
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    IXON_API_KEY: IXON_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: ixon-controlleddevicemembership
+    baseUri: https://portal.ixon.cloud:443/api
+    description: IXON API — ControlledDeviceMembership business capability. Self-contained, no shared references.
+    resources:
+    - name: controlled-devices-memberships-publicId
+      path: /controlled-devices/memberships/{publicId}
+      operations:
+      - name: get
+        method: GET
+        description: ControlledDeviceMembership
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: publicId
+          in: path
+          type: string
+          required: true
+      - name: delete
+        method: DELETE
+        description: ControlledDeviceMembership
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: publicId
+          in: path
+          type: string
+          required: true
+    authentication:
+      type: bearer
+      token: '{{env.IXON_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: ixon-controlleddevicemembership-rest
+    port: 8080
+    description: REST adapter for IXON API — ControlledDeviceMembership. One Spectral-compliant resource per consumed operation,
+      prefixed with /v1.
+    resources:
+    - path: /v1/controlled-devices/memberships/{publicid}
+      name: controlled-devices-memberships-publicid
+      description: REST surface for controlled-devices-memberships-publicId.
+      operations:
+      - method: GET
+        name: get
+        description: ControlledDeviceMembership
+        call: ixon-controlleddevicemembership.get
+        with:
+          publicId: rest.publicId
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: DELETE
+        name: delete
+        description: ControlledDeviceMembership
+        call: ixon-controlleddevicemembership.delete
+        with:
+          publicId: rest.publicId
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: ixon-controlleddevicemembership-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for IXON API — ControlledDeviceMembership. One tool per consumed operation, routed inline through
+      this capability's consumes block.
+    tools:
+    - name: controlleddevicemembership
+      description: ControlledDeviceMembership
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: ixon-controlleddevicemembership.get
+      with:
+        publicId: tools.publicId
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: controlleddevicemembership-2
+      description: ControlledDeviceMembership
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: ixon-controlleddevicemembership.delete
+      with:
+        publicId: tools.publicId
+      outputParameters:
+      - type: object
+        mapping: $.

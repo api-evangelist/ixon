@@ -1,0 +1,172 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: IXON API — AgentDataSource
+  description: 'IXON API — AgentDataSource. 3 operations. Lead operation: AgentDataSource. Self-contained Naftiko capability
+    covering one Ixon business surface.'
+  tags:
+  - Ixon
+  - AgentDataSource
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    IXON_API_KEY: IXON_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: ixon-agentdatasource
+    baseUri: https://portal.ixon.cloud:443/api
+    description: IXON API — AgentDataSource business capability. Self-contained, no shared references.
+    resources:
+    - name: agents-agentId-data-sources-publicId
+      path: /agents/{agentId}/data-sources/{publicId}
+      operations:
+      - name: get
+        method: GET
+        description: AgentDataSource
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: agentId
+          in: path
+          type: string
+          required: true
+        - name: publicId
+          in: path
+          type: string
+          required: true
+      - name: patch
+        method: PATCH
+        description: AgentDataSource
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: agentId
+          in: path
+          type: string
+          required: true
+        - name: publicId
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+      - name: delete
+        method: DELETE
+        description: AgentDataSource
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: agentId
+          in: path
+          type: string
+          required: true
+        - name: publicId
+          in: path
+          type: string
+          required: true
+    authentication:
+      type: bearer
+      token: '{{env.IXON_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: ixon-agentdatasource-rest
+    port: 8080
+    description: REST adapter for IXON API — AgentDataSource. One Spectral-compliant resource per consumed operation, prefixed
+      with /v1.
+    resources:
+    - path: /v1/agents/{agentid}/data-sources/{publicid}
+      name: agents-agentid-data-sources-publicid
+      description: REST surface for agents-agentId-data-sources-publicId.
+      operations:
+      - method: GET
+        name: get
+        description: AgentDataSource
+        call: ixon-agentdatasource.get
+        with:
+          agentId: rest.agentId
+          publicId: rest.publicId
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: PATCH
+        name: patch
+        description: AgentDataSource
+        call: ixon-agentdatasource.patch
+        with:
+          agentId: rest.agentId
+          publicId: rest.publicId
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: DELETE
+        name: delete
+        description: AgentDataSource
+        call: ixon-agentdatasource.delete
+        with:
+          agentId: rest.agentId
+          publicId: rest.publicId
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: ixon-agentdatasource-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for IXON API — AgentDataSource. One tool per consumed operation, routed inline through this capability's
+      consumes block.
+    tools:
+    - name: agentdatasource
+      description: AgentDataSource
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: ixon-agentdatasource.get
+      with:
+        agentId: tools.agentId
+        publicId: tools.publicId
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: agentdatasource-2
+      description: AgentDataSource
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: ixon-agentdatasource.patch
+      with:
+        agentId: tools.agentId
+        publicId: tools.publicId
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: agentdatasource-3
+      description: AgentDataSource
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: ixon-agentdatasource.delete
+      with:
+        agentId: tools.agentId
+        publicId: tools.publicId
+      outputParameters:
+      - type: object
+        mapping: $.

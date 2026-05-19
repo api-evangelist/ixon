@@ -1,0 +1,70 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: IXON API — BrandingList
+  description: 'IXON API — BrandingList. 1 operations. Lead operation: BrandingList. Self-contained Naftiko capability covering
+    one Ixon business surface.'
+  tags:
+  - Ixon
+  - BrandingList
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    IXON_API_KEY: IXON_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: ixon-brandinglist
+    baseUri: https://portal.ixon.cloud:443/api
+    description: IXON API — BrandingList business capability. Self-contained, no shared references.
+    resources:
+    - name: brandings
+      path: /brandings
+      operations:
+      - name: get
+        method: GET
+        description: BrandingList
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    authentication:
+      type: bearer
+      token: '{{env.IXON_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: ixon-brandinglist-rest
+    port: 8080
+    description: REST adapter for IXON API — BrandingList. One Spectral-compliant resource per consumed operation, prefixed
+      with /v1.
+    resources:
+    - path: /v1/brandings
+      name: brandings
+      description: REST surface for brandings.
+      operations:
+      - method: GET
+        name: get
+        description: BrandingList
+        call: ixon-brandinglist.get
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: ixon-brandinglist-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for IXON API — BrandingList. One tool per consumed operation, routed inline through this capability's
+      consumes block.
+    tools:
+    - name: brandinglist
+      description: BrandingList
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: ixon-brandinglist.get
+      outputParameters:
+      - type: object
+        mapping: $.

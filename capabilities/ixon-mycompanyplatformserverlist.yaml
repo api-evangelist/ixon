@@ -1,0 +1,70 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: IXON API — MyCompanyPlatformServerList
+  description: 'IXON API — MyCompanyPlatformServerList. 1 operations. Lead operation: MyCompanyPlatformServerList. Self-contained
+    Naftiko capability covering one Ixon business surface.'
+  tags:
+  - Ixon
+  - MyCompanyPlatformServerList
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    IXON_API_KEY: IXON_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: ixon-mycompanyplatformserverlist
+    baseUri: https://portal.ixon.cloud:443/api
+    description: IXON API — MyCompanyPlatformServerList business capability. Self-contained, no shared references.
+    resources:
+    - name: platform-servers-me
+      path: /platform-servers/me
+      operations:
+      - name: get
+        method: GET
+        description: MyCompanyPlatformServerList
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    authentication:
+      type: bearer
+      token: '{{env.IXON_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: ixon-mycompanyplatformserverlist-rest
+    port: 8080
+    description: REST adapter for IXON API — MyCompanyPlatformServerList. One Spectral-compliant resource per consumed operation,
+      prefixed with /v1.
+    resources:
+    - path: /v1/platform-servers/me
+      name: platform-servers-me
+      description: REST surface for platform-servers-me.
+      operations:
+      - method: GET
+        name: get
+        description: MyCompanyPlatformServerList
+        call: ixon-mycompanyplatformserverlist.get
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: ixon-mycompanyplatformserverlist-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for IXON API — MyCompanyPlatformServerList. One tool per consumed operation, routed inline through
+      this capability's consumes block.
+    tools:
+    - name: mycompanyplatformserverlist
+      description: MyCompanyPlatformServerList
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: ixon-mycompanyplatformserverlist.get
+      outputParameters:
+      - type: object
+        mapping: $.

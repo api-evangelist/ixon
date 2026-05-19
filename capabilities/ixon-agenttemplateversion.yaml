@@ -1,0 +1,85 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: IXON API — AgentTemplateVersion
+  description: 'IXON API — AgentTemplateVersion. 1 operations. Lead operation: AgentTemplateVersion. Self-contained Naftiko
+    capability covering one Ixon business surface.'
+  tags:
+  - Ixon
+  - AgentTemplateVersion
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    IXON_API_KEY: IXON_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: ixon-agenttemplateversion
+    baseUri: https://portal.ixon.cloud:443/api
+    description: IXON API — AgentTemplateVersion business capability. Self-contained, no shared references.
+    resources:
+    - name: agent-templates-agentId-versions-publicId
+      path: /agent-templates/{agentId}/versions/{publicId}
+      operations:
+      - name: get
+        method: GET
+        description: AgentTemplateVersion
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: agentId
+          in: path
+          type: string
+          required: true
+        - name: publicId
+          in: path
+          type: string
+          required: true
+    authentication:
+      type: bearer
+      token: '{{env.IXON_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: ixon-agenttemplateversion-rest
+    port: 8080
+    description: REST adapter for IXON API — AgentTemplateVersion. One Spectral-compliant resource per consumed operation,
+      prefixed with /v1.
+    resources:
+    - path: /v1/agent-templates/{agentid}/versions/{publicid}
+      name: agent-templates-agentid-versions-publicid
+      description: REST surface for agent-templates-agentId-versions-publicId.
+      operations:
+      - method: GET
+        name: get
+        description: AgentTemplateVersion
+        call: ixon-agenttemplateversion.get
+        with:
+          agentId: rest.agentId
+          publicId: rest.publicId
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: ixon-agenttemplateversion-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for IXON API — AgentTemplateVersion. One tool per consumed operation, routed inline through this
+      capability's consumes block.
+    tools:
+    - name: agenttemplateversion
+      description: AgentTemplateVersion
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: ixon-agenttemplateversion.get
+      with:
+        agentId: tools.agentId
+        publicId: tools.publicId
+      outputParameters:
+      - type: object
+        mapping: $.

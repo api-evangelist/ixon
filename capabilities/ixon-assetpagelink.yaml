@@ -1,0 +1,172 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: IXON API — AssetPageLink
+  description: 'IXON API — AssetPageLink. 3 operations. Lead operation: AssetPageLink. Self-contained Naftiko capability covering
+    one Ixon business surface.'
+  tags:
+  - Ixon
+  - AssetPageLink
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    IXON_API_KEY: IXON_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: ixon-assetpagelink
+    baseUri: https://portal.ixon.cloud:443/api
+    description: IXON API — AssetPageLink business capability. Self-contained, no shared references.
+    resources:
+    - name: assets-assetId-page-links-publicId
+      path: /assets/{assetId}/page-links/{publicId}
+      operations:
+      - name: get
+        method: GET
+        description: AssetPageLink
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: assetId
+          in: path
+          type: string
+          required: true
+        - name: publicId
+          in: path
+          type: string
+          required: true
+      - name: patch
+        method: PATCH
+        description: AssetPageLink
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: assetId
+          in: path
+          type: string
+          required: true
+        - name: publicId
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+      - name: delete
+        method: DELETE
+        description: AssetPageLink
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: assetId
+          in: path
+          type: string
+          required: true
+        - name: publicId
+          in: path
+          type: string
+          required: true
+    authentication:
+      type: bearer
+      token: '{{env.IXON_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: ixon-assetpagelink-rest
+    port: 8080
+    description: REST adapter for IXON API — AssetPageLink. One Spectral-compliant resource per consumed operation, prefixed
+      with /v1.
+    resources:
+    - path: /v1/assets/{assetid}/page-links/{publicid}
+      name: assets-assetid-page-links-publicid
+      description: REST surface for assets-assetId-page-links-publicId.
+      operations:
+      - method: GET
+        name: get
+        description: AssetPageLink
+        call: ixon-assetpagelink.get
+        with:
+          assetId: rest.assetId
+          publicId: rest.publicId
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: PATCH
+        name: patch
+        description: AssetPageLink
+        call: ixon-assetpagelink.patch
+        with:
+          assetId: rest.assetId
+          publicId: rest.publicId
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: DELETE
+        name: delete
+        description: AssetPageLink
+        call: ixon-assetpagelink.delete
+        with:
+          assetId: rest.assetId
+          publicId: rest.publicId
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: ixon-assetpagelink-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for IXON API — AssetPageLink. One tool per consumed operation, routed inline through this capability's
+      consumes block.
+    tools:
+    - name: assetpagelink
+      description: AssetPageLink
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: ixon-assetpagelink.get
+      with:
+        assetId: tools.assetId
+        publicId: tools.publicId
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: assetpagelink-2
+      description: AssetPageLink
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: ixon-assetpagelink.patch
+      with:
+        assetId: tools.assetId
+        publicId: tools.publicId
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: assetpagelink-3
+      description: AssetPageLink
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: ixon-assetpagelink.delete
+      with:
+        assetId: tools.assetId
+        publicId: tools.publicId
+      outputParameters:
+      - type: object
+        mapping: $.

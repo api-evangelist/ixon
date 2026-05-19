@@ -1,0 +1,105 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: IXON API — PageComponentTemplateVersionList
+  description: 'IXON API — PageComponentTemplateVersionList. 2 operations. Lead operation: PageComponentTemplateVersionList.
+    Self-contained Naftiko capability covering one Ixon business surface.'
+  tags:
+  - Ixon
+  - PageComponentTemplateVersionList
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    IXON_API_KEY: IXON_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: ixon-pagecomponenttemplateversionlist
+    baseUri: https://portal.ixon.cloud:443/api
+    description: IXON API — PageComponentTemplateVersionList business capability. Self-contained, no shared references.
+    resources:
+    - name: page-component-template-versions
+      path: /page-component-template-versions
+      operations:
+      - name: get
+        method: GET
+        description: PageComponentTemplateVersionList
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: patch
+        method: PATCH
+        description: PageComponentTemplateVersionList
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    authentication:
+      type: bearer
+      token: '{{env.IXON_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: ixon-pagecomponenttemplateversionlist-rest
+    port: 8080
+    description: REST adapter for IXON API — PageComponentTemplateVersionList. One Spectral-compliant resource per consumed
+      operation, prefixed with /v1.
+    resources:
+    - path: /v1/page-component-template-versions
+      name: page-component-template-versions
+      description: REST surface for page-component-template-versions.
+      operations:
+      - method: GET
+        name: get
+        description: PageComponentTemplateVersionList
+        call: ixon-pagecomponenttemplateversionlist.get
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: PATCH
+        name: patch
+        description: PageComponentTemplateVersionList
+        call: ixon-pagecomponenttemplateversionlist.patch
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: ixon-pagecomponenttemplateversionlist-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for IXON API — PageComponentTemplateVersionList. One tool per consumed operation, routed inline
+      through this capability's consumes block.
+    tools:
+    - name: pagecomponenttemplateversionlist
+      description: PageComponentTemplateVersionList
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: ixon-pagecomponenttemplateversionlist.get
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: pagecomponenttemplateversionlist-2
+      description: PageComponentTemplateVersionList
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: ixon-pagecomponenttemplateversionlist.patch
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.

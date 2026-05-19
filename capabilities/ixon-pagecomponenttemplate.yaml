@@ -1,0 +1,120 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: IXON API — PageComponentTemplate
+  description: 'IXON API — PageComponentTemplate. 2 operations. Lead operation: PageComponentTemplate. Self-contained Naftiko
+    capability covering one Ixon business surface.'
+  tags:
+  - Ixon
+  - PageComponentTemplate
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    IXON_API_KEY: IXON_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: ixon-pagecomponenttemplate
+    baseUri: https://portal.ixon.cloud:443/api
+    description: IXON API — PageComponentTemplate business capability. Self-contained, no shared references.
+    resources:
+    - name: page-component-templates-publicId
+      path: /page-component-templates/{publicId}
+      operations:
+      - name: get
+        method: GET
+        description: PageComponentTemplate
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: publicId
+          in: path
+          type: string
+          required: true
+      - name: patch
+        method: PATCH
+        description: PageComponentTemplate
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: publicId
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    authentication:
+      type: bearer
+      token: '{{env.IXON_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: ixon-pagecomponenttemplate-rest
+    port: 8080
+    description: REST adapter for IXON API — PageComponentTemplate. One Spectral-compliant resource per consumed operation,
+      prefixed with /v1.
+    resources:
+    - path: /v1/page-component-templates/{publicid}
+      name: page-component-templates-publicid
+      description: REST surface for page-component-templates-publicId.
+      operations:
+      - method: GET
+        name: get
+        description: PageComponentTemplate
+        call: ixon-pagecomponenttemplate.get
+        with:
+          publicId: rest.publicId
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: PATCH
+        name: patch
+        description: PageComponentTemplate
+        call: ixon-pagecomponenttemplate.patch
+        with:
+          publicId: rest.publicId
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: ixon-pagecomponenttemplate-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for IXON API — PageComponentTemplate. One tool per consumed operation, routed inline through
+      this capability's consumes block.
+    tools:
+    - name: pagecomponenttemplate
+      description: PageComponentTemplate
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: ixon-pagecomponenttemplate.get
+      with:
+        publicId: tools.publicId
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: pagecomponenttemplate-2
+      description: PageComponentTemplate
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: ixon-pagecomponenttemplate.patch
+      with:
+        publicId: tools.publicId
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.

@@ -1,0 +1,130 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: IXON API — MyUser
+  description: 'IXON API — MyUser. 3 operations. Lead operation: MyUser. Self-contained Naftiko capability covering one Ixon
+    business surface.'
+  tags:
+  - Ixon
+  - MyUser
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    IXON_API_KEY: IXON_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: ixon-myuser
+    baseUri: https://portal.ixon.cloud:443/api
+    description: IXON API — MyUser business capability. Self-contained, no shared references.
+    resources:
+    - name: users-me
+      path: /users/me
+      operations:
+      - name: get
+        method: GET
+        description: MyUser
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: patch
+        method: PATCH
+        description: MyUser
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+      - name: delete
+        method: DELETE
+        description: MyUser
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    authentication:
+      type: bearer
+      token: '{{env.IXON_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: ixon-myuser-rest
+    port: 8080
+    description: REST adapter for IXON API — MyUser. One Spectral-compliant resource per consumed operation, prefixed with
+      /v1.
+    resources:
+    - path: /v1/users/me
+      name: users-me
+      description: REST surface for users-me.
+      operations:
+      - method: GET
+        name: get
+        description: MyUser
+        call: ixon-myuser.get
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: PATCH
+        name: patch
+        description: MyUser
+        call: ixon-myuser.patch
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: DELETE
+        name: delete
+        description: MyUser
+        call: ixon-myuser.delete
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: ixon-myuser-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for IXON API — MyUser. One tool per consumed operation, routed inline through this capability's
+      consumes block.
+    tools:
+    - name: myuser
+      description: MyUser
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: ixon-myuser.get
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: myuser-2
+      description: MyUser
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: ixon-myuser.patch
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: myuser-3
+      description: MyUser
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: ixon-myuser.delete
+      outputParameters:
+      - type: object
+        mapping: $.

@@ -1,0 +1,80 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: IXON API — RegistrationList
+  description: 'IXON API — RegistrationList. 1 operations. Lead operation: RegistrationList. Self-contained Naftiko capability
+    covering one Ixon business surface.'
+  tags:
+  - Ixon
+  - RegistrationList
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    IXON_API_KEY: IXON_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: ixon-registrationlist
+    baseUri: https://portal.ixon.cloud:443/api
+    description: IXON API — RegistrationList business capability. Self-contained, no shared references.
+    resources:
+    - name: registrations
+      path: /registrations
+      operations:
+      - name: post
+        method: POST
+        description: RegistrationList
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    authentication:
+      type: bearer
+      token: '{{env.IXON_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: ixon-registrationlist-rest
+    port: 8080
+    description: REST adapter for IXON API — RegistrationList. One Spectral-compliant resource per consumed operation, prefixed
+      with /v1.
+    resources:
+    - path: /v1/registrations
+      name: registrations
+      description: REST surface for registrations.
+      operations:
+      - method: POST
+        name: post
+        description: RegistrationList
+        call: ixon-registrationlist.post
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: ixon-registrationlist-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for IXON API — RegistrationList. One tool per consumed operation, routed inline through this
+      capability's consumes block.
+    tools:
+    - name: registrationlist
+      description: RegistrationList
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: ixon-registrationlist.post
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.

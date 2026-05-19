@@ -1,0 +1,202 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: IXON API — AgentDataAlarmList
+  description: 'IXON API — AgentDataAlarmList. 4 operations. Lead operation: AgentDataAlarmList. Self-contained Naftiko capability
+    covering one Ixon business surface.'
+  tags:
+  - Ixon
+  - AgentDataAlarmList
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    IXON_API_KEY: IXON_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: ixon-agentdataalarmlist
+    baseUri: https://portal.ixon.cloud:443/api
+    description: IXON API — AgentDataAlarmList business capability. Self-contained, no shared references.
+    resources:
+    - name: agents-agentId-data-alarms
+      path: /agents/{agentId}/data-alarms
+      operations:
+      - name: get
+        method: GET
+        description: AgentDataAlarmList
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: agentId
+          in: path
+          type: string
+          required: true
+      - name: post
+        method: POST
+        description: AgentDataAlarmList
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: agentId
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+      - name: patch
+        method: PATCH
+        description: AgentDataAlarmList
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: agentId
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+      - name: delete
+        method: DELETE
+        description: AgentDataAlarmList
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: agentId
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    authentication:
+      type: bearer
+      token: '{{env.IXON_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: ixon-agentdataalarmlist-rest
+    port: 8080
+    description: REST adapter for IXON API — AgentDataAlarmList. One Spectral-compliant resource per consumed operation, prefixed
+      with /v1.
+    resources:
+    - path: /v1/agents/{agentid}/data-alarms
+      name: agents-agentid-data-alarms
+      description: REST surface for agents-agentId-data-alarms.
+      operations:
+      - method: GET
+        name: get
+        description: AgentDataAlarmList
+        call: ixon-agentdataalarmlist.get
+        with:
+          agentId: rest.agentId
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: post
+        description: AgentDataAlarmList
+        call: ixon-agentdataalarmlist.post
+        with:
+          agentId: rest.agentId
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: PATCH
+        name: patch
+        description: AgentDataAlarmList
+        call: ixon-agentdataalarmlist.patch
+        with:
+          agentId: rest.agentId
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: DELETE
+        name: delete
+        description: AgentDataAlarmList
+        call: ixon-agentdataalarmlist.delete
+        with:
+          agentId: rest.agentId
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: ixon-agentdataalarmlist-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for IXON API — AgentDataAlarmList. One tool per consumed operation, routed inline through this
+      capability's consumes block.
+    tools:
+    - name: agentdataalarmlist
+      description: AgentDataAlarmList
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: ixon-agentdataalarmlist.get
+      with:
+        agentId: tools.agentId
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: agentdataalarmlist-2
+      description: AgentDataAlarmList
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: ixon-agentdataalarmlist.post
+      with:
+        agentId: tools.agentId
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: agentdataalarmlist-3
+      description: AgentDataAlarmList
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: ixon-agentdataalarmlist.patch
+      with:
+        agentId: tools.agentId
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: agentdataalarmlist-4
+      description: AgentDataAlarmList
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: ixon-agentdataalarmlist.delete
+      with:
+        agentId: tools.agentId
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.

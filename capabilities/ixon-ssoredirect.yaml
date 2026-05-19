@@ -1,0 +1,79 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: IXON API — SsoRedirect
+  description: 'IXON API — SsoRedirect. 1 operations. Lead operation: SsoRedirect. Self-contained Naftiko capability covering
+    one Ixon business surface.'
+  tags:
+  - Ixon
+  - SsoRedirect
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    IXON_API_KEY: IXON_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: ixon-ssoredirect
+    baseUri: https://portal.ixon.cloud:443/api
+    description: IXON API — SsoRedirect business capability. Self-contained, no shared references.
+    resources:
+    - name: sso-redirect-api-version
+      path: /sso/redirect/{api-version}
+      operations:
+      - name: get
+        method: GET
+        description: SsoRedirect
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: api-version
+          in: path
+          type: string
+          required: true
+    authentication:
+      type: bearer
+      token: '{{env.IXON_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: ixon-ssoredirect-rest
+    port: 8080
+    description: REST adapter for IXON API — SsoRedirect. One Spectral-compliant resource per consumed operation, prefixed
+      with /v1.
+    resources:
+    - path: /v1/sso/redirect/{api-version}
+      name: sso-redirect-api-version
+      description: REST surface for sso-redirect-api-version.
+      operations:
+      - method: GET
+        name: get
+        description: SsoRedirect
+        call: ixon-ssoredirect.get
+        with:
+          api-version: rest.api-version
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: ixon-ssoredirect-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for IXON API — SsoRedirect. One tool per consumed operation, routed inline through this capability's
+      consumes block.
+    tools:
+    - name: ssoredirect
+      description: SsoRedirect
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: ixon-ssoredirect.get
+      with:
+        api-version: tools.api-version
+      outputParameters:
+      - type: object
+        mapping: $.

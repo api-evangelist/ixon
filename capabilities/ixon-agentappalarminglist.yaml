@@ -1,0 +1,80 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: IXON API — AgentAppAlarmingList
+  description: 'IXON API — AgentAppAlarmingList. 1 operations. Lead operation: AgentAppAlarmingList. Self-contained Naftiko
+    capability covering one Ixon business surface.'
+  tags:
+  - Ixon
+  - AgentAppAlarmingList
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    IXON_API_KEY: IXON_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: ixon-agentappalarminglist
+    baseUri: https://portal.ixon.cloud:443/api
+    description: IXON API — AgentAppAlarmingList business capability. Self-contained, no shared references.
+    resources:
+    - name: agents-app-alarming
+      path: /agents/app/alarming
+      operations:
+      - name: delete
+        method: DELETE
+        description: AgentAppAlarmingList
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    authentication:
+      type: bearer
+      token: '{{env.IXON_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: ixon-agentappalarminglist-rest
+    port: 8080
+    description: REST adapter for IXON API — AgentAppAlarmingList. One Spectral-compliant resource per consumed operation,
+      prefixed with /v1.
+    resources:
+    - path: /v1/agents/app/alarming
+      name: agents-app-alarming
+      description: REST surface for agents-app-alarming.
+      operations:
+      - method: DELETE
+        name: delete
+        description: AgentAppAlarmingList
+        call: ixon-agentappalarminglist.delete
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: ixon-agentappalarminglist-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for IXON API — AgentAppAlarmingList. One tool per consumed operation, routed inline through this
+      capability's consumes block.
+    tools:
+    - name: agentappalarminglist
+      description: AgentAppAlarmingList
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: ixon-agentappalarminglist.delete
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.

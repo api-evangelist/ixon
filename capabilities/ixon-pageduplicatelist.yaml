@@ -1,0 +1,80 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: IXON API — PageDuplicateList
+  description: 'IXON API — PageDuplicateList. 1 operations. Lead operation: PageDuplicateList. Self-contained Naftiko capability
+    covering one Ixon business surface.'
+  tags:
+  - Ixon
+  - PageDuplicateList
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    IXON_API_KEY: IXON_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: ixon-pageduplicatelist
+    baseUri: https://portal.ixon.cloud:443/api
+    description: IXON API — PageDuplicateList business capability. Self-contained, no shared references.
+    resources:
+    - name: pages-duplicate
+      path: /pages/duplicate
+      operations:
+      - name: post
+        method: POST
+        description: PageDuplicateList
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    authentication:
+      type: bearer
+      token: '{{env.IXON_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: ixon-pageduplicatelist-rest
+    port: 8080
+    description: REST adapter for IXON API — PageDuplicateList. One Spectral-compliant resource per consumed operation, prefixed
+      with /v1.
+    resources:
+    - path: /v1/pages/duplicate
+      name: pages-duplicate
+      description: REST surface for pages-duplicate.
+      operations:
+      - method: POST
+        name: post
+        description: PageDuplicateList
+        call: ixon-pageduplicatelist.post
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: ixon-pageduplicatelist-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for IXON API — PageDuplicateList. One tool per consumed operation, routed inline through this
+      capability's consumes block.
+    tools:
+    - name: pageduplicatelist
+      description: PageDuplicateList
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: ixon-pageduplicatelist.post
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.

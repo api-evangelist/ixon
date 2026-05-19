@@ -1,0 +1,172 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: IXON API — AgentPageLink
+  description: 'IXON API — AgentPageLink. 3 operations. Lead operation: AgentPageLink. Self-contained Naftiko capability covering
+    one Ixon business surface.'
+  tags:
+  - Ixon
+  - AgentPageLink
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    IXON_API_KEY: IXON_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: ixon-agentpagelink
+    baseUri: https://portal.ixon.cloud:443/api
+    description: IXON API — AgentPageLink business capability. Self-contained, no shared references.
+    resources:
+    - name: agents-agentId-page-links-publicId
+      path: /agents/{agentId}/page-links/{publicId}
+      operations:
+      - name: get
+        method: GET
+        description: AgentPageLink
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: agentId
+          in: path
+          type: string
+          required: true
+        - name: publicId
+          in: path
+          type: string
+          required: true
+      - name: patch
+        method: PATCH
+        description: AgentPageLink
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: agentId
+          in: path
+          type: string
+          required: true
+        - name: publicId
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+      - name: delete
+        method: DELETE
+        description: AgentPageLink
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: agentId
+          in: path
+          type: string
+          required: true
+        - name: publicId
+          in: path
+          type: string
+          required: true
+    authentication:
+      type: bearer
+      token: '{{env.IXON_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: ixon-agentpagelink-rest
+    port: 8080
+    description: REST adapter for IXON API — AgentPageLink. One Spectral-compliant resource per consumed operation, prefixed
+      with /v1.
+    resources:
+    - path: /v1/agents/{agentid}/page-links/{publicid}
+      name: agents-agentid-page-links-publicid
+      description: REST surface for agents-agentId-page-links-publicId.
+      operations:
+      - method: GET
+        name: get
+        description: AgentPageLink
+        call: ixon-agentpagelink.get
+        with:
+          agentId: rest.agentId
+          publicId: rest.publicId
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: PATCH
+        name: patch
+        description: AgentPageLink
+        call: ixon-agentpagelink.patch
+        with:
+          agentId: rest.agentId
+          publicId: rest.publicId
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: DELETE
+        name: delete
+        description: AgentPageLink
+        call: ixon-agentpagelink.delete
+        with:
+          agentId: rest.agentId
+          publicId: rest.publicId
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: ixon-agentpagelink-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for IXON API — AgentPageLink. One tool per consumed operation, routed inline through this capability's
+      consumes block.
+    tools:
+    - name: agentpagelink
+      description: AgentPageLink
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: ixon-agentpagelink.get
+      with:
+        agentId: tools.agentId
+        publicId: tools.publicId
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: agentpagelink-2
+      description: AgentPageLink
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: ixon-agentpagelink.patch
+      with:
+        agentId: tools.agentId
+        publicId: tools.publicId
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: agentpagelink-3
+      description: AgentPageLink
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: ixon-agentpagelink.delete
+      with:
+        agentId: tools.agentId
+        publicId: tools.publicId
+      outputParameters:
+      - type: object
+        mapping: $.

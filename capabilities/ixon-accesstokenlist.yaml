@@ -1,0 +1,140 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: IXON API — AccessTokenList
+  description: 'IXON API — AccessTokenList. 3 operations. Lead operation: AccessTokenList. Self-contained Naftiko capability
+    covering one Ixon business surface.'
+  tags:
+  - Ixon
+  - AccessTokenList
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    IXON_API_KEY: IXON_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: ixon-accesstokenlist
+    baseUri: https://portal.ixon.cloud:443/api
+    description: IXON API — AccessTokenList business capability. Self-contained, no shared references.
+    resources:
+    - name: access-tokens
+      path: /access-tokens
+      operations:
+      - name: get
+        method: GET
+        description: AccessTokenList
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: post
+        method: POST
+        description: AccessTokenList
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+      - name: delete
+        method: DELETE
+        description: AccessTokenList
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    authentication:
+      type: bearer
+      token: '{{env.IXON_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: ixon-accesstokenlist-rest
+    port: 8080
+    description: REST adapter for IXON API — AccessTokenList. One Spectral-compliant resource per consumed operation, prefixed
+      with /v1.
+    resources:
+    - path: /v1/access-tokens
+      name: access-tokens
+      description: REST surface for access-tokens.
+      operations:
+      - method: GET
+        name: get
+        description: AccessTokenList
+        call: ixon-accesstokenlist.get
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: post
+        description: AccessTokenList
+        call: ixon-accesstokenlist.post
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: DELETE
+        name: delete
+        description: AccessTokenList
+        call: ixon-accesstokenlist.delete
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: ixon-accesstokenlist-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for IXON API — AccessTokenList. One tool per consumed operation, routed inline through this capability's
+      consumes block.
+    tools:
+    - name: accesstokenlist
+      description: AccessTokenList
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: ixon-accesstokenlist.get
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: accesstokenlist-2
+      description: AccessTokenList
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: ixon-accesstokenlist.post
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: accesstokenlist-3
+      description: AccessTokenList
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: ixon-accesstokenlist.delete
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.

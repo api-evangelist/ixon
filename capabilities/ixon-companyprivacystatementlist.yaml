@@ -1,0 +1,79 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: IXON API — CompanyPrivacyStatementList
+  description: 'IXON API — CompanyPrivacyStatementList. 1 operations. Lead operation: CompanyPrivacyStatementList. Self-contained
+    Naftiko capability covering one Ixon business surface.'
+  tags:
+  - Ixon
+  - CompanyPrivacyStatementList
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    IXON_API_KEY: IXON_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: ixon-companyprivacystatementlist
+    baseUri: https://portal.ixon.cloud:443/api
+    description: IXON API — CompanyPrivacyStatementList business capability. Self-contained, no shared references.
+    resources:
+    - name: companies-publicId-privacy-statements
+      path: /companies/{publicId}/privacy-statements
+      operations:
+      - name: get
+        method: GET
+        description: CompanyPrivacyStatementList
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: publicId
+          in: path
+          type: string
+          required: true
+    authentication:
+      type: bearer
+      token: '{{env.IXON_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: ixon-companyprivacystatementlist-rest
+    port: 8080
+    description: REST adapter for IXON API — CompanyPrivacyStatementList. One Spectral-compliant resource per consumed operation,
+      prefixed with /v1.
+    resources:
+    - path: /v1/companies/{publicid}/privacy-statements
+      name: companies-publicid-privacy-statements
+      description: REST surface for companies-publicId-privacy-statements.
+      operations:
+      - method: GET
+        name: get
+        description: CompanyPrivacyStatementList
+        call: ixon-companyprivacystatementlist.get
+        with:
+          publicId: rest.publicId
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: ixon-companyprivacystatementlist-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for IXON API — CompanyPrivacyStatementList. One tool per consumed operation, routed inline through
+      this capability's consumes block.
+    tools:
+    - name: companyprivacystatementlist
+      description: CompanyPrivacyStatementList
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: ixon-companyprivacystatementlist.get
+      with:
+        publicId: tools.publicId
+      outputParameters:
+      - type: object
+        mapping: $.

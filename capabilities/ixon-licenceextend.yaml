@@ -1,0 +1,86 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: IXON API — LicenceExtend
+  description: 'IXON API — LicenceExtend. 1 operations. Lead operation: LicenceExtend. Self-contained Naftiko capability covering
+    one Ixon business surface.'
+  tags:
+  - Ixon
+  - LicenceExtend
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    IXON_API_KEY: IXON_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: ixon-licenceextend
+    baseUri: https://portal.ixon.cloud:443/api
+    description: IXON API — LicenceExtend business capability. Self-contained, no shared references.
+    resources:
+    - name: licences-publicId-extend
+      path: /licences/{publicId}/extend
+      operations:
+      - name: post
+        method: POST
+        description: LicenceExtend
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: publicId
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    authentication:
+      type: bearer
+      token: '{{env.IXON_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: ixon-licenceextend-rest
+    port: 8080
+    description: REST adapter for IXON API — LicenceExtend. One Spectral-compliant resource per consumed operation, prefixed
+      with /v1.
+    resources:
+    - path: /v1/licences/{publicid}/extend
+      name: licences-publicid-extend
+      description: REST surface for licences-publicId-extend.
+      operations:
+      - method: POST
+        name: post
+        description: LicenceExtend
+        call: ixon-licenceextend.post
+        with:
+          publicId: rest.publicId
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: ixon-licenceextend-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for IXON API — LicenceExtend. One tool per consumed operation, routed inline through this capability's
+      consumes block.
+    tools:
+    - name: licenceextend
+      description: LicenceExtend
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: ixon-licenceextend.post
+      with:
+        publicId: tools.publicId
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.

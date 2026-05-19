@@ -1,0 +1,154 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: IXON API — MqttBroker
+  description: 'IXON API — MqttBroker. 3 operations. Lead operation: MqttBroker. Self-contained Naftiko capability covering
+    one Ixon business surface.'
+  tags:
+  - Ixon
+  - MqttBroker
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    IXON_API_KEY: IXON_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: ixon-mqttbroker
+    baseUri: https://portal.ixon.cloud:443/api
+    description: IXON API — MqttBroker business capability. Self-contained, no shared references.
+    resources:
+    - name: mqtt-brokers-publicId
+      path: /mqtt-brokers/{publicId}
+      operations:
+      - name: get
+        method: GET
+        description: MqttBroker
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: publicId
+          in: path
+          type: string
+          required: true
+      - name: patch
+        method: PATCH
+        description: MqttBroker
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: publicId
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+      - name: delete
+        method: DELETE
+        description: MqttBroker
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: publicId
+          in: path
+          type: string
+          required: true
+    authentication:
+      type: bearer
+      token: '{{env.IXON_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: ixon-mqttbroker-rest
+    port: 8080
+    description: REST adapter for IXON API — MqttBroker. One Spectral-compliant resource per consumed operation, prefixed
+      with /v1.
+    resources:
+    - path: /v1/mqtt-brokers/{publicid}
+      name: mqtt-brokers-publicid
+      description: REST surface for mqtt-brokers-publicId.
+      operations:
+      - method: GET
+        name: get
+        description: MqttBroker
+        call: ixon-mqttbroker.get
+        with:
+          publicId: rest.publicId
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: PATCH
+        name: patch
+        description: MqttBroker
+        call: ixon-mqttbroker.patch
+        with:
+          publicId: rest.publicId
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: DELETE
+        name: delete
+        description: MqttBroker
+        call: ixon-mqttbroker.delete
+        with:
+          publicId: rest.publicId
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: ixon-mqttbroker-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for IXON API — MqttBroker. One tool per consumed operation, routed inline through this capability's
+      consumes block.
+    tools:
+    - name: mqttbroker
+      description: MqttBroker
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: ixon-mqttbroker.get
+      with:
+        publicId: tools.publicId
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: mqttbroker-2
+      description: MqttBroker
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: ixon-mqttbroker.patch
+      with:
+        publicId: tools.publicId
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: mqttbroker-3
+      description: MqttBroker
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: ixon-mqttbroker.delete
+      with:
+        publicId: tools.publicId
+      outputParameters:
+      - type: object
+        mapping: $.

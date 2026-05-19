@@ -1,0 +1,70 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: IXON API — EdgeAppVersionList
+  description: 'IXON API — EdgeAppVersionList. 1 operations. Lead operation: EdgeAppVersionList. Self-contained Naftiko capability
+    covering one Ixon business surface.'
+  tags:
+  - Ixon
+  - EdgeAppVersionList
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    IXON_API_KEY: IXON_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: ixon-edgeappversionlist
+    baseUri: https://portal.ixon.cloud:443/api
+    description: IXON API — EdgeAppVersionList business capability. Self-contained, no shared references.
+    resources:
+    - name: edge-app-versions
+      path: /edge-app-versions
+      operations:
+      - name: get
+        method: GET
+        description: EdgeAppVersionList
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    authentication:
+      type: bearer
+      token: '{{env.IXON_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: ixon-edgeappversionlist-rest
+    port: 8080
+    description: REST adapter for IXON API — EdgeAppVersionList. One Spectral-compliant resource per consumed operation, prefixed
+      with /v1.
+    resources:
+    - path: /v1/edge-app-versions
+      name: edge-app-versions
+      description: REST surface for edge-app-versions.
+      operations:
+      - method: GET
+        name: get
+        description: EdgeAppVersionList
+        call: ixon-edgeappversionlist.get
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: ixon-edgeappversionlist-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for IXON API — EdgeAppVersionList. One tool per consumed operation, routed inline through this
+      capability's consumes block.
+    tools:
+    - name: edgeappversionlist
+      description: EdgeAppVersionList
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: ixon-edgeappversionlist.get
+      outputParameters:
+      - type: object
+        mapping: $.

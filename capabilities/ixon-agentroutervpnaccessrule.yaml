@@ -1,0 +1,172 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: IXON API — AgentRouterVpnAccessRule
+  description: 'IXON API — AgentRouterVpnAccessRule. 3 operations. Lead operation: AgentRouterVpnAccessRule. Self-contained
+    Naftiko capability covering one Ixon business surface.'
+  tags:
+  - Ixon
+  - AgentRouterVpnAccessRule
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    IXON_API_KEY: IXON_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: ixon-agentroutervpnaccessrule
+    baseUri: https://portal.ixon.cloud:443/api
+    description: IXON API — AgentRouterVpnAccessRule business capability. Self-contained, no shared references.
+    resources:
+    - name: agents-agentId-router-vpn-access-rules-publicId
+      path: /agents/{agentId}/router-vpn-access-rules/{publicId}
+      operations:
+      - name: get
+        method: GET
+        description: AgentRouterVpnAccessRule
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: agentId
+          in: path
+          type: string
+          required: true
+        - name: publicId
+          in: path
+          type: string
+          required: true
+      - name: patch
+        method: PATCH
+        description: AgentRouterVpnAccessRule
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: agentId
+          in: path
+          type: string
+          required: true
+        - name: publicId
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+      - name: delete
+        method: DELETE
+        description: AgentRouterVpnAccessRule
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: agentId
+          in: path
+          type: string
+          required: true
+        - name: publicId
+          in: path
+          type: string
+          required: true
+    authentication:
+      type: bearer
+      token: '{{env.IXON_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: ixon-agentroutervpnaccessrule-rest
+    port: 8080
+    description: REST adapter for IXON API — AgentRouterVpnAccessRule. One Spectral-compliant resource per consumed operation,
+      prefixed with /v1.
+    resources:
+    - path: /v1/agents/{agentid}/router-vpn-access-rules/{publicid}
+      name: agents-agentid-router-vpn-access-rules-publicid
+      description: REST surface for agents-agentId-router-vpn-access-rules-publicId.
+      operations:
+      - method: GET
+        name: get
+        description: AgentRouterVpnAccessRule
+        call: ixon-agentroutervpnaccessrule.get
+        with:
+          agentId: rest.agentId
+          publicId: rest.publicId
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: PATCH
+        name: patch
+        description: AgentRouterVpnAccessRule
+        call: ixon-agentroutervpnaccessrule.patch
+        with:
+          agentId: rest.agentId
+          publicId: rest.publicId
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: DELETE
+        name: delete
+        description: AgentRouterVpnAccessRule
+        call: ixon-agentroutervpnaccessrule.delete
+        with:
+          agentId: rest.agentId
+          publicId: rest.publicId
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: ixon-agentroutervpnaccessrule-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for IXON API — AgentRouterVpnAccessRule. One tool per consumed operation, routed inline through
+      this capability's consumes block.
+    tools:
+    - name: agentroutervpnaccessrule
+      description: AgentRouterVpnAccessRule
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: ixon-agentroutervpnaccessrule.get
+      with:
+        agentId: tools.agentId
+        publicId: tools.publicId
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: agentroutervpnaccessrule-2
+      description: AgentRouterVpnAccessRule
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: ixon-agentroutervpnaccessrule.patch
+      with:
+        agentId: tools.agentId
+        publicId: tools.publicId
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: agentroutervpnaccessrule-3
+      description: AgentRouterVpnAccessRule
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: ixon-agentroutervpnaccessrule.delete
+      with:
+        agentId: tools.agentId
+        publicId: tools.publicId
+      outputParameters:
+      - type: object
+        mapping: $.

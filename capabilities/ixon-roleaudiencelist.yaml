@@ -1,0 +1,168 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: IXON API — RoleAudienceList
+  description: 'IXON API — RoleAudienceList. 3 operations. Lead operation: RoleAudienceList. Self-contained Naftiko capability
+    covering one Ixon business surface.'
+  tags:
+  - Ixon
+  - RoleAudienceList
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    IXON_API_KEY: IXON_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: ixon-roleaudiencelist
+    baseUri: https://portal.ixon.cloud:443/api
+    description: IXON API — RoleAudienceList business capability. Self-contained, no shared references.
+    resources:
+    - name: roles-publicId-audiences
+      path: /roles/{publicId}/audiences
+      operations:
+      - name: post
+        method: POST
+        description: RoleAudienceList
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: publicId
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+      - name: put
+        method: PUT
+        description: RoleAudienceList
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: publicId
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+      - name: delete
+        method: DELETE
+        description: RoleAudienceList
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: publicId
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    authentication:
+      type: bearer
+      token: '{{env.IXON_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: ixon-roleaudiencelist-rest
+    port: 8080
+    description: REST adapter for IXON API — RoleAudienceList. One Spectral-compliant resource per consumed operation, prefixed
+      with /v1.
+    resources:
+    - path: /v1/roles/{publicid}/audiences
+      name: roles-publicid-audiences
+      description: REST surface for roles-publicId-audiences.
+      operations:
+      - method: POST
+        name: post
+        description: RoleAudienceList
+        call: ixon-roleaudiencelist.post
+        with:
+          publicId: rest.publicId
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: PUT
+        name: put
+        description: RoleAudienceList
+        call: ixon-roleaudiencelist.put
+        with:
+          publicId: rest.publicId
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: DELETE
+        name: delete
+        description: RoleAudienceList
+        call: ixon-roleaudiencelist.delete
+        with:
+          publicId: rest.publicId
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: ixon-roleaudiencelist-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for IXON API — RoleAudienceList. One tool per consumed operation, routed inline through this
+      capability's consumes block.
+    tools:
+    - name: roleaudiencelist
+      description: RoleAudienceList
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: ixon-roleaudiencelist.post
+      with:
+        publicId: tools.publicId
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: roleaudiencelist-2
+      description: RoleAudienceList
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: ixon-roleaudiencelist.put
+      with:
+        publicId: tools.publicId
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: roleaudiencelist-3
+      description: RoleAudienceList
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: ixon-roleaudiencelist.delete
+      with:
+        publicId: tools.publicId
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.

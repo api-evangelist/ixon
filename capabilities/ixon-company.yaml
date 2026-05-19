@@ -1,0 +1,113 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: IXON API — Company
+  description: 'IXON API — Company. 2 operations. Lead operation: Company. Self-contained Naftiko capability covering one
+    Ixon business surface.'
+  tags:
+  - Ixon
+  - Company
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    IXON_API_KEY: IXON_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: ixon-company
+    baseUri: https://portal.ixon.cloud:443/api
+    description: IXON API — Company business capability. Self-contained, no shared references.
+    resources:
+    - name: companies-publicId
+      path: /companies/{publicId}
+      operations:
+      - name: get
+        method: GET
+        description: Company
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: publicId
+          in: path
+          type: string
+          required: true
+      - name: delete
+        method: DELETE
+        description: Company
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: publicId
+          in: path
+          type: string
+          required: true
+    authentication:
+      type: bearer
+      token: '{{env.IXON_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: ixon-company-rest
+    port: 8080
+    description: REST adapter for IXON API — Company. One Spectral-compliant resource per consumed operation, prefixed with
+      /v1.
+    resources:
+    - path: /v1/companies/{publicid}
+      name: companies-publicid
+      description: REST surface for companies-publicId.
+      operations:
+      - method: GET
+        name: get
+        description: Company
+        call: ixon-company.get
+        with:
+          publicId: rest.publicId
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: DELETE
+        name: delete
+        description: Company
+        call: ixon-company.delete
+        with:
+          publicId: rest.publicId
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: ixon-company-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for IXON API — Company. One tool per consumed operation, routed inline through this capability's
+      consumes block.
+    tools:
+    - name: company
+      description: Company
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: ixon-company.get
+      with:
+        publicId: tools.publicId
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: company-2
+      description: Company
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: ixon-company.delete
+      with:
+        publicId: tools.publicId
+      outputParameters:
+      - type: object
+        mapping: $.

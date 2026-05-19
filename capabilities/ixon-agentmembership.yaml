@@ -1,0 +1,154 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: IXON API — AgentMembership
+  description: 'IXON API — AgentMembership. 3 operations. Lead operation: AgentMembership. Self-contained Naftiko capability
+    covering one Ixon business surface.'
+  tags:
+  - Ixon
+  - AgentMembership
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    IXON_API_KEY: IXON_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: ixon-agentmembership
+    baseUri: https://portal.ixon.cloud:443/api
+    description: IXON API — AgentMembership business capability. Self-contained, no shared references.
+    resources:
+    - name: agents-memberships-publicId
+      path: /agents/memberships/{publicId}
+      operations:
+      - name: get
+        method: GET
+        description: AgentMembership
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: publicId
+          in: path
+          type: string
+          required: true
+      - name: patch
+        method: PATCH
+        description: AgentMembership
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: publicId
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+      - name: delete
+        method: DELETE
+        description: AgentMembership
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: publicId
+          in: path
+          type: string
+          required: true
+    authentication:
+      type: bearer
+      token: '{{env.IXON_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: ixon-agentmembership-rest
+    port: 8080
+    description: REST adapter for IXON API — AgentMembership. One Spectral-compliant resource per consumed operation, prefixed
+      with /v1.
+    resources:
+    - path: /v1/agents/memberships/{publicid}
+      name: agents-memberships-publicid
+      description: REST surface for agents-memberships-publicId.
+      operations:
+      - method: GET
+        name: get
+        description: AgentMembership
+        call: ixon-agentmembership.get
+        with:
+          publicId: rest.publicId
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: PATCH
+        name: patch
+        description: AgentMembership
+        call: ixon-agentmembership.patch
+        with:
+          publicId: rest.publicId
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: DELETE
+        name: delete
+        description: AgentMembership
+        call: ixon-agentmembership.delete
+        with:
+          publicId: rest.publicId
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: ixon-agentmembership-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for IXON API — AgentMembership. One tool per consumed operation, routed inline through this capability's
+      consumes block.
+    tools:
+    - name: agentmembership
+      description: AgentMembership
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: ixon-agentmembership.get
+      with:
+        publicId: tools.publicId
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: agentmembership-2
+      description: AgentMembership
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: ixon-agentmembership.patch
+      with:
+        publicId: tools.publicId
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: agentmembership-3
+      description: AgentMembership
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: ixon-agentmembership.delete
+      with:
+        publicId: tools.publicId
+      outputParameters:
+      - type: object
+        mapping: $.

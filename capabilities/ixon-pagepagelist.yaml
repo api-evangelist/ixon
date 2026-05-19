@@ -1,0 +1,140 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: IXON API — PagePageList
+  description: 'IXON API — PagePageList. 3 operations. Lead operation: PagePageList. Self-contained Naftiko capability covering
+    one Ixon business surface.'
+  tags:
+  - Ixon
+  - PagePageList
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    IXON_API_KEY: IXON_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: ixon-pagepagelist
+    baseUri: https://portal.ixon.cloud:443/api
+    description: IXON API — PagePageList business capability. Self-contained, no shared references.
+    resources:
+    - name: pages-pages
+      path: /pages-pages
+      operations:
+      - name: get
+        method: GET
+        description: PagePageList
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: post
+        method: POST
+        description: PagePageList
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+      - name: delete
+        method: DELETE
+        description: PagePageList
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    authentication:
+      type: bearer
+      token: '{{env.IXON_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: ixon-pagepagelist-rest
+    port: 8080
+    description: REST adapter for IXON API — PagePageList. One Spectral-compliant resource per consumed operation, prefixed
+      with /v1.
+    resources:
+    - path: /v1/pages-pages
+      name: pages-pages
+      description: REST surface for pages-pages.
+      operations:
+      - method: GET
+        name: get
+        description: PagePageList
+        call: ixon-pagepagelist.get
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: post
+        description: PagePageList
+        call: ixon-pagepagelist.post
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: DELETE
+        name: delete
+        description: PagePageList
+        call: ixon-pagepagelist.delete
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: ixon-pagepagelist-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for IXON API — PagePageList. One tool per consumed operation, routed inline through this capability's
+      consumes block.
+    tools:
+    - name: pagepagelist
+      description: PagePageList
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: ixon-pagepagelist.get
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: pagepagelist-2
+      description: PagePageList
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: ixon-pagepagelist.post
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: pagepagelist-3
+      description: PagePageList
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: ixon-pagepagelist.delete
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.

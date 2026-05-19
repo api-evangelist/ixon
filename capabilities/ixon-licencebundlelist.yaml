@@ -1,0 +1,70 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: IXON API — LicenceBundleList
+  description: 'IXON API — LicenceBundleList. 1 operations. Lead operation: LicenceBundleList. Self-contained Naftiko capability
+    covering one Ixon business surface.'
+  tags:
+  - Ixon
+  - LicenceBundleList
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    IXON_API_KEY: IXON_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: ixon-licencebundlelist
+    baseUri: https://portal.ixon.cloud:443/api
+    description: IXON API — LicenceBundleList business capability. Self-contained, no shared references.
+    resources:
+    - name: licence-bundles
+      path: /licence-bundles
+      operations:
+      - name: get
+        method: GET
+        description: LicenceBundleList
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    authentication:
+      type: bearer
+      token: '{{env.IXON_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: ixon-licencebundlelist-rest
+    port: 8080
+    description: REST adapter for IXON API — LicenceBundleList. One Spectral-compliant resource per consumed operation, prefixed
+      with /v1.
+    resources:
+    - path: /v1/licence-bundles
+      name: licence-bundles
+      description: REST surface for licence-bundles.
+      operations:
+      - method: GET
+        name: get
+        description: LicenceBundleList
+        call: ixon-licencebundlelist.get
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: ixon-licencebundlelist-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for IXON API — LicenceBundleList. One tool per consumed operation, routed inline through this
+      capability's consumes block.
+    tools:
+    - name: licencebundlelist
+      description: LicenceBundleList
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: ixon-licencebundlelist.get
+      outputParameters:
+      - type: object
+        mapping: $.

@@ -1,0 +1,70 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: IXON API — BackendComponentTemplateVersionList
+  description: 'IXON API — BackendComponentTemplateVersionList. 1 operations. Lead operation: BackendComponentTemplateVersionList.
+    Self-contained Naftiko capability covering one Ixon business surface.'
+  tags:
+  - Ixon
+  - BackendComponentTemplateVersionList
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    IXON_API_KEY: IXON_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: ixon-backendcomponenttemplateversionlist
+    baseUri: https://portal.ixon.cloud:443/api
+    description: IXON API — BackendComponentTemplateVersionList business capability. Self-contained, no shared references.
+    resources:
+    - name: backend-component-template-versions
+      path: /backend-component-template-versions
+      operations:
+      - name: get
+        method: GET
+        description: BackendComponentTemplateVersionList
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    authentication:
+      type: bearer
+      token: '{{env.IXON_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: ixon-backendcomponenttemplateversionlist-rest
+    port: 8080
+    description: REST adapter for IXON API — BackendComponentTemplateVersionList. One Spectral-compliant resource per consumed
+      operation, prefixed with /v1.
+    resources:
+    - path: /v1/backend-component-template-versions
+      name: backend-component-template-versions
+      description: REST surface for backend-component-template-versions.
+      operations:
+      - method: GET
+        name: get
+        description: BackendComponentTemplateVersionList
+        call: ixon-backendcomponenttemplateversionlist.get
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: ixon-backendcomponenttemplateversionlist-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for IXON API — BackendComponentTemplateVersionList. One tool per consumed operation, routed inline
+      through this capability's consumes block.
+    tools:
+    - name: backendcomponenttemplateversionlist
+      description: BackendComponentTemplateVersionList
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: ixon-backendcomponenttemplateversionlist.get
+      outputParameters:
+      - type: object
+        mapping: $.

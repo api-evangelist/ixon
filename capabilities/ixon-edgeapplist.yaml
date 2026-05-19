@@ -1,0 +1,140 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: IXON API — EdgeAppList
+  description: 'IXON API — EdgeAppList. 3 operations. Lead operation: EdgeAppList. Self-contained Naftiko capability covering
+    one Ixon business surface.'
+  tags:
+  - Ixon
+  - EdgeAppList
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    IXON_API_KEY: IXON_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: ixon-edgeapplist
+    baseUri: https://portal.ixon.cloud:443/api
+    description: IXON API — EdgeAppList business capability. Self-contained, no shared references.
+    resources:
+    - name: edge-apps
+      path: /edge-apps
+      operations:
+      - name: get
+        method: GET
+        description: EdgeAppList
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: post
+        method: POST
+        description: EdgeAppList
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+      - name: patch
+        method: PATCH
+        description: EdgeAppList
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    authentication:
+      type: bearer
+      token: '{{env.IXON_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: ixon-edgeapplist-rest
+    port: 8080
+    description: REST adapter for IXON API — EdgeAppList. One Spectral-compliant resource per consumed operation, prefixed
+      with /v1.
+    resources:
+    - path: /v1/edge-apps
+      name: edge-apps
+      description: REST surface for edge-apps.
+      operations:
+      - method: GET
+        name: get
+        description: EdgeAppList
+        call: ixon-edgeapplist.get
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: post
+        description: EdgeAppList
+        call: ixon-edgeapplist.post
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: PATCH
+        name: patch
+        description: EdgeAppList
+        call: ixon-edgeapplist.patch
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: ixon-edgeapplist-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for IXON API — EdgeAppList. One tool per consumed operation, routed inline through this capability's
+      consumes block.
+    tools:
+    - name: edgeapplist
+      description: EdgeAppList
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: ixon-edgeapplist.get
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: edgeapplist-2
+      description: EdgeAppList
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: ixon-edgeapplist.post
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: edgeapplist-3
+      description: EdgeAppList
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: ixon-edgeapplist.patch
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.

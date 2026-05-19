@@ -1,0 +1,113 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: IXON API — PageDefault
+  description: 'IXON API — PageDefault. 2 operations. Lead operation: PageDefault. Self-contained Naftiko capability covering
+    one Ixon business surface.'
+  tags:
+  - Ixon
+  - PageDefault
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    IXON_API_KEY: IXON_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: ixon-pagedefault
+    baseUri: https://portal.ixon.cloud:443/api
+    description: IXON API — PageDefault business capability. Self-contained, no shared references.
+    resources:
+    - name: pages-publicId-default
+      path: /pages/{publicId}/default
+      operations:
+      - name: post
+        method: POST
+        description: PageDefault
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: publicId
+          in: path
+          type: string
+          required: true
+      - name: delete
+        method: DELETE
+        description: PageDefault
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: publicId
+          in: path
+          type: string
+          required: true
+    authentication:
+      type: bearer
+      token: '{{env.IXON_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: ixon-pagedefault-rest
+    port: 8080
+    description: REST adapter for IXON API — PageDefault. One Spectral-compliant resource per consumed operation, prefixed
+      with /v1.
+    resources:
+    - path: /v1/pages/{publicid}/default
+      name: pages-publicid-default
+      description: REST surface for pages-publicId-default.
+      operations:
+      - method: POST
+        name: post
+        description: PageDefault
+        call: ixon-pagedefault.post
+        with:
+          publicId: rest.publicId
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: DELETE
+        name: delete
+        description: PageDefault
+        call: ixon-pagedefault.delete
+        with:
+          publicId: rest.publicId
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: ixon-pagedefault-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for IXON API — PageDefault. One tool per consumed operation, routed inline through this capability's
+      consumes block.
+    tools:
+    - name: pagedefault
+      description: PageDefault
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: ixon-pagedefault.post
+      with:
+        publicId: tools.publicId
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: pagedefault-2
+      description: PageDefault
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: ixon-pagedefault.delete
+      with:
+        publicId: tools.publicId
+      outputParameters:
+      - type: object
+        mapping: $.

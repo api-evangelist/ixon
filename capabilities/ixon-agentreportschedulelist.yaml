@@ -1,0 +1,202 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: IXON API — AgentReportScheduleList
+  description: 'IXON API — AgentReportScheduleList. 4 operations. Lead operation: AgentReportScheduleList. Self-contained
+    Naftiko capability covering one Ixon business surface.'
+  tags:
+  - Ixon
+  - AgentReportScheduleList
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    IXON_API_KEY: IXON_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: ixon-agentreportschedulelist
+    baseUri: https://portal.ixon.cloud:443/api
+    description: IXON API — AgentReportScheduleList business capability. Self-contained, no shared references.
+    resources:
+    - name: agents-agentId-report-schedules
+      path: /agents/{agentId}/report-schedules
+      operations:
+      - name: get
+        method: GET
+        description: AgentReportScheduleList
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: agentId
+          in: path
+          type: string
+          required: true
+      - name: post
+        method: POST
+        description: AgentReportScheduleList
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: agentId
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+      - name: patch
+        method: PATCH
+        description: AgentReportScheduleList
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: agentId
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+      - name: delete
+        method: DELETE
+        description: AgentReportScheduleList
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: agentId
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    authentication:
+      type: bearer
+      token: '{{env.IXON_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: ixon-agentreportschedulelist-rest
+    port: 8080
+    description: REST adapter for IXON API — AgentReportScheduleList. One Spectral-compliant resource per consumed operation,
+      prefixed with /v1.
+    resources:
+    - path: /v1/agents/{agentid}/report-schedules
+      name: agents-agentid-report-schedules
+      description: REST surface for agents-agentId-report-schedules.
+      operations:
+      - method: GET
+        name: get
+        description: AgentReportScheduleList
+        call: ixon-agentreportschedulelist.get
+        with:
+          agentId: rest.agentId
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: post
+        description: AgentReportScheduleList
+        call: ixon-agentreportschedulelist.post
+        with:
+          agentId: rest.agentId
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: PATCH
+        name: patch
+        description: AgentReportScheduleList
+        call: ixon-agentreportschedulelist.patch
+        with:
+          agentId: rest.agentId
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: DELETE
+        name: delete
+        description: AgentReportScheduleList
+        call: ixon-agentreportschedulelist.delete
+        with:
+          agentId: rest.agentId
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: ixon-agentreportschedulelist-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for IXON API — AgentReportScheduleList. One tool per consumed operation, routed inline through
+      this capability's consumes block.
+    tools:
+    - name: agentreportschedulelist
+      description: AgentReportScheduleList
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: ixon-agentreportschedulelist.get
+      with:
+        agentId: tools.agentId
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: agentreportschedulelist-2
+      description: AgentReportScheduleList
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: ixon-agentreportschedulelist.post
+      with:
+        agentId: tools.agentId
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: agentreportschedulelist-3
+      description: AgentReportScheduleList
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: ixon-agentreportschedulelist.patch
+      with:
+        agentId: tools.agentId
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: agentreportschedulelist-4
+      description: AgentReportScheduleList
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: ixon-agentreportschedulelist.delete
+      with:
+        agentId: tools.agentId
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.

@@ -1,0 +1,175 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: IXON API — UserMembershipList
+  description: 'IXON API — UserMembershipList. 4 operations. Lead operation: UserMembershipList. Self-contained Naftiko capability
+    covering one Ixon business surface.'
+  tags:
+  - Ixon
+  - UserMembershipList
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    IXON_API_KEY: IXON_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: ixon-usermembershiplist
+    baseUri: https://portal.ixon.cloud:443/api
+    description: IXON API — UserMembershipList business capability. Self-contained, no shared references.
+    resources:
+    - name: users-memberships
+      path: /users/memberships
+      operations:
+      - name: get
+        method: GET
+        description: UserMembershipList
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: post
+        method: POST
+        description: UserMembershipList
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+      - name: patch
+        method: PATCH
+        description: UserMembershipList
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+      - name: delete
+        method: DELETE
+        description: UserMembershipList
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    authentication:
+      type: bearer
+      token: '{{env.IXON_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: ixon-usermembershiplist-rest
+    port: 8080
+    description: REST adapter for IXON API — UserMembershipList. One Spectral-compliant resource per consumed operation, prefixed
+      with /v1.
+    resources:
+    - path: /v1/users/memberships
+      name: users-memberships
+      description: REST surface for users-memberships.
+      operations:
+      - method: GET
+        name: get
+        description: UserMembershipList
+        call: ixon-usermembershiplist.get
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: post
+        description: UserMembershipList
+        call: ixon-usermembershiplist.post
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: PATCH
+        name: patch
+        description: UserMembershipList
+        call: ixon-usermembershiplist.patch
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: DELETE
+        name: delete
+        description: UserMembershipList
+        call: ixon-usermembershiplist.delete
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: ixon-usermembershiplist-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for IXON API — UserMembershipList. One tool per consumed operation, routed inline through this
+      capability's consumes block.
+    tools:
+    - name: usermembershiplist
+      description: UserMembershipList
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: ixon-usermembershiplist.get
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: usermembershiplist-2
+      description: UserMembershipList
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: ixon-usermembershiplist.post
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: usermembershiplist-3
+      description: UserMembershipList
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: ixon-usermembershiplist.patch
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: usermembershiplist-4
+      description: UserMembershipList
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: ixon-usermembershiplist.delete
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.

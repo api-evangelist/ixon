@@ -1,0 +1,79 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: IXON API — AgentAppLogging
+  description: 'IXON API — AgentAppLogging. 1 operations. Lead operation: AgentAppLogging. Self-contained Naftiko capability
+    covering one Ixon business surface.'
+  tags:
+  - Ixon
+  - AgentAppLogging
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    IXON_API_KEY: IXON_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: ixon-agentapplogging
+    baseUri: https://portal.ixon.cloud:443/api
+    description: IXON API — AgentAppLogging business capability. Self-contained, no shared references.
+    resources:
+    - name: agents-publicId-app-logging
+      path: /agents/{publicId}/app/logging
+      operations:
+      - name: delete
+        method: DELETE
+        description: AgentAppLogging
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: publicId
+          in: path
+          type: string
+          required: true
+    authentication:
+      type: bearer
+      token: '{{env.IXON_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: ixon-agentapplogging-rest
+    port: 8080
+    description: REST adapter for IXON API — AgentAppLogging. One Spectral-compliant resource per consumed operation, prefixed
+      with /v1.
+    resources:
+    - path: /v1/agents/{publicid}/app/logging
+      name: agents-publicid-app-logging
+      description: REST surface for agents-publicId-app-logging.
+      operations:
+      - method: DELETE
+        name: delete
+        description: AgentAppLogging
+        call: ixon-agentapplogging.delete
+        with:
+          publicId: rest.publicId
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: ixon-agentapplogging-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for IXON API — AgentAppLogging. One tool per consumed operation, routed inline through this capability's
+      consumes block.
+    tools:
+    - name: agentapplogging
+      description: AgentAppLogging
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: ixon-agentapplogging.delete
+      with:
+        publicId: tools.publicId
+      outputParameters:
+      - type: object
+        mapping: $.

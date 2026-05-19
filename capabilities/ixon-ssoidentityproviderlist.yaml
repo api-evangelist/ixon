@@ -1,0 +1,70 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: IXON API — SsoIdentityProviderList
+  description: 'IXON API — SsoIdentityProviderList. 1 operations. Lead operation: SsoIdentityProviderList. Self-contained
+    Naftiko capability covering one Ixon business surface.'
+  tags:
+  - Ixon
+  - SsoIdentityProviderList
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    IXON_API_KEY: IXON_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: ixon-ssoidentityproviderlist
+    baseUri: https://portal.ixon.cloud:443/api
+    description: IXON API — SsoIdentityProviderList business capability. Self-contained, no shared references.
+    resources:
+    - name: sso-identity-providers
+      path: /sso/identity-providers
+      operations:
+      - name: get
+        method: GET
+        description: SsoIdentityProviderList
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    authentication:
+      type: bearer
+      token: '{{env.IXON_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: ixon-ssoidentityproviderlist-rest
+    port: 8080
+    description: REST adapter for IXON API — SsoIdentityProviderList. One Spectral-compliant resource per consumed operation,
+      prefixed with /v1.
+    resources:
+    - path: /v1/sso/identity-providers
+      name: sso-identity-providers
+      description: REST surface for sso-identity-providers.
+      operations:
+      - method: GET
+        name: get
+        description: SsoIdentityProviderList
+        call: ixon-ssoidentityproviderlist.get
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: ixon-ssoidentityproviderlist-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for IXON API — SsoIdentityProviderList. One tool per consumed operation, routed inline through
+      this capability's consumes block.
+    tools:
+    - name: ssoidentityproviderlist
+      description: SsoIdentityProviderList
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: ixon-ssoidentityproviderlist.get
+      outputParameters:
+      - type: object
+        mapping: $.

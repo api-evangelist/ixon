@@ -1,0 +1,80 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: IXON API — ShellAgentList
+  description: 'IXON API — ShellAgentList. 1 operations. Lead operation: ShellAgentList. Self-contained Naftiko capability
+    covering one Ixon business surface.'
+  tags:
+  - Ixon
+  - ShellAgentList
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    IXON_API_KEY: IXON_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: ixon-shellagentlist
+    baseUri: https://portal.ixon.cloud:443/api
+    description: IXON API — ShellAgentList business capability. Self-contained, no shared references.
+    resources:
+    - name: agents-shell
+      path: /agents/shell
+      operations:
+      - name: post
+        method: POST
+        description: ShellAgentList
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    authentication:
+      type: bearer
+      token: '{{env.IXON_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: ixon-shellagentlist-rest
+    port: 8080
+    description: REST adapter for IXON API — ShellAgentList. One Spectral-compliant resource per consumed operation, prefixed
+      with /v1.
+    resources:
+    - path: /v1/agents/shell
+      name: agents-shell
+      description: REST surface for agents-shell.
+      operations:
+      - method: POST
+        name: post
+        description: ShellAgentList
+        call: ixon-shellagentlist.post
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: ixon-shellagentlist-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for IXON API — ShellAgentList. One tool per consumed operation, routed inline through this capability's
+      consumes block.
+    tools:
+    - name: shellagentlist
+      description: ShellAgentList
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: ixon-shellagentlist.post
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.

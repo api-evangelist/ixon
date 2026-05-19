@@ -1,0 +1,79 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: IXON API — BackendComponentMessageTriggerList
+  description: 'IXON API — BackendComponentMessageTriggerList. 1 operations. Lead operation: BackendComponentMessageTriggerList.
+    Self-contained Naftiko capability covering one Ixon business surface.'
+  tags:
+  - Ixon
+  - BackendComponentMessageTriggerList
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    IXON_API_KEY: IXON_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: ixon-backendcomponentmessagetriggerlist
+    baseUri: https://portal.ixon.cloud:443/api
+    description: IXON API — BackendComponentMessageTriggerList business capability. Self-contained, no shared references.
+    resources:
+    - name: backend-component-message-subscriptions-publicId-triggers
+      path: /backend-component-message-subscriptions/{publicId}/triggers
+      operations:
+      - name: get
+        method: GET
+        description: BackendComponentMessageTriggerList
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: publicId
+          in: path
+          type: string
+          required: true
+    authentication:
+      type: bearer
+      token: '{{env.IXON_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: ixon-backendcomponentmessagetriggerlist-rest
+    port: 8080
+    description: REST adapter for IXON API — BackendComponentMessageTriggerList. One Spectral-compliant resource per consumed
+      operation, prefixed with /v1.
+    resources:
+    - path: /v1/backend-component-message-subscriptions/{publicid}/triggers
+      name: backend-component-message-subscriptions-publicid-triggers
+      description: REST surface for backend-component-message-subscriptions-publicId-triggers.
+      operations:
+      - method: GET
+        name: get
+        description: BackendComponentMessageTriggerList
+        call: ixon-backendcomponentmessagetriggerlist.get
+        with:
+          publicId: rest.publicId
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: ixon-backendcomponentmessagetriggerlist-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for IXON API — BackendComponentMessageTriggerList. One tool per consumed operation, routed inline
+      through this capability's consumes block.
+    tools:
+    - name: backendcomponentmessagetriggerlist
+      description: BackendComponentMessageTriggerList
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: ixon-backendcomponentmessagetriggerlist.get
+      with:
+        publicId: tools.publicId
+      outputParameters:
+      - type: object
+        mapping: $.

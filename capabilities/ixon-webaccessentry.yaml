@@ -1,0 +1,79 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: IXON API — WebAccessEntry
+  description: 'IXON API — WebAccessEntry. 1 operations. Lead operation: WebAccessEntry. Self-contained Naftiko capability
+    covering one Ixon business surface.'
+  tags:
+  - Ixon
+  - WebAccessEntry
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    IXON_API_KEY: IXON_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: ixon-webaccessentry
+    baseUri: https://portal.ixon.cloud:443/api
+    description: IXON API — WebAccessEntry business capability. Self-contained, no shared references.
+    resources:
+    - name: web-accesses-publicId
+      path: /web-accesses/{publicId}
+      operations:
+      - name: get
+        method: GET
+        description: WebAccessEntry
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: publicId
+          in: path
+          type: string
+          required: true
+    authentication:
+      type: bearer
+      token: '{{env.IXON_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: ixon-webaccessentry-rest
+    port: 8080
+    description: REST adapter for IXON API — WebAccessEntry. One Spectral-compliant resource per consumed operation, prefixed
+      with /v1.
+    resources:
+    - path: /v1/web-accesses/{publicid}
+      name: web-accesses-publicid
+      description: REST surface for web-accesses-publicId.
+      operations:
+      - method: GET
+        name: get
+        description: WebAccessEntry
+        call: ixon-webaccessentry.get
+        with:
+          publicId: rest.publicId
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: ixon-webaccessentry-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for IXON API — WebAccessEntry. One tool per consumed operation, routed inline through this capability's
+      consumes block.
+    tools:
+    - name: webaccessentry
+      description: WebAccessEntry
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: ixon-webaccessentry.get
+      with:
+        publicId: tools.publicId
+      outputParameters:
+      - type: object
+        mapping: $.

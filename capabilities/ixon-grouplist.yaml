@@ -1,0 +1,175 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: IXON API — GroupList
+  description: 'IXON API — GroupList. 4 operations. Lead operation: GroupList. Self-contained Naftiko capability covering
+    one Ixon business surface.'
+  tags:
+  - Ixon
+  - GroupList
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    IXON_API_KEY: IXON_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: ixon-grouplist
+    baseUri: https://portal.ixon.cloud:443/api
+    description: IXON API — GroupList business capability. Self-contained, no shared references.
+    resources:
+    - name: groups
+      path: /groups
+      operations:
+      - name: get
+        method: GET
+        description: GroupList
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: patch
+        method: PATCH
+        description: GroupList
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+      - name: post
+        method: POST
+        description: GroupList
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+      - name: delete
+        method: DELETE
+        description: GroupList
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    authentication:
+      type: bearer
+      token: '{{env.IXON_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: ixon-grouplist-rest
+    port: 8080
+    description: REST adapter for IXON API — GroupList. One Spectral-compliant resource per consumed operation, prefixed with
+      /v1.
+    resources:
+    - path: /v1/groups
+      name: groups
+      description: REST surface for groups.
+      operations:
+      - method: GET
+        name: get
+        description: GroupList
+        call: ixon-grouplist.get
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: PATCH
+        name: patch
+        description: GroupList
+        call: ixon-grouplist.patch
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: post
+        description: GroupList
+        call: ixon-grouplist.post
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: DELETE
+        name: delete
+        description: GroupList
+        call: ixon-grouplist.delete
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: ixon-grouplist-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for IXON API — GroupList. One tool per consumed operation, routed inline through this capability's
+      consumes block.
+    tools:
+    - name: grouplist
+      description: GroupList
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: ixon-grouplist.get
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: grouplist-2
+      description: GroupList
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: ixon-grouplist.patch
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: grouplist-3
+      description: GroupList
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: ixon-grouplist.post
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: grouplist-4
+      description: GroupList
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: ixon-grouplist.delete
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.

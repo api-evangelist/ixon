@@ -1,0 +1,86 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: IXON API — AssetObjectStorageDownloadAction
+  description: 'IXON API — AssetObjectStorageDownloadAction. 1 operations. Lead operation: AssetObjectStorageDownloadAction.
+    Self-contained Naftiko capability covering one Ixon business surface.'
+  tags:
+  - Ixon
+  - AssetObjectStorageDownloadAction
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    IXON_API_KEY: IXON_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: ixon-assetobjectstoragedownloadaction
+    baseUri: https://portal.ixon.cloud:443/api
+    description: IXON API — AssetObjectStorageDownloadAction business capability. Self-contained, no shared references.
+    resources:
+    - name: assets-assetId-object-storage-download
+      path: /assets/{assetId}/object-storage/download
+      operations:
+      - name: post
+        method: POST
+        description: AssetObjectStorageDownloadAction
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: assetId
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    authentication:
+      type: bearer
+      token: '{{env.IXON_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: ixon-assetobjectstoragedownloadaction-rest
+    port: 8080
+    description: REST adapter for IXON API — AssetObjectStorageDownloadAction. One Spectral-compliant resource per consumed
+      operation, prefixed with /v1.
+    resources:
+    - path: /v1/assets/{assetid}/object-storage/download
+      name: assets-assetid-object-storage-download
+      description: REST surface for assets-assetId-object-storage-download.
+      operations:
+      - method: POST
+        name: post
+        description: AssetObjectStorageDownloadAction
+        call: ixon-assetobjectstoragedownloadaction.post
+        with:
+          assetId: rest.assetId
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: ixon-assetobjectstoragedownloadaction-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for IXON API — AssetObjectStorageDownloadAction. One tool per consumed operation, routed inline
+      through this capability's consumes block.
+    tools:
+    - name: assetobjectstoragedownloadaction
+      description: AssetObjectStorageDownloadAction
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: ixon-assetobjectstoragedownloadaction.post
+      with:
+        assetId: tools.assetId
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.

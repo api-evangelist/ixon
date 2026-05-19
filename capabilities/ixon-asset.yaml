@@ -1,0 +1,195 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: IXON API — Asset
+  description: 'IXON API — Asset. 4 operations. Lead operation: Asset. Self-contained Naftiko capability covering one Ixon
+    business surface.'
+  tags:
+  - Ixon
+  - Asset
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    IXON_API_KEY: IXON_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: ixon-asset
+    baseUri: https://portal.ixon.cloud:443/api
+    description: IXON API — Asset business capability. Self-contained, no shared references.
+    resources:
+    - name: assets-publicId
+      path: /assets/{publicId}
+      operations:
+      - name: get
+        method: GET
+        description: Asset
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: publicId
+          in: path
+          type: string
+          required: true
+      - name: post
+        method: POST
+        description: Asset
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: publicId
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+      - name: patch
+        method: PATCH
+        description: Asset
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: publicId
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+      - name: delete
+        method: DELETE
+        description: Asset
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: publicId
+          in: path
+          type: string
+          required: true
+    authentication:
+      type: bearer
+      token: '{{env.IXON_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: ixon-asset-rest
+    port: 8080
+    description: REST adapter for IXON API — Asset. One Spectral-compliant resource per consumed operation, prefixed with
+      /v1.
+    resources:
+    - path: /v1/assets/{publicid}
+      name: assets-publicid
+      description: REST surface for assets-publicId.
+      operations:
+      - method: GET
+        name: get
+        description: Asset
+        call: ixon-asset.get
+        with:
+          publicId: rest.publicId
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: post
+        description: Asset
+        call: ixon-asset.post
+        with:
+          publicId: rest.publicId
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: PATCH
+        name: patch
+        description: Asset
+        call: ixon-asset.patch
+        with:
+          publicId: rest.publicId
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: DELETE
+        name: delete
+        description: Asset
+        call: ixon-asset.delete
+        with:
+          publicId: rest.publicId
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: ixon-asset-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for IXON API — Asset. One tool per consumed operation, routed inline through this capability's
+      consumes block.
+    tools:
+    - name: asset
+      description: Asset
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: ixon-asset.get
+      with:
+        publicId: tools.publicId
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: asset-2
+      description: Asset
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: ixon-asset.post
+      with:
+        publicId: tools.publicId
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: asset-3
+      description: Asset
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: ixon-asset.patch
+      with:
+        publicId: tools.publicId
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: asset-4
+      description: Asset
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: ixon-asset.delete
+      with:
+        publicId: tools.publicId
+      outputParameters:
+      - type: object
+        mapping: $.

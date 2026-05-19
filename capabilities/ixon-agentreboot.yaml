@@ -1,0 +1,79 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: IXON API — AgentReboot
+  description: 'IXON API — AgentReboot. 1 operations. Lead operation: AgentReboot. Self-contained Naftiko capability covering
+    one Ixon business surface.'
+  tags:
+  - Ixon
+  - AgentReboot
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    IXON_API_KEY: IXON_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: ixon-agentreboot
+    baseUri: https://portal.ixon.cloud:443/api
+    description: IXON API — AgentReboot business capability. Self-contained, no shared references.
+    resources:
+    - name: agents-agentId-reboot
+      path: /agents/{agentId}/reboot
+      operations:
+      - name: post
+        method: POST
+        description: AgentReboot
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: agentId
+          in: path
+          type: string
+          required: true
+    authentication:
+      type: bearer
+      token: '{{env.IXON_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: ixon-agentreboot-rest
+    port: 8080
+    description: REST adapter for IXON API — AgentReboot. One Spectral-compliant resource per consumed operation, prefixed
+      with /v1.
+    resources:
+    - path: /v1/agents/{agentid}/reboot
+      name: agents-agentid-reboot
+      description: REST surface for agents-agentId-reboot.
+      operations:
+      - method: POST
+        name: post
+        description: AgentReboot
+        call: ixon-agentreboot.post
+        with:
+          agentId: rest.agentId
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: ixon-agentreboot-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for IXON API — AgentReboot. One tool per consumed operation, routed inline through this capability's
+      consumes block.
+    tools:
+    - name: agentreboot
+      description: AgentReboot
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: ixon-agentreboot.post
+      with:
+        agentId: tools.agentId
+      outputParameters:
+      - type: object
+        mapping: $.

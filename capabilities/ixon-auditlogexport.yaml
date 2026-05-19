@@ -1,0 +1,70 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: IXON API — AuditLogExport
+  description: 'IXON API — AuditLogExport. 1 operations. Lead operation: AuditLogExport. Self-contained Naftiko capability
+    covering one Ixon business surface.'
+  tags:
+  - Ixon
+  - AuditLogExport
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    IXON_API_KEY: IXON_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: ixon-auditlogexport
+    baseUri: https://portal.ixon.cloud:443/api
+    description: IXON API — AuditLogExport business capability. Self-contained, no shared references.
+    resources:
+    - name: audit-logs-export
+      path: /audit-logs-export
+      operations:
+      - name: get
+        method: GET
+        description: AuditLogExport
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    authentication:
+      type: bearer
+      token: '{{env.IXON_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: ixon-auditlogexport-rest
+    port: 8080
+    description: REST adapter for IXON API — AuditLogExport. One Spectral-compliant resource per consumed operation, prefixed
+      with /v1.
+    resources:
+    - path: /v1/audit-logs-export
+      name: audit-logs-export
+      description: REST surface for audit-logs-export.
+      operations:
+      - method: GET
+        name: get
+        description: AuditLogExport
+        call: ixon-auditlogexport.get
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: ixon-auditlogexport-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for IXON API — AuditLogExport. One tool per consumed operation, routed inline through this capability's
+      consumes block.
+    tools:
+    - name: auditlogexport
+      description: AuditLogExport
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: ixon-auditlogexport.get
+      outputParameters:
+      - type: object
+        mapping: $.

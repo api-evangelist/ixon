@@ -1,0 +1,195 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: IXON API — ControlledDevice
+  description: 'IXON API — ControlledDevice. 4 operations. Lead operation: ControlledDevice. Self-contained Naftiko capability
+    covering one Ixon business surface.'
+  tags:
+  - Ixon
+  - ControlledDevice
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    IXON_API_KEY: IXON_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: ixon-controlleddevice
+    baseUri: https://portal.ixon.cloud:443/api
+    description: IXON API — ControlledDevice business capability. Self-contained, no shared references.
+    resources:
+    - name: controlled-devices-publicId
+      path: /controlled-devices/{publicId}
+      operations:
+      - name: get
+        method: GET
+        description: ControlledDevice
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: publicId
+          in: path
+          type: string
+          required: true
+      - name: patch
+        method: PATCH
+        description: ControlledDevice
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: publicId
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+      - name: post
+        method: POST
+        description: ControlledDevice
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: publicId
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+      - name: delete
+        method: DELETE
+        description: ControlledDevice
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: publicId
+          in: path
+          type: string
+          required: true
+    authentication:
+      type: bearer
+      token: '{{env.IXON_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: ixon-controlleddevice-rest
+    port: 8080
+    description: REST adapter for IXON API — ControlledDevice. One Spectral-compliant resource per consumed operation, prefixed
+      with /v1.
+    resources:
+    - path: /v1/controlled-devices/{publicid}
+      name: controlled-devices-publicid
+      description: REST surface for controlled-devices-publicId.
+      operations:
+      - method: GET
+        name: get
+        description: ControlledDevice
+        call: ixon-controlleddevice.get
+        with:
+          publicId: rest.publicId
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: PATCH
+        name: patch
+        description: ControlledDevice
+        call: ixon-controlleddevice.patch
+        with:
+          publicId: rest.publicId
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: post
+        description: ControlledDevice
+        call: ixon-controlleddevice.post
+        with:
+          publicId: rest.publicId
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: DELETE
+        name: delete
+        description: ControlledDevice
+        call: ixon-controlleddevice.delete
+        with:
+          publicId: rest.publicId
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: ixon-controlleddevice-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for IXON API — ControlledDevice. One tool per consumed operation, routed inline through this
+      capability's consumes block.
+    tools:
+    - name: controlleddevice
+      description: ControlledDevice
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: ixon-controlleddevice.get
+      with:
+        publicId: tools.publicId
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: controlleddevice-2
+      description: ControlledDevice
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: ixon-controlleddevice.patch
+      with:
+        publicId: tools.publicId
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: controlleddevice-3
+      description: ControlledDevice
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: ixon-controlleddevice.post
+      with:
+        publicId: tools.publicId
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: controlleddevice-4
+      description: ControlledDevice
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: ixon-controlleddevice.delete
+      with:
+        publicId: tools.publicId
+      outputParameters:
+      - type: object
+        mapping: $.

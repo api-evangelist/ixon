@@ -1,0 +1,86 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: IXON API — UserMembershipUserList
+  description: 'IXON API — UserMembershipUserList. 1 operations. Lead operation: UserMembershipUserList. Self-contained Naftiko
+    capability covering one Ixon business surface.'
+  tags:
+  - Ixon
+  - UserMembershipUserList
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    IXON_API_KEY: IXON_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: ixon-usermembershipuserlist
+    baseUri: https://portal.ixon.cloud:443/api
+    description: IXON API — UserMembershipUserList business capability. Self-contained, no shared references.
+    resources:
+    - name: users-memberships-user-publicId
+      path: /users/memberships/user/{publicId}
+      operations:
+      - name: put
+        method: PUT
+        description: UserMembershipUserList
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: publicId
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    authentication:
+      type: bearer
+      token: '{{env.IXON_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: ixon-usermembershipuserlist-rest
+    port: 8080
+    description: REST adapter for IXON API — UserMembershipUserList. One Spectral-compliant resource per consumed operation,
+      prefixed with /v1.
+    resources:
+    - path: /v1/users/memberships/user/{publicid}
+      name: users-memberships-user-publicid
+      description: REST surface for users-memberships-user-publicId.
+      operations:
+      - method: PUT
+        name: put
+        description: UserMembershipUserList
+        call: ixon-usermembershipuserlist.put
+        with:
+          publicId: rest.publicId
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: ixon-usermembershipuserlist-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for IXON API — UserMembershipUserList. One tool per consumed operation, routed inline through
+      this capability's consumes block.
+    tools:
+    - name: usermembershipuserlist
+      description: UserMembershipUserList
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: ixon-usermembershipuserlist.put
+      with:
+        publicId: tools.publicId
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.

@@ -1,0 +1,153 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: IXON API — Page
+  description: 'IXON API — Page. 3 operations. Lead operation: Page. Self-contained Naftiko capability covering one Ixon business
+    surface.'
+  tags:
+  - Ixon
+  - Page
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    IXON_API_KEY: IXON_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: ixon-page
+    baseUri: https://portal.ixon.cloud:443/api
+    description: IXON API — Page business capability. Self-contained, no shared references.
+    resources:
+    - name: pages-publicId
+      path: /pages/{publicId}
+      operations:
+      - name: get
+        method: GET
+        description: Page
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: publicId
+          in: path
+          type: string
+          required: true
+      - name: patch
+        method: PATCH
+        description: Page
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: publicId
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+      - name: delete
+        method: DELETE
+        description: Page
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: publicId
+          in: path
+          type: string
+          required: true
+    authentication:
+      type: bearer
+      token: '{{env.IXON_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: ixon-page-rest
+    port: 8080
+    description: REST adapter for IXON API — Page. One Spectral-compliant resource per consumed operation, prefixed with /v1.
+    resources:
+    - path: /v1/pages/{publicid}
+      name: pages-publicid
+      description: REST surface for pages-publicId.
+      operations:
+      - method: GET
+        name: get
+        description: Page
+        call: ixon-page.get
+        with:
+          publicId: rest.publicId
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: PATCH
+        name: patch
+        description: Page
+        call: ixon-page.patch
+        with:
+          publicId: rest.publicId
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: DELETE
+        name: delete
+        description: Page
+        call: ixon-page.delete
+        with:
+          publicId: rest.publicId
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: ixon-page-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for IXON API — Page. One tool per consumed operation, routed inline through this capability's
+      consumes block.
+    tools:
+    - name: page
+      description: Page
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: ixon-page.get
+      with:
+        publicId: tools.publicId
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: page-2
+      description: Page
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: ixon-page.patch
+      with:
+        publicId: tools.publicId
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: page-3
+      description: Page
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: ixon-page.delete
+      with:
+        publicId: tools.publicId
+      outputParameters:
+      - type: object
+        mapping: $.

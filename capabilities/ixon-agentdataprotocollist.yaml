@@ -1,0 +1,79 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: IXON API — AgentDataProtocolList
+  description: 'IXON API — AgentDataProtocolList. 1 operations. Lead operation: AgentDataProtocolList. Self-contained Naftiko
+    capability covering one Ixon business surface.'
+  tags:
+  - Ixon
+  - AgentDataProtocolList
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    IXON_API_KEY: IXON_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: ixon-agentdataprotocollist
+    baseUri: https://portal.ixon.cloud:443/api
+    description: IXON API — AgentDataProtocolList business capability. Self-contained, no shared references.
+    resources:
+    - name: agents-agentId-data-protocols
+      path: /agents/{agentId}/data-protocols
+      operations:
+      - name: get
+        method: GET
+        description: AgentDataProtocolList
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: agentId
+          in: path
+          type: string
+          required: true
+    authentication:
+      type: bearer
+      token: '{{env.IXON_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: ixon-agentdataprotocollist-rest
+    port: 8080
+    description: REST adapter for IXON API — AgentDataProtocolList. One Spectral-compliant resource per consumed operation,
+      prefixed with /v1.
+    resources:
+    - path: /v1/agents/{agentid}/data-protocols
+      name: agents-agentid-data-protocols
+      description: REST surface for agents-agentId-data-protocols.
+      operations:
+      - method: GET
+        name: get
+        description: AgentDataProtocolList
+        call: ixon-agentdataprotocollist.get
+        with:
+          agentId: rest.agentId
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: ixon-agentdataprotocollist-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for IXON API — AgentDataProtocolList. One tool per consumed operation, routed inline through
+      this capability's consumes block.
+    tools:
+    - name: agentdataprotocollist
+      description: AgentDataProtocolList
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: ixon-agentdataprotocollist.get
+      with:
+        agentId: tools.agentId
+      outputParameters:
+      - type: object
+        mapping: $.

@@ -1,0 +1,70 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: IXON API — MyEmailAddressChangeFinish
+  description: 'IXON API — MyEmailAddressChangeFinish. 1 operations. Lead operation: MyEmailAddressChangeFinish. Self-contained
+    Naftiko capability covering one Ixon business surface.'
+  tags:
+  - Ixon
+  - MyEmailAddressChangeFinish
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    IXON_API_KEY: IXON_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: ixon-myemailaddresschangefinish
+    baseUri: https://portal.ixon.cloud:443/api
+    description: IXON API — MyEmailAddressChangeFinish business capability. Self-contained, no shared references.
+    resources:
+    - name: email-address-changes-me-finish
+      path: /email-address-changes/me/finish
+      operations:
+      - name: post
+        method: POST
+        description: MyEmailAddressChangeFinish
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    authentication:
+      type: bearer
+      token: '{{env.IXON_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: ixon-myemailaddresschangefinish-rest
+    port: 8080
+    description: REST adapter for IXON API — MyEmailAddressChangeFinish. One Spectral-compliant resource per consumed operation,
+      prefixed with /v1.
+    resources:
+    - path: /v1/email-address-changes/me/finish
+      name: email-address-changes-me-finish
+      description: REST surface for email-address-changes-me-finish.
+      operations:
+      - method: POST
+        name: post
+        description: MyEmailAddressChangeFinish
+        call: ixon-myemailaddresschangefinish.post
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: ixon-myemailaddresschangefinish-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for IXON API — MyEmailAddressChangeFinish. One tool per consumed operation, routed inline through
+      this capability's consumes block.
+    tools:
+    - name: myemailaddresschangefinish
+      description: MyEmailAddressChangeFinish
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: ixon-myemailaddresschangefinish.post
+      outputParameters:
+      - type: object
+        mapping: $.

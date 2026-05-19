@@ -1,0 +1,70 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: IXON API — MyUserPushDeviceList
+  description: 'IXON API — MyUserPushDeviceList. 1 operations. Lead operation: MyUserPushDeviceList. Self-contained Naftiko
+    capability covering one Ixon business surface.'
+  tags:
+  - Ixon
+  - MyUserPushDeviceList
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    IXON_API_KEY: IXON_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: ixon-myuserpushdevicelist
+    baseUri: https://portal.ixon.cloud:443/api
+    description: IXON API — MyUserPushDeviceList business capability. Self-contained, no shared references.
+    resources:
+    - name: users-me-push-devices
+      path: /users/me/push-devices
+      operations:
+      - name: get
+        method: GET
+        description: MyUserPushDeviceList
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    authentication:
+      type: bearer
+      token: '{{env.IXON_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: ixon-myuserpushdevicelist-rest
+    port: 8080
+    description: REST adapter for IXON API — MyUserPushDeviceList. One Spectral-compliant resource per consumed operation,
+      prefixed with /v1.
+    resources:
+    - path: /v1/users/me/push-devices
+      name: users-me-push-devices
+      description: REST surface for users-me-push-devices.
+      operations:
+      - method: GET
+        name: get
+        description: MyUserPushDeviceList
+        call: ixon-myuserpushdevicelist.get
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: ixon-myuserpushdevicelist-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for IXON API — MyUserPushDeviceList. One tool per consumed operation, routed inline through this
+      capability's consumes block.
+    tools:
+    - name: myuserpushdevicelist
+      description: MyUserPushDeviceList
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: ixon-myuserpushdevicelist.get
+      outputParameters:
+      - type: object
+        mapping: $.

@@ -1,0 +1,113 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: IXON API — MyUserEmailAddressChange
+  description: 'IXON API — MyUserEmailAddressChange. 2 operations. Lead operation: MyUserEmailAddressChange. Self-contained
+    Naftiko capability covering one Ixon business surface.'
+  tags:
+  - Ixon
+  - MyUserEmailAddressChange
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    IXON_API_KEY: IXON_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: ixon-myuseremailaddresschange
+    baseUri: https://portal.ixon.cloud:443/api
+    description: IXON API — MyUserEmailAddressChange business capability. Self-contained, no shared references.
+    resources:
+    - name: users-me-email-address-changes-publicId
+      path: /users/me/email-address-changes/{publicId}
+      operations:
+      - name: get
+        method: GET
+        description: MyUserEmailAddressChange
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: publicId
+          in: path
+          type: string
+          required: true
+      - name: delete
+        method: DELETE
+        description: MyUserEmailAddressChange
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: publicId
+          in: path
+          type: string
+          required: true
+    authentication:
+      type: bearer
+      token: '{{env.IXON_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: ixon-myuseremailaddresschange-rest
+    port: 8080
+    description: REST adapter for IXON API — MyUserEmailAddressChange. One Spectral-compliant resource per consumed operation,
+      prefixed with /v1.
+    resources:
+    - path: /v1/users/me/email-address-changes/{publicid}
+      name: users-me-email-address-changes-publicid
+      description: REST surface for users-me-email-address-changes-publicId.
+      operations:
+      - method: GET
+        name: get
+        description: MyUserEmailAddressChange
+        call: ixon-myuseremailaddresschange.get
+        with:
+          publicId: rest.publicId
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: DELETE
+        name: delete
+        description: MyUserEmailAddressChange
+        call: ixon-myuseremailaddresschange.delete
+        with:
+          publicId: rest.publicId
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: ixon-myuseremailaddresschange-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for IXON API — MyUserEmailAddressChange. One tool per consumed operation, routed inline through
+      this capability's consumes block.
+    tools:
+    - name: myuseremailaddresschange
+      description: MyUserEmailAddressChange
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: ixon-myuseremailaddresschange.get
+      with:
+        publicId: tools.publicId
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: myuseremailaddresschange-2
+      description: MyUserEmailAddressChange
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: ixon-myuseremailaddresschange.delete
+      with:
+        publicId: tools.publicId
+      outputParameters:
+      - type: object
+        mapping: $.

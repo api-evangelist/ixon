@@ -1,0 +1,80 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: IXON API — MyUserLeaveCompanyList
+  description: 'IXON API — MyUserLeaveCompanyList. 1 operations. Lead operation: MyUserLeaveCompanyList. Self-contained Naftiko
+    capability covering one Ixon business surface.'
+  tags:
+  - Ixon
+  - MyUserLeaveCompanyList
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    IXON_API_KEY: IXON_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: ixon-myuserleavecompanylist
+    baseUri: https://portal.ixon.cloud:443/api
+    description: IXON API — MyUserLeaveCompanyList business capability. Self-contained, no shared references.
+    resources:
+    - name: users-me-leave-companies
+      path: /users/me/leave-companies
+      operations:
+      - name: delete
+        method: DELETE
+        description: MyUserLeaveCompanyList
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    authentication:
+      type: bearer
+      token: '{{env.IXON_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: ixon-myuserleavecompanylist-rest
+    port: 8080
+    description: REST adapter for IXON API — MyUserLeaveCompanyList. One Spectral-compliant resource per consumed operation,
+      prefixed with /v1.
+    resources:
+    - path: /v1/users/me/leave-companies
+      name: users-me-leave-companies
+      description: REST surface for users-me-leave-companies.
+      operations:
+      - method: DELETE
+        name: delete
+        description: MyUserLeaveCompanyList
+        call: ixon-myuserleavecompanylist.delete
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: ixon-myuserleavecompanylist-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for IXON API — MyUserLeaveCompanyList. One tool per consumed operation, routed inline through
+      this capability's consumes block.
+    tools:
+    - name: myuserleavecompanylist
+      description: MyUserLeaveCompanyList
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: ixon-myuserleavecompanylist.delete
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.

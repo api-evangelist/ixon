@@ -1,0 +1,105 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: IXON API — PageComponentTemplateShareList
+  description: 'IXON API — PageComponentTemplateShareList. 2 operations. Lead operation: PageComponentTemplateShareList. Self-contained
+    Naftiko capability covering one Ixon business surface.'
+  tags:
+  - Ixon
+  - PageComponentTemplateShareList
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    IXON_API_KEY: IXON_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: ixon-pagecomponenttemplatesharelist
+    baseUri: https://portal.ixon.cloud:443/api
+    description: IXON API — PageComponentTemplateShareList business capability. Self-contained, no shared references.
+    resources:
+    - name: page-component-template-shares
+      path: /page-component-template-shares
+      operations:
+      - name: get
+        method: GET
+        description: PageComponentTemplateShareList
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: post
+        method: POST
+        description: PageComponentTemplateShareList
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    authentication:
+      type: bearer
+      token: '{{env.IXON_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: ixon-pagecomponenttemplatesharelist-rest
+    port: 8080
+    description: REST adapter for IXON API — PageComponentTemplateShareList. One Spectral-compliant resource per consumed
+      operation, prefixed with /v1.
+    resources:
+    - path: /v1/page-component-template-shares
+      name: page-component-template-shares
+      description: REST surface for page-component-template-shares.
+      operations:
+      - method: GET
+        name: get
+        description: PageComponentTemplateShareList
+        call: ixon-pagecomponenttemplatesharelist.get
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: post
+        description: PageComponentTemplateShareList
+        call: ixon-pagecomponenttemplatesharelist.post
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: ixon-pagecomponenttemplatesharelist-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for IXON API — PageComponentTemplateShareList. One tool per consumed operation, routed inline
+      through this capability's consumes block.
+    tools:
+    - name: pagecomponenttemplatesharelist
+      description: PageComponentTemplateShareList
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: ixon-pagecomponenttemplatesharelist.get
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: pagecomponenttemplatesharelist-2
+      description: PageComponentTemplateShareList
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: ixon-pagecomponenttemplatesharelist.post
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.

@@ -1,0 +1,243 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: IXON API — AgentRouterNtpServerList
+  description: 'IXON API — AgentRouterNtpServerList. 5 operations. Lead operation: AgentRouterNtpServerList. Self-contained
+    Naftiko capability covering one Ixon business surface.'
+  tags:
+  - Ixon
+  - AgentRouterNtpServerList
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    IXON_API_KEY: IXON_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: ixon-agentrouterntpserverlist
+    baseUri: https://portal.ixon.cloud:443/api
+    description: IXON API — AgentRouterNtpServerList business capability. Self-contained, no shared references.
+    resources:
+    - name: agents-agentId-router-ntp-servers
+      path: /agents/{agentId}/router-ntp-servers
+      operations:
+      - name: get
+        method: GET
+        description: AgentRouterNtpServerList
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: agentId
+          in: path
+          type: string
+          required: true
+      - name: post
+        method: POST
+        description: AgentRouterNtpServerList
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: agentId
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+      - name: patch
+        method: PATCH
+        description: AgentRouterNtpServerList
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: agentId
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+      - name: delete
+        method: DELETE
+        description: AgentRouterNtpServerList
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: agentId
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+      - name: put
+        method: PUT
+        description: AgentRouterNtpServerList
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: agentId
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    authentication:
+      type: bearer
+      token: '{{env.IXON_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: ixon-agentrouterntpserverlist-rest
+    port: 8080
+    description: REST adapter for IXON API — AgentRouterNtpServerList. One Spectral-compliant resource per consumed operation,
+      prefixed with /v1.
+    resources:
+    - path: /v1/agents/{agentid}/router-ntp-servers
+      name: agents-agentid-router-ntp-servers
+      description: REST surface for agents-agentId-router-ntp-servers.
+      operations:
+      - method: GET
+        name: get
+        description: AgentRouterNtpServerList
+        call: ixon-agentrouterntpserverlist.get
+        with:
+          agentId: rest.agentId
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: post
+        description: AgentRouterNtpServerList
+        call: ixon-agentrouterntpserverlist.post
+        with:
+          agentId: rest.agentId
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: PATCH
+        name: patch
+        description: AgentRouterNtpServerList
+        call: ixon-agentrouterntpserverlist.patch
+        with:
+          agentId: rest.agentId
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: DELETE
+        name: delete
+        description: AgentRouterNtpServerList
+        call: ixon-agentrouterntpserverlist.delete
+        with:
+          agentId: rest.agentId
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: PUT
+        name: put
+        description: AgentRouterNtpServerList
+        call: ixon-agentrouterntpserverlist.put
+        with:
+          agentId: rest.agentId
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: ixon-agentrouterntpserverlist-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for IXON API — AgentRouterNtpServerList. One tool per consumed operation, routed inline through
+      this capability's consumes block.
+    tools:
+    - name: agentrouterntpserverlist
+      description: AgentRouterNtpServerList
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: ixon-agentrouterntpserverlist.get
+      with:
+        agentId: tools.agentId
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: agentrouterntpserverlist-2
+      description: AgentRouterNtpServerList
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: ixon-agentrouterntpserverlist.post
+      with:
+        agentId: tools.agentId
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: agentrouterntpserverlist-3
+      description: AgentRouterNtpServerList
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: ixon-agentrouterntpserverlist.patch
+      with:
+        agentId: tools.agentId
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: agentrouterntpserverlist-4
+      description: AgentRouterNtpServerList
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: ixon-agentrouterntpserverlist.delete
+      with:
+        agentId: tools.agentId
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: agentrouterntpserverlist-5
+      description: AgentRouterNtpServerList
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: ixon-agentrouterntpserverlist.put
+      with:
+        agentId: tools.agentId
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.

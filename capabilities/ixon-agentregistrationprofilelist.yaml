@@ -1,0 +1,175 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: IXON API — AgentRegistrationProfileList
+  description: 'IXON API — AgentRegistrationProfileList. 4 operations. Lead operation: AgentRegistrationProfileList. Self-contained
+    Naftiko capability covering one Ixon business surface.'
+  tags:
+  - Ixon
+  - AgentRegistrationProfileList
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    IXON_API_KEY: IXON_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: ixon-agentregistrationprofilelist
+    baseUri: https://portal.ixon.cloud:443/api
+    description: IXON API — AgentRegistrationProfileList business capability. Self-contained, no shared references.
+    resources:
+    - name: agent-registration-profiles
+      path: /agent-registration-profiles
+      operations:
+      - name: get
+        method: GET
+        description: AgentRegistrationProfileList
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: post
+        method: POST
+        description: AgentRegistrationProfileList
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+      - name: patch
+        method: PATCH
+        description: AgentRegistrationProfileList
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+      - name: delete
+        method: DELETE
+        description: AgentRegistrationProfileList
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    authentication:
+      type: bearer
+      token: '{{env.IXON_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: ixon-agentregistrationprofilelist-rest
+    port: 8080
+    description: REST adapter for IXON API — AgentRegistrationProfileList. One Spectral-compliant resource per consumed operation,
+      prefixed with /v1.
+    resources:
+    - path: /v1/agent-registration-profiles
+      name: agent-registration-profiles
+      description: REST surface for agent-registration-profiles.
+      operations:
+      - method: GET
+        name: get
+        description: AgentRegistrationProfileList
+        call: ixon-agentregistrationprofilelist.get
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: post
+        description: AgentRegistrationProfileList
+        call: ixon-agentregistrationprofilelist.post
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: PATCH
+        name: patch
+        description: AgentRegistrationProfileList
+        call: ixon-agentregistrationprofilelist.patch
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: DELETE
+        name: delete
+        description: AgentRegistrationProfileList
+        call: ixon-agentregistrationprofilelist.delete
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: ixon-agentregistrationprofilelist-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for IXON API — AgentRegistrationProfileList. One tool per consumed operation, routed inline through
+      this capability's consumes block.
+    tools:
+    - name: agentregistrationprofilelist
+      description: AgentRegistrationProfileList
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: ixon-agentregistrationprofilelist.get
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: agentregistrationprofilelist-2
+      description: AgentRegistrationProfileList
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: ixon-agentregistrationprofilelist.post
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: agentregistrationprofilelist-3
+      description: AgentRegistrationProfileList
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: ixon-agentregistrationprofilelist.patch
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: agentregistrationprofilelist-4
+      description: AgentRegistrationProfileList
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: ixon-agentregistrationprofilelist.delete
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.

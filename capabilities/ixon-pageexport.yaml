@@ -1,0 +1,79 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: IXON API — PageExport
+  description: 'IXON API — PageExport. 1 operations. Lead operation: PageExport. Self-contained Naftiko capability covering
+    one Ixon business surface.'
+  tags:
+  - Ixon
+  - PageExport
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    IXON_API_KEY: IXON_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: ixon-pageexport
+    baseUri: https://portal.ixon.cloud:443/api
+    description: IXON API — PageExport business capability. Self-contained, no shared references.
+    resources:
+    - name: pages-publicId-export
+      path: /pages/{publicId}/export
+      operations:
+      - name: get
+        method: GET
+        description: PageExport
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: publicId
+          in: path
+          type: string
+          required: true
+    authentication:
+      type: bearer
+      token: '{{env.IXON_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: ixon-pageexport-rest
+    port: 8080
+    description: REST adapter for IXON API — PageExport. One Spectral-compliant resource per consumed operation, prefixed
+      with /v1.
+    resources:
+    - path: /v1/pages/{publicid}/export
+      name: pages-publicid-export
+      description: REST surface for pages-publicId-export.
+      operations:
+      - method: GET
+        name: get
+        description: PageExport
+        call: ixon-pageexport.get
+        with:
+          publicId: rest.publicId
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: ixon-pageexport-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for IXON API — PageExport. One tool per consumed operation, routed inline through this capability's
+      consumes block.
+    tools:
+    - name: pageexport
+      description: PageExport
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: ixon-pageexport.get
+      with:
+        publicId: tools.publicId
+      outputParameters:
+      - type: object
+        mapping: $.

@@ -1,0 +1,85 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: IXON API — ScimServiceProviderConfig
+  description: 'IXON API — ScimServiceProviderConfig. 1 operations. Lead operation: ScimServiceProviderConfig. Self-contained
+    Naftiko capability covering one Ixon business surface.'
+  tags:
+  - Ixon
+  - ScimServiceProviderConfig
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    IXON_API_KEY: IXON_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: ixon-scimserviceproviderconfig
+    baseUri: https://portal.ixon.cloud:443/api
+    description: IXON API — ScimServiceProviderConfig business capability. Self-contained, no shared references.
+    resources:
+    - name: api-version-api-application-scim-v2-ServiceProviderConfig
+      path: /{api-version}/{api-application}/scim/v2/ServiceProviderConfig
+      operations:
+      - name: get
+        method: GET
+        description: ScimServiceProviderConfig
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: api-version
+          in: path
+          type: string
+          required: true
+        - name: api-application
+          in: path
+          type: string
+          required: true
+    authentication:
+      type: bearer
+      token: '{{env.IXON_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: ixon-scimserviceproviderconfig-rest
+    port: 8080
+    description: REST adapter for IXON API — ScimServiceProviderConfig. One Spectral-compliant resource per consumed operation,
+      prefixed with /v1.
+    resources:
+    - path: /v1/{api-version}/{api-application}/scim/v2/serviceproviderconfig
+      name: api-version-api-application-scim-v2-serviceproviderconfig
+      description: REST surface for api-version-api-application-scim-v2-ServiceProviderConfig.
+      operations:
+      - method: GET
+        name: get
+        description: ScimServiceProviderConfig
+        call: ixon-scimserviceproviderconfig.get
+        with:
+          api-version: rest.api-version
+          api-application: rest.api-application
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: ixon-scimserviceproviderconfig-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for IXON API — ScimServiceProviderConfig. One tool per consumed operation, routed inline through
+      this capability's consumes block.
+    tools:
+    - name: scimserviceproviderconfig
+      description: ScimServiceProviderConfig
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: ixon-scimserviceproviderconfig.get
+      with:
+        api-version: tools.api-version
+        api-application: tools.api-application
+      outputParameters:
+      - type: object
+        mapping: $.

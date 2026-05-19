@@ -1,0 +1,175 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: IXON API — GroupTypeList
+  description: 'IXON API — GroupTypeList. 4 operations. Lead operation: GroupTypeList. Self-contained Naftiko capability covering
+    one Ixon business surface.'
+  tags:
+  - Ixon
+  - GroupTypeList
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    IXON_API_KEY: IXON_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: ixon-grouptypelist
+    baseUri: https://portal.ixon.cloud:443/api
+    description: IXON API — GroupTypeList business capability. Self-contained, no shared references.
+    resources:
+    - name: group-types
+      path: /group-types
+      operations:
+      - name: get
+        method: GET
+        description: GroupTypeList
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: patch
+        method: PATCH
+        description: GroupTypeList
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+      - name: post
+        method: POST
+        description: GroupTypeList
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+      - name: delete
+        method: DELETE
+        description: GroupTypeList
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    authentication:
+      type: bearer
+      token: '{{env.IXON_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: ixon-grouptypelist-rest
+    port: 8080
+    description: REST adapter for IXON API — GroupTypeList. One Spectral-compliant resource per consumed operation, prefixed
+      with /v1.
+    resources:
+    - path: /v1/group-types
+      name: group-types
+      description: REST surface for group-types.
+      operations:
+      - method: GET
+        name: get
+        description: GroupTypeList
+        call: ixon-grouptypelist.get
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: PATCH
+        name: patch
+        description: GroupTypeList
+        call: ixon-grouptypelist.patch
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: post
+        description: GroupTypeList
+        call: ixon-grouptypelist.post
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: DELETE
+        name: delete
+        description: GroupTypeList
+        call: ixon-grouptypelist.delete
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: ixon-grouptypelist-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for IXON API — GroupTypeList. One tool per consumed operation, routed inline through this capability's
+      consumes block.
+    tools:
+    - name: grouptypelist
+      description: GroupTypeList
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: ixon-grouptypelist.get
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: grouptypelist-2
+      description: GroupTypeList
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: ixon-grouptypelist.patch
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: grouptypelist-3
+      description: GroupTypeList
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: ixon-grouptypelist.post
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: grouptypelist-4
+      description: GroupTypeList
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: ixon-grouptypelist.delete
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.

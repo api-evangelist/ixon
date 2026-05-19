@@ -1,0 +1,80 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: IXON API — RouterDisplayScreensaverUpload
+  description: 'IXON API — RouterDisplayScreensaverUpload. 1 operations. Lead operation: RouterDisplayScreensaverUpload. Self-contained
+    Naftiko capability covering one Ixon business surface.'
+  tags:
+  - Ixon
+  - RouterDisplayScreensaverUpload
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    IXON_API_KEY: IXON_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: ixon-routerdisplayscreensaverupload
+    baseUri: https://portal.ixon.cloud:443/api
+    description: IXON API — RouterDisplayScreensaverUpload business capability. Self-contained, no shared references.
+    resources:
+    - name: router-display-screensaver-upload
+      path: /router-display-screensaver/upload
+      operations:
+      - name: post
+        method: POST
+        description: RouterDisplayScreensaverUpload
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    authentication:
+      type: bearer
+      token: '{{env.IXON_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: ixon-routerdisplayscreensaverupload-rest
+    port: 8080
+    description: REST adapter for IXON API — RouterDisplayScreensaverUpload. One Spectral-compliant resource per consumed
+      operation, prefixed with /v1.
+    resources:
+    - path: /v1/router-display-screensaver/upload
+      name: router-display-screensaver-upload
+      description: REST surface for router-display-screensaver-upload.
+      operations:
+      - method: POST
+        name: post
+        description: RouterDisplayScreensaverUpload
+        call: ixon-routerdisplayscreensaverupload.post
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: ixon-routerdisplayscreensaverupload-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for IXON API — RouterDisplayScreensaverUpload. One tool per consumed operation, routed inline
+      through this capability's consumes block.
+    tools:
+    - name: routerdisplayscreensaverupload
+      description: RouterDisplayScreensaverUpload
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: ixon-routerdisplayscreensaverupload.post
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.

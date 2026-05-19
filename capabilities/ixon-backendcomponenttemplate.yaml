@@ -1,0 +1,120 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: IXON API — BackendComponentTemplate
+  description: 'IXON API — BackendComponentTemplate. 2 operations. Lead operation: BackendComponentTemplate. Self-contained
+    Naftiko capability covering one Ixon business surface.'
+  tags:
+  - Ixon
+  - BackendComponentTemplate
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    IXON_API_KEY: IXON_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: ixon-backendcomponenttemplate
+    baseUri: https://portal.ixon.cloud:443/api
+    description: IXON API — BackendComponentTemplate business capability. Self-contained, no shared references.
+    resources:
+    - name: backend-component-templates-publicId
+      path: /backend-component-templates/{publicId}
+      operations:
+      - name: get
+        method: GET
+        description: BackendComponentTemplate
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: publicId
+          in: path
+          type: string
+          required: true
+      - name: patch
+        method: PATCH
+        description: BackendComponentTemplate
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: publicId
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    authentication:
+      type: bearer
+      token: '{{env.IXON_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: ixon-backendcomponenttemplate-rest
+    port: 8080
+    description: REST adapter for IXON API — BackendComponentTemplate. One Spectral-compliant resource per consumed operation,
+      prefixed with /v1.
+    resources:
+    - path: /v1/backend-component-templates/{publicid}
+      name: backend-component-templates-publicid
+      description: REST surface for backend-component-templates-publicId.
+      operations:
+      - method: GET
+        name: get
+        description: BackendComponentTemplate
+        call: ixon-backendcomponenttemplate.get
+        with:
+          publicId: rest.publicId
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: PATCH
+        name: patch
+        description: BackendComponentTemplate
+        call: ixon-backendcomponenttemplate.patch
+        with:
+          publicId: rest.publicId
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: ixon-backendcomponenttemplate-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for IXON API — BackendComponentTemplate. One tool per consumed operation, routed inline through
+      this capability's consumes block.
+    tools:
+    - name: backendcomponenttemplate
+      description: BackendComponentTemplate
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: ixon-backendcomponenttemplate.get
+      with:
+        publicId: tools.publicId
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: backendcomponenttemplate-2
+      description: BackendComponentTemplate
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: ixon-backendcomponenttemplate.patch
+      with:
+        publicId: tools.publicId
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.

@@ -1,0 +1,79 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: IXON API — ControlledDeviceAuditLogList
+  description: 'IXON API — ControlledDeviceAuditLogList. 1 operations. Lead operation: ControlledDeviceAuditLogList. Self-contained
+    Naftiko capability covering one Ixon business surface.'
+  tags:
+  - Ixon
+  - ControlledDeviceAuditLogList
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    IXON_API_KEY: IXON_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: ixon-controlleddeviceauditloglist
+    baseUri: https://portal.ixon.cloud:443/api
+    description: IXON API — ControlledDeviceAuditLogList business capability. Self-contained, no shared references.
+    resources:
+    - name: controlled-devices-publicId-audit-logs
+      path: /controlled-devices/{publicId}/audit-logs
+      operations:
+      - name: get
+        method: GET
+        description: ControlledDeviceAuditLogList
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: publicId
+          in: path
+          type: string
+          required: true
+    authentication:
+      type: bearer
+      token: '{{env.IXON_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: ixon-controlleddeviceauditloglist-rest
+    port: 8080
+    description: REST adapter for IXON API — ControlledDeviceAuditLogList. One Spectral-compliant resource per consumed operation,
+      prefixed with /v1.
+    resources:
+    - path: /v1/controlled-devices/{publicid}/audit-logs
+      name: controlled-devices-publicid-audit-logs
+      description: REST surface for controlled-devices-publicId-audit-logs.
+      operations:
+      - method: GET
+        name: get
+        description: ControlledDeviceAuditLogList
+        call: ixon-controlleddeviceauditloglist.get
+        with:
+          publicId: rest.publicId
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: ixon-controlleddeviceauditloglist-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for IXON API — ControlledDeviceAuditLogList. One tool per consumed operation, routed inline through
+      this capability's consumes block.
+    tools:
+    - name: controlleddeviceauditloglist
+      description: ControlledDeviceAuditLogList
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: ixon-controlleddeviceauditloglist.get
+      with:
+        publicId: tools.publicId
+      outputParameters:
+      - type: object
+        mapping: $.

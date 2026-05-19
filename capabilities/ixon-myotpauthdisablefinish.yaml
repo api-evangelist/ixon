@@ -1,0 +1,70 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: IXON API — MyOtpAuthDisableFinish
+  description: 'IXON API — MyOtpAuthDisableFinish. 1 operations. Lead operation: MyOtpAuthDisableFinish. Self-contained Naftiko
+    capability covering one Ixon business surface.'
+  tags:
+  - Ixon
+  - MyOtpAuthDisableFinish
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    IXON_API_KEY: IXON_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: ixon-myotpauthdisablefinish
+    baseUri: https://portal.ixon.cloud:443/api
+    description: IXON API — MyOtpAuthDisableFinish business capability. Self-contained, no shared references.
+    resources:
+    - name: otp-auth-disable-me-finish
+      path: /otp-auth-disable/me/finish
+      operations:
+      - name: post
+        method: POST
+        description: MyOtpAuthDisableFinish
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    authentication:
+      type: bearer
+      token: '{{env.IXON_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: ixon-myotpauthdisablefinish-rest
+    port: 8080
+    description: REST adapter for IXON API — MyOtpAuthDisableFinish. One Spectral-compliant resource per consumed operation,
+      prefixed with /v1.
+    resources:
+    - path: /v1/otp-auth-disable/me/finish
+      name: otp-auth-disable-me-finish
+      description: REST surface for otp-auth-disable-me-finish.
+      operations:
+      - method: POST
+        name: post
+        description: MyOtpAuthDisableFinish
+        call: ixon-myotpauthdisablefinish.post
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: ixon-myotpauthdisablefinish-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for IXON API — MyOtpAuthDisableFinish. One tool per consumed operation, routed inline through
+      this capability's consumes block.
+    tools:
+    - name: myotpauthdisablefinish
+      description: MyOtpAuthDisableFinish
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: ixon-myotpauthdisablefinish.post
+      outputParameters:
+      - type: object
+        mapping: $.

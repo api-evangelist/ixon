@@ -1,0 +1,172 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: IXON API — AgentDataVariable
+  description: 'IXON API — AgentDataVariable. 3 operations. Lead operation: AgentDataVariable. Self-contained Naftiko capability
+    covering one Ixon business surface.'
+  tags:
+  - Ixon
+  - AgentDataVariable
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    IXON_API_KEY: IXON_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: ixon-agentdatavariable
+    baseUri: https://portal.ixon.cloud:443/api
+    description: IXON API — AgentDataVariable business capability. Self-contained, no shared references.
+    resources:
+    - name: agents-agentId-data-variables-publicId
+      path: /agents/{agentId}/data-variables/{publicId}
+      operations:
+      - name: get
+        method: GET
+        description: AgentDataVariable
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: agentId
+          in: path
+          type: string
+          required: true
+        - name: publicId
+          in: path
+          type: string
+          required: true
+      - name: patch
+        method: PATCH
+        description: AgentDataVariable
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: agentId
+          in: path
+          type: string
+          required: true
+        - name: publicId
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+      - name: delete
+        method: DELETE
+        description: AgentDataVariable
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: agentId
+          in: path
+          type: string
+          required: true
+        - name: publicId
+          in: path
+          type: string
+          required: true
+    authentication:
+      type: bearer
+      token: '{{env.IXON_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: ixon-agentdatavariable-rest
+    port: 8080
+    description: REST adapter for IXON API — AgentDataVariable. One Spectral-compliant resource per consumed operation, prefixed
+      with /v1.
+    resources:
+    - path: /v1/agents/{agentid}/data-variables/{publicid}
+      name: agents-agentid-data-variables-publicid
+      description: REST surface for agents-agentId-data-variables-publicId.
+      operations:
+      - method: GET
+        name: get
+        description: AgentDataVariable
+        call: ixon-agentdatavariable.get
+        with:
+          agentId: rest.agentId
+          publicId: rest.publicId
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: PATCH
+        name: patch
+        description: AgentDataVariable
+        call: ixon-agentdatavariable.patch
+        with:
+          agentId: rest.agentId
+          publicId: rest.publicId
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: DELETE
+        name: delete
+        description: AgentDataVariable
+        call: ixon-agentdatavariable.delete
+        with:
+          agentId: rest.agentId
+          publicId: rest.publicId
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: ixon-agentdatavariable-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for IXON API — AgentDataVariable. One tool per consumed operation, routed inline through this
+      capability's consumes block.
+    tools:
+    - name: agentdatavariable
+      description: AgentDataVariable
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: ixon-agentdatavariable.get
+      with:
+        agentId: tools.agentId
+        publicId: tools.publicId
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: agentdatavariable-2
+      description: AgentDataVariable
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: ixon-agentdatavariable.patch
+      with:
+        agentId: tools.agentId
+        publicId: tools.publicId
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: agentdatavariable-3
+      description: AgentDataVariable
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: ixon-agentdatavariable.delete
+      with:
+        agentId: tools.agentId
+        publicId: tools.publicId
+      outputParameters:
+      - type: object
+        mapping: $.

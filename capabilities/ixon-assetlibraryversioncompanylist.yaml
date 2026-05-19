@@ -1,0 +1,105 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: IXON API — AssetLibraryVersionCompanyList
+  description: 'IXON API — AssetLibraryVersionCompanyList. 2 operations. Lead operation: AssetLibraryVersionCompanyList. Self-contained
+    Naftiko capability covering one Ixon business surface.'
+  tags:
+  - Ixon
+  - AssetLibraryVersionCompanyList
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    IXON_API_KEY: IXON_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: ixon-assetlibraryversioncompanylist
+    baseUri: https://portal.ixon.cloud:443/api
+    description: IXON API — AssetLibraryVersionCompanyList business capability. Self-contained, no shared references.
+    resources:
+    - name: assets-library-versions
+      path: /assets/library/versions
+      operations:
+      - name: post
+        method: POST
+        description: AssetLibraryVersionCompanyList
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+      - name: get
+        method: GET
+        description: AssetLibraryVersionCompanyList
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    authentication:
+      type: bearer
+      token: '{{env.IXON_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: ixon-assetlibraryversioncompanylist-rest
+    port: 8080
+    description: REST adapter for IXON API — AssetLibraryVersionCompanyList. One Spectral-compliant resource per consumed
+      operation, prefixed with /v1.
+    resources:
+    - path: /v1/assets/library/versions
+      name: assets-library-versions
+      description: REST surface for assets-library-versions.
+      operations:
+      - method: POST
+        name: post
+        description: AssetLibraryVersionCompanyList
+        call: ixon-assetlibraryversioncompanylist.post
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: GET
+        name: get
+        description: AssetLibraryVersionCompanyList
+        call: ixon-assetlibraryversioncompanylist.get
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: ixon-assetlibraryversioncompanylist-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for IXON API — AssetLibraryVersionCompanyList. One tool per consumed operation, routed inline
+      through this capability's consumes block.
+    tools:
+    - name: assetlibraryversioncompanylist
+      description: AssetLibraryVersionCompanyList
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: ixon-assetlibraryversioncompanylist.post
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: assetlibraryversioncompanylist-2
+      description: AssetLibraryVersionCompanyList
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: ixon-assetlibraryversioncompanylist.get
+      outputParameters:
+      - type: object
+        mapping: $.

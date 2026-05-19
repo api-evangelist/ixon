@@ -1,0 +1,85 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: IXON API — AgentAccessRequestAuthenticatedApprove
+  description: 'IXON API — AgentAccessRequestAuthenticatedApprove. 1 operations. Lead operation: AgentAccessRequestAuthenticatedApprove.
+    Self-contained Naftiko capability covering one Ixon business surface.'
+  tags:
+  - Ixon
+  - AgentAccessRequestAuthenticatedApprove
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    IXON_API_KEY: IXON_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: ixon-agentaccessrequestauthenticatedapprove
+    baseUri: https://portal.ixon.cloud:443/api
+    description: IXON API — AgentAccessRequestAuthenticatedApprove business capability. Self-contained, no shared references.
+    resources:
+    - name: agents-agentId-access-requests-approve-publicId
+      path: /agents/{agentId}/access-requests/approve/{publicId}
+      operations:
+      - name: post
+        method: POST
+        description: AgentAccessRequestAuthenticatedApprove
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: agentId
+          in: path
+          type: string
+          required: true
+        - name: publicId
+          in: path
+          type: string
+          required: true
+    authentication:
+      type: bearer
+      token: '{{env.IXON_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: ixon-agentaccessrequestauthenticatedapprove-rest
+    port: 8080
+    description: REST adapter for IXON API — AgentAccessRequestAuthenticatedApprove. One Spectral-compliant resource per consumed
+      operation, prefixed with /v1.
+    resources:
+    - path: /v1/agents/{agentid}/access-requests/approve/{publicid}
+      name: agents-agentid-access-requests-approve-publicid
+      description: REST surface for agents-agentId-access-requests-approve-publicId.
+      operations:
+      - method: POST
+        name: post
+        description: AgentAccessRequestAuthenticatedApprove
+        call: ixon-agentaccessrequestauthenticatedapprove.post
+        with:
+          agentId: rest.agentId
+          publicId: rest.publicId
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: ixon-agentaccessrequestauthenticatedapprove-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for IXON API — AgentAccessRequestAuthenticatedApprove. One tool per consumed operation, routed
+      inline through this capability's consumes block.
+    tools:
+    - name: agentaccessrequestauthenticatedapprove
+      description: AgentAccessRequestAuthenticatedApprove
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: ixon-agentaccessrequestauthenticatedapprove.post
+      with:
+        agentId: tools.agentId
+        publicId: tools.publicId
+      outputParameters:
+      - type: object
+        mapping: $.

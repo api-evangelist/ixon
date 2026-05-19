@@ -1,0 +1,85 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: IXON API — AgentEdgeAppInstanceDelete
+  description: 'IXON API — AgentEdgeAppInstanceDelete. 1 operations. Lead operation: AgentEdgeAppInstanceDelete. Self-contained
+    Naftiko capability covering one Ixon business surface.'
+  tags:
+  - Ixon
+  - AgentEdgeAppInstanceDelete
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    IXON_API_KEY: IXON_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: ixon-agentedgeappinstancedelete
+    baseUri: https://portal.ixon.cloud:443/api
+    description: IXON API — AgentEdgeAppInstanceDelete business capability. Self-contained, no shared references.
+    resources:
+    - name: agents-agentId-edge-app-instances-publicId-delete
+      path: /agents/{agentId}/edge-app-instances/{publicId}/delete
+      operations:
+      - name: post
+        method: POST
+        description: AgentEdgeAppInstanceDelete
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: agentId
+          in: path
+          type: string
+          required: true
+        - name: publicId
+          in: path
+          type: string
+          required: true
+    authentication:
+      type: bearer
+      token: '{{env.IXON_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: ixon-agentedgeappinstancedelete-rest
+    port: 8080
+    description: REST adapter for IXON API — AgentEdgeAppInstanceDelete. One Spectral-compliant resource per consumed operation,
+      prefixed with /v1.
+    resources:
+    - path: /v1/agents/{agentid}/edge-app-instances/{publicid}/delete
+      name: agents-agentid-edge-app-instances-publicid-delete
+      description: REST surface for agents-agentId-edge-app-instances-publicId-delete.
+      operations:
+      - method: POST
+        name: post
+        description: AgentEdgeAppInstanceDelete
+        call: ixon-agentedgeappinstancedelete.post
+        with:
+          agentId: rest.agentId
+          publicId: rest.publicId
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: ixon-agentedgeappinstancedelete-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for IXON API — AgentEdgeAppInstanceDelete. One tool per consumed operation, routed inline through
+      this capability's consumes block.
+    tools:
+    - name: agentedgeappinstancedelete
+      description: AgentEdgeAppInstanceDelete
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: ixon-agentedgeappinstancedelete.post
+      with:
+        agentId: tools.agentId
+        publicId: tools.publicId
+      outputParameters:
+      - type: object
+        mapping: $.

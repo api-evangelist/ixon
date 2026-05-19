@@ -1,0 +1,80 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: IXON API — AgentListActivate
+  description: 'IXON API — AgentListActivate. 1 operations. Lead operation: AgentListActivate. Self-contained Naftiko capability
+    covering one Ixon business surface.'
+  tags:
+  - Ixon
+  - AgentListActivate
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    IXON_API_KEY: IXON_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: ixon-agentlistactivate
+    baseUri: https://portal.ixon.cloud:443/api
+    description: IXON API — AgentListActivate business capability. Self-contained, no shared references.
+    resources:
+    - name: agents-activate
+      path: /agents/activate
+      operations:
+      - name: post
+        method: POST
+        description: AgentListActivate
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    authentication:
+      type: bearer
+      token: '{{env.IXON_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: ixon-agentlistactivate-rest
+    port: 8080
+    description: REST adapter for IXON API — AgentListActivate. One Spectral-compliant resource per consumed operation, prefixed
+      with /v1.
+    resources:
+    - path: /v1/agents/activate
+      name: agents-activate
+      description: REST surface for agents-activate.
+      operations:
+      - method: POST
+        name: post
+        description: AgentListActivate
+        call: ixon-agentlistactivate.post
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: ixon-agentlistactivate-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for IXON API — AgentListActivate. One tool per consumed operation, routed inline through this
+      capability's consumes block.
+    tools:
+    - name: agentlistactivate
+      description: AgentListActivate
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: ixon-agentlistactivate.post
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.

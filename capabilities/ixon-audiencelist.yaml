@@ -1,0 +1,175 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: IXON API — AudienceList
+  description: 'IXON API — AudienceList. 4 operations. Lead operation: AudienceList. Self-contained Naftiko capability covering
+    one Ixon business surface.'
+  tags:
+  - Ixon
+  - AudienceList
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    IXON_API_KEY: IXON_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: ixon-audiencelist
+    baseUri: https://portal.ixon.cloud:443/api
+    description: IXON API — AudienceList business capability. Self-contained, no shared references.
+    resources:
+    - name: audiences
+      path: /audiences
+      operations:
+      - name: get
+        method: GET
+        description: AudienceList
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: post
+        method: POST
+        description: AudienceList
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+      - name: patch
+        method: PATCH
+        description: AudienceList
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+      - name: delete
+        method: DELETE
+        description: AudienceList
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    authentication:
+      type: bearer
+      token: '{{env.IXON_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: ixon-audiencelist-rest
+    port: 8080
+    description: REST adapter for IXON API — AudienceList. One Spectral-compliant resource per consumed operation, prefixed
+      with /v1.
+    resources:
+    - path: /v1/audiences
+      name: audiences
+      description: REST surface for audiences.
+      operations:
+      - method: GET
+        name: get
+        description: AudienceList
+        call: ixon-audiencelist.get
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: post
+        description: AudienceList
+        call: ixon-audiencelist.post
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: PATCH
+        name: patch
+        description: AudienceList
+        call: ixon-audiencelist.patch
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: DELETE
+        name: delete
+        description: AudienceList
+        call: ixon-audiencelist.delete
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: ixon-audiencelist-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for IXON API — AudienceList. One tool per consumed operation, routed inline through this capability's
+      consumes block.
+    tools:
+    - name: audiencelist
+      description: AudienceList
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: ixon-audiencelist.get
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: audiencelist-2
+      description: AudienceList
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: ixon-audiencelist.post
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: audiencelist-3
+      description: AudienceList
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: ixon-audiencelist.patch
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: audiencelist-4
+      description: AudienceList
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: ixon-audiencelist.delete
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.

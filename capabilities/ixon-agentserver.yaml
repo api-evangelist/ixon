@@ -1,0 +1,172 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: IXON API — AgentServer
+  description: 'IXON API — AgentServer. 3 operations. Lead operation: AgentServer. Self-contained Naftiko capability covering
+    one Ixon business surface.'
+  tags:
+  - Ixon
+  - AgentServer
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    IXON_API_KEY: IXON_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: ixon-agentserver
+    baseUri: https://portal.ixon.cloud:443/api
+    description: IXON API — AgentServer business capability. Self-contained, no shared references.
+    resources:
+    - name: agents-agentId-servers-publicId
+      path: /agents/{agentId}/servers/{publicId}
+      operations:
+      - name: get
+        method: GET
+        description: AgentServer
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: agentId
+          in: path
+          type: string
+          required: true
+        - name: publicId
+          in: path
+          type: string
+          required: true
+      - name: patch
+        method: PATCH
+        description: AgentServer
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: agentId
+          in: path
+          type: string
+          required: true
+        - name: publicId
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+      - name: delete
+        method: DELETE
+        description: AgentServer
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: agentId
+          in: path
+          type: string
+          required: true
+        - name: publicId
+          in: path
+          type: string
+          required: true
+    authentication:
+      type: bearer
+      token: '{{env.IXON_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: ixon-agentserver-rest
+    port: 8080
+    description: REST adapter for IXON API — AgentServer. One Spectral-compliant resource per consumed operation, prefixed
+      with /v1.
+    resources:
+    - path: /v1/agents/{agentid}/servers/{publicid}
+      name: agents-agentid-servers-publicid
+      description: REST surface for agents-agentId-servers-publicId.
+      operations:
+      - method: GET
+        name: get
+        description: AgentServer
+        call: ixon-agentserver.get
+        with:
+          agentId: rest.agentId
+          publicId: rest.publicId
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: PATCH
+        name: patch
+        description: AgentServer
+        call: ixon-agentserver.patch
+        with:
+          agentId: rest.agentId
+          publicId: rest.publicId
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: DELETE
+        name: delete
+        description: AgentServer
+        call: ixon-agentserver.delete
+        with:
+          agentId: rest.agentId
+          publicId: rest.publicId
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: ixon-agentserver-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for IXON API — AgentServer. One tool per consumed operation, routed inline through this capability's
+      consumes block.
+    tools:
+    - name: agentserver
+      description: AgentServer
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: ixon-agentserver.get
+      with:
+        agentId: tools.agentId
+        publicId: tools.publicId
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: agentserver-2
+      description: AgentServer
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: ixon-agentserver.patch
+      with:
+        agentId: tools.agentId
+        publicId: tools.publicId
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: agentserver-3
+      description: AgentServer
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: ixon-agentserver.delete
+      with:
+        agentId: tools.agentId
+        publicId: tools.publicId
+      outputParameters:
+      - type: object
+        mapping: $.

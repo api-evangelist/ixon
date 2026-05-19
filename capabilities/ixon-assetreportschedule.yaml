@@ -1,0 +1,172 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: IXON API — AssetReportSchedule
+  description: 'IXON API — AssetReportSchedule. 3 operations. Lead operation: AssetReportSchedule. Self-contained Naftiko
+    capability covering one Ixon business surface.'
+  tags:
+  - Ixon
+  - AssetReportSchedule
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    IXON_API_KEY: IXON_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: ixon-assetreportschedule
+    baseUri: https://portal.ixon.cloud:443/api
+    description: IXON API — AssetReportSchedule business capability. Self-contained, no shared references.
+    resources:
+    - name: assets-assetId-report-schedules-publicId
+      path: /assets/{assetId}/report-schedules/{publicId}
+      operations:
+      - name: get
+        method: GET
+        description: AssetReportSchedule
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: assetId
+          in: path
+          type: string
+          required: true
+        - name: publicId
+          in: path
+          type: string
+          required: true
+      - name: patch
+        method: PATCH
+        description: AssetReportSchedule
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: assetId
+          in: path
+          type: string
+          required: true
+        - name: publicId
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+      - name: delete
+        method: DELETE
+        description: AssetReportSchedule
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: assetId
+          in: path
+          type: string
+          required: true
+        - name: publicId
+          in: path
+          type: string
+          required: true
+    authentication:
+      type: bearer
+      token: '{{env.IXON_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: ixon-assetreportschedule-rest
+    port: 8080
+    description: REST adapter for IXON API — AssetReportSchedule. One Spectral-compliant resource per consumed operation,
+      prefixed with /v1.
+    resources:
+    - path: /v1/assets/{assetid}/report-schedules/{publicid}
+      name: assets-assetid-report-schedules-publicid
+      description: REST surface for assets-assetId-report-schedules-publicId.
+      operations:
+      - method: GET
+        name: get
+        description: AssetReportSchedule
+        call: ixon-assetreportschedule.get
+        with:
+          assetId: rest.assetId
+          publicId: rest.publicId
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: PATCH
+        name: patch
+        description: AssetReportSchedule
+        call: ixon-assetreportschedule.patch
+        with:
+          assetId: rest.assetId
+          publicId: rest.publicId
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: DELETE
+        name: delete
+        description: AssetReportSchedule
+        call: ixon-assetreportschedule.delete
+        with:
+          assetId: rest.assetId
+          publicId: rest.publicId
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: ixon-assetreportschedule-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for IXON API — AssetReportSchedule. One tool per consumed operation, routed inline through this
+      capability's consumes block.
+    tools:
+    - name: assetreportschedule
+      description: AssetReportSchedule
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: ixon-assetreportschedule.get
+      with:
+        assetId: tools.assetId
+        publicId: tools.publicId
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: assetreportschedule-2
+      description: AssetReportSchedule
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: ixon-assetreportschedule.patch
+      with:
+        assetId: tools.assetId
+        publicId: tools.publicId
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: assetreportschedule-3
+      description: AssetReportSchedule
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: ixon-assetreportschedule.delete
+      with:
+        assetId: tools.assetId
+        publicId: tools.publicId
+      outputParameters:
+      - type: object
+        mapping: $.

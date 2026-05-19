@@ -1,0 +1,79 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: IXON API — WebaccessSessionRecording
+  description: 'IXON API — WebaccessSessionRecording. 1 operations. Lead operation: WebaccessSessionRecording. Self-contained
+    Naftiko capability covering one Ixon business surface.'
+  tags:
+  - Ixon
+  - WebaccessSessionRecording
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    IXON_API_KEY: IXON_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: ixon-webaccesssessionrecording
+    baseUri: https://portal.ixon.cloud:443/api
+    description: IXON API — WebaccessSessionRecording business capability. Self-contained, no shared references.
+    resources:
+    - name: web-access-session-recordings-publicId
+      path: /web-access/session-recordings/{publicId}
+      operations:
+      - name: get
+        method: GET
+        description: WebaccessSessionRecording
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: publicId
+          in: path
+          type: string
+          required: true
+    authentication:
+      type: bearer
+      token: '{{env.IXON_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: ixon-webaccesssessionrecording-rest
+    port: 8080
+    description: REST adapter for IXON API — WebaccessSessionRecording. One Spectral-compliant resource per consumed operation,
+      prefixed with /v1.
+    resources:
+    - path: /v1/web-access/session-recordings/{publicid}
+      name: web-access-session-recordings-publicid
+      description: REST surface for web-access-session-recordings-publicId.
+      operations:
+      - method: GET
+        name: get
+        description: WebaccessSessionRecording
+        call: ixon-webaccesssessionrecording.get
+        with:
+          publicId: rest.publicId
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: ixon-webaccesssessionrecording-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for IXON API — WebaccessSessionRecording. One tool per consumed operation, routed inline through
+      this capability's consumes block.
+    tools:
+    - name: webaccesssessionrecording
+      description: WebaccessSessionRecording
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: ixon-webaccesssessionrecording.get
+      with:
+        publicId: tools.publicId
+      outputParameters:
+      - type: object
+        mapping: $.

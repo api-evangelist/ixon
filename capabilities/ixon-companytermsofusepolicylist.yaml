@@ -1,0 +1,79 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: IXON API — CompanyTermsOfUsePolicyList
+  description: 'IXON API — CompanyTermsOfUsePolicyList. 1 operations. Lead operation: CompanyTermsOfUsePolicyList. Self-contained
+    Naftiko capability covering one Ixon business surface.'
+  tags:
+  - Ixon
+  - CompanyTermsOfUsePolicyList
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    IXON_API_KEY: IXON_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: ixon-companytermsofusepolicylist
+    baseUri: https://portal.ixon.cloud:443/api
+    description: IXON API — CompanyTermsOfUsePolicyList business capability. Self-contained, no shared references.
+    resources:
+    - name: companies-publicId-terms-of-use-policies
+      path: /companies/{publicId}/terms-of-use-policies
+      operations:
+      - name: get
+        method: GET
+        description: CompanyTermsOfUsePolicyList
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: publicId
+          in: path
+          type: string
+          required: true
+    authentication:
+      type: bearer
+      token: '{{env.IXON_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: ixon-companytermsofusepolicylist-rest
+    port: 8080
+    description: REST adapter for IXON API — CompanyTermsOfUsePolicyList. One Spectral-compliant resource per consumed operation,
+      prefixed with /v1.
+    resources:
+    - path: /v1/companies/{publicid}/terms-of-use-policies
+      name: companies-publicid-terms-of-use-policies
+      description: REST surface for companies-publicId-terms-of-use-policies.
+      operations:
+      - method: GET
+        name: get
+        description: CompanyTermsOfUsePolicyList
+        call: ixon-companytermsofusepolicylist.get
+        with:
+          publicId: rest.publicId
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: ixon-companytermsofusepolicylist-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for IXON API — CompanyTermsOfUsePolicyList. One tool per consumed operation, routed inline through
+      this capability's consumes block.
+    tools:
+    - name: companytermsofusepolicylist
+      description: CompanyTermsOfUsePolicyList
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: ixon-companytermsofusepolicylist.get
+      with:
+        publicId: tools.publicId
+      outputParameters:
+      - type: object
+        mapping: $.

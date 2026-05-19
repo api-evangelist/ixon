@@ -1,0 +1,86 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: IXON API — AgentRouterDisplayConfig
+  description: 'IXON API — AgentRouterDisplayConfig. 1 operations. Lead operation: AgentRouterDisplayConfig. Self-contained
+    Naftiko capability covering one Ixon business surface.'
+  tags:
+  - Ixon
+  - AgentRouterDisplayConfig
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    IXON_API_KEY: IXON_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: ixon-agentrouterdisplayconfig
+    baseUri: https://portal.ixon.cloud:443/api
+    description: IXON API — AgentRouterDisplayConfig business capability. Self-contained, no shared references.
+    resources:
+    - name: agents-agentId-router-display-config
+      path: /agents/{agentId}/router-display-config
+      operations:
+      - name: patch
+        method: PATCH
+        description: AgentRouterDisplayConfig
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: agentId
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    authentication:
+      type: bearer
+      token: '{{env.IXON_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: ixon-agentrouterdisplayconfig-rest
+    port: 8080
+    description: REST adapter for IXON API — AgentRouterDisplayConfig. One Spectral-compliant resource per consumed operation,
+      prefixed with /v1.
+    resources:
+    - path: /v1/agents/{agentid}/router-display-config
+      name: agents-agentid-router-display-config
+      description: REST surface for agents-agentId-router-display-config.
+      operations:
+      - method: PATCH
+        name: patch
+        description: AgentRouterDisplayConfig
+        call: ixon-agentrouterdisplayconfig.patch
+        with:
+          agentId: rest.agentId
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: ixon-agentrouterdisplayconfig-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for IXON API — AgentRouterDisplayConfig. One tool per consumed operation, routed inline through
+      this capability's consumes block.
+    tools:
+    - name: agentrouterdisplayconfig
+      description: AgentRouterDisplayConfig
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: ixon-agentrouterdisplayconfig.patch
+      with:
+        agentId: tools.agentId
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.

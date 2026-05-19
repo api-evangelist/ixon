@@ -1,0 +1,70 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: IXON API — GroupRoleList
+  description: 'IXON API — GroupRoleList. 1 operations. Lead operation: GroupRoleList. Self-contained Naftiko capability covering
+    one Ixon business surface.'
+  tags:
+  - Ixon
+  - GroupRoleList
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    IXON_API_KEY: IXON_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: ixon-grouprolelist
+    baseUri: https://portal.ixon.cloud:443/api
+    description: IXON API — GroupRoleList business capability. Self-contained, no shared references.
+    resources:
+    - name: groups-roles
+      path: /groups/roles
+      operations:
+      - name: get
+        method: GET
+        description: GroupRoleList
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    authentication:
+      type: bearer
+      token: '{{env.IXON_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: ixon-grouprolelist-rest
+    port: 8080
+    description: REST adapter for IXON API — GroupRoleList. One Spectral-compliant resource per consumed operation, prefixed
+      with /v1.
+    resources:
+    - path: /v1/groups/roles
+      name: groups-roles
+      description: REST surface for groups-roles.
+      operations:
+      - method: GET
+        name: get
+        description: GroupRoleList
+        call: ixon-grouprolelist.get
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: ixon-grouprolelist-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for IXON API — GroupRoleList. One tool per consumed operation, routed inline through this capability's
+      consumes block.
+    tools:
+    - name: grouprolelist
+      description: GroupRoleList
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: ixon-grouprolelist.get
+      outputParameters:
+      - type: object
+        mapping: $.

@@ -1,0 +1,79 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: IXON API — AgentAccessRequestApproverList
+  description: 'IXON API — AgentAccessRequestApproverList. 1 operations. Lead operation: AgentAccessRequestApproverList. Self-contained
+    Naftiko capability covering one Ixon business surface.'
+  tags:
+  - Ixon
+  - AgentAccessRequestApproverList
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    IXON_API_KEY: IXON_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: ixon-agentaccessrequestapproverlist
+    baseUri: https://portal.ixon.cloud:443/api
+    description: IXON API — AgentAccessRequestApproverList business capability. Self-contained, no shared references.
+    resources:
+    - name: agents-agentId-approvers
+      path: /agents/{agentId}/approvers
+      operations:
+      - name: get
+        method: GET
+        description: AgentAccessRequestApproverList
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: agentId
+          in: path
+          type: string
+          required: true
+    authentication:
+      type: bearer
+      token: '{{env.IXON_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: ixon-agentaccessrequestapproverlist-rest
+    port: 8080
+    description: REST adapter for IXON API — AgentAccessRequestApproverList. One Spectral-compliant resource per consumed
+      operation, prefixed with /v1.
+    resources:
+    - path: /v1/agents/{agentid}/approvers
+      name: agents-agentid-approvers
+      description: REST surface for agents-agentId-approvers.
+      operations:
+      - method: GET
+        name: get
+        description: AgentAccessRequestApproverList
+        call: ixon-agentaccessrequestapproverlist.get
+        with:
+          agentId: rest.agentId
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: ixon-agentaccessrequestapproverlist-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for IXON API — AgentAccessRequestApproverList. One tool per consumed operation, routed inline
+      through this capability's consumes block.
+    tools:
+    - name: agentaccessrequestapproverlist
+      description: AgentAccessRequestApproverList
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: ixon-agentaccessrequestapproverlist.get
+      with:
+        agentId: tools.agentId
+      outputParameters:
+      - type: object
+        mapping: $.

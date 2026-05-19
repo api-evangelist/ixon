@@ -1,0 +1,80 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: IXON API — MyUserPushDeviceActivate
+  description: 'IXON API — MyUserPushDeviceActivate. 1 operations. Lead operation: MyUserPushDeviceActivate. Self-contained
+    Naftiko capability covering one Ixon business surface.'
+  tags:
+  - Ixon
+  - MyUserPushDeviceActivate
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    IXON_API_KEY: IXON_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: ixon-myuserpushdeviceactivate
+    baseUri: https://portal.ixon.cloud:443/api
+    description: IXON API — MyUserPushDeviceActivate business capability. Self-contained, no shared references.
+    resources:
+    - name: users-me-push-devices-activate
+      path: /users/me/push-devices/activate
+      operations:
+      - name: post
+        method: POST
+        description: MyUserPushDeviceActivate
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    authentication:
+      type: bearer
+      token: '{{env.IXON_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: ixon-myuserpushdeviceactivate-rest
+    port: 8080
+    description: REST adapter for IXON API — MyUserPushDeviceActivate. One Spectral-compliant resource per consumed operation,
+      prefixed with /v1.
+    resources:
+    - path: /v1/users/me/push-devices/activate
+      name: users-me-push-devices-activate
+      description: REST surface for users-me-push-devices-activate.
+      operations:
+      - method: POST
+        name: post
+        description: MyUserPushDeviceActivate
+        call: ixon-myuserpushdeviceactivate.post
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: ixon-myuserpushdeviceactivate-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for IXON API — MyUserPushDeviceActivate. One tool per consumed operation, routed inline through
+      this capability's consumes block.
+    tools:
+    - name: myuserpushdeviceactivate
+      description: MyUserPushDeviceActivate
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: ixon-myuserpushdeviceactivate.post
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.

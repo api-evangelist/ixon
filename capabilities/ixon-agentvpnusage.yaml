@@ -1,0 +1,86 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: IXON API — AgentVpnUsage
+  description: 'IXON API — AgentVpnUsage. 1 operations. Lead operation: AgentVpnUsage. Self-contained Naftiko capability covering
+    one Ixon business surface.'
+  tags:
+  - Ixon
+  - AgentVpnUsage
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    IXON_API_KEY: IXON_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: ixon-agentvpnusage
+    baseUri: https://portal.ixon.cloud:443/api
+    description: IXON API — AgentVpnUsage business capability. Self-contained, no shared references.
+    resources:
+    - name: agents-agentId-vpn-usage
+      path: /agents/{agentId}/vpn-usage
+      operations:
+      - name: post
+        method: POST
+        description: AgentVpnUsage
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: agentId
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    authentication:
+      type: bearer
+      token: '{{env.IXON_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: ixon-agentvpnusage-rest
+    port: 8080
+    description: REST adapter for IXON API — AgentVpnUsage. One Spectral-compliant resource per consumed operation, prefixed
+      with /v1.
+    resources:
+    - path: /v1/agents/{agentid}/vpn-usage
+      name: agents-agentid-vpn-usage
+      description: REST surface for agents-agentId-vpn-usage.
+      operations:
+      - method: POST
+        name: post
+        description: AgentVpnUsage
+        call: ixon-agentvpnusage.post
+        with:
+          agentId: rest.agentId
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: ixon-agentvpnusage-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for IXON API — AgentVpnUsage. One tool per consumed operation, routed inline through this capability's
+      consumes block.
+    tools:
+    - name: agentvpnusage
+      description: AgentVpnUsage
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: ixon-agentvpnusage.post
+      with:
+        agentId: tools.agentId
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.

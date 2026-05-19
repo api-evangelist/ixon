@@ -1,0 +1,154 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: IXON API — UserMembership
+  description: 'IXON API — UserMembership. 3 operations. Lead operation: UserMembership. Self-contained Naftiko capability
+    covering one Ixon business surface.'
+  tags:
+  - Ixon
+  - UserMembership
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    IXON_API_KEY: IXON_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: ixon-usermembership
+    baseUri: https://portal.ixon.cloud:443/api
+    description: IXON API — UserMembership business capability. Self-contained, no shared references.
+    resources:
+    - name: users-memberships-publicId
+      path: /users/memberships/{publicId}
+      operations:
+      - name: get
+        method: GET
+        description: UserMembership
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: publicId
+          in: path
+          type: string
+          required: true
+      - name: patch
+        method: PATCH
+        description: UserMembership
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: publicId
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+      - name: delete
+        method: DELETE
+        description: UserMembership
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: publicId
+          in: path
+          type: string
+          required: true
+    authentication:
+      type: bearer
+      token: '{{env.IXON_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: ixon-usermembership-rest
+    port: 8080
+    description: REST adapter for IXON API — UserMembership. One Spectral-compliant resource per consumed operation, prefixed
+      with /v1.
+    resources:
+    - path: /v1/users/memberships/{publicid}
+      name: users-memberships-publicid
+      description: REST surface for users-memberships-publicId.
+      operations:
+      - method: GET
+        name: get
+        description: UserMembership
+        call: ixon-usermembership.get
+        with:
+          publicId: rest.publicId
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: PATCH
+        name: patch
+        description: UserMembership
+        call: ixon-usermembership.patch
+        with:
+          publicId: rest.publicId
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: DELETE
+        name: delete
+        description: UserMembership
+        call: ixon-usermembership.delete
+        with:
+          publicId: rest.publicId
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: ixon-usermembership-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for IXON API — UserMembership. One tool per consumed operation, routed inline through this capability's
+      consumes block.
+    tools:
+    - name: usermembership
+      description: UserMembership
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: ixon-usermembership.get
+      with:
+        publicId: tools.publicId
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: usermembership-2
+      description: UserMembership
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: ixon-usermembership.patch
+      with:
+        publicId: tools.publicId
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: usermembership-3
+      description: UserMembership
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: ixon-usermembership.delete
+      with:
+        publicId: tools.publicId
+      outputParameters:
+      - type: object
+        mapping: $.

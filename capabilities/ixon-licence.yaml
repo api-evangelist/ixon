@@ -1,0 +1,79 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: IXON API — Licence
+  description: 'IXON API — Licence. 1 operations. Lead operation: Licence. Self-contained Naftiko capability covering one
+    Ixon business surface.'
+  tags:
+  - Ixon
+  - Licence
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    IXON_API_KEY: IXON_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: ixon-licence
+    baseUri: https://portal.ixon.cloud:443/api
+    description: IXON API — Licence business capability. Self-contained, no shared references.
+    resources:
+    - name: licences-publicId
+      path: /licences/{publicId}
+      operations:
+      - name: get
+        method: GET
+        description: Licence
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: publicId
+          in: path
+          type: string
+          required: true
+    authentication:
+      type: bearer
+      token: '{{env.IXON_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: ixon-licence-rest
+    port: 8080
+    description: REST adapter for IXON API — Licence. One Spectral-compliant resource per consumed operation, prefixed with
+      /v1.
+    resources:
+    - path: /v1/licences/{publicid}
+      name: licences-publicid
+      description: REST surface for licences-publicId.
+      operations:
+      - method: GET
+        name: get
+        description: Licence
+        call: ixon-licence.get
+        with:
+          publicId: rest.publicId
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: ixon-licence-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for IXON API — Licence. One tool per consumed operation, routed inline through this capability's
+      consumes block.
+    tools:
+    - name: licence
+      description: Licence
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: ixon-licence.get
+      with:
+        publicId: tools.publicId
+      outputParameters:
+      - type: object
+        mapping: $.

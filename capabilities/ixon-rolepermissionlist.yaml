@@ -1,0 +1,168 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: IXON API — RolePermissionList
+  description: 'IXON API — RolePermissionList. 3 operations. Lead operation: RolePermissionList. Self-contained Naftiko capability
+    covering one Ixon business surface.'
+  tags:
+  - Ixon
+  - RolePermissionList
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    IXON_API_KEY: IXON_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: ixon-rolepermissionlist
+    baseUri: https://portal.ixon.cloud:443/api
+    description: IXON API — RolePermissionList business capability. Self-contained, no shared references.
+    resources:
+    - name: roles-publicId-permissions
+      path: /roles/{publicId}/permissions
+      operations:
+      - name: post
+        method: POST
+        description: RolePermissionList
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: publicId
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+      - name: put
+        method: PUT
+        description: RolePermissionList
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: publicId
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+      - name: delete
+        method: DELETE
+        description: RolePermissionList
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: publicId
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    authentication:
+      type: bearer
+      token: '{{env.IXON_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: ixon-rolepermissionlist-rest
+    port: 8080
+    description: REST adapter for IXON API — RolePermissionList. One Spectral-compliant resource per consumed operation, prefixed
+      with /v1.
+    resources:
+    - path: /v1/roles/{publicid}/permissions
+      name: roles-publicid-permissions
+      description: REST surface for roles-publicId-permissions.
+      operations:
+      - method: POST
+        name: post
+        description: RolePermissionList
+        call: ixon-rolepermissionlist.post
+        with:
+          publicId: rest.publicId
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: PUT
+        name: put
+        description: RolePermissionList
+        call: ixon-rolepermissionlist.put
+        with:
+          publicId: rest.publicId
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: DELETE
+        name: delete
+        description: RolePermissionList
+        call: ixon-rolepermissionlist.delete
+        with:
+          publicId: rest.publicId
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: ixon-rolepermissionlist-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for IXON API — RolePermissionList. One tool per consumed operation, routed inline through this
+      capability's consumes block.
+    tools:
+    - name: rolepermissionlist
+      description: RolePermissionList
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: ixon-rolepermissionlist.post
+      with:
+        publicId: tools.publicId
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: rolepermissionlist-2
+      description: RolePermissionList
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: ixon-rolepermissionlist.put
+      with:
+        publicId: tools.publicId
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: rolepermissionlist-3
+      description: RolePermissionList
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: ixon-rolepermissionlist.delete
+      with:
+        publicId: tools.publicId
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.

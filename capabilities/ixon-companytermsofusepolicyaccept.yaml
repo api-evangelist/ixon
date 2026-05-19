@@ -1,0 +1,79 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: IXON API — CompanyTermsOfUsePolicyAccept
+  description: 'IXON API — CompanyTermsOfUsePolicyAccept. 1 operations. Lead operation: CompanyTermsOfUsePolicyAccept. Self-contained
+    Naftiko capability covering one Ixon business surface.'
+  tags:
+  - Ixon
+  - CompanyTermsOfUsePolicyAccept
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    IXON_API_KEY: IXON_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: ixon-companytermsofusepolicyaccept
+    baseUri: https://portal.ixon.cloud:443/api
+    description: IXON API — CompanyTermsOfUsePolicyAccept business capability. Self-contained, no shared references.
+    resources:
+    - name: companies-terms-of-use-policies-publicId-accept
+      path: /companies/terms-of-use-policies/{publicId}/accept
+      operations:
+      - name: post
+        method: POST
+        description: CompanyTermsOfUsePolicyAccept
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: publicId
+          in: path
+          type: string
+          required: true
+    authentication:
+      type: bearer
+      token: '{{env.IXON_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: ixon-companytermsofusepolicyaccept-rest
+    port: 8080
+    description: REST adapter for IXON API — CompanyTermsOfUsePolicyAccept. One Spectral-compliant resource per consumed operation,
+      prefixed with /v1.
+    resources:
+    - path: /v1/companies/terms-of-use-policies/{publicid}/accept
+      name: companies-terms-of-use-policies-publicid-accept
+      description: REST surface for companies-terms-of-use-policies-publicId-accept.
+      operations:
+      - method: POST
+        name: post
+        description: CompanyTermsOfUsePolicyAccept
+        call: ixon-companytermsofusepolicyaccept.post
+        with:
+          publicId: rest.publicId
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: ixon-companytermsofusepolicyaccept-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for IXON API — CompanyTermsOfUsePolicyAccept. One tool per consumed operation, routed inline
+      through this capability's consumes block.
+    tools:
+    - name: companytermsofusepolicyaccept
+      description: CompanyTermsOfUsePolicyAccept
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: ixon-companytermsofusepolicyaccept.post
+      with:
+        publicId: tools.publicId
+      outputParameters:
+      - type: object
+        mapping: $.

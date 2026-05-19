@@ -1,0 +1,86 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: IXON API — AssetBackendComponentFunctionCall
+  description: 'IXON API — AssetBackendComponentFunctionCall. 1 operations. Lead operation: AssetBackendComponentFunctionCall.
+    Self-contained Naftiko capability covering one Ixon business surface.'
+  tags:
+  - Ixon
+  - AssetBackendComponentFunctionCall
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    IXON_API_KEY: IXON_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: ixon-assetbackendcomponentfunctioncall
+    baseUri: https://portal.ixon.cloud:443/api
+    description: IXON API — AssetBackendComponentFunctionCall business capability. Self-contained, no shared references.
+    resources:
+    - name: assets-assetId-backend-component-function-call
+      path: /assets/{assetId}/backend-component-function-call
+      operations:
+      - name: post
+        method: POST
+        description: AssetBackendComponentFunctionCall
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: assetId
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    authentication:
+      type: bearer
+      token: '{{env.IXON_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: ixon-assetbackendcomponentfunctioncall-rest
+    port: 8080
+    description: REST adapter for IXON API — AssetBackendComponentFunctionCall. One Spectral-compliant resource per consumed
+      operation, prefixed with /v1.
+    resources:
+    - path: /v1/assets/{assetid}/backend-component-function-call
+      name: assets-assetid-backend-component-function-call
+      description: REST surface for assets-assetId-backend-component-function-call.
+      operations:
+      - method: POST
+        name: post
+        description: AssetBackendComponentFunctionCall
+        call: ixon-assetbackendcomponentfunctioncall.post
+        with:
+          assetId: rest.assetId
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: ixon-assetbackendcomponentfunctioncall-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for IXON API — AssetBackendComponentFunctionCall. One tool per consumed operation, routed inline
+      through this capability's consumes block.
+    tools:
+    - name: assetbackendcomponentfunctioncall
+      description: AssetBackendComponentFunctionCall
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: ixon-assetbackendcomponentfunctioncall.post
+      with:
+        assetId: tools.assetId
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.

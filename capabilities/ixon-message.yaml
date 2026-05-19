@@ -1,0 +1,154 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: IXON API — Message
+  description: 'IXON API — Message. 3 operations. Lead operation: Message. Self-contained Naftiko capability covering one
+    Ixon business surface.'
+  tags:
+  - Ixon
+  - Message
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    IXON_API_KEY: IXON_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: ixon-message
+    baseUri: https://portal.ixon.cloud:443/api
+    description: IXON API — Message business capability. Self-contained, no shared references.
+    resources:
+    - name: messages-publicId
+      path: /messages/{publicId}
+      operations:
+      - name: get
+        method: GET
+        description: Message
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: publicId
+          in: path
+          type: string
+          required: true
+      - name: patch
+        method: PATCH
+        description: Message
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: publicId
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+      - name: delete
+        method: DELETE
+        description: Message
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: publicId
+          in: path
+          type: string
+          required: true
+    authentication:
+      type: bearer
+      token: '{{env.IXON_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: ixon-message-rest
+    port: 8080
+    description: REST adapter for IXON API — Message. One Spectral-compliant resource per consumed operation, prefixed with
+      /v1.
+    resources:
+    - path: /v1/messages/{publicid}
+      name: messages-publicid
+      description: REST surface for messages-publicId.
+      operations:
+      - method: GET
+        name: get
+        description: Message
+        call: ixon-message.get
+        with:
+          publicId: rest.publicId
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: PATCH
+        name: patch
+        description: Message
+        call: ixon-message.patch
+        with:
+          publicId: rest.publicId
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: DELETE
+        name: delete
+        description: Message
+        call: ixon-message.delete
+        with:
+          publicId: rest.publicId
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: ixon-message-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for IXON API — Message. One tool per consumed operation, routed inline through this capability's
+      consumes block.
+    tools:
+    - name: message
+      description: Message
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: ixon-message.get
+      with:
+        publicId: tools.publicId
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: message-2
+      description: Message
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: ixon-message.patch
+      with:
+        publicId: tools.publicId
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: message-3
+      description: Message
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: ixon-message.delete
+      with:
+        publicId: tools.publicId
+      outputParameters:
+      - type: object
+        mapping: $.

@@ -1,0 +1,140 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: IXON API — BackendComponentTemplateList
+  description: 'IXON API — BackendComponentTemplateList. 3 operations. Lead operation: BackendComponentTemplateList. Self-contained
+    Naftiko capability covering one Ixon business surface.'
+  tags:
+  - Ixon
+  - BackendComponentTemplateList
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    IXON_API_KEY: IXON_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: ixon-backendcomponenttemplatelist
+    baseUri: https://portal.ixon.cloud:443/api
+    description: IXON API — BackendComponentTemplateList business capability. Self-contained, no shared references.
+    resources:
+    - name: backend-component-templates
+      path: /backend-component-templates
+      operations:
+      - name: get
+        method: GET
+        description: BackendComponentTemplateList
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: post
+        method: POST
+        description: BackendComponentTemplateList
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+      - name: patch
+        method: PATCH
+        description: BackendComponentTemplateList
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    authentication:
+      type: bearer
+      token: '{{env.IXON_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: ixon-backendcomponenttemplatelist-rest
+    port: 8080
+    description: REST adapter for IXON API — BackendComponentTemplateList. One Spectral-compliant resource per consumed operation,
+      prefixed with /v1.
+    resources:
+    - path: /v1/backend-component-templates
+      name: backend-component-templates
+      description: REST surface for backend-component-templates.
+      operations:
+      - method: GET
+        name: get
+        description: BackendComponentTemplateList
+        call: ixon-backendcomponenttemplatelist.get
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: post
+        description: BackendComponentTemplateList
+        call: ixon-backendcomponenttemplatelist.post
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: PATCH
+        name: patch
+        description: BackendComponentTemplateList
+        call: ixon-backendcomponenttemplatelist.patch
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: ixon-backendcomponenttemplatelist-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for IXON API — BackendComponentTemplateList. One tool per consumed operation, routed inline through
+      this capability's consumes block.
+    tools:
+    - name: backendcomponenttemplatelist
+      description: BackendComponentTemplateList
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: ixon-backendcomponenttemplatelist.get
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: backendcomponenttemplatelist-2
+      description: BackendComponentTemplateList
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: ixon-backendcomponenttemplatelist.post
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: backendcomponenttemplatelist-3
+      description: BackendComponentTemplateList
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: ixon-backendcomponenttemplatelist.patch
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.

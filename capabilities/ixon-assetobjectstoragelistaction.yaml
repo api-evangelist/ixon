@@ -1,0 +1,86 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: IXON API — AssetObjectStorageListAction
+  description: 'IXON API — AssetObjectStorageListAction. 1 operations. Lead operation: AssetObjectStorageListAction. Self-contained
+    Naftiko capability covering one Ixon business surface.'
+  tags:
+  - Ixon
+  - AssetObjectStorageListAction
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    IXON_API_KEY: IXON_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: ixon-assetobjectstoragelistaction
+    baseUri: https://portal.ixon.cloud:443/api
+    description: IXON API — AssetObjectStorageListAction business capability. Self-contained, no shared references.
+    resources:
+    - name: assets-assetId-object-storage-list
+      path: /assets/{assetId}/object-storage/list
+      operations:
+      - name: post
+        method: POST
+        description: AssetObjectStorageListAction
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: assetId
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    authentication:
+      type: bearer
+      token: '{{env.IXON_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: ixon-assetobjectstoragelistaction-rest
+    port: 8080
+    description: REST adapter for IXON API — AssetObjectStorageListAction. One Spectral-compliant resource per consumed operation,
+      prefixed with /v1.
+    resources:
+    - path: /v1/assets/{assetid}/object-storage/list
+      name: assets-assetid-object-storage-list
+      description: REST surface for assets-assetId-object-storage-list.
+      operations:
+      - method: POST
+        name: post
+        description: AssetObjectStorageListAction
+        call: ixon-assetobjectstoragelistaction.post
+        with:
+          assetId: rest.assetId
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: ixon-assetobjectstoragelistaction-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for IXON API — AssetObjectStorageListAction. One tool per consumed operation, routed inline through
+      this capability's consumes block.
+    tools:
+    - name: assetobjectstoragelistaction
+      description: AssetObjectStorageListAction
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: ixon-assetobjectstoragelistaction.post
+      with:
+        assetId: tools.assetId
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.

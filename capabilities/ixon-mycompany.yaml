@@ -1,0 +1,105 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: IXON API — MyCompany
+  description: 'IXON API — MyCompany. 2 operations. Lead operation: MyCompany. Self-contained Naftiko capability covering
+    one Ixon business surface.'
+  tags:
+  - Ixon
+  - MyCompany
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    IXON_API_KEY: IXON_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: ixon-mycompany
+    baseUri: https://portal.ixon.cloud:443/api
+    description: IXON API — MyCompany business capability. Self-contained, no shared references.
+    resources:
+    - name: companies-me
+      path: /companies/me
+      operations:
+      - name: get
+        method: GET
+        description: MyCompany
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: patch
+        method: PATCH
+        description: MyCompany
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    authentication:
+      type: bearer
+      token: '{{env.IXON_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: ixon-mycompany-rest
+    port: 8080
+    description: REST adapter for IXON API — MyCompany. One Spectral-compliant resource per consumed operation, prefixed with
+      /v1.
+    resources:
+    - path: /v1/companies/me
+      name: companies-me
+      description: REST surface for companies-me.
+      operations:
+      - method: GET
+        name: get
+        description: MyCompany
+        call: ixon-mycompany.get
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: PATCH
+        name: patch
+        description: MyCompany
+        call: ixon-mycompany.patch
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: ixon-mycompany-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for IXON API — MyCompany. One tool per consumed operation, routed inline through this capability's
+      consumes block.
+    tools:
+    - name: mycompany
+      description: MyCompany
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: ixon-mycompany.get
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: mycompany-2
+      description: MyCompany
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: ixon-mycompany.patch
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.

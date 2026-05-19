@@ -1,0 +1,175 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: IXON API — PageList
+  description: 'IXON API — PageList. 4 operations. Lead operation: PageList. Self-contained Naftiko capability covering one
+    Ixon business surface.'
+  tags:
+  - Ixon
+  - PageList
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    IXON_API_KEY: IXON_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: ixon-pagelist
+    baseUri: https://portal.ixon.cloud:443/api
+    description: IXON API — PageList business capability. Self-contained, no shared references.
+    resources:
+    - name: pages
+      path: /pages
+      operations:
+      - name: get
+        method: GET
+        description: PageList
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: post
+        method: POST
+        description: PageList
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+      - name: patch
+        method: PATCH
+        description: PageList
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+      - name: delete
+        method: DELETE
+        description: PageList
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    authentication:
+      type: bearer
+      token: '{{env.IXON_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: ixon-pagelist-rest
+    port: 8080
+    description: REST adapter for IXON API — PageList. One Spectral-compliant resource per consumed operation, prefixed with
+      /v1.
+    resources:
+    - path: /v1/pages
+      name: pages
+      description: REST surface for pages.
+      operations:
+      - method: GET
+        name: get
+        description: PageList
+        call: ixon-pagelist.get
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: post
+        description: PageList
+        call: ixon-pagelist.post
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: PATCH
+        name: patch
+        description: PageList
+        call: ixon-pagelist.patch
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: DELETE
+        name: delete
+        description: PageList
+        call: ixon-pagelist.delete
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: ixon-pagelist-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for IXON API — PageList. One tool per consumed operation, routed inline through this capability's
+      consumes block.
+    tools:
+    - name: pagelist
+      description: PageList
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: ixon-pagelist.get
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: pagelist-2
+      description: PageList
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: ixon-pagelist.post
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: pagelist-3
+      description: PageList
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: ixon-pagelist.patch
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: pagelist-4
+      description: PageList
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: ixon-pagelist.delete
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.

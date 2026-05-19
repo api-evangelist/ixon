@@ -1,0 +1,154 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: IXON API — AssetMembership
+  description: 'IXON API — AssetMembership. 3 operations. Lead operation: AssetMembership. Self-contained Naftiko capability
+    covering one Ixon business surface.'
+  tags:
+  - Ixon
+  - AssetMembership
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    IXON_API_KEY: IXON_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: ixon-assetmembership
+    baseUri: https://portal.ixon.cloud:443/api
+    description: IXON API — AssetMembership business capability. Self-contained, no shared references.
+    resources:
+    - name: assets-memberships-publicId
+      path: /assets/memberships/{publicId}
+      operations:
+      - name: get
+        method: GET
+        description: AssetMembership
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: publicId
+          in: path
+          type: string
+          required: true
+      - name: patch
+        method: PATCH
+        description: AssetMembership
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: publicId
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+      - name: delete
+        method: DELETE
+        description: AssetMembership
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: publicId
+          in: path
+          type: string
+          required: true
+    authentication:
+      type: bearer
+      token: '{{env.IXON_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: ixon-assetmembership-rest
+    port: 8080
+    description: REST adapter for IXON API — AssetMembership. One Spectral-compliant resource per consumed operation, prefixed
+      with /v1.
+    resources:
+    - path: /v1/assets/memberships/{publicid}
+      name: assets-memberships-publicid
+      description: REST surface for assets-memberships-publicId.
+      operations:
+      - method: GET
+        name: get
+        description: AssetMembership
+        call: ixon-assetmembership.get
+        with:
+          publicId: rest.publicId
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: PATCH
+        name: patch
+        description: AssetMembership
+        call: ixon-assetmembership.patch
+        with:
+          publicId: rest.publicId
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: DELETE
+        name: delete
+        description: AssetMembership
+        call: ixon-assetmembership.delete
+        with:
+          publicId: rest.publicId
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: ixon-assetmembership-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for IXON API — AssetMembership. One tool per consumed operation, routed inline through this capability's
+      consumes block.
+    tools:
+    - name: assetmembership
+      description: AssetMembership
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: ixon-assetmembership.get
+      with:
+        publicId: tools.publicId
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: assetmembership-2
+      description: AssetMembership
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: ixon-assetmembership.patch
+      with:
+        publicId: tools.publicId
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: assetmembership-3
+      description: AssetMembership
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: ixon-assetmembership.delete
+      with:
+        publicId: tools.publicId
+      outputParameters:
+      - type: object
+        mapping: $.

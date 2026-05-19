@@ -1,0 +1,70 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: IXON API — PageComponentTemplateCategoryList
+  description: 'IXON API — PageComponentTemplateCategoryList. 1 operations. Lead operation: PageComponentTemplateCategoryList.
+    Self-contained Naftiko capability covering one Ixon business surface.'
+  tags:
+  - Ixon
+  - PageComponentTemplateCategoryList
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    IXON_API_KEY: IXON_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: ixon-pagecomponenttemplatecategorylist
+    baseUri: https://portal.ixon.cloud:443/api
+    description: IXON API — PageComponentTemplateCategoryList business capability. Self-contained, no shared references.
+    resources:
+    - name: page-component-template-categories
+      path: /page-component-template-categories
+      operations:
+      - name: get
+        method: GET
+        description: PageComponentTemplateCategoryList
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    authentication:
+      type: bearer
+      token: '{{env.IXON_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: ixon-pagecomponenttemplatecategorylist-rest
+    port: 8080
+    description: REST adapter for IXON API — PageComponentTemplateCategoryList. One Spectral-compliant resource per consumed
+      operation, prefixed with /v1.
+    resources:
+    - path: /v1/page-component-template-categories
+      name: page-component-template-categories
+      description: REST surface for page-component-template-categories.
+      operations:
+      - method: GET
+        name: get
+        description: PageComponentTemplateCategoryList
+        call: ixon-pagecomponenttemplatecategorylist.get
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: ixon-pagecomponenttemplatecategorylist-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for IXON API — PageComponentTemplateCategoryList. One tool per consumed operation, routed inline
+      through this capability's consumes block.
+    tools:
+    - name: pagecomponenttemplatecategorylist
+      description: PageComponentTemplateCategoryList
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: ixon-pagecomponenttemplatecategorylist.get
+      outputParameters:
+      - type: object
+        mapping: $.

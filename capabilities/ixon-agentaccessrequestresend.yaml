@@ -1,0 +1,85 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: IXON API — AgentAccessRequestResend
+  description: 'IXON API — AgentAccessRequestResend. 1 operations. Lead operation: AgentAccessRequestResend. Self-contained
+    Naftiko capability covering one Ixon business surface.'
+  tags:
+  - Ixon
+  - AgentAccessRequestResend
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    IXON_API_KEY: IXON_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: ixon-agentaccessrequestresend
+    baseUri: https://portal.ixon.cloud:443/api
+    description: IXON API — AgentAccessRequestResend business capability. Self-contained, no shared references.
+    resources:
+    - name: agents-agentId-access-requests-resend-publicId-resend
+      path: /agents/{agentId}/access-requests/resend/{publicId}/resend
+      operations:
+      - name: post
+        method: POST
+        description: AgentAccessRequestResend
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: agentId
+          in: path
+          type: string
+          required: true
+        - name: publicId
+          in: path
+          type: string
+          required: true
+    authentication:
+      type: bearer
+      token: '{{env.IXON_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: ixon-agentaccessrequestresend-rest
+    port: 8080
+    description: REST adapter for IXON API — AgentAccessRequestResend. One Spectral-compliant resource per consumed operation,
+      prefixed with /v1.
+    resources:
+    - path: /v1/agents/{agentid}/access-requests/resend/{publicid}/resend
+      name: agents-agentid-access-requests-resend-publicid-resend
+      description: REST surface for agents-agentId-access-requests-resend-publicId-resend.
+      operations:
+      - method: POST
+        name: post
+        description: AgentAccessRequestResend
+        call: ixon-agentaccessrequestresend.post
+        with:
+          agentId: rest.agentId
+          publicId: rest.publicId
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: ixon-agentaccessrequestresend-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for IXON API — AgentAccessRequestResend. One tool per consumed operation, routed inline through
+      this capability's consumes block.
+    tools:
+    - name: agentaccessrequestresend
+      description: AgentAccessRequestResend
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: ixon-agentaccessrequestresend.post
+      with:
+        agentId: tools.agentId
+        publicId: tools.publicId
+      outputParameters:
+      - type: object
+        mapping: $.

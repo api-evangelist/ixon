@@ -1,0 +1,70 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: IXON API — MySector
+  description: 'IXON API — MySector. 1 operations. Lead operation: MySector. Self-contained Naftiko capability covering one
+    Ixon business surface.'
+  tags:
+  - Ixon
+  - MySector
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    IXON_API_KEY: IXON_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: ixon-mysector
+    baseUri: https://portal.ixon.cloud:443/api
+    description: IXON API — MySector business capability. Self-contained, no shared references.
+    resources:
+    - name: sectors-me
+      path: /sectors/me
+      operations:
+      - name: get
+        method: GET
+        description: MySector
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    authentication:
+      type: bearer
+      token: '{{env.IXON_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: ixon-mysector-rest
+    port: 8080
+    description: REST adapter for IXON API — MySector. One Spectral-compliant resource per consumed operation, prefixed with
+      /v1.
+    resources:
+    - path: /v1/sectors/me
+      name: sectors-me
+      description: REST surface for sectors-me.
+      operations:
+      - method: GET
+        name: get
+        description: MySector
+        call: ixon-mysector.get
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: ixon-mysector-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for IXON API — MySector. One tool per consumed operation, routed inline through this capability's
+      consumes block.
+    tools:
+    - name: mysector
+      description: MySector
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: ixon-mysector.get
+      outputParameters:
+      - type: object
+        mapping: $.

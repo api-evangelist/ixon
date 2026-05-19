@@ -1,0 +1,70 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: IXON API — CustomPropertyList
+  description: 'IXON API — CustomPropertyList. 1 operations. Lead operation: CustomPropertyList. Self-contained Naftiko capability
+    covering one Ixon business surface.'
+  tags:
+  - Ixon
+  - CustomPropertyList
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    IXON_API_KEY: IXON_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: ixon-custompropertylist
+    baseUri: https://portal.ixon.cloud:443/api
+    description: IXON API — CustomPropertyList business capability. Self-contained, no shared references.
+    resources:
+    - name: custom-properties
+      path: /custom-properties
+      operations:
+      - name: get
+        method: GET
+        description: CustomPropertyList
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    authentication:
+      type: bearer
+      token: '{{env.IXON_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: ixon-custompropertylist-rest
+    port: 8080
+    description: REST adapter for IXON API — CustomPropertyList. One Spectral-compliant resource per consumed operation, prefixed
+      with /v1.
+    resources:
+    - path: /v1/custom-properties
+      name: custom-properties
+      description: REST surface for custom-properties.
+      operations:
+      - method: GET
+        name: get
+        description: CustomPropertyList
+        call: ixon-custompropertylist.get
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: ixon-custompropertylist-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for IXON API — CustomPropertyList. One tool per consumed operation, routed inline through this
+      capability's consumes block.
+    tools:
+    - name: custompropertylist
+      description: CustomPropertyList
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: ixon-custompropertylist.get
+      outputParameters:
+      - type: object
+        mapping: $.

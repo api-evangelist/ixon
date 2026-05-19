@@ -1,0 +1,85 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: IXON API — CompanyPrivacyStatementDownload
+  description: 'IXON API — CompanyPrivacyStatementDownload. 1 operations. Lead operation: CompanyPrivacyStatementDownload.
+    Self-contained Naftiko capability covering one Ixon business surface.'
+  tags:
+  - Ixon
+  - CompanyPrivacyStatementDownload
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    IXON_API_KEY: IXON_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: ixon-companyprivacystatementdownload
+    baseUri: https://portal.ixon.cloud:443/api
+    description: IXON API — CompanyPrivacyStatementDownload business capability. Self-contained, no shared references.
+    resources:
+    - name: companies-companyId-privacy-statements-publicId-download
+      path: /companies/{companyId}/privacy-statements/{publicId}/download
+      operations:
+      - name: get
+        method: GET
+        description: CompanyPrivacyStatementDownload
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: companyId
+          in: path
+          type: string
+          required: true
+        - name: publicId
+          in: path
+          type: string
+          required: true
+    authentication:
+      type: bearer
+      token: '{{env.IXON_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: ixon-companyprivacystatementdownload-rest
+    port: 8080
+    description: REST adapter for IXON API — CompanyPrivacyStatementDownload. One Spectral-compliant resource per consumed
+      operation, prefixed with /v1.
+    resources:
+    - path: /v1/companies/{companyid}/privacy-statements/{publicid}/download
+      name: companies-companyid-privacy-statements-publicid-download
+      description: REST surface for companies-companyId-privacy-statements-publicId-download.
+      operations:
+      - method: GET
+        name: get
+        description: CompanyPrivacyStatementDownload
+        call: ixon-companyprivacystatementdownload.get
+        with:
+          companyId: rest.companyId
+          publicId: rest.publicId
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: ixon-companyprivacystatementdownload-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for IXON API — CompanyPrivacyStatementDownload. One tool per consumed operation, routed inline
+      through this capability's consumes block.
+    tools:
+    - name: companyprivacystatementdownload
+      description: CompanyPrivacyStatementDownload
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: ixon-companyprivacystatementdownload.get
+      with:
+        companyId: tools.companyId
+        publicId: tools.publicId
+      outputParameters:
+      - type: object
+        mapping: $.
