@@ -6,838 +6,840 @@ description: IXON is an industrial IoT platform that enables machine builders an
 type: Index
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 tags:
-- IIoT
-- Industrial IoT
-- Machine Connectivity
-- Remote Access
+  - IIoT
+  - Industrial IoT
+  - Machine Connectivity
+  - Remote Access
 url: https://raw.githubusercontent.com/api-evangelist/ixon/refs/heads/main/apis.yml
 created: '2026-03-16'
 modified: '2026-05-19'
 specificationVersion: '0.19'
 apis:
-- aid: ixon:ixon-api
-  name: IXON Cloud API
-  description: The IXON Cloud API is an open, public REST API that provides programmatic access to the IXON industrial IoT
-    platform, enabling management of devices, agents, access requests, machine data, and remote access connectivity. The API
-    exposes 359 endpoints across the IXON Cloud platform.
-  humanURL: https://developer.ixon.cloud/docs
-  baseURL: https://portal.ixon.cloud/api/
-  tags:
-  - Industrial IoT
-  - Machine Data
-  - Remote Access
-  - Device Management
-  properties:
+  - aid: ixon:ixon-api
+    name: IXON Cloud API
+    description: The IXON Cloud API is an open, public REST API that provides programmatic access to the IXON industrial IoT
+      platform, enabling management of devices, agents, access requests, machine data, and remote access connectivity. The API
+      exposes 359 endpoints across the IXON Cloud platform.
+    humanURL: https://developer.ixon.cloud/docs
+    baseURL: https://portal.ixon.cloud/api/
+    tags:
+    - Industrial IoT
+    - Machine Data
+    - Remote Access
+    - Device Management
+    properties:
+    - type: Documentation
+      url: https://developer.ixon.cloud/docs
+    - type: APIReference
+      url: https://developer.ixon.cloud/v2/reference
+    - type: OpenAPI
+      url: https://raw.githubusercontent.com/api-evangelist/ixon/refs/heads/main/openapi/ixon-openapi.json
+    - type: NaftikoCapability
+      url: capabilities/ixon-accessrecoverlist.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-accesstoken.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-accesstokenlist.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-agent.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-agentaccessrequest.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-agentaccessrequestapprove.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-agentaccessrequestapproverlist.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-agentaccessrequestauthenticatedapprove.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-agentaccessrequestauthenticatedreject.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-agentaccessrequestinfo.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-agentaccessrequestlist.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-agentaccessrequestreject.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-agentaccessrequestresend.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-agentaccessrequestresendlist.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-agentappalarming.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-agentappalarminglist.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-agentappalarminglistactivate.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-agentapplogging.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-agentapplogginglist.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-agentapplogginglistactivate.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-agentauditloglist.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-agentbackendcomponentfunctioncall.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-agentconfigurationimport.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-agentcontrolkey.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-agentdataalarm.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-agentdataalarmlist.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-agentdataalarmoccurrence.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-agentdataalarmoccurrencelatestlist.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-agentdataalarmoccurrencelist.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-agentdatacondition.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-agentdataconditionlist.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-agentdataprotocollist.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-agentdatasource.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-agentdatasourcelist.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-agentdatatag.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-agentdatataglist.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-agentdatavariable.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-agentdatavariablelist.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-agentdevice.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-agentdevicelist.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-agentedgeappinstance.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-agentedgeappinstancedelete.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-agentedgeappinstancedeletelist.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-agentedgeappinstancedeploy.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-agentedgeappinstancedeploylist.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-agentedgeappinstancefile.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-agentedgeappinstancefilelist.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-agentedgeappinstancefileupload.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-agentedgeappinstancelist.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-agentedgeappinstanceservice.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-agentedgeappinstanceservicelist.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-agentfirmwareupgrade.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-agentfromtemplate.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-agentlicencebundleactivate.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-agentlicencebundles.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-agentlist.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-agentlistactivate.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-agentlistconfigurationimport.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-agentlistconfigurationpush.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-agentlistfromtemplate.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-agentlistloggingconfigurationpush.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-agentlistopenvpnconnection.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-agentlistpull.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-agentmembership.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-agentmembershiplist.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-agentobjectstoragedeleteaction.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-agentobjectstoragedownloadaction.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-agentobjectstoragelistaction.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-agentobjectstorageobjectmetaupdateaction.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-agentobjectstorageuploadaction.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-agentopenvpnconnection.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-agentpagelink.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-agentpagelinkgroup.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-agentpagelinkgrouplist.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-agentpagelinklist.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-agentpagelist.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-agentpullcode.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-agentqueuereportlist.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-agentreboot.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-agentregistrationprofile.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-agentregistrationprofilelist.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-agentregistrationprofilemembership.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-agentregistrationprofilemembershiplist.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-agentreportschedule.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-agentreportschedulelist.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-agentrouteradditionalsubnet.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-agentrouteradditionalsubnetlist.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-agentrouterdisplayconfig.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-agentrouterlanconfig.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-agentrouterlanwanaccessrule.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-agentrouterlanwanaccessrulelist.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-agentrouterntpserver.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-agentrouterntpserverlist.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-agentrouteronetoonenatrule.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-agentrouteronetoonenatrulelist.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-agentrouterportforward.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-agentrouterportforwardlist.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-agentroutervpnaccessrule.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-agentroutervpnaccessrulelist.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-agentroutervpnconfig.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-agentrouterwanconfig.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-agentrouterwanconfigcellularpush.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-agentrouterwanconfigwlanpush.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-agentserver.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-agentserverfromtemplatelist.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-agentserverlist.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-agenttemplate.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-agenttemplatefromagentlist.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-agenttemplatelist.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-agenttemplateversion.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-agenttemplateversionfromtemplate.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-agenttemplateversionlist.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-agenttypefilelist.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-agenttypelist.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-agentvpnusage.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-agentvpnusagelist.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-appconfigupdate.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-appinstall.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-appuninstall.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-asset.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-assetappconfig.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-assetappconfiglist.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-assetappconfigresource.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-assetappconfigresourcelist.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-assetbackendcomponentfunctioncall.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-assetdescendantlist.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-assetlibrary.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-assetlibraryinstancedetach.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-assetlibraryinstancedetachlist.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-assetlibraryinstancelist.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-assetlibrarylist.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-assetlibraryversioncompanylist.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-assetlibraryversionlist.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-assetlist.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-assetmembership.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-assetmembershiplist.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-assetobjectstoragedeleteaction.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-assetobjectstoragedownloadaction.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-assetobjectstoragelistaction.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-assetobjectstorageobjectmetaupdateaction.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-assetobjectstorageuploadaction.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-assetpagelink.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-assetpagelinkgroup.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-assetpagelinkgrouplist.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-assetpagelinklist.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-assetpagelist.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-assetqueuereportlist.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-assetrender.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-assetreportschedule.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-assetreportschedulelist.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-assettreelist.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-assettype.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-assettypelist.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-audience.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-audienceagentreferencelist.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-audienceassetreferencelist.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-audiencedefault.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-audiencelist.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-auditlogexport.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-auditloglist.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-authtokenaichatlist.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-authtokenchangenotificationslist.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-authtokendatalist.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-authtokenlist.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-backendcomponentfunctioncall.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-backendcomponentmessagesubscription.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-backendcomponentmessagesubscriptionlist.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-backendcomponentmessagetriggerlist.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-backendcomponenttemplate.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-backendcomponenttemplateconfig.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-backendcomponenttemplateconfiglist.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-backendcomponenttemplatedownloadlogs.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-backendcomponenttemplatelist.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-backendcomponenttemplateshare.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-backendcomponenttemplatesharelist.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-backendcomponenttemplateversion.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-backendcomponenttemplateversionlist.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-backendcomponenttemplateversionupload.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-brandinglist.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-company.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-companybranding.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-companylist.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-companyprivacystatementdownload.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-companyprivacystatementlanguage.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-companyprivacystatementlist.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-companyprivacystatementpublish.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-companytermsofusepolicyaccept.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-companytermsofusepolicydownload.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-companytermsofusepolicylanguage.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-companytermsofusepolicylist.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-companytermsofusepolicypublish.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-controlleddevice.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-controlleddeviceauditloglist.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-controlleddevicelist.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-controlleddevicemembership.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-controlleddevicemembershiplist.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-customproperty.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-custompropertylist.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-datadeletionrequestlist.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-dataexport.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-datalist.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-demodevicelist.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-discovery.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-edgeapplist.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-edgeappversionlist.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-edgeappversionupload.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-feedback.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-group.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-grouplist.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-grouppageimport.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-grouprolelist.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-grouptype.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-grouptypelist.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-historicaldatausage.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-invite.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-invitefinish.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-invitelist.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-inviteresend.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-inviteresendlist.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-labellist.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-licence.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-licencebundleextend.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-licencebundlelist.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-licenceextend.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-licencelist.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-licencelistextend.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-licencetype.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-licencetypelist.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-machinegrouplist.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-menuitem.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-menuitemlist.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-message.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-messageall.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-messagefilter.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-messagefilterlist.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-messagelist.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-mqttbroker.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-mqttbrokerclient.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-mqttbrokerclientlist.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-mqttbrokerclientmessage.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-mqttbrokerlist.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-myaccessrecover.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-myaccessrecoverfinish.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-myaccesstoken.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-mycompany.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-mycompanycustomproperty.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-mycompanycustompropertylist.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-mycompanyplatformserverlist.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-mycompanysupportaccess.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-myemailaddresschange.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-myemailaddresschangefinish.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-myinvite.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-myinvitefinish.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-myotpauthdisable.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-myotpauthdisablefinish.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-myregistration.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-myregistrationfinish.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-mysector.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-myuser.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-myuseremailaddresschange.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-myuseremailaddresschangelist.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-myuserinvite.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-myuserinvitelist.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-myuserleavecompanylist.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-myuserotpauthdisable.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-myuserotpauthenable.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-myuserotpauthsmsenable.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-myuserotpauthverify.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-myuserpassword.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-myuserpushdevice.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-myuserpushdeviceactivate.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-myuserpushdeviceclaim.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-myuserpushdevicedeactivate.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-myuserpushdevicelist.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-myuserpushdevicereleaseclaim.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-myuservpnconfiglist.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-ociregistry.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-ociregistrylist.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-page.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-pagecomponent.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-pagecomponentlist.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-pagecomponenttemplate.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-pagecomponenttemplatecategorylist.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-pagecomponenttemplateconfig.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-pagecomponenttemplateconfiglist.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-pagecomponenttemplatelist.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-pagecomponenttemplateshare.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-pagecomponenttemplatesharelist.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-pagecomponenttemplateversion.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-pagecomponenttemplateversionlist.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-pagecomponenttemplateversionupload.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-pagedefault.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-pagedraft.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-pagedraftlist.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-pageduplicate.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-pageduplicatelist.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-pageexport.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-pageimport.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-pagelist.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-pagepage.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-pagepagelist.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-pageversion.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-pageversionlist.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-permissionlist.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-pipelinefunctionlist.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-platformserverlist.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-premiumdomain.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-privacystatement.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-privacystatementdownload.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-privacystatementlist.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-publicfileupload.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-queuereportlist.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-registrationlist.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-role.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-roleaudience.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-roleaudiencelist.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-rolelist.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-rolepermission.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-rolepermissionlist.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-routerdisplayscreensaver.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-routerdisplayscreensaverupload.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-scimschemas.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-scimserviceproviderconfig.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-sector.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-sectorlist.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-servertime.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-servervalidation.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-serviceaccount.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-serviceaccountlist.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-shellagentlist.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-ssoaccesstokenlist.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-ssoauthenticationrequestlist.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-ssoidentityproviderlist.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-ssoredirect.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-ssoregistrationlist.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-termsofusepolicy.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-termsofusepolicyaccept.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-termsofusepolicydownload.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-termsofusepolicylist.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-translationlist.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-trusteddevice.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-trusteddevicelist.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-user.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-userlist.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-usermembership.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-usermembershiplist.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-usermembershipuserlist.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-userzonegrantslist.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-vpnusage.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-vpnusagelist.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-webaccess.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-webaccessentry.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-webaccesslist.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-webaccesssessionrecording.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-webaccesssessionrecordingdownload.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-webaccesssessionrecordinglist.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-webhooksubscription.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-webhooksubscriptionlist.yaml
+    - type: NaftikoCapability
+      url: capabilities/ixon-webhooksubscriptiontriggerlist.yaml
+common:
+  - type: GitHubOrganization
+    url: https://github.com/ixoncloud
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/ixoncloud
+  - type: Website
+    url: https://www.ixon.cloud/
+  - type: Portal
+    url: https://developer.ixon.cloud/
   - type: Documentation
     url: https://developer.ixon.cloud/docs
-  - type: APIReference
-    url: https://developer.ixon.cloud/v2/reference
-  - type: OpenAPI
-    url: https://raw.githubusercontent.com/api-evangelist/ixon/refs/heads/main/openapi/ixon-openapi.json
-  - type: NaftikoCapability
-    url: capabilities/ixon-accessrecoverlist.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-accesstoken.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-accesstokenlist.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-agent.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-agentaccessrequest.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-agentaccessrequestapprove.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-agentaccessrequestapproverlist.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-agentaccessrequestauthenticatedapprove.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-agentaccessrequestauthenticatedreject.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-agentaccessrequestinfo.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-agentaccessrequestlist.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-agentaccessrequestreject.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-agentaccessrequestresend.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-agentaccessrequestresendlist.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-agentappalarming.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-agentappalarminglist.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-agentappalarminglistactivate.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-agentapplogging.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-agentapplogginglist.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-agentapplogginglistactivate.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-agentauditloglist.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-agentbackendcomponentfunctioncall.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-agentconfigurationimport.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-agentcontrolkey.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-agentdataalarm.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-agentdataalarmlist.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-agentdataalarmoccurrence.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-agentdataalarmoccurrencelatestlist.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-agentdataalarmoccurrencelist.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-agentdatacondition.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-agentdataconditionlist.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-agentdataprotocollist.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-agentdatasource.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-agentdatasourcelist.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-agentdatatag.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-agentdatataglist.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-agentdatavariable.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-agentdatavariablelist.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-agentdevice.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-agentdevicelist.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-agentedgeappinstance.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-agentedgeappinstancedelete.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-agentedgeappinstancedeletelist.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-agentedgeappinstancedeploy.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-agentedgeappinstancedeploylist.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-agentedgeappinstancefile.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-agentedgeappinstancefilelist.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-agentedgeappinstancefileupload.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-agentedgeappinstancelist.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-agentedgeappinstanceservice.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-agentedgeappinstanceservicelist.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-agentfirmwareupgrade.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-agentfromtemplate.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-agentlicencebundleactivate.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-agentlicencebundles.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-agentlist.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-agentlistactivate.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-agentlistconfigurationimport.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-agentlistconfigurationpush.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-agentlistfromtemplate.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-agentlistloggingconfigurationpush.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-agentlistopenvpnconnection.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-agentlistpull.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-agentmembership.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-agentmembershiplist.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-agentobjectstoragedeleteaction.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-agentobjectstoragedownloadaction.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-agentobjectstoragelistaction.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-agentobjectstorageobjectmetaupdateaction.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-agentobjectstorageuploadaction.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-agentopenvpnconnection.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-agentpagelink.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-agentpagelinkgroup.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-agentpagelinkgrouplist.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-agentpagelinklist.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-agentpagelist.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-agentpullcode.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-agentqueuereportlist.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-agentreboot.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-agentregistrationprofile.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-agentregistrationprofilelist.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-agentregistrationprofilemembership.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-agentregistrationprofilemembershiplist.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-agentreportschedule.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-agentreportschedulelist.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-agentrouteradditionalsubnet.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-agentrouteradditionalsubnetlist.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-agentrouterdisplayconfig.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-agentrouterlanconfig.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-agentrouterlanwanaccessrule.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-agentrouterlanwanaccessrulelist.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-agentrouterntpserver.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-agentrouterntpserverlist.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-agentrouteronetoonenatrule.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-agentrouteronetoonenatrulelist.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-agentrouterportforward.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-agentrouterportforwardlist.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-agentroutervpnaccessrule.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-agentroutervpnaccessrulelist.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-agentroutervpnconfig.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-agentrouterwanconfig.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-agentrouterwanconfigcellularpush.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-agentrouterwanconfigwlanpush.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-agentserver.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-agentserverfromtemplatelist.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-agentserverlist.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-agenttemplate.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-agenttemplatefromagentlist.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-agenttemplatelist.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-agenttemplateversion.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-agenttemplateversionfromtemplate.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-agenttemplateversionlist.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-agenttypefilelist.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-agenttypelist.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-agentvpnusage.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-agentvpnusagelist.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-appconfigupdate.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-appinstall.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-appuninstall.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-asset.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-assetappconfig.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-assetappconfiglist.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-assetappconfigresource.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-assetappconfigresourcelist.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-assetbackendcomponentfunctioncall.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-assetdescendantlist.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-assetlibrary.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-assetlibraryinstancedetach.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-assetlibraryinstancedetachlist.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-assetlibraryinstancelist.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-assetlibrarylist.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-assetlibraryversioncompanylist.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-assetlibraryversionlist.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-assetlist.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-assetmembership.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-assetmembershiplist.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-assetobjectstoragedeleteaction.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-assetobjectstoragedownloadaction.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-assetobjectstoragelistaction.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-assetobjectstorageobjectmetaupdateaction.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-assetobjectstorageuploadaction.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-assetpagelink.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-assetpagelinkgroup.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-assetpagelinkgrouplist.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-assetpagelinklist.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-assetpagelist.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-assetqueuereportlist.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-assetrender.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-assetreportschedule.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-assetreportschedulelist.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-assettreelist.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-assettype.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-assettypelist.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-audience.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-audienceagentreferencelist.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-audienceassetreferencelist.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-audiencedefault.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-audiencelist.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-auditlogexport.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-auditloglist.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-authtokenaichatlist.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-authtokenchangenotificationslist.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-authtokendatalist.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-authtokenlist.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-backendcomponentfunctioncall.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-backendcomponentmessagesubscription.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-backendcomponentmessagesubscriptionlist.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-backendcomponentmessagetriggerlist.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-backendcomponenttemplate.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-backendcomponenttemplateconfig.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-backendcomponenttemplateconfiglist.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-backendcomponenttemplatedownloadlogs.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-backendcomponenttemplatelist.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-backendcomponenttemplateshare.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-backendcomponenttemplatesharelist.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-backendcomponenttemplateversion.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-backendcomponenttemplateversionlist.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-backendcomponenttemplateversionupload.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-brandinglist.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-company.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-companybranding.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-companylist.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-companyprivacystatementdownload.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-companyprivacystatementlanguage.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-companyprivacystatementlist.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-companyprivacystatementpublish.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-companytermsofusepolicyaccept.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-companytermsofusepolicydownload.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-companytermsofusepolicylanguage.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-companytermsofusepolicylist.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-companytermsofusepolicypublish.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-controlleddevice.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-controlleddeviceauditloglist.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-controlleddevicelist.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-controlleddevicemembership.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-controlleddevicemembershiplist.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-customproperty.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-custompropertylist.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-datadeletionrequestlist.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-dataexport.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-datalist.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-demodevicelist.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-discovery.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-edgeapplist.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-edgeappversionlist.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-edgeappversionupload.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-feedback.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-group.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-grouplist.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-grouppageimport.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-grouprolelist.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-grouptype.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-grouptypelist.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-historicaldatausage.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-invite.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-invitefinish.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-invitelist.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-inviteresend.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-inviteresendlist.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-labellist.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-licence.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-licencebundleextend.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-licencebundlelist.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-licenceextend.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-licencelist.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-licencelistextend.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-licencetype.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-licencetypelist.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-machinegrouplist.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-menuitem.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-menuitemlist.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-message.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-messageall.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-messagefilter.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-messagefilterlist.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-messagelist.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-mqttbroker.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-mqttbrokerclient.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-mqttbrokerclientlist.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-mqttbrokerclientmessage.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-mqttbrokerlist.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-myaccessrecover.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-myaccessrecoverfinish.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-myaccesstoken.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-mycompany.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-mycompanycustomproperty.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-mycompanycustompropertylist.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-mycompanyplatformserverlist.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-mycompanysupportaccess.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-myemailaddresschange.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-myemailaddresschangefinish.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-myinvite.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-myinvitefinish.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-myotpauthdisable.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-myotpauthdisablefinish.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-myregistration.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-myregistrationfinish.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-mysector.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-myuser.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-myuseremailaddresschange.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-myuseremailaddresschangelist.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-myuserinvite.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-myuserinvitelist.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-myuserleavecompanylist.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-myuserotpauthdisable.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-myuserotpauthenable.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-myuserotpauthsmsenable.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-myuserotpauthverify.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-myuserpassword.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-myuserpushdevice.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-myuserpushdeviceactivate.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-myuserpushdeviceclaim.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-myuserpushdevicedeactivate.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-myuserpushdevicelist.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-myuserpushdevicereleaseclaim.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-myuservpnconfiglist.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-ociregistry.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-ociregistrylist.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-page.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-pagecomponent.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-pagecomponentlist.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-pagecomponenttemplate.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-pagecomponenttemplatecategorylist.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-pagecomponenttemplateconfig.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-pagecomponenttemplateconfiglist.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-pagecomponenttemplatelist.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-pagecomponenttemplateshare.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-pagecomponenttemplatesharelist.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-pagecomponenttemplateversion.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-pagecomponenttemplateversionlist.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-pagecomponenttemplateversionupload.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-pagedefault.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-pagedraft.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-pagedraftlist.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-pageduplicate.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-pageduplicatelist.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-pageexport.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-pageimport.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-pagelist.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-pagepage.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-pagepagelist.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-pageversion.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-pageversionlist.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-permissionlist.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-pipelinefunctionlist.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-platformserverlist.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-premiumdomain.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-privacystatement.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-privacystatementdownload.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-privacystatementlist.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-publicfileupload.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-queuereportlist.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-registrationlist.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-role.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-roleaudience.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-roleaudiencelist.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-rolelist.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-rolepermission.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-rolepermissionlist.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-routerdisplayscreensaver.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-routerdisplayscreensaverupload.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-scimschemas.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-scimserviceproviderconfig.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-sector.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-sectorlist.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-servertime.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-servervalidation.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-serviceaccount.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-serviceaccountlist.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-shellagentlist.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-ssoaccesstokenlist.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-ssoauthenticationrequestlist.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-ssoidentityproviderlist.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-ssoredirect.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-ssoregistrationlist.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-termsofusepolicy.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-termsofusepolicyaccept.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-termsofusepolicydownload.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-termsofusepolicylist.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-translationlist.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-trusteddevice.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-trusteddevicelist.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-user.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-userlist.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-usermembership.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-usermembershiplist.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-usermembershipuserlist.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-userzonegrantslist.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-vpnusage.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-vpnusagelist.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-webaccess.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-webaccessentry.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-webaccesslist.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-webaccesssessionrecording.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-webaccesssessionrecordingdownload.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-webaccesssessionrecordinglist.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-webhooksubscription.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-webhooksubscriptionlist.yaml
-  - type: NaftikoCapability
-    url: capabilities/ixon-webhooksubscriptiontriggerlist.yaml
-common:
-- type: LinkedIn
-  url: https://www.linkedin.com/company/ixoncloud
-- type: Website
-  url: https://www.ixon.cloud/
-- type: Portal
-  url: https://developer.ixon.cloud/
-- type: Documentation
-  url: https://developer.ixon.cloud/docs
-- type: Support
-  url: https://support.ixon.cloud/
-- type: Integrations
-  url: https://marketplace.ixon.cloud/en/apps
+  - type: Support
+    url: https://support.ixon.cloud/
+  - type: Integrations
+    url: https://marketplace.ixon.cloud/en/apps
 integrations:
-- name: IXON
-- name: Service Logbook
-- name: Visual Twin
-- name: Power BI Connector
-- name: Spare Parts Webshop
-- name: Virtual HMI
-- name: Document Management
-- name: Dataray AI
-- name: Alarm Analysis
-- name: Calculate Single Value
-- name: OEE Performance
-- name: YouTube Player
-- name: Wear & Tear
-- name: Grafana Connector
-- name: User Access Graph
-- name: Batch Period Selection
-- name: AFAS Connector
-- name: Bulk firmware upgrade
-- name: Post to Local Device
-- name: Total of Multiple Devices
-- name: Format Value as Time
-- name: Nosco Connector
-- name: OEE Display
-- name: Mail Form
-- name: Hexagon Connector
-- name: BI Data Connector
-- name: Normal Distribution
-- name: IoT Asset Management
-- name: SIGNL4 Mobile Alerting
-- name: Pre-Failure Video Snapshot
-- name: TensorFlow Lite AI Modeling
-- name: Grafana
-- name: Node-RED
-- name: FTP File Explorer
-- name: PLC Settings Backups
-- name: InfluxDB
-- name: Mosquitto MQTT Broker
-- name: Zabbix Proxy
-- name: MicroSocks
-- name: IXON Data Logger
-- name: AnyWare Smart Maintenance
-- name: Support Ticket Connector
-- name: Banner
-- name: Yearly MoM Comparison
-- name: Hierarchical User Groups
-- name: logiccloud Control
-- name: Live Value Overlay
-- name: WAN File Generator
-- name: File Browser
-- name: Visual Studio Code
-- name: go2rtc
-- name: Remote Access Analysis
-- name: Custom Logs
-- name: DAQORE Studio
-- name: Settings Tracking
-- name: Remote API Gateway
-- name: Calculate Live Value
-- name: Open Link Button
-- name: DIALOGO Base
-- name: GPS Data Logger
-- name: GPS Tracking
-- name: Ridder iQ Connector
-- name: State Analysis
-- name: Pronetiqs Industrial Diagnostics
-- name: FieldBuddy Field Service
-- name: DIALOGO Advanced
-- name: Data Logging Checker
-- name: Soply work instructions
-- name: Active Connections
-- name: Historical Connections
-- name: Data Export
-- name: IXON Cloud
+  - name: IXON
+  - name: Service Logbook
+  - name: Visual Twin
+  - name: Power BI Connector
+  - name: Spare Parts Webshop
+  - name: Virtual HMI
+  - name: Document Management
+  - name: Dataray AI
+  - name: Alarm Analysis
+  - name: Calculate Single Value
+  - name: OEE Performance
+  - name: YouTube Player
+  - name: Wear & Tear
+  - name: Grafana Connector
+  - name: User Access Graph
+  - name: Batch Period Selection
+  - name: AFAS Connector
+  - name: Bulk firmware upgrade
+  - name: Post to Local Device
+  - name: Total of Multiple Devices
+  - name: Format Value as Time
+  - name: Nosco Connector
+  - name: OEE Display
+  - name: Mail Form
+  - name: Hexagon Connector
+  - name: BI Data Connector
+  - name: Normal Distribution
+  - name: IoT Asset Management
+  - name: SIGNL4 Mobile Alerting
+  - name: Pre-Failure Video Snapshot
+  - name: TensorFlow Lite AI Modeling
+  - name: Grafana
+  - name: Node-RED
+  - name: FTP File Explorer
+  - name: PLC Settings Backups
+  - name: InfluxDB
+  - name: Mosquitto MQTT Broker
+  - name: Zabbix Proxy
+  - name: MicroSocks
+  - name: IXON Data Logger
+  - name: AnyWare Smart Maintenance
+  - name: Support Ticket Connector
+  - name: Banner
+  - name: Yearly MoM Comparison
+  - name: Hierarchical User Groups
+  - name: logiccloud Control
+  - name: Live Value Overlay
+  - name: WAN File Generator
+  - name: File Browser
+  - name: Visual Studio Code
+  - name: go2rtc
+  - name: Remote Access Analysis
+  - name: Custom Logs
+  - name: DAQORE Studio
+  - name: Settings Tracking
+  - name: Remote API Gateway
+  - name: Calculate Live Value
+  - name: Open Link Button
+  - name: DIALOGO Base
+  - name: GPS Data Logger
+  - name: GPS Tracking
+  - name: Ridder iQ Connector
+  - name: State Analysis
+  - name: Pronetiqs Industrial Diagnostics
+  - name: FieldBuddy Field Service
+  - name: DIALOGO Advanced
+  - name: Data Logging Checker
+  - name: Soply work instructions
+  - name: Active Connections
+  - name: Historical Connections
+  - name: Data Export
+  - name: IXON Cloud
 maintainers:
-- FN: Kin Lane
-  email: kin@apievangelist.com
+  - FN: Kin Lane
+    email: kin@apievangelist.com
