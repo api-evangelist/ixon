@@ -767,6 +767,8 @@ common:
     url: https://support.ixon.cloud/
   - type: Integrations
     url: https://marketplace.ixon.cloud/en/apps
+  - type: LLMsTxt
+    url: https://developer.ixon.cloud/llms.txt
 integrations:
   - name: IXON
   - name: Service Logbook
