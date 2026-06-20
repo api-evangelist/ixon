@@ -5,7 +5,7 @@ description: >-
   industrial machines remotely. IXON provides APIs for accessing machine data, remote access management, and industrial
   IoT connectivity.
 type: Index
-image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 tags:
   - IIoT
   - Industrial IoT
