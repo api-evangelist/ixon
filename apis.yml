@@ -37,6 +37,14 @@ apis:
       - type: OpenAPI
         url: https://raw.githubusercontent.com/api-evangelist/ixon/refs/heads/main/openapi/ixon-openapi.json
 common:
+  - type: TrustCenter
+    url: security/ixon-trust-center.yml
+  - type: VulnerabilityDisclosure
+    url: security/ixon-vulnerability-disclosure.yml
+  - type: DomainSecurity
+    url: security/ixon-domain-security.yml
+  - type: Authentication
+    url: authentication/ixon-authentication.yml
   - type: GitHubOrganization
     url: https://github.com/ixoncloud
   - type: LinkedIn
@@ -51,6 +59,8 @@ common:
     url: https://support.ixon.cloud/
   - type: Integrations
     url: https://marketplace.ixon.cloud/en/apps
+  - url: https://www.ixon.cloud/news/rss.xml
+    type: Blog
   - type: LlmsText
     url: https://developer.ixon.cloud/llms.txt
 integrations:

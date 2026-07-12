@@ -1,0 +1,13 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/ixon-openapi.json
+summary:
+  types:
+  - http
+schemes:
+- name: bearerToken
+  type: http
+  scheme: bearer
+  description: Bearer token created by the endpoint "POST AccessTokenList"
+  sources:
+  - openapi/ixon-openapi.json
