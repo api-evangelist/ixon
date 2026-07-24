@@ -1,0 +1,89 @@
+openapi: 3.0.2
+info:
+  contact:
+    name: IXON B.V.
+    url: https://www.ixon.cloud/
+    email: support@ixon.cloud
+  description: API for the IXON Cloud Platform
+  license:
+    name: All Rights Reserved
+    url: https://www.ixon.cloud/
+  title: IXON AccessRecoverList ScimServiceProviderConfig API
+  version: 0.1.294
+servers:
+- description: IXON Cloud platform server
+  url: https://portal.ixon.cloud:443/api/
+tags:
+- name: ScimServiceProviderConfig
+paths:
+  /{api-version}/{api-application}/scim/v2/ServiceProviderConfig:
+    get:
+      tags:
+      - ScimServiceProviderConfig
+      summary: ScimServiceProviderConfig
+      responses:
+        '200':
+          description: Success response
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                - status
+                - type
+                - data
+                properties:
+                  status:
+                    type: string
+                    default: success
+                    nullable: false
+                  type:
+                    type: string
+                    nullable: false
+                  data:
+                    type: object
+                    nullable: true
+      parameters:
+      - $ref: '#/components/parameters/apiVersion'
+      - $ref: '#/components/parameters/apiBrandingOptional'
+      - required: true
+        name: api-version
+        in: path
+        schema:
+          type: string
+      - required: true
+        name: api-application
+        in: path
+        schema:
+          type: string
+components:
+  parameters:
+    apiVersion:
+      required: true
+      description: Version of the API to use
+      name: Api-Version
+      in: header
+      schema:
+        type: integer
+        format: int32
+        enum:
+        - 2
+    apiBrandingOptional:
+      required: false
+      description: Domain that provides the branding
+      name: Api-Branding
+      in: header
+      schema:
+        type: string
+        pattern: .+(\..[^.]+)
+  securitySchemes:
+    bearerToken:
+      type: http
+      description: Bearer token created by the endpoint "POST AccessTokenList"
+      scheme: bearer
+x-samples-languages:
+- curl
+- ruby
+- javascript
+- python
+- powershell

@@ -1,0 +1,360 @@
+openapi: 3.0.2
+info:
+  contact:
+    name: IXON B.V.
+    url: https://www.ixon.cloud/
+    email: support@ixon.cloud
+  description: API for the IXON Cloud Platform
+  license:
+    name: All Rights Reserved
+    url: https://www.ixon.cloud/
+  title: IXON AccessRecoverList GroupRoleList API
+  version: 0.1.294
+servers:
+- description: IXON Cloud platform server
+  url: https://portal.ixon.cloud:443/api/
+tags:
+- name: GroupRoleList
+paths:
+  /groups/roles:
+    get:
+      tags:
+      - GroupRoleList
+      summary: GroupRoleList
+      responses:
+        '200':
+          description: Success response. Data could be an object instead of a list when one value is returned
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                - status
+                - type
+                - data
+                properties:
+                  status:
+                    type: string
+                    default: success
+                    nullable: false
+                  type:
+                    type: string
+                    nullable: false
+                  moreAfter:
+                    type: string
+                    nullable: true
+                  data:
+                    nullable: false
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        group:
+                          nullable: true
+                          type: object
+                          properties:
+                            publicId:
+                              maxLength: 12
+                              minLength: 12
+                              nullable: false
+                              type: string
+                            name:
+                              maxLength: 255
+                              minLength: 1
+                              nullable: false
+                              type: string
+                            type:
+                              nullable: true
+                              type: object
+                              properties:
+                                publicId:
+                                  maxLength: 12
+                                  minLength: 12
+                                  nullable: false
+                                  type: string
+                                name:
+                                  maxLength: 255
+                                  minLength: 1
+                                  nullable: false
+                                  type: string
+                                description:
+                                  maxLength: 255
+                                  minLength: 0
+                                  nullable: true
+                                  type: string
+                                order:
+                                  maximum: 9223372036854776000
+                                  minimum: -9223372036854776000
+                                  nullable: false
+                                  type: integer
+                                  format: int32
+                                color:
+                                  maxLength: 7
+                                  minLength: 6
+                                  nullable: true
+                                  pattern: '#?[a-fA-F0-9]{6,6}'
+                                  type: string
+                                custom:
+                                  nullable: false
+                                  type: object
+                            custom:
+                              nullable: false
+                              type: object
+                            agent:
+                              nullable: true
+                              type: object
+                              properties:
+                                publicId:
+                                  nullable: false
+                                  type: string
+                            asset:
+                              nullable: true
+                              type: object
+                              properties:
+                                publicId:
+                                  nullable: false
+                                  type: string
+                            parent:
+                              nullable: true
+                              type: object
+                              properties:
+                                publicId:
+                                  maxLength: 12
+                                  minLength: 12
+                                  nullable: false
+                                  type: string
+                                name:
+                                  maxLength: 255
+                                  minLength: 1
+                                  nullable: false
+                                  type: string
+                                type:
+                                  nullable: true
+                                  type: object
+                                  properties:
+                                    publicId:
+                                      maxLength: 12
+                                      minLength: 12
+                                      nullable: false
+                                      type: string
+                                    name:
+                                      maxLength: 255
+                                      minLength: 1
+                                      nullable: false
+                                      type: string
+                                    description:
+                                      maxLength: 255
+                                      minLength: 0
+                                      nullable: true
+                                      type: string
+                                    order:
+                                      maximum: 9223372036854776000
+                                      minimum: -9223372036854776000
+                                      nullable: false
+                                      type: integer
+                                      format: int32
+                                    color:
+                                      maxLength: 7
+                                      minLength: 6
+                                      nullable: true
+                                      pattern: '#?[a-fA-F0-9]{6,6}'
+                                      type: string
+                                    custom:
+                                      nullable: false
+                                      type: object
+                            managedBy:
+                              nullable: true
+                              type: object
+                              properties:
+                                publicId:
+                                  maxLength: 12
+                                  minLength: 12
+                                  nullable: false
+                                  type: string
+                                name:
+                                  maxLength: 255
+                                  minLength: 1
+                                  nullable: false
+                                  type: string
+                                type:
+                                  nullable: true
+                                  type: object
+                                  properties:
+                                    publicId:
+                                      maxLength: 12
+                                      minLength: 12
+                                      nullable: false
+                                      type: string
+                                    name:
+                                      maxLength: 255
+                                      minLength: 1
+                                      nullable: false
+                                      type: string
+                                    description:
+                                      maxLength: 255
+                                      minLength: 0
+                                      nullable: true
+                                      type: string
+                                    order:
+                                      maximum: 9223372036854776000
+                                      minimum: -9223372036854776000
+                                      nullable: false
+                                      type: integer
+                                      format: int32
+                                    color:
+                                      maxLength: 7
+                                      minLength: 6
+                                      nullable: true
+                                      pattern: '#?[a-fA-F0-9]{6,6}'
+                                      type: string
+                                    custom:
+                                      nullable: false
+                                      type: object
+                            isCompanyGroup:
+                              nullable: false
+                              type: boolean
+                        roles:
+                          type: array
+                          items:
+                            nullable: false
+                            type: object
+                            properties:
+                              publicId:
+                                maxLength: 12
+                                minLength: 12
+                                nullable: false
+                                type: string
+                              name:
+                                maxLength: 255
+                                minLength: 1
+                                nullable: false
+                                type: string
+                              description:
+                                maxLength: 255
+                                minLength: 0
+                                nullable: true
+                                type: string
+                              enforce2fa:
+                                nullable: false
+                                type: boolean
+                              enforceSso:
+                                nullable: false
+                                type: boolean
+                              permissions:
+                                type: array
+                                items:
+                                  nullable: false
+                                  type: object
+                                  properties:
+                                    publicId:
+                                      maxLength: 255
+                                      minLength: 1
+                                      nullable: false
+                                      type: string
+                                    custom:
+                                      nullable: false
+                                      type: object
+                              audiences:
+                                type: array
+                                items:
+                                  nullable: false
+                                  type: object
+                                  properties:
+                                    publicId:
+                                      maxLength: 12
+                                      minLength: 12
+                                      nullable: false
+                                      type: string
+                                    name:
+                                      maxLength: 255
+                                      minLength: 1
+                                      nullable: false
+                                      type: string
+                                    description:
+                                      maxLength: 255
+                                      minLength: 0
+                                      nullable: true
+                                      type: string
+                                    custom:
+                                      nullable: false
+                                      type: object
+                                    default:
+                                      nullable: false
+                                      type: boolean
+                                    type:
+                                      enum:
+                                      - alarm
+                                      - page
+                                      - service
+                                      nullable: true
+                                      type: string
+                              custom:
+                                nullable: false
+                                type: object
+      parameters:
+      - $ref: '#/components/parameters/apiVersion'
+      - $ref: '#/components/parameters/apiApplication'
+      - $ref: '#/components/parameters/apiCompany'
+      - $ref: '#/components/parameters/apiBrandingOptional'
+      - $ref: '#/components/parameters/fieldsParameter'
+      security:
+      - bearerToken: []
+components:
+  parameters:
+    apiApplication:
+      required: true
+      description: Get your Application ID via support@ixon.cloud
+      name: Api-Application
+      in: header
+      schema:
+        type: string
+        pattern: ^[0-9a-zA-Z]{12}$
+    apiVersion:
+      required: true
+      description: Version of the API to use
+      name: Api-Version
+      in: header
+      schema:
+        type: integer
+        format: int32
+        enum:
+        - 2
+    apiBrandingOptional:
+      required: false
+      description: Domain that provides the branding
+      name: Api-Branding
+      in: header
+      schema:
+        type: string
+        pattern: .+(\..[^.]+)
+    fieldsParameter:
+      required: false
+      description: 'Fields to select. Use "*" for all the top-level fields. Or check the "Success response" below for other fields.
+
+
+        To get the fields of a subresource do subresource.field or for multiple fields of one subresource do subresource(field,field)'
+      name: fields
+      in: query
+      schema:
+        type: array
+        items:
+          type: string
+    apiCompany:
+      required: true
+      description: PublicId of the company
+      name: Api-Company
+      in: header
+      schema:
+        type: string
+        pattern: ^(\d{4}-){4}\d{4}$
+  securitySchemes:
+    bearerToken:
+      type: http
+      description: Bearer token created by the endpoint "POST AccessTokenList"
+      scheme: bearer
+x-samples-languages:
+- curl
+- ruby
+- javascript
+- python
+- powershell
