@@ -5,7 +5,20 @@ description: >-
   industrial machines remotely. IXON provides APIs for accessing machine data, remote access management, and industrial
   IoT connectivity.
 type: Index
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: freemium
+  onboarding: self-serve
+  trial: false
+  try_now: true
+  public: false
+  label: Freemium · Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/ixon.png
 tags:
   - IIoT
   - Industrial IoT
@@ -16,26 +29,5154 @@ created: '2026-03-16'
 modified: '2026-05-19'
 specificationVersion: '0.19'
 apis:
-  - aid: ixon:ixon-api
-    name: IXON Cloud API
-    description: >-
-      The IXON Cloud API is an open, public REST API that provides programmatic access to the IXON industrial IoT
-      platform, enabling management of devices, agents, access requests, machine data, and remote access connectivity.
-      The API exposes 359 endpoints across the IXON Cloud platform.
-    humanURL: https://developer.ixon.cloud/docs
-    baseURL: https://portal.ixon.cloud/api/
-    tags:
-      - Industrial IoT
-      - Machine Data
-      - Remote Access
-      - Device Management
-    properties:
-      - type: Documentation
-        url: https://developer.ixon.cloud/docs
-      - type: APIReference
-        url: https://developer.ixon.cloud/v2/reference
-      - type: OpenAPI
-        url: https://raw.githubusercontent.com/api-evangelist/ixon/refs/heads/main/openapi/ixon-openapi.json
+- aid: ixon:ixon-accessrecoverlist-api
+  name: IXON AccessRecoverList API
+  description: The AccessRecoverList API from IXON — 1 operation(s) for accessrecoverlist.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - AccessRecoverList
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-accessrecoverlist-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-accesstoken-api
+  name: IXON AccessToken API
+  description: The AccessToken API from IXON — 1 operation(s) for accesstoken.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - AccessToken
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-accesstoken-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-accesstokenlist-api
+  name: IXON AccessTokenList API
+  description: The AccessTokenList API from IXON — 1 operation(s) for accesstokenlist.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - AccessTokenList
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-accesstokenlist-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-agent-api
+  name: IXON Agent API
+  description: The Agent API from IXON — 1 operation(s) for agent.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - Agent
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-agent-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-agentaccessrequest-api
+  name: IXON AgentAccessRequest API
+  description: The AgentAccessRequest API from IXON — 1 operation(s) for agentaccessrequest.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - AgentAccessRequest
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-agentaccessrequest-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-agentaccessrequestapprove-api
+  name: IXON AgentAccessRequestApprove API
+  description: >-
+    The AgentAccessRequestApprove API from IXON — 1 operation(s) for agentaccessrequestapprove.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - AgentAccessRequestApprove
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-agentaccessrequestapprove-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-agentaccessrequestapproverlist-api
+  name: IXON AgentAccessRequestApproverList API
+  description: >-
+    The AgentAccessRequestApproverList API from IXON — 1 operation(s) for agentaccessrequestapproverlist.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - AgentAccessRequestApproverList
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-agentaccessrequestapproverlist-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-agentaccessrequestauthenticatedapprove-api
+  name: IXON AgentAccessRequestAuthenticatedApprove API
+  description: >-
+    The AgentAccessRequestAuthenticatedApprove API from IXON — 1 operation(s) for agentaccessrequestauthenticatedapprove.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - AgentAccessRequestAuthenticatedApprove
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-agentaccessrequestauthenticatedapprove-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-agentaccessrequestauthenticatedreject-api
+  name: IXON AgentAccessRequestAuthenticatedReject API
+  description: >-
+    The AgentAccessRequestAuthenticatedReject API from IXON — 1 operation(s) for agentaccessrequestauthenticatedreject.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - AgentAccessRequestAuthenticatedReject
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-agentaccessrequestauthenticatedreject-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-agentaccessrequestinfo-api
+  name: IXON AgentAccessRequestInfo API
+  description: The AgentAccessRequestInfo API from IXON — 1 operation(s) for agentaccessrequestinfo.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - AgentAccessRequestInfo
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-agentaccessrequestinfo-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-agentaccessrequestlist-api
+  name: IXON AgentAccessRequestList API
+  description: The AgentAccessRequestList API from IXON — 1 operation(s) for agentaccessrequestlist.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - AgentAccessRequestList
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-agentaccessrequestlist-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-agentaccessrequestreject-api
+  name: IXON AgentAccessRequestReject API
+  description: >-
+    The AgentAccessRequestReject API from IXON — 1 operation(s) for agentaccessrequestreject.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - AgentAccessRequestReject
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-agentaccessrequestreject-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-agentaccessrequestresend-api
+  name: IXON AgentAccessRequestResend API
+  description: >-
+    The AgentAccessRequestResend API from IXON — 1 operation(s) for agentaccessrequestresend.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - AgentAccessRequestResend
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-agentaccessrequestresend-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-agentaccessrequestresendlist-api
+  name: IXON AgentAccessRequestResendList API
+  description: >-
+    The AgentAccessRequestResendList API from IXON — 1 operation(s) for agentaccessrequestresendlist.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - AgentAccessRequestResendList
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-agentaccessrequestresendlist-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-agentappalarming-api
+  name: IXON AgentAppAlarming API
+  description: The AgentAppAlarming API from IXON — 1 operation(s) for agentappalarming.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - AgentAppAlarming
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-agentappalarming-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-agentappalarminglist-api
+  name: IXON AgentAppAlarmingList API
+  description: The AgentAppAlarmingList API from IXON — 1 operation(s) for agentappalarminglist.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - AgentAppAlarmingList
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-agentappalarminglist-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-agentappalarminglistactivate-api
+  name: IXON AgentAppAlarmingListActivate API
+  description: >-
+    The AgentAppAlarmingListActivate API from IXON — 1 operation(s) for agentappalarminglistactivate.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - AgentAppAlarmingListActivate
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-agentappalarminglistactivate-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-agentapplogging-api
+  name: IXON AgentAppLogging API
+  description: The AgentAppLogging API from IXON — 1 operation(s) for agentapplogging.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - AgentAppLogging
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-agentapplogging-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-agentapplogginglist-api
+  name: IXON AgentAppLoggingList API
+  description: The AgentAppLoggingList API from IXON — 1 operation(s) for agentapplogginglist.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - AgentAppLoggingList
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-agentapplogginglist-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-agentapplogginglistactivate-api
+  name: IXON AgentAppLoggingListActivate API
+  description: >-
+    The AgentAppLoggingListActivate API from IXON — 1 operation(s) for agentapplogginglistactivate.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - AgentAppLoggingListActivate
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-agentapplogginglistactivate-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-agentauditloglist-api
+  name: IXON AgentAuditLogList API
+  description: The AgentAuditLogList API from IXON — 1 operation(s) for agentauditloglist.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - AgentAuditLogList
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-agentauditloglist-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-agentbackendcomponentfunctioncall-api
+  name: IXON AgentBackendComponentFunctionCall API
+  description: >-
+    The AgentBackendComponentFunctionCall API from IXON — 1 operation(s) for agentbackendcomponentfunctioncall.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - AgentBackendComponentFunctionCall
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-agentbackendcomponentfunctioncall-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-agentconfigurationimport-api
+  name: IXON AgentConfigurationImport API
+  description: >-
+    The AgentConfigurationImport API from IXON — 1 operation(s) for agentconfigurationimport.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - AgentConfigurationImport
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-agentconfigurationimport-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-agentcontrolkey-api
+  name: IXON AgentControlKey API
+  description: The AgentControlKey API from IXON — 1 operation(s) for agentcontrolkey.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - AgentControlKey
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-agentcontrolkey-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-agentdataalarm-api
+  name: IXON AgentDataAlarm API
+  description: The AgentDataAlarm API from IXON — 1 operation(s) for agentdataalarm.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - AgentDataAlarm
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-agentdataalarm-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-agentdataalarmlist-api
+  name: IXON AgentDataAlarmList API
+  description: The AgentDataAlarmList API from IXON — 1 operation(s) for agentdataalarmlist.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - AgentDataAlarmList
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-agentdataalarmlist-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-agentdataalarmoccurrence-api
+  name: IXON AgentDataAlarmOccurrence API
+  description: >-
+    The AgentDataAlarmOccurrence API from IXON — 1 operation(s) for agentdataalarmoccurrence.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - AgentDataAlarmOccurrence
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-agentdataalarmoccurrence-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-agentdataalarmoccurrencelatestlist-api
+  name: IXON AgentDataAlarmOccurrenceLatestList API
+  description: >-
+    The AgentDataAlarmOccurrenceLatestList API from IXON — 1 operation(s) for agentdataalarmoccurrencelatestlist.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - AgentDataAlarmOccurrenceLatestList
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-agentdataalarmoccurrencelatestlist-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-agentdataalarmoccurrencelist-api
+  name: IXON AgentDataAlarmOccurrenceList API
+  description: >-
+    The AgentDataAlarmOccurrenceList API from IXON — 1 operation(s) for agentdataalarmoccurrencelist.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - AgentDataAlarmOccurrenceList
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-agentdataalarmoccurrencelist-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-agentdatacondition-api
+  name: IXON AgentDataCondition API
+  description: The AgentDataCondition API from IXON — 1 operation(s) for agentdatacondition.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - AgentDataCondition
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-agentdatacondition-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-agentdataconditionlist-api
+  name: IXON AgentDataConditionList API
+  description: The AgentDataConditionList API from IXON — 1 operation(s) for agentdataconditionlist.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - AgentDataConditionList
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-agentdataconditionlist-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-agentdataprotocollist-api
+  name: IXON AgentDataProtocolList API
+  description: The AgentDataProtocolList API from IXON — 1 operation(s) for agentdataprotocollist.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - AgentDataProtocolList
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-agentdataprotocollist-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-agentdatasource-api
+  name: IXON AgentDataSource API
+  description: The AgentDataSource API from IXON — 1 operation(s) for agentdatasource.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - AgentDataSource
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-agentdatasource-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-agentdatasourcelist-api
+  name: IXON AgentDataSourceList API
+  description: The AgentDataSourceList API from IXON — 1 operation(s) for agentdatasourcelist.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - AgentDataSourceList
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-agentdatasourcelist-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-agentdatatag-api
+  name: IXON AgentDataTag API
+  description: The AgentDataTag API from IXON — 1 operation(s) for agentdatatag.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - AgentDataTag
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-agentdatatag-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-agentdatataglist-api
+  name: IXON AgentDataTagList API
+  description: The AgentDataTagList API from IXON — 1 operation(s) for agentdatataglist.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - AgentDataTagList
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-agentdatataglist-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-agentdatavariable-api
+  name: IXON AgentDataVariable API
+  description: The AgentDataVariable API from IXON — 1 operation(s) for agentdatavariable.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - AgentDataVariable
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-agentdatavariable-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-agentdatavariablelist-api
+  name: IXON AgentDataVariableList API
+  description: The AgentDataVariableList API from IXON — 1 operation(s) for agentdatavariablelist.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - AgentDataVariableList
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-agentdatavariablelist-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-agentdevice-api
+  name: IXON AgentDevice API
+  description: The AgentDevice API from IXON — 1 operation(s) for agentdevice.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - AgentDevice
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-agentdevice-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-agentdevicelist-api
+  name: IXON AgentDeviceList API
+  description: The AgentDeviceList API from IXON — 1 operation(s) for agentdevicelist.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - AgentDeviceList
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-agentdevicelist-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-agentedgeappinstance-api
+  name: IXON AgentEdgeAppInstance API
+  description: The AgentEdgeAppInstance API from IXON — 1 operation(s) for agentedgeappinstance.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - AgentEdgeAppInstance
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-agentedgeappinstance-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-agentedgeappinstancedelete-api
+  name: IXON AgentEdgeAppInstanceDelete API
+  description: >-
+    The AgentEdgeAppInstanceDelete API from IXON — 1 operation(s) for agentedgeappinstancedelete.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - AgentEdgeAppInstanceDelete
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-agentedgeappinstancedelete-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-agentedgeappinstancedeletelist-api
+  name: IXON AgentEdgeAppInstanceDeleteList API
+  description: >-
+    The AgentEdgeAppInstanceDeleteList API from IXON — 1 operation(s) for agentedgeappinstancedeletelist.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - AgentEdgeAppInstanceDeleteList
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-agentedgeappinstancedeletelist-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-agentedgeappinstancedeploy-api
+  name: IXON AgentEdgeAppInstanceDeploy API
+  description: >-
+    The AgentEdgeAppInstanceDeploy API from IXON — 1 operation(s) for agentedgeappinstancedeploy.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - AgentEdgeAppInstanceDeploy
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-agentedgeappinstancedeploy-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-agentedgeappinstancedeploylist-api
+  name: IXON AgentEdgeAppInstanceDeployList API
+  description: >-
+    The AgentEdgeAppInstanceDeployList API from IXON — 1 operation(s) for agentedgeappinstancedeploylist.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - AgentEdgeAppInstanceDeployList
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-agentedgeappinstancedeploylist-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-agentedgeappinstancefile-api
+  name: IXON AgentEdgeAppInstanceFile API
+  description: >-
+    The AgentEdgeAppInstanceFile API from IXON — 1 operation(s) for agentedgeappinstancefile.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - AgentEdgeAppInstanceFile
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-agentedgeappinstancefile-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-agentedgeappinstancefilelist-api
+  name: IXON AgentEdgeAppInstanceFileList API
+  description: >-
+    The AgentEdgeAppInstanceFileList API from IXON — 1 operation(s) for agentedgeappinstancefilelist.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - AgentEdgeAppInstanceFileList
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-agentedgeappinstancefilelist-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-agentedgeappinstancefileupload-api
+  name: IXON AgentEdgeAppInstanceFileUpload API
+  description: >-
+    The AgentEdgeAppInstanceFileUpload API from IXON — 1 operation(s) for agentedgeappinstancefileupload.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - AgentEdgeAppInstanceFileUpload
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-agentedgeappinstancefileupload-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-agentedgeappinstancelist-api
+  name: IXON AgentEdgeAppInstanceList API
+  description: >-
+    The AgentEdgeAppInstanceList API from IXON — 1 operation(s) for agentedgeappinstancelist.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - AgentEdgeAppInstanceList
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-agentedgeappinstancelist-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-agentedgeappinstanceservice-api
+  name: IXON AgentEdgeAppInstanceService API
+  description: >-
+    The AgentEdgeAppInstanceService API from IXON — 1 operation(s) for agentedgeappinstanceservice.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - AgentEdgeAppInstanceService
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-agentedgeappinstanceservice-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-agentedgeappinstanceservicelist-api
+  name: IXON AgentEdgeAppInstanceServiceList API
+  description: >-
+    The AgentEdgeAppInstanceServiceList API from IXON — 1 operation(s) for agentedgeappinstanceservicelist.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - AgentEdgeAppInstanceServiceList
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-agentedgeappinstanceservicelist-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-agentfirmwareupgrade-api
+  name: IXON AgentFirmwareUpgrade API
+  description: The AgentFirmwareUpgrade API from IXON — 1 operation(s) for agentfirmwareupgrade.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - AgentFirmwareUpgrade
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-agentfirmwareupgrade-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-agentfromtemplate-api
+  name: IXON AgentFromTemplate API
+  description: The AgentFromTemplate API from IXON — 1 operation(s) for agentfromtemplate.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - AgentFromTemplate
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-agentfromtemplate-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-agentlicencebundleactivate-api
+  name: IXON AgentLicenceBundleActivate API
+  description: >-
+    The AgentLicenceBundleActivate API from IXON — 1 operation(s) for agentlicencebundleactivate.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - AgentLicenceBundleActivate
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-agentlicencebundleactivate-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-agentlicencebundles-api
+  name: IXON AgentLicenceBundles API
+  description: The AgentLicenceBundles API from IXON — 1 operation(s) for agentlicencebundles.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - AgentLicenceBundles
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-agentlicencebundles-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-agentlist-api
+  name: IXON AgentList API
+  description: The AgentList API from IXON — 1 operation(s) for agentlist.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - AgentList
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-agentlist-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-agentlistactivate-api
+  name: IXON AgentListActivate API
+  description: The AgentListActivate API from IXON — 1 operation(s) for agentlistactivate.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - AgentListActivate
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-agentlistactivate-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-agentlistconfigurationimport-api
+  name: IXON AgentListConfigurationImport API
+  description: >-
+    The AgentListConfigurationImport API from IXON — 1 operation(s) for agentlistconfigurationimport.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - AgentListConfigurationImport
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-agentlistconfigurationimport-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-agentlistconfigurationpush-api
+  name: IXON AgentListConfigurationPush API
+  description: >-
+    The AgentListConfigurationPush API from IXON — 1 operation(s) for agentlistconfigurationpush.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - AgentListConfigurationPush
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-agentlistconfigurationpush-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-agentlistfromtemplate-api
+  name: IXON AgentListFromTemplate API
+  description: The AgentListFromTemplate API from IXON — 1 operation(s) for agentlistfromtemplate.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - AgentListFromTemplate
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-agentlistfromtemplate-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-agentlistloggingconfigurationpush-api
+  name: IXON AgentListLoggingConfigurationPush API
+  description: >-
+    The AgentListLoggingConfigurationPush API from IXON — 1 operation(s) for agentlistloggingconfigurationpush.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - AgentListLoggingConfigurationPush
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-agentlistloggingconfigurationpush-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-agentlistopenvpnconnection-api
+  name: IXON AgentListOpenVpnConnection API
+  description: >-
+    The AgentListOpenVpnConnection API from IXON — 1 operation(s) for agentlistopenvpnconnection.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - AgentListOpenVpnConnection
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-agentlistopenvpnconnection-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-agentlistpull-api
+  name: IXON AgentListPull API
+  description: The AgentListPull API from IXON — 1 operation(s) for agentlistpull.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - AgentListPull
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-agentlistpull-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-agentmembership-api
+  name: IXON AgentMembership API
+  description: The AgentMembership API from IXON — 1 operation(s) for agentmembership.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - AgentMembership
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-agentmembership-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-agentmembershiplist-api
+  name: IXON AgentMembershipList API
+  description: The AgentMembershipList API from IXON — 1 operation(s) for agentmembershiplist.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - AgentMembershipList
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-agentmembershiplist-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-agentobjectstoragedeleteaction-api
+  name: IXON AgentObjectStorageDeleteAction API
+  description: >-
+    The AgentObjectStorageDeleteAction API from IXON — 1 operation(s) for agentobjectstoragedeleteaction.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - AgentObjectStorageDeleteAction
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-agentobjectstoragedeleteaction-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-agentobjectstoragedownloadaction-api
+  name: IXON AgentObjectStorageDownloadAction API
+  description: >-
+    The AgentObjectStorageDownloadAction API from IXON — 1 operation(s) for agentobjectstoragedownloadaction.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - AgentObjectStorageDownloadAction
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-agentobjectstoragedownloadaction-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-agentobjectstoragelistaction-api
+  name: IXON AgentObjectStorageListAction API
+  description: >-
+    The AgentObjectStorageListAction API from IXON — 1 operation(s) for agentobjectstoragelistaction.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - AgentObjectStorageListAction
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-agentobjectstoragelistaction-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-agentobjectstorageobjectmetaupdateaction-api
+  name: IXON AgentObjectStorageObjectMetaUpdateAction API
+  description: >-
+    The AgentObjectStorageObjectMetaUpdateAction API from IXON — 1 operation(s) for agentobjectstorageobjectmetaupdateaction.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - AgentObjectStorageObjectMetaUpdateAction
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-agentobjectstorageobjectmetaupdateaction-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-agentobjectstorageuploadaction-api
+  name: IXON AgentObjectStorageUploadAction API
+  description: >-
+    The AgentObjectStorageUploadAction API from IXON — 1 operation(s) for agentobjectstorageuploadaction.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - AgentObjectStorageUploadAction
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-agentobjectstorageuploadaction-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-agentopenvpnconnection-api
+  name: IXON AgentOpenVpnConnection API
+  description: The AgentOpenVpnConnection API from IXON — 1 operation(s) for agentopenvpnconnection.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - AgentOpenVpnConnection
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-agentopenvpnconnection-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-agentpagelink-api
+  name: IXON AgentPageLink API
+  description: The AgentPageLink API from IXON — 1 operation(s) for agentpagelink.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - AgentPageLink
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-agentpagelink-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-agentpagelinkgroup-api
+  name: IXON AgentPageLinkGroup API
+  description: The AgentPageLinkGroup API from IXON — 1 operation(s) for agentpagelinkgroup.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - AgentPageLinkGroup
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-agentpagelinkgroup-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-agentpagelinkgrouplist-api
+  name: IXON AgentPageLinkGroupList API
+  description: The AgentPageLinkGroupList API from IXON — 1 operation(s) for agentpagelinkgrouplist.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - AgentPageLinkGroupList
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-agentpagelinkgrouplist-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-agentpagelinklist-api
+  name: IXON AgentPageLinkList API
+  description: The AgentPageLinkList API from IXON — 1 operation(s) for agentpagelinklist.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - AgentPageLinkList
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-agentpagelinklist-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-agentpagelist-api
+  name: IXON AgentPageList API
+  description: The AgentPageList API from IXON — 1 operation(s) for agentpagelist.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - AgentPageList
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-agentpagelist-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-agentpullcode-api
+  name: IXON AgentPullCode API
+  description: The AgentPullCode API from IXON — 1 operation(s) for agentpullcode.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - AgentPullCode
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-agentpullcode-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-agentqueuereportlist-api
+  name: IXON AgentQueueReportList API
+  description: The AgentQueueReportList API from IXON — 1 operation(s) for agentqueuereportlist.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - AgentQueueReportList
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-agentqueuereportlist-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-agentreboot-api
+  name: IXON AgentReboot API
+  description: The AgentReboot API from IXON — 1 operation(s) for agentreboot.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - AgentReboot
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-agentreboot-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-agentregistrationprofile-api
+  name: IXON AgentRegistrationProfile API
+  description: >-
+    The AgentRegistrationProfile API from IXON — 1 operation(s) for agentregistrationprofile.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - AgentRegistrationProfile
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-agentregistrationprofile-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-agentregistrationprofilelist-api
+  name: IXON AgentRegistrationProfileList API
+  description: >-
+    The AgentRegistrationProfileList API from IXON — 1 operation(s) for agentregistrationprofilelist.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - AgentRegistrationProfileList
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-agentregistrationprofilelist-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-agentregistrationprofilemembership-api
+  name: IXON AgentRegistrationProfileMembership API
+  description: >-
+    The AgentRegistrationProfileMembership API from IXON — 1 operation(s) for agentregistrationprofilemembership.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - AgentRegistrationProfileMembership
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-agentregistrationprofilemembership-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-agentregistrationprofilemembershiplist-api
+  name: IXON AgentRegistrationProfileMembershipList API
+  description: >-
+    The AgentRegistrationProfileMembershipList API from IXON — 1 operation(s) for agentregistrationprofilemembershiplist.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - AgentRegistrationProfileMembershipList
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-agentregistrationprofilemembershiplist-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-agentreportschedule-api
+  name: IXON AgentReportSchedule API
+  description: The AgentReportSchedule API from IXON — 1 operation(s) for agentreportschedule.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - AgentReportSchedule
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-agentreportschedule-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-agentreportschedulelist-api
+  name: IXON AgentReportScheduleList API
+  description: The AgentReportScheduleList API from IXON — 1 operation(s) for agentreportschedulelist.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - AgentReportScheduleList
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-agentreportschedulelist-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-agentrouteradditionalsubnet-api
+  name: IXON AgentRouterAdditionalSubnet API
+  description: >-
+    The AgentRouterAdditionalSubnet API from IXON — 1 operation(s) for agentrouteradditionalsubnet.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - AgentRouterAdditionalSubnet
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-agentrouteradditionalsubnet-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-agentrouteradditionalsubnetlist-api
+  name: IXON AgentRouterAdditionalSubnetList API
+  description: >-
+    The AgentRouterAdditionalSubnetList API from IXON — 1 operation(s) for agentrouteradditionalsubnetlist.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - AgentRouterAdditionalSubnetList
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-agentrouteradditionalsubnetlist-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-agentrouterdisplayconfig-api
+  name: IXON AgentRouterDisplayConfig API
+  description: >-
+    The AgentRouterDisplayConfig API from IXON — 1 operation(s) for agentrouterdisplayconfig.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - AgentRouterDisplayConfig
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-agentrouterdisplayconfig-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-agentrouterlanconfig-api
+  name: IXON AgentRouterLanConfig API
+  description: The AgentRouterLanConfig API from IXON — 1 operation(s) for agentrouterlanconfig.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - AgentRouterLanConfig
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-agentrouterlanconfig-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-agentrouterlanwanaccessrule-api
+  name: IXON AgentRouterLanWanAccessRule API
+  description: >-
+    The AgentRouterLanWanAccessRule API from IXON — 1 operation(s) for agentrouterlanwanaccessrule.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - AgentRouterLanWanAccessRule
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-agentrouterlanwanaccessrule-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-agentrouterlanwanaccessrulelist-api
+  name: IXON AgentRouterLanWanAccessRuleList API
+  description: >-
+    The AgentRouterLanWanAccessRuleList API from IXON — 1 operation(s) for agentrouterlanwanaccessrulelist.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - AgentRouterLanWanAccessRuleList
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-agentrouterlanwanaccessrulelist-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-agentrouterntpserver-api
+  name: IXON AgentRouterNtpServer API
+  description: The AgentRouterNtpServer API from IXON — 1 operation(s) for agentrouterntpserver.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - AgentRouterNtpServer
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-agentrouterntpserver-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-agentrouterntpserverlist-api
+  name: IXON AgentRouterNtpServerList API
+  description: >-
+    The AgentRouterNtpServerList API from IXON — 1 operation(s) for agentrouterntpserverlist.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - AgentRouterNtpServerList
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-agentrouterntpserverlist-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-agentrouteronetoonenatrule-api
+  name: IXON AgentRouterOneToOneNatRule API
+  description: >-
+    The AgentRouterOneToOneNatRule API from IXON — 1 operation(s) for agentrouteronetoonenatrule.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - AgentRouterOneToOneNatRule
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-agentrouteronetoonenatrule-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-agentrouteronetoonenatrulelist-api
+  name: IXON AgentRouterOneToOneNatRuleList API
+  description: >-
+    The AgentRouterOneToOneNatRuleList API from IXON — 1 operation(s) for agentrouteronetoonenatrulelist.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - AgentRouterOneToOneNatRuleList
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-agentrouteronetoonenatrulelist-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-agentrouterportforward-api
+  name: IXON AgentRouterPortForward API
+  description: The AgentRouterPortForward API from IXON — 1 operation(s) for agentrouterportforward.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - AgentRouterPortForward
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-agentrouterportforward-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-agentrouterportforwardlist-api
+  name: IXON AgentRouterPortForwardList API
+  description: >-
+    The AgentRouterPortForwardList API from IXON — 1 operation(s) for agentrouterportforwardlist.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - AgentRouterPortForwardList
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-agentrouterportforwardlist-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-agentroutervpnaccessrule-api
+  name: IXON AgentRouterVpnAccessRule API
+  description: >-
+    The AgentRouterVpnAccessRule API from IXON — 1 operation(s) for agentroutervpnaccessrule.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - AgentRouterVpnAccessRule
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-agentroutervpnaccessrule-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-agentroutervpnaccessrulelist-api
+  name: IXON AgentRouterVpnAccessRuleList API
+  description: >-
+    The AgentRouterVpnAccessRuleList API from IXON — 1 operation(s) for agentroutervpnaccessrulelist.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - AgentRouterVpnAccessRuleList
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-agentroutervpnaccessrulelist-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-agentroutervpnconfig-api
+  name: IXON AgentRouterVpnConfig API
+  description: The AgentRouterVpnConfig API from IXON — 1 operation(s) for agentroutervpnconfig.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - AgentRouterVpnConfig
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-agentroutervpnconfig-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-agentrouterwanconfig-api
+  name: IXON AgentRouterWanConfig API
+  description: The AgentRouterWanConfig API from IXON — 1 operation(s) for agentrouterwanconfig.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - AgentRouterWanConfig
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-agentrouterwanconfig-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-agentrouterwanconfigcellularpush-api
+  name: IXON AgentRouterWanConfigCellularPush API
+  description: >-
+    The AgentRouterWanConfigCellularPush API from IXON — 1 operation(s) for agentrouterwanconfigcellularpush.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - AgentRouterWanConfigCellularPush
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-agentrouterwanconfigcellularpush-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-agentrouterwanconfigwlanpush-api
+  name: IXON AgentRouterWanConfigWlanPush API
+  description: >-
+    The AgentRouterWanConfigWlanPush API from IXON — 1 operation(s) for agentrouterwanconfigwlanpush.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - AgentRouterWanConfigWlanPush
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-agentrouterwanconfigwlanpush-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-agentserver-api
+  name: IXON AgentServer API
+  description: The AgentServer API from IXON — 1 operation(s) for agentserver.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - AgentServer
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-agentserver-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-agentserverfromtemplatelist-api
+  name: IXON AgentServerFromTemplateList API
+  description: >-
+    The AgentServerFromTemplateList API from IXON — 1 operation(s) for agentserverfromtemplatelist.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - AgentServerFromTemplateList
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-agentserverfromtemplatelist-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-agentserverlist-api
+  name: IXON AgentServerList API
+  description: The AgentServerList API from IXON — 1 operation(s) for agentserverlist.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - AgentServerList
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-agentserverlist-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-agenttemplate-api
+  name: IXON AgentTemplate API
+  description: The AgentTemplate API from IXON — 1 operation(s) for agenttemplate.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - AgentTemplate
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-agenttemplate-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-agenttemplatefromagentlist-api
+  name: IXON AgentTemplateFromAgentList API
+  description: >-
+    The AgentTemplateFromAgentList API from IXON — 1 operation(s) for agenttemplatefromagentlist.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - AgentTemplateFromAgentList
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-agenttemplatefromagentlist-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-agenttemplatelist-api
+  name: IXON AgentTemplateList API
+  description: The AgentTemplateList API from IXON — 1 operation(s) for agenttemplatelist.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - AgentTemplateList
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-agenttemplatelist-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-agenttemplateversion-api
+  name: IXON AgentTemplateVersion API
+  description: The AgentTemplateVersion API from IXON — 1 operation(s) for agenttemplateversion.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - AgentTemplateVersion
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-agenttemplateversion-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-agenttemplateversionfromtemplate-api
+  name: IXON AgentTemplateVersionFromTemplate API
+  description: >-
+    The AgentTemplateVersionFromTemplate API from IXON — 1 operation(s) for agenttemplateversionfromtemplate.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - AgentTemplateVersionFromTemplate
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-agenttemplateversionfromtemplate-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-agenttemplateversionlist-api
+  name: IXON AgentTemplateVersionList API
+  description: >-
+    The AgentTemplateVersionList API from IXON — 1 operation(s) for agenttemplateversionlist.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - AgentTemplateVersionList
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-agenttemplateversionlist-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-agenttypefilelist-api
+  name: IXON AgentTypeFileList API
+  description: The AgentTypeFileList API from IXON — 1 operation(s) for agenttypefilelist.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - AgentTypeFileList
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-agenttypefilelist-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-agenttypelist-api
+  name: IXON AgentTypeList API
+  description: The AgentTypeList API from IXON — 1 operation(s) for agenttypelist.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - AgentTypeList
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-agenttypelist-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-agentvpnusage-api
+  name: IXON AgentVpnUsage API
+  description: The AgentVpnUsage API from IXON — 1 operation(s) for agentvpnusage.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - AgentVpnUsage
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-agentvpnusage-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-agentvpnusagelist-api
+  name: IXON AgentVpnUsageList API
+  description: The AgentVpnUsageList API from IXON — 1 operation(s) for agentvpnusagelist.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - AgentVpnUsageList
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-agentvpnusagelist-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-appconfigupdate-api
+  name: IXON AppConfigUpdate API
+  description: The AppConfigUpdate API from IXON — 1 operation(s) for appconfigupdate.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - AppConfigUpdate
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-appconfigupdate-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-appinstall-api
+  name: IXON AppInstall API
+  description: The AppInstall API from IXON — 1 operation(s) for appinstall.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - AppInstall
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-appinstall-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-appuninstall-api
+  name: IXON AppUninstall API
+  description: The AppUninstall API from IXON — 1 operation(s) for appuninstall.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - AppUninstall
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-appuninstall-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-asset-api
+  name: IXON Asset API
+  description: The Asset API from IXON — 1 operation(s) for asset.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - Asset
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-asset-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-assetappconfig-api
+  name: IXON AssetAppConfig API
+  description: The AssetAppConfig API from IXON — 1 operation(s) for assetappconfig.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - AssetAppConfig
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-assetappconfig-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-assetappconfiglist-api
+  name: IXON AssetAppConfigList API
+  description: The AssetAppConfigList API from IXON — 1 operation(s) for assetappconfiglist.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - AssetAppConfigList
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-assetappconfiglist-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-assetappconfigresource-api
+  name: IXON AssetAppConfigResource API
+  description: The AssetAppConfigResource API from IXON — 1 operation(s) for assetappconfigresource.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - AssetAppConfigResource
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-assetappconfigresource-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-assetappconfigresourcelist-api
+  name: IXON AssetAppConfigResourceList API
+  description: >-
+    The AssetAppConfigResourceList API from IXON — 1 operation(s) for assetappconfigresourcelist.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - AssetAppConfigResourceList
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-assetappconfigresourcelist-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-assetbackendcomponentfunctioncall-api
+  name: IXON AssetBackendComponentFunctionCall API
+  description: >-
+    The AssetBackendComponentFunctionCall API from IXON — 1 operation(s) for assetbackendcomponentfunctioncall.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - AssetBackendComponentFunctionCall
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-assetbackendcomponentfunctioncall-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-assetdescendantlist-api
+  name: IXON AssetDescendantList API
+  description: The AssetDescendantList API from IXON — 1 operation(s) for assetdescendantlist.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - AssetDescendantList
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-assetdescendantlist-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-assetlibrary-api
+  name: IXON AssetLibrary API
+  description: The AssetLibrary API from IXON — 1 operation(s) for assetlibrary.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - AssetLibrary
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-assetlibrary-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-assetlibraryinstancedetach-api
+  name: IXON AssetLibraryInstanceDetach API
+  description: >-
+    The AssetLibraryInstanceDetach API from IXON — 1 operation(s) for assetlibraryinstancedetach.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - AssetLibraryInstanceDetach
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-assetlibraryinstancedetach-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-assetlibraryinstancedetachlist-api
+  name: IXON AssetLibraryInstanceDetachList API
+  description: >-
+    The AssetLibraryInstanceDetachList API from IXON — 1 operation(s) for assetlibraryinstancedetachlist.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - AssetLibraryInstanceDetachList
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-assetlibraryinstancedetachlist-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-assetlibraryinstancelist-api
+  name: IXON AssetLibraryInstanceList API
+  description: >-
+    The AssetLibraryInstanceList API from IXON — 1 operation(s) for assetlibraryinstancelist.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - AssetLibraryInstanceList
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-assetlibraryinstancelist-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-assetlibrarylist-api
+  name: IXON AssetLibraryList API
+  description: The AssetLibraryList API from IXON — 1 operation(s) for assetlibrarylist.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - AssetLibraryList
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-assetlibrarylist-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-assetlibraryversioncompanylist-api
+  name: IXON AssetLibraryVersionCompanyList API
+  description: >-
+    The AssetLibraryVersionCompanyList API from IXON — 1 operation(s) for assetlibraryversioncompanylist.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - AssetLibraryVersionCompanyList
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-assetlibraryversioncompanylist-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-assetlibraryversionlist-api
+  name: IXON AssetLibraryVersionList API
+  description: The AssetLibraryVersionList API from IXON — 1 operation(s) for assetlibraryversionlist.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - AssetLibraryVersionList
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-assetlibraryversionlist-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-assetlist-api
+  name: IXON AssetList API
+  description: The AssetList API from IXON — 1 operation(s) for assetlist.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - AssetList
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-assetlist-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-assetmembership-api
+  name: IXON AssetMembership API
+  description: The AssetMembership API from IXON — 1 operation(s) for assetmembership.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - AssetMembership
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-assetmembership-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-assetmembershiplist-api
+  name: IXON AssetMembershipList API
+  description: The AssetMembershipList API from IXON — 1 operation(s) for assetmembershiplist.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - AssetMembershipList
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-assetmembershiplist-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-assetobjectstoragedeleteaction-api
+  name: IXON AssetObjectStorageDeleteAction API
+  description: >-
+    The AssetObjectStorageDeleteAction API from IXON — 1 operation(s) for assetobjectstoragedeleteaction.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - AssetObjectStorageDeleteAction
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-assetobjectstoragedeleteaction-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-assetobjectstoragedownloadaction-api
+  name: IXON AssetObjectStorageDownloadAction API
+  description: >-
+    The AssetObjectStorageDownloadAction API from IXON — 1 operation(s) for assetobjectstoragedownloadaction.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - AssetObjectStorageDownloadAction
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-assetobjectstoragedownloadaction-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-assetobjectstoragelistaction-api
+  name: IXON AssetObjectStorageListAction API
+  description: >-
+    The AssetObjectStorageListAction API from IXON — 1 operation(s) for assetobjectstoragelistaction.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - AssetObjectStorageListAction
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-assetobjectstoragelistaction-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-assetobjectstorageobjectmetaupdateaction-api
+  name: IXON AssetObjectStorageObjectMetaUpdateAction API
+  description: >-
+    The AssetObjectStorageObjectMetaUpdateAction API from IXON — 1 operation(s) for assetobjectstorageobjectmetaupdateaction.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - AssetObjectStorageObjectMetaUpdateAction
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-assetobjectstorageobjectmetaupdateaction-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-assetobjectstorageuploadaction-api
+  name: IXON AssetObjectStorageUploadAction API
+  description: >-
+    The AssetObjectStorageUploadAction API from IXON — 1 operation(s) for assetobjectstorageuploadaction.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - AssetObjectStorageUploadAction
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-assetobjectstorageuploadaction-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-assetpagelink-api
+  name: IXON AssetPageLink API
+  description: The AssetPageLink API from IXON — 1 operation(s) for assetpagelink.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - AssetPageLink
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-assetpagelink-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-assetpagelinkgroup-api
+  name: IXON AssetPageLinkGroup API
+  description: The AssetPageLinkGroup API from IXON — 1 operation(s) for assetpagelinkgroup.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - AssetPageLinkGroup
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-assetpagelinkgroup-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-assetpagelinkgrouplist-api
+  name: IXON AssetPageLinkGroupList API
+  description: The AssetPageLinkGroupList API from IXON — 1 operation(s) for assetpagelinkgrouplist.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - AssetPageLinkGroupList
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-assetpagelinkgrouplist-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-assetpagelinklist-api
+  name: IXON AssetPageLinkList API
+  description: The AssetPageLinkList API from IXON — 1 operation(s) for assetpagelinklist.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - AssetPageLinkList
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-assetpagelinklist-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-assetpagelist-api
+  name: IXON AssetPageList API
+  description: The AssetPageList API from IXON — 1 operation(s) for assetpagelist.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - AssetPageList
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-assetpagelist-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-assetqueuereportlist-api
+  name: IXON AssetQueueReportList API
+  description: The AssetQueueReportList API from IXON — 1 operation(s) for assetqueuereportlist.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - AssetQueueReportList
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-assetqueuereportlist-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-assetrender-api
+  name: IXON AssetRender API
+  description: The AssetRender API from IXON — 1 operation(s) for assetrender.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - AssetRender
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-assetrender-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-assetreportschedule-api
+  name: IXON AssetReportSchedule API
+  description: The AssetReportSchedule API from IXON — 1 operation(s) for assetreportschedule.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - AssetReportSchedule
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-assetreportschedule-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-assetreportschedulelist-api
+  name: IXON AssetReportScheduleList API
+  description: The AssetReportScheduleList API from IXON — 1 operation(s) for assetreportschedulelist.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - AssetReportScheduleList
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-assetreportschedulelist-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-assettreelist-api
+  name: IXON AssetTreeList API
+  description: The AssetTreeList API from IXON — 1 operation(s) for assettreelist.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - AssetTreeList
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-assettreelist-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-assettype-api
+  name: IXON AssetType API
+  description: The AssetType API from IXON — 1 operation(s) for assettype.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - AssetType
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-assettype-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-assettypelist-api
+  name: IXON AssetTypeList API
+  description: The AssetTypeList API from IXON — 1 operation(s) for assettypelist.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - AssetTypeList
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-assettypelist-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-audience-api
+  name: IXON Audience API
+  description: The Audience API from IXON — 1 operation(s) for audience.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - Audience
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-audience-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-audienceagentreferencelist-api
+  name: IXON AudienceAgentReferenceList API
+  description: >-
+    The AudienceAgentReferenceList API from IXON — 1 operation(s) for audienceagentreferencelist.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - AudienceAgentReferenceList
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-audienceagentreferencelist-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-audienceassetreferencelist-api
+  name: IXON AudienceAssetReferenceList API
+  description: >-
+    The AudienceAssetReferenceList API from IXON — 1 operation(s) for audienceassetreferencelist.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - AudienceAssetReferenceList
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-audienceassetreferencelist-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-audiencedefault-api
+  name: IXON AudienceDefault API
+  description: The AudienceDefault API from IXON — 1 operation(s) for audiencedefault.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - AudienceDefault
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-audiencedefault-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-audiencelist-api
+  name: IXON AudienceList API
+  description: The AudienceList API from IXON — 1 operation(s) for audiencelist.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - AudienceList
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-audiencelist-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-auditlogexport-api
+  name: IXON AuditLogExport API
+  description: The AuditLogExport API from IXON — 1 operation(s) for auditlogexport.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - AuditLogExport
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-auditlogexport-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-auditloglist-api
+  name: IXON AuditLogList API
+  description: The AuditLogList API from IXON — 1 operation(s) for auditloglist.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - AuditLogList
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-auditloglist-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-authtokenaichatlist-api
+  name: IXON AuthTokenAiChatList API
+  description: The AuthTokenAiChatList API from IXON — 1 operation(s) for authtokenaichatlist.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - AuthTokenAiChatList
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-authtokenaichatlist-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-authtokenchangenotificationslist-api
+  name: IXON AuthTokenChangeNotificationsList API
+  description: >-
+    The AuthTokenChangeNotificationsList API from IXON — 1 operation(s) for authtokenchangenotificationslist.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - AuthTokenChangeNotificationsList
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-authtokenchangenotificationslist-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-authtokendatalist-api
+  name: IXON AuthTokenDataList API
+  description: The AuthTokenDataList API from IXON — 1 operation(s) for authtokendatalist.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - AuthTokenDataList
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-authtokendatalist-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-authtokenlist-api
+  name: IXON AuthTokenList API
+  description: The AuthTokenList API from IXON — 1 operation(s) for authtokenlist.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - AuthTokenList
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-authtokenlist-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-backendcomponentfunctioncall-api
+  name: IXON BackendComponentFunctionCall API
+  description: >-
+    The BackendComponentFunctionCall API from IXON — 1 operation(s) for backendcomponentfunctioncall.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - BackendComponentFunctionCall
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-backendcomponentfunctioncall-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-backendcomponentmessagesubscription-api
+  name: IXON BackendComponentMessageSubscription API
+  description: >-
+    The BackendComponentMessageSubscription API from IXON — 1 operation(s) for backendcomponentmessagesubscription.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - BackendComponentMessageSubscription
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-backendcomponentmessagesubscription-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-backendcomponentmessagesubscriptionlist-api
+  name: IXON BackendComponentMessageSubscriptionList API
+  description: >-
+    The BackendComponentMessageSubscriptionList API from IXON — 1 operation(s) for backendcomponentmessagesubscriptionlist.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - BackendComponentMessageSubscriptionList
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-backendcomponentmessagesubscriptionlist-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-backendcomponentmessagetriggerlist-api
+  name: IXON BackendComponentMessageTriggerList API
+  description: >-
+    The BackendComponentMessageTriggerList API from IXON — 1 operation(s) for backendcomponentmessagetriggerlist.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - BackendComponentMessageTriggerList
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-backendcomponentmessagetriggerlist-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-backendcomponenttemplate-api
+  name: IXON BackendComponentTemplate API
+  description: >-
+    The BackendComponentTemplate API from IXON — 1 operation(s) for backendcomponenttemplate.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - BackendComponentTemplate
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-backendcomponenttemplate-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-backendcomponenttemplateconfig-api
+  name: IXON BackendComponentTemplateConfig API
+  description: >-
+    The BackendComponentTemplateConfig API from IXON — 1 operation(s) for backendcomponenttemplateconfig.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - BackendComponentTemplateConfig
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-backendcomponenttemplateconfig-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-backendcomponenttemplateconfiglist-api
+  name: IXON BackendComponentTemplateConfigList API
+  description: >-
+    The BackendComponentTemplateConfigList API from IXON — 1 operation(s) for backendcomponenttemplateconfiglist.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - BackendComponentTemplateConfigList
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-backendcomponenttemplateconfiglist-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-backendcomponenttemplatedownloadlogs-api
+  name: IXON BackendComponentTemplateDownloadLogs API
+  description: >-
+    The BackendComponentTemplateDownloadLogs API from IXON — 1 operation(s) for backendcomponenttemplatedownloadlogs.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - BackendComponentTemplateDownloadLogs
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-backendcomponenttemplatedownloadlogs-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-backendcomponenttemplatelist-api
+  name: IXON BackendComponentTemplateList API
+  description: >-
+    The BackendComponentTemplateList API from IXON — 1 operation(s) for backendcomponenttemplatelist.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - BackendComponentTemplateList
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-backendcomponenttemplatelist-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-backendcomponenttemplateshare-api
+  name: IXON BackendComponentTemplateShare API
+  description: >-
+    The BackendComponentTemplateShare API from IXON — 1 operation(s) for backendcomponenttemplateshare.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - BackendComponentTemplateShare
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-backendcomponenttemplateshare-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-backendcomponenttemplatesharelist-api
+  name: IXON BackendComponentTemplateShareList API
+  description: >-
+    The BackendComponentTemplateShareList API from IXON — 1 operation(s) for backendcomponenttemplatesharelist.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - BackendComponentTemplateShareList
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-backendcomponenttemplatesharelist-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-backendcomponenttemplateversion-api
+  name: IXON BackendComponentTemplateVersion API
+  description: >-
+    The BackendComponentTemplateVersion API from IXON — 1 operation(s) for backendcomponenttemplateversion.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - BackendComponentTemplateVersion
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-backendcomponenttemplateversion-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-backendcomponenttemplateversionlist-api
+  name: IXON BackendComponentTemplateVersionList API
+  description: >-
+    The BackendComponentTemplateVersionList API from IXON — 1 operation(s) for backendcomponenttemplateversionlist.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - BackendComponentTemplateVersionList
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-backendcomponenttemplateversionlist-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-backendcomponenttemplateversionupload-api
+  name: IXON BackendComponentTemplateVersionUpload API
+  description: >-
+    The BackendComponentTemplateVersionUpload API from IXON — 1 operation(s) for backendcomponenttemplateversionupload.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - BackendComponentTemplateVersionUpload
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-backendcomponenttemplateversionupload-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-brandinglist-api
+  name: IXON BrandingList API
+  description: The BrandingList API from IXON — 1 operation(s) for brandinglist.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - BrandingList
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-brandinglist-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-company-api
+  name: IXON Company API
+  description: The Company API from IXON — 1 operation(s) for company.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - Company
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-company-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-companybranding-api
+  name: IXON CompanyBranding API
+  description: The CompanyBranding API from IXON — 1 operation(s) for companybranding.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - CompanyBranding
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-companybranding-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-companylist-api
+  name: IXON CompanyList API
+  description: The CompanyList API from IXON — 1 operation(s) for companylist.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - CompanyList
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-companylist-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-companyprivacystatementdownload-api
+  name: IXON CompanyPrivacyStatementDownload API
+  description: >-
+    The CompanyPrivacyStatementDownload API from IXON — 1 operation(s) for companyprivacystatementdownload.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - CompanyPrivacyStatementDownload
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-companyprivacystatementdownload-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-companyprivacystatementlanguage-api
+  name: IXON CompanyPrivacyStatementLanguage API
+  description: >-
+    The CompanyPrivacyStatementLanguage API from IXON — 1 operation(s) for companyprivacystatementlanguage.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - CompanyPrivacyStatementLanguage
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-companyprivacystatementlanguage-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-companyprivacystatementlist-api
+  name: IXON CompanyPrivacyStatementList API
+  description: >-
+    The CompanyPrivacyStatementList API from IXON — 1 operation(s) for companyprivacystatementlist.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - CompanyPrivacyStatementList
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-companyprivacystatementlist-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-companyprivacystatementpublish-api
+  name: IXON CompanyPrivacyStatementPublish API
+  description: >-
+    The CompanyPrivacyStatementPublish API from IXON — 1 operation(s) for companyprivacystatementpublish.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - CompanyPrivacyStatementPublish
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-companyprivacystatementpublish-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-companytermsofusepolicyaccept-api
+  name: IXON CompanyTermsOfUsePolicyAccept API
+  description: >-
+    The CompanyTermsOfUsePolicyAccept API from IXON — 1 operation(s) for companytermsofusepolicyaccept.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - CompanyTermsOfUsePolicyAccept
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-companytermsofusepolicyaccept-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-companytermsofusepolicydownload-api
+  name: IXON CompanyTermsOfUsePolicyDownload API
+  description: >-
+    The CompanyTermsOfUsePolicyDownload API from IXON — 1 operation(s) for companytermsofusepolicydownload.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - CompanyTermsOfUsePolicyDownload
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-companytermsofusepolicydownload-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-companytermsofusepolicylanguage-api
+  name: IXON CompanyTermsOfUsePolicyLanguage API
+  description: >-
+    The CompanyTermsOfUsePolicyLanguage API from IXON — 1 operation(s) for companytermsofusepolicylanguage.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - CompanyTermsOfUsePolicyLanguage
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-companytermsofusepolicylanguage-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-companytermsofusepolicylist-api
+  name: IXON CompanyTermsOfUsePolicyList API
+  description: >-
+    The CompanyTermsOfUsePolicyList API from IXON — 1 operation(s) for companytermsofusepolicylist.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - CompanyTermsOfUsePolicyList
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-companytermsofusepolicylist-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-companytermsofusepolicypublish-api
+  name: IXON CompanyTermsOfUsePolicyPublish API
+  description: >-
+    The CompanyTermsOfUsePolicyPublish API from IXON — 1 operation(s) for companytermsofusepolicypublish.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - CompanyTermsOfUsePolicyPublish
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-companytermsofusepolicypublish-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-controlleddevice-api
+  name: IXON ControlledDevice API
+  description: The ControlledDevice API from IXON — 1 operation(s) for controlleddevice.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - ControlledDevice
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-controlleddevice-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-controlleddeviceauditloglist-api
+  name: IXON ControlledDeviceAuditLogList API
+  description: >-
+    The ControlledDeviceAuditLogList API from IXON — 1 operation(s) for controlleddeviceauditloglist.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - ControlledDeviceAuditLogList
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-controlleddeviceauditloglist-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-controlleddevicelist-api
+  name: IXON ControlledDeviceList API
+  description: The ControlledDeviceList API from IXON — 1 operation(s) for controlleddevicelist.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - ControlledDeviceList
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-controlleddevicelist-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-controlleddevicemembership-api
+  name: IXON ControlledDeviceMembership API
+  description: >-
+    The ControlledDeviceMembership API from IXON — 1 operation(s) for controlleddevicemembership.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - ControlledDeviceMembership
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-controlleddevicemembership-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-controlleddevicemembershiplist-api
+  name: IXON ControlledDeviceMembershipList API
+  description: >-
+    The ControlledDeviceMembershipList API from IXON — 1 operation(s) for controlleddevicemembershiplist.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - ControlledDeviceMembershipList
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-controlleddevicemembershiplist-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-customproperty-api
+  name: IXON CustomProperty API
+  description: The CustomProperty API from IXON — 1 operation(s) for customproperty.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - CustomProperty
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-customproperty-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-custompropertylist-api
+  name: IXON CustomPropertyList API
+  description: The CustomPropertyList API from IXON — 1 operation(s) for custompropertylist.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - CustomPropertyList
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-custompropertylist-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-datadeletionrequestlist-api
+  name: IXON DataDeletionRequestList API
+  description: The DataDeletionRequestList API from IXON — 1 operation(s) for datadeletionrequestlist.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - DataDeletionRequestList
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-datadeletionrequestlist-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-dataexport-api
+  name: IXON DataExport API
+  description: The DataExport API from IXON — 1 operation(s) for dataexport.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - DataExport
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-dataexport-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-datalist-api
+  name: IXON DataList API
+  description: The DataList API from IXON — 1 operation(s) for datalist.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - DataList
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-datalist-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-demodevicelist-api
+  name: IXON DemoDeviceList API
+  description: The DemoDeviceList API from IXON — 1 operation(s) for demodevicelist.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - DemoDeviceList
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-demodevicelist-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-discovery-api
+  name: IXON Discovery API
+  description: The Discovery API from IXON — 1 operation(s) for discovery.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - Discovery
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-discovery-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-edgeapplist-api
+  name: IXON EdgeAppList API
+  description: The EdgeAppList API from IXON — 1 operation(s) for edgeapplist.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - EdgeAppList
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-edgeapplist-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-edgeappversionlist-api
+  name: IXON EdgeAppVersionList API
+  description: The EdgeAppVersionList API from IXON — 1 operation(s) for edgeappversionlist.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - EdgeAppVersionList
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-edgeappversionlist-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-edgeappversionupload-api
+  name: IXON EdgeAppVersionUpload API
+  description: The EdgeAppVersionUpload API from IXON — 1 operation(s) for edgeappversionupload.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - EdgeAppVersionUpload
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-edgeappversionupload-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-feedback-api
+  name: IXON Feedback API
+  description: The Feedback API from IXON — 1 operation(s) for feedback.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - Feedback
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-feedback-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-group-api
+  name: IXON Group API
+  description: The Group API from IXON — 1 operation(s) for group.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - Group
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-group-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-grouplist-api
+  name: IXON GroupList API
+  description: The GroupList API from IXON — 1 operation(s) for grouplist.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - GroupList
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-grouplist-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-grouppageimport-api
+  name: IXON GroupPageImport API
+  description: The GroupPageImport API from IXON — 1 operation(s) for grouppageimport.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - GroupPageImport
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-grouppageimport-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-grouprolelist-api
+  name: IXON GroupRoleList API
+  description: The GroupRoleList API from IXON — 1 operation(s) for grouprolelist.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - GroupRoleList
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-grouprolelist-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-grouptype-api
+  name: IXON GroupType API
+  description: The GroupType API from IXON — 1 operation(s) for grouptype.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - GroupType
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-grouptype-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-grouptypelist-api
+  name: IXON GroupTypeList API
+  description: The GroupTypeList API from IXON — 1 operation(s) for grouptypelist.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - GroupTypeList
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-grouptypelist-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-historicaldatausage-api
+  name: IXON HistoricalDataUsage API
+  description: The HistoricalDataUsage API from IXON — 1 operation(s) for historicaldatausage.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - HistoricalDataUsage
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-historicaldatausage-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-invite-api
+  name: IXON Invite API
+  description: The Invite API from IXON — 1 operation(s) for invite.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - Invite
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-invite-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-invitefinish-api
+  name: IXON InviteFinish API
+  description: The InviteFinish API from IXON — 1 operation(s) for invitefinish.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - InviteFinish
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-invitefinish-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-invitelist-api
+  name: IXON InviteList API
+  description: The InviteList API from IXON — 1 operation(s) for invitelist.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - InviteList
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-invitelist-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-inviteresend-api
+  name: IXON InviteResend API
+  description: The InviteResend API from IXON — 1 operation(s) for inviteresend.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - InviteResend
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-inviteresend-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-inviteresendlist-api
+  name: IXON InviteResendList API
+  description: The InviteResendList API from IXON — 1 operation(s) for inviteresendlist.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - InviteResendList
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-inviteresendlist-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-labellist-api
+  name: IXON LabelList API
+  description: The LabelList API from IXON — 1 operation(s) for labellist.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - LabelList
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-labellist-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-licence-api
+  name: IXON Licence API
+  description: The Licence API from IXON — 1 operation(s) for licence.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - Licence
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-licence-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-licencebundleextend-api
+  name: IXON LicenceBundleExtend API
+  description: The LicenceBundleExtend API from IXON — 1 operation(s) for licencebundleextend.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - LicenceBundleExtend
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-licencebundleextend-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-licencebundlelist-api
+  name: IXON LicenceBundleList API
+  description: The LicenceBundleList API from IXON — 1 operation(s) for licencebundlelist.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - LicenceBundleList
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-licencebundlelist-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-licenceextend-api
+  name: IXON LicenceExtend API
+  description: The LicenceExtend API from IXON — 1 operation(s) for licenceextend.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - LicenceExtend
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-licenceextend-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-licencelist-api
+  name: IXON LicenceList API
+  description: The LicenceList API from IXON — 1 operation(s) for licencelist.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - LicenceList
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-licencelist-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-licencelistextend-api
+  name: IXON LicenceListExtend API
+  description: The LicenceListExtend API from IXON — 1 operation(s) for licencelistextend.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - LicenceListExtend
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-licencelistextend-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-licencetype-api
+  name: IXON LicenceType API
+  description: The LicenceType API from IXON — 1 operation(s) for licencetype.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - LicenceType
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-licencetype-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-licencetypelist-api
+  name: IXON LicenceTypeList API
+  description: The LicenceTypeList API from IXON — 1 operation(s) for licencetypelist.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - LicenceTypeList
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-licencetypelist-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-machinegrouplist-api
+  name: IXON MachineGroupList API
+  description: The MachineGroupList API from IXON — 1 operation(s) for machinegrouplist.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - MachineGroupList
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-machinegrouplist-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-menuitem-api
+  name: IXON MenuItem API
+  description: The MenuItem API from IXON — 1 operation(s) for menuitem.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - MenuItem
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-menuitem-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-menuitemlist-api
+  name: IXON MenuItemList API
+  description: The MenuItemList API from IXON — 1 operation(s) for menuitemlist.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - MenuItemList
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-menuitemlist-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-message-api
+  name: IXON Message API
+  description: The Message API from IXON — 1 operation(s) for message.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - Message
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-message-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-messageall-api
+  name: IXON MessageAll API
+  description: The MessageAll API from IXON — 1 operation(s) for messageall.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - MessageAll
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-messageall-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-messagefilter-api
+  name: IXON MessageFilter API
+  description: The MessageFilter API from IXON — 1 operation(s) for messagefilter.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - MessageFilter
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-messagefilter-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-messagefilterlist-api
+  name: IXON MessageFilterList API
+  description: The MessageFilterList API from IXON — 1 operation(s) for messagefilterlist.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - MessageFilterList
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-messagefilterlist-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-messagelist-api
+  name: IXON MessageList API
+  description: The MessageList API from IXON — 1 operation(s) for messagelist.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - MessageList
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-messagelist-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-mqttbroker-api
+  name: IXON MqttBroker API
+  description: The MqttBroker API from IXON — 1 operation(s) for mqttbroker.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - MqttBroker
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-mqttbroker-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-mqttbrokerclient-api
+  name: IXON MqttBrokerClient API
+  description: The MqttBrokerClient API from IXON — 1 operation(s) for mqttbrokerclient.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - MqttBrokerClient
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-mqttbrokerclient-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-mqttbrokerclientlist-api
+  name: IXON MqttBrokerClientList API
+  description: The MqttBrokerClientList API from IXON — 1 operation(s) for mqttbrokerclientlist.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - MqttBrokerClientList
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-mqttbrokerclientlist-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-mqttbrokerclientmessage-api
+  name: IXON MqttBrokerClientMessage API
+  description: The MqttBrokerClientMessage API from IXON — 1 operation(s) for mqttbrokerclientmessage.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - MqttBrokerClientMessage
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-mqttbrokerclientmessage-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-mqttbrokerlist-api
+  name: IXON MqttBrokerList API
+  description: The MqttBrokerList API from IXON — 1 operation(s) for mqttbrokerlist.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - MqttBrokerList
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-mqttbrokerlist-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-myaccessrecover-api
+  name: IXON MyAccessRecover API
+  description: The MyAccessRecover API from IXON — 1 operation(s) for myaccessrecover.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - MyAccessRecover
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-myaccessrecover-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-myaccessrecoverfinish-api
+  name: IXON MyAccessRecoverFinish API
+  description: The MyAccessRecoverFinish API from IXON — 1 operation(s) for myaccessrecoverfinish.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - MyAccessRecoverFinish
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-myaccessrecoverfinish-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-myaccesstoken-api
+  name: IXON MyAccessToken API
+  description: The MyAccessToken API from IXON — 1 operation(s) for myaccesstoken.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - MyAccessToken
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-myaccesstoken-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-mycompany-api
+  name: IXON MyCompany API
+  description: The MyCompany API from IXON — 1 operation(s) for mycompany.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - MyCompany
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-mycompany-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-mycompanycustomproperty-api
+  name: IXON MyCompanyCustomProperty API
+  description: The MyCompanyCustomProperty API from IXON — 1 operation(s) for mycompanycustomproperty.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - MyCompanyCustomProperty
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-mycompanycustomproperty-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-mycompanycustompropertylist-api
+  name: IXON MyCompanyCustomPropertyList API
+  description: >-
+    The MyCompanyCustomPropertyList API from IXON — 1 operation(s) for mycompanycustompropertylist.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - MyCompanyCustomPropertyList
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-mycompanycustompropertylist-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-mycompanyplatformserverlist-api
+  name: IXON MyCompanyPlatformServerList API
+  description: >-
+    The MyCompanyPlatformServerList API from IXON — 1 operation(s) for mycompanyplatformserverlist.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - MyCompanyPlatformServerList
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-mycompanyplatformserverlist-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-mycompanysupportaccess-api
+  name: IXON MyCompanySupportAccess API
+  description: The MyCompanySupportAccess API from IXON — 1 operation(s) for mycompanysupportaccess.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - MyCompanySupportAccess
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-mycompanysupportaccess-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-myemailaddresschange-api
+  name: IXON MyEmailAddressChange API
+  description: The MyEmailAddressChange API from IXON — 1 operation(s) for myemailaddresschange.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - MyEmailAddressChange
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-myemailaddresschange-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-myemailaddresschangefinish-api
+  name: IXON MyEmailAddressChangeFinish API
+  description: >-
+    The MyEmailAddressChangeFinish API from IXON — 1 operation(s) for myemailaddresschangefinish.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - MyEmailAddressChangeFinish
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-myemailaddresschangefinish-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-myinvite-api
+  name: IXON MyInvite API
+  description: The MyInvite API from IXON — 1 operation(s) for myinvite.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - MyInvite
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-myinvite-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-myinvitefinish-api
+  name: IXON MyInviteFinish API
+  description: The MyInviteFinish API from IXON — 1 operation(s) for myinvitefinish.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - MyInviteFinish
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-myinvitefinish-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-myotpauthdisable-api
+  name: IXON MyOtpAuthDisable API
+  description: The MyOtpAuthDisable API from IXON — 1 operation(s) for myotpauthdisable.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - MyOtpAuthDisable
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-myotpauthdisable-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-myotpauthdisablefinish-api
+  name: IXON MyOtpAuthDisableFinish API
+  description: The MyOtpAuthDisableFinish API from IXON — 1 operation(s) for myotpauthdisablefinish.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - MyOtpAuthDisableFinish
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-myotpauthdisablefinish-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-myregistration-api
+  name: IXON MyRegistration API
+  description: The MyRegistration API from IXON — 1 operation(s) for myregistration.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - MyRegistration
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-myregistration-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-myregistrationfinish-api
+  name: IXON MyRegistrationFinish API
+  description: The MyRegistrationFinish API from IXON — 1 operation(s) for myregistrationfinish.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - MyRegistrationFinish
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-myregistrationfinish-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-mysector-api
+  name: IXON MySector API
+  description: The MySector API from IXON — 1 operation(s) for mysector.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - MySector
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-mysector-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-myuser-api
+  name: IXON MyUser API
+  description: The MyUser API from IXON — 1 operation(s) for myuser.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - MyUser
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-myuser-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-myuseremailaddresschange-api
+  name: IXON MyUserEmailAddressChange API
+  description: >-
+    The MyUserEmailAddressChange API from IXON — 1 operation(s) for myuseremailaddresschange.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - MyUserEmailAddressChange
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-myuseremailaddresschange-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-myuseremailaddresschangelist-api
+  name: IXON MyUserEmailAddressChangeList API
+  description: >-
+    The MyUserEmailAddressChangeList API from IXON — 1 operation(s) for myuseremailaddresschangelist.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - MyUserEmailAddressChangeList
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-myuseremailaddresschangelist-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-myuserinvite-api
+  name: IXON MyUserInvite API
+  description: The MyUserInvite API from IXON — 1 operation(s) for myuserinvite.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - MyUserInvite
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-myuserinvite-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-myuserinvitelist-api
+  name: IXON MyUserInviteList API
+  description: The MyUserInviteList API from IXON — 1 operation(s) for myuserinvitelist.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - MyUserInviteList
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-myuserinvitelist-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-myuserleavecompanylist-api
+  name: IXON MyUserLeaveCompanyList API
+  description: The MyUserLeaveCompanyList API from IXON — 1 operation(s) for myuserleavecompanylist.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - MyUserLeaveCompanyList
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-myuserleavecompanylist-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-myuserotpauthdisable-api
+  name: IXON MyUserOtpAuthDisable API
+  description: The MyUserOtpAuthDisable API from IXON — 1 operation(s) for myuserotpauthdisable.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - MyUserOtpAuthDisable
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-myuserotpauthdisable-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-myuserotpauthenable-api
+  name: IXON MyUserOtpAuthEnable API
+  description: The MyUserOtpAuthEnable API from IXON — 1 operation(s) for myuserotpauthenable.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - MyUserOtpAuthEnable
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-myuserotpauthenable-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-myuserotpauthsmsenable-api
+  name: IXON MyUserOtpAuthSmsEnable API
+  description: The MyUserOtpAuthSmsEnable API from IXON — 1 operation(s) for myuserotpauthsmsenable.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - MyUserOtpAuthSmsEnable
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-myuserotpauthsmsenable-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-myuserotpauthverify-api
+  name: IXON MyUserOtpAuthVerify API
+  description: The MyUserOtpAuthVerify API from IXON — 1 operation(s) for myuserotpauthverify.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - MyUserOtpAuthVerify
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-myuserotpauthverify-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-myuserpassword-api
+  name: IXON MyUserPassword API
+  description: The MyUserPassword API from IXON — 1 operation(s) for myuserpassword.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - MyUserPassword
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-myuserpassword-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-myuserpushdevice-api
+  name: IXON MyUserPushDevice API
+  description: The MyUserPushDevice API from IXON — 1 operation(s) for myuserpushdevice.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - MyUserPushDevice
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-myuserpushdevice-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-myuserpushdeviceactivate-api
+  name: IXON MyUserPushDeviceActivate API
+  description: >-
+    The MyUserPushDeviceActivate API from IXON — 1 operation(s) for myuserpushdeviceactivate.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - MyUserPushDeviceActivate
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-myuserpushdeviceactivate-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-myuserpushdeviceclaim-api
+  name: IXON MyUserPushDeviceClaim API
+  description: The MyUserPushDeviceClaim API from IXON — 1 operation(s) for myuserpushdeviceclaim.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - MyUserPushDeviceClaim
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-myuserpushdeviceclaim-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-myuserpushdevicedeactivate-api
+  name: IXON MyUserPushDeviceDeactivate API
+  description: >-
+    The MyUserPushDeviceDeactivate API from IXON — 1 operation(s) for myuserpushdevicedeactivate.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - MyUserPushDeviceDeactivate
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-myuserpushdevicedeactivate-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-myuserpushdevicelist-api
+  name: IXON MyUserPushDeviceList API
+  description: The MyUserPushDeviceList API from IXON — 1 operation(s) for myuserpushdevicelist.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - MyUserPushDeviceList
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-myuserpushdevicelist-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-myuserpushdevicereleaseclaim-api
+  name: IXON MyUserPushDeviceReleaseClaim API
+  description: >-
+    The MyUserPushDeviceReleaseClaim API from IXON — 1 operation(s) for myuserpushdevicereleaseclaim.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - MyUserPushDeviceReleaseClaim
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-myuserpushdevicereleaseclaim-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-myuservpnconfiglist-api
+  name: IXON MyUserVpnConfigList API
+  description: The MyUserVpnConfigList API from IXON — 1 operation(s) for myuservpnconfiglist.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - MyUserVpnConfigList
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-myuservpnconfiglist-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-ociregistry-api
+  name: IXON OciRegistry API
+  description: The OciRegistry API from IXON — 1 operation(s) for ociregistry.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - OciRegistry
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-ociregistry-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-ociregistrylist-api
+  name: IXON OciRegistryList API
+  description: The OciRegistryList API from IXON — 1 operation(s) for ociregistrylist.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - OciRegistryList
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-ociregistrylist-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-page-api
+  name: IXON Page API
+  description: The Page API from IXON — 1 operation(s) for page.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - Page
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-page-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-pagecomponent-api
+  name: IXON PageComponent API
+  description: The PageComponent API from IXON — 1 operation(s) for pagecomponent.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - PageComponent
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-pagecomponent-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-pagecomponentlist-api
+  name: IXON PageComponentList API
+  description: The PageComponentList API from IXON — 1 operation(s) for pagecomponentlist.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - PageComponentList
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-pagecomponentlist-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-pagecomponenttemplate-api
+  name: IXON PageComponentTemplate API
+  description: The PageComponentTemplate API from IXON — 1 operation(s) for pagecomponenttemplate.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - PageComponentTemplate
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-pagecomponenttemplate-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-pagecomponenttemplatecategorylist-api
+  name: IXON PageComponentTemplateCategoryList API
+  description: >-
+    The PageComponentTemplateCategoryList API from IXON — 1 operation(s) for pagecomponenttemplatecategorylist.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - PageComponentTemplateCategoryList
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-pagecomponenttemplatecategorylist-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-pagecomponenttemplateconfig-api
+  name: IXON PageComponentTemplateConfig API
+  description: >-
+    The PageComponentTemplateConfig API from IXON — 1 operation(s) for pagecomponenttemplateconfig.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - PageComponentTemplateConfig
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-pagecomponenttemplateconfig-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-pagecomponenttemplateconfiglist-api
+  name: IXON PageComponentTemplateConfigList API
+  description: >-
+    The PageComponentTemplateConfigList API from IXON — 1 operation(s) for pagecomponenttemplateconfiglist.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - PageComponentTemplateConfigList
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-pagecomponenttemplateconfiglist-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-pagecomponenttemplatelist-api
+  name: IXON PageComponentTemplateList API
+  description: >-
+    The PageComponentTemplateList API from IXON — 1 operation(s) for pagecomponenttemplatelist.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - PageComponentTemplateList
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-pagecomponenttemplatelist-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-pagecomponenttemplateshare-api
+  name: IXON PageComponentTemplateShare API
+  description: >-
+    The PageComponentTemplateShare API from IXON — 1 operation(s) for pagecomponenttemplateshare.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - PageComponentTemplateShare
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-pagecomponenttemplateshare-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-pagecomponenttemplatesharelist-api
+  name: IXON PageComponentTemplateShareList API
+  description: >-
+    The PageComponentTemplateShareList API from IXON — 1 operation(s) for pagecomponenttemplatesharelist.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - PageComponentTemplateShareList
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-pagecomponenttemplatesharelist-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-pagecomponenttemplateversion-api
+  name: IXON PageComponentTemplateVersion API
+  description: >-
+    The PageComponentTemplateVersion API from IXON — 1 operation(s) for pagecomponenttemplateversion.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - PageComponentTemplateVersion
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-pagecomponenttemplateversion-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-pagecomponenttemplateversionlist-api
+  name: IXON PageComponentTemplateVersionList API
+  description: >-
+    The PageComponentTemplateVersionList API from IXON — 1 operation(s) for pagecomponenttemplateversionlist.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - PageComponentTemplateVersionList
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-pagecomponenttemplateversionlist-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-pagecomponenttemplateversionupload-api
+  name: IXON PageComponentTemplateVersionUpload API
+  description: >-
+    The PageComponentTemplateVersionUpload API from IXON — 1 operation(s) for pagecomponenttemplateversionupload.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - PageComponentTemplateVersionUpload
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-pagecomponenttemplateversionupload-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-pagedefault-api
+  name: IXON PageDefault API
+  description: The PageDefault API from IXON — 1 operation(s) for pagedefault.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - PageDefault
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-pagedefault-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-pagedraft-api
+  name: IXON PageDraft API
+  description: The PageDraft API from IXON — 1 operation(s) for pagedraft.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - PageDraft
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-pagedraft-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-pagedraftlist-api
+  name: IXON PageDraftList API
+  description: The PageDraftList API from IXON — 1 operation(s) for pagedraftlist.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - PageDraftList
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-pagedraftlist-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-pageduplicate-api
+  name: IXON PageDuplicate API
+  description: The PageDuplicate API from IXON — 1 operation(s) for pageduplicate.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - PageDuplicate
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-pageduplicate-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-pageduplicatelist-api
+  name: IXON PageDuplicateList API
+  description: The PageDuplicateList API from IXON — 1 operation(s) for pageduplicatelist.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - PageDuplicateList
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-pageduplicatelist-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-pageexport-api
+  name: IXON PageExport API
+  description: The PageExport API from IXON — 1 operation(s) for pageexport.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - PageExport
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-pageexport-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-pageimport-api
+  name: IXON PageImport API
+  description: The PageImport API from IXON — 1 operation(s) for pageimport.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - PageImport
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-pageimport-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-pagelist-api
+  name: IXON PageList API
+  description: The PageList API from IXON — 1 operation(s) for pagelist.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - PageList
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-pagelist-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-pagepage-api
+  name: IXON PagePage API
+  description: The PagePage API from IXON — 1 operation(s) for pagepage.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - PagePage
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-pagepage-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-pagepagelist-api
+  name: IXON PagePageList API
+  description: The PagePageList API from IXON — 1 operation(s) for pagepagelist.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - PagePageList
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-pagepagelist-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-pageversion-api
+  name: IXON PageVersion API
+  description: The PageVersion API from IXON — 1 operation(s) for pageversion.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - PageVersion
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-pageversion-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-pageversionlist-api
+  name: IXON PageVersionList API
+  description: The PageVersionList API from IXON — 1 operation(s) for pageversionlist.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - PageVersionList
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-pageversionlist-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-permissionlist-api
+  name: IXON PermissionList API
+  description: The PermissionList API from IXON — 1 operation(s) for permissionlist.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - PermissionList
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-permissionlist-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-pipelinefunctionlist-api
+  name: IXON PipelineFunctionList API
+  description: The PipelineFunctionList API from IXON — 1 operation(s) for pipelinefunctionlist.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - PipelineFunctionList
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-pipelinefunctionlist-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-platformserverlist-api
+  name: IXON PlatformServerList API
+  description: The PlatformServerList API from IXON — 1 operation(s) for platformserverlist.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - PlatformServerList
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-platformserverlist-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-premiumdomain-api
+  name: IXON PremiumDomain API
+  description: The PremiumDomain API from IXON — 1 operation(s) for premiumdomain.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - PremiumDomain
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-premiumdomain-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-privacystatement-api
+  name: IXON PrivacyStatement API
+  description: The PrivacyStatement API from IXON — 1 operation(s) for privacystatement.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - PrivacyStatement
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-privacystatement-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-privacystatementdownload-api
+  name: IXON PrivacyStatementDownload API
+  description: >-
+    The PrivacyStatementDownload API from IXON — 1 operation(s) for privacystatementdownload.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - PrivacyStatementDownload
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-privacystatementdownload-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-privacystatementlist-api
+  name: IXON PrivacyStatementList API
+  description: The PrivacyStatementList API from IXON — 1 operation(s) for privacystatementlist.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - PrivacyStatementList
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-privacystatementlist-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-publicfileupload-api
+  name: IXON PublicFileUpload API
+  description: The PublicFileUpload API from IXON — 1 operation(s) for publicfileupload.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - PublicFileUpload
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-publicfileupload-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-queuereportlist-api
+  name: IXON QueueReportList API
+  description: The QueueReportList API from IXON — 1 operation(s) for queuereportlist.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - QueueReportList
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-queuereportlist-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-registrationlist-api
+  name: IXON RegistrationList API
+  description: The RegistrationList API from IXON — 1 operation(s) for registrationlist.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - RegistrationList
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-registrationlist-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-role-api
+  name: IXON Role API
+  description: The Role API from IXON — 1 operation(s) for role.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - Role
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-role-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-roleaudience-api
+  name: IXON RoleAudience API
+  description: The RoleAudience API from IXON — 1 operation(s) for roleaudience.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - RoleAudience
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-roleaudience-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-roleaudiencelist-api
+  name: IXON RoleAudienceList API
+  description: The RoleAudienceList API from IXON — 1 operation(s) for roleaudiencelist.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - RoleAudienceList
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-roleaudiencelist-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-rolelist-api
+  name: IXON RoleList API
+  description: The RoleList API from IXON — 1 operation(s) for rolelist.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - RoleList
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-rolelist-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-rolepermission-api
+  name: IXON RolePermission API
+  description: The RolePermission API from IXON — 1 operation(s) for rolepermission.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - RolePermission
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-rolepermission-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-rolepermissionlist-api
+  name: IXON RolePermissionList API
+  description: The RolePermissionList API from IXON — 1 operation(s) for rolepermissionlist.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - RolePermissionList
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-rolepermissionlist-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-routerdisplayscreensaver-api
+  name: IXON RouterDisplayScreensaver API
+  description: >-
+    The RouterDisplayScreensaver API from IXON — 1 operation(s) for routerdisplayscreensaver.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - RouterDisplayScreensaver
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-routerdisplayscreensaver-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-routerdisplayscreensaverupload-api
+  name: IXON RouterDisplayScreensaverUpload API
+  description: >-
+    The RouterDisplayScreensaverUpload API from IXON — 1 operation(s) for routerdisplayscreensaverupload.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - RouterDisplayScreensaverUpload
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-routerdisplayscreensaverupload-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-scimschemas-api
+  name: IXON ScimSchemas API
+  description: The ScimSchemas API from IXON — 1 operation(s) for scimschemas.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - ScimSchemas
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-scimschemas-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-scimserviceproviderconfig-api
+  name: IXON ScimServiceProviderConfig API
+  description: >-
+    The ScimServiceProviderConfig API from IXON — 1 operation(s) for scimserviceproviderconfig.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - ScimServiceProviderConfig
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-scimserviceproviderconfig-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-sector-api
+  name: IXON Sector API
+  description: The Sector API from IXON — 1 operation(s) for sector.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - Sector
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-sector-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-sectorlist-api
+  name: IXON SectorList API
+  description: The SectorList API from IXON — 1 operation(s) for sectorlist.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - SectorList
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-sectorlist-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-servertime-api
+  name: IXON ServerTime API
+  description: The ServerTime API from IXON — 1 operation(s) for servertime.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - ServerTime
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-servertime-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-servervalidation-api
+  name: IXON ServerValidation API
+  description: The ServerValidation API from IXON — 1 operation(s) for servervalidation.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - ServerValidation
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-servervalidation-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-serviceaccount-api
+  name: IXON ServiceAccount API
+  description: The ServiceAccount API from IXON — 1 operation(s) for serviceaccount.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - ServiceAccount
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-serviceaccount-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-serviceaccountlist-api
+  name: IXON ServiceAccountList API
+  description: The ServiceAccountList API from IXON — 1 operation(s) for serviceaccountlist.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - ServiceAccountList
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-serviceaccountlist-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-shellagentlist-api
+  name: IXON ShellAgentList API
+  description: The ShellAgentList API from IXON — 1 operation(s) for shellagentlist.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - ShellAgentList
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-shellagentlist-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-ssoaccesstokenlist-api
+  name: IXON SsoAccessTokenList API
+  description: The SsoAccessTokenList API from IXON — 1 operation(s) for ssoaccesstokenlist.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - SsoAccessTokenList
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-ssoaccesstokenlist-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-ssoauthenticationrequestlist-api
+  name: IXON SsoAuthenticationRequestList API
+  description: >-
+    The SsoAuthenticationRequestList API from IXON — 1 operation(s) for ssoauthenticationrequestlist.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - SsoAuthenticationRequestList
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-ssoauthenticationrequestlist-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-ssoidentityproviderlist-api
+  name: IXON SsoIdentityProviderList API
+  description: The SsoIdentityProviderList API from IXON — 1 operation(s) for ssoidentityproviderlist.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - SsoIdentityProviderList
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-ssoidentityproviderlist-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-ssoredirect-api
+  name: IXON SsoRedirect API
+  description: The SsoRedirect API from IXON — 1 operation(s) for ssoredirect.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - SsoRedirect
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-ssoredirect-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-ssoregistrationlist-api
+  name: IXON SsoRegistrationList API
+  description: The SsoRegistrationList API from IXON — 1 operation(s) for ssoregistrationlist.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - SsoRegistrationList
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-ssoregistrationlist-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-termsofusepolicy-api
+  name: IXON TermsOfUsePolicy API
+  description: The TermsOfUsePolicy API from IXON — 1 operation(s) for termsofusepolicy.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - TermsOfUsePolicy
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-termsofusepolicy-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-termsofusepolicyaccept-api
+  name: IXON TermsOfUsePolicyAccept API
+  description: The TermsOfUsePolicyAccept API from IXON — 1 operation(s) for termsofusepolicyaccept.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - TermsOfUsePolicyAccept
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-termsofusepolicyaccept-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-termsofusepolicydownload-api
+  name: IXON TermsOfUsePolicyDownload API
+  description: >-
+    The TermsOfUsePolicyDownload API from IXON — 1 operation(s) for termsofusepolicydownload.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - TermsOfUsePolicyDownload
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-termsofusepolicydownload-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-termsofusepolicylist-api
+  name: IXON TermsOfUsePolicyList API
+  description: The TermsOfUsePolicyList API from IXON — 1 operation(s) for termsofusepolicylist.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - TermsOfUsePolicyList
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-termsofusepolicylist-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-translationlist-api
+  name: IXON TranslationList API
+  description: The TranslationList API from IXON — 1 operation(s) for translationlist.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - TranslationList
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-translationlist-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-trusteddevice-api
+  name: IXON TrustedDevice API
+  description: The TrustedDevice API from IXON — 1 operation(s) for trusteddevice.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - TrustedDevice
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-trusteddevice-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-trusteddevicelist-api
+  name: IXON TrustedDeviceList API
+  description: The TrustedDeviceList API from IXON — 1 operation(s) for trusteddevicelist.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - TrustedDeviceList
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-trusteddevicelist-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-user-api
+  name: IXON User API
+  description: The User API from IXON — 1 operation(s) for user.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - User
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-user-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-userlist-api
+  name: IXON UserList API
+  description: The UserList API from IXON — 1 operation(s) for userlist.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - UserList
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-userlist-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-usermembership-api
+  name: IXON UserMembership API
+  description: The UserMembership API from IXON — 1 operation(s) for usermembership.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - UserMembership
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-usermembership-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-usermembershiplist-api
+  name: IXON UserMembershipList API
+  description: The UserMembershipList API from IXON — 1 operation(s) for usermembershiplist.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - UserMembershipList
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-usermembershiplist-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-usermembershipuserlist-api
+  name: IXON UserMembershipUserList API
+  description: The UserMembershipUserList API from IXON — 1 operation(s) for usermembershipuserlist.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - UserMembershipUserList
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-usermembershipuserlist-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-userzonegrantslist-api
+  name: IXON UserZoneGrantsList API
+  description: The UserZoneGrantsList API from IXON — 1 operation(s) for userzonegrantslist.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - UserZoneGrantsList
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-userzonegrantslist-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-vpnusage-api
+  name: IXON VpnUsage API
+  description: The VpnUsage API from IXON — 1 operation(s) for vpnusage.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - VpnUsage
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-vpnusage-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-vpnusagelist-api
+  name: IXON VpnUsageList API
+  description: The VpnUsageList API from IXON — 1 operation(s) for vpnusagelist.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - VpnUsageList
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-vpnusagelist-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-webaccess-api
+  name: IXON WebAccess API
+  description: The WebAccess API from IXON — 1 operation(s) for webaccess.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - WebAccess
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-webaccess-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-webaccessentry-api
+  name: IXON WebAccessEntry API
+  description: The WebAccessEntry API from IXON — 1 operation(s) for webaccessentry.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - WebAccessEntry
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-webaccessentry-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-webaccesslist-api
+  name: IXON WebAccessList API
+  description: The WebAccessList API from IXON — 1 operation(s) for webaccesslist.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - WebAccessList
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-webaccesslist-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-webaccesssessionrecording-api
+  name: IXON WebaccessSessionRecording API
+  description: >-
+    The WebaccessSessionRecording API from IXON — 1 operation(s) for webaccesssessionrecording.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - WebaccessSessionRecording
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-webaccesssessionrecording-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-webaccesssessionrecordingdownload-api
+  name: IXON WebaccessSessionRecordingDownload API
+  description: >-
+    The WebaccessSessionRecordingDownload API from IXON — 1 operation(s) for webaccesssessionrecordingdownload.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - WebaccessSessionRecordingDownload
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-webaccesssessionrecordingdownload-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-webaccesssessionrecordinglist-api
+  name: IXON WebaccessSessionRecordingList API
+  description: >-
+    The WebaccessSessionRecordingList API from IXON — 1 operation(s) for webaccesssessionrecordinglist.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - WebaccessSessionRecordingList
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-webaccesssessionrecordinglist-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-webhooksubscription-api
+  name: IXON WebhookSubscription API
+  description: The WebhookSubscription API from IXON — 1 operation(s) for webhooksubscription.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - WebhookSubscription
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-webhooksubscription-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-webhooksubscriptionlist-api
+  name: IXON WebhookSubscriptionList API
+  description: The WebhookSubscriptionList API from IXON — 1 operation(s) for webhooksubscriptionlist.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - WebhookSubscriptionList
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-webhooksubscriptionlist-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
+- aid: ixon:ixon-webhooksubscriptiontriggerlist-api
+  name: IXON WebhookSubscriptionTriggerList API
+  description: >-
+    The WebhookSubscriptionTriggerList API from IXON — 1 operation(s) for webhooksubscriptiontriggerlist.
+  humanURL: https://developer.ixon.cloud/docs
+  baseURL: https://portal.ixon.cloud/api/
+  tags:
+  - WebhookSubscriptionTriggerList
+  properties:
+  - type: OpenAPI
+    url: openapi/ixon-webhooksubscriptiontriggerlist-api-openapi.yml
+  - type: Documentation
+    url: https://developer.ixon.cloud/docs
+  - type: APIReference
+    url: https://developer.ixon.cloud/v2/reference
 common:
   - type: AgenticAccess
     url: agentic-access/ixon-agentic-access.yml
