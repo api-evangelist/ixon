@@ -1,0 +1,292 @@
+{
+  "item": [
+    {
+      "id": "39532499-ec5d-4cc0-82f4-667ca7f58be8",
+      "name": "AgentObjectStorageUploadAction",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "e73b3c59-e6db-4203-b9d0-6c8d69b8b3cc",
+          "name": "AgentObjectStorageUploadAction",
+          "request": {
+            "name": "AgentObjectStorageUploadAction",
+            "description": {},
+            "url": {
+              "path": [
+                "agents",
+                ":agentId",
+                "object-storage",
+                "upload"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "agentId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) Version of the API to use",
+                "key": "Api-Version",
+                "value": "<integer>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) Get your Application ID via support@ixon.cloud",
+                "key": "Api-Application",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) PublicId of the company",
+                "key": "Api-Company",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "Domain that provides the branding",
+                "key": "Api-Branding",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"template\": {\n    \"publicId\": \"<string>\"\n  },\n  \"uuid\": \"<uuid>\",\n  \"arguments\": {}\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "1a405da3-f18e-42bd-8432-0cdd9000c0e7",
+              "name": "Success response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "agents",
+                    ":agentId",
+                    "object-storage",
+                    "upload"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "agentId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Version of the API to use",
+                    "key": "Api-Version",
+                    "value": "<integer>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Get your Application ID via support@ixon.cloud",
+                    "key": "Api-Application",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) PublicId of the company",
+                    "key": "Api-Company",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Domain that provides the branding",
+                    "key": "Api-Branding",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"template\": {\n    \"publicId\": \"<string>\"\n  },\n  \"uuid\": \"<uuid>\",\n  \"arguments\": {}\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"success\",\n  \"type\": \"string\",\n  \"data\": {\n    \"type\": \"azure-blob-storage\",\n    \"url\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "70376ff5-cb12-4029-a00a-e2eb8f6fb0fd",
+              "name": "4XX error response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "agents",
+                    ":agentId",
+                    "object-storage",
+                    "upload"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "agentId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Version of the API to use",
+                    "key": "Api-Version",
+                    "value": "<integer>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Get your Application ID via support@ixon.cloud",
+                    "key": "Api-Application",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) PublicId of the company",
+                    "key": "Api-Company",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Domain that provides the branding",
+                    "key": "Api-Branding",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"template\": {\n    \"publicId\": \"<string>\"\n  },\n  \"uuid\": \"<uuid>\",\n  \"arguments\": {}\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"error\",\n  \"type\": \"Error\",\n  \"data\": [\n    {\n      \"message\": \"string\",\n      \"propertyName\": \"string\",\n      \"listIndex\": 1502\n    },\n    {\n      \"message\": \"string\",\n      \"propertyName\": \"string\",\n      \"listIndex\": 2499\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://portal.ixon.cloud:443/api/",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "31028dc0-1867-419e-85f0-97fce717c662",
+    "name": "IXON AccessRecoverList AgentObjectStorageUploadAction API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "API for the IXON Cloud Platform\n\nContact Support:\n Name: IXON B.V.\n Email: support@ixon.cloud",
+      "type": "text/plain"
+    }
+  }
+}

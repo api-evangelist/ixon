@@ -1,0 +1,43 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "IXON AccessRecoverList AgentAccessRequestInfo API",
+    "version": "0.1.294"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "AgentAccessRequestInfo",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "AgentAccessRequestInfo",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://portal.ixon.cloud:443/api/agents/access-requests",
+            "headers": [
+              {
+                "name": "Api-Version",
+                "value": ""
+              },
+              {
+                "name": "Api-Application",
+                "value": ""
+              },
+              {
+                "name": "Api-Branding",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "AgentAccessRequestInfo"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

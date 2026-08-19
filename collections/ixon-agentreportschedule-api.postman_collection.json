@@ -1,0 +1,876 @@
+{
+  "item": [
+    {
+      "id": "477318bf-e100-46c0-9061-47e74b8a093d",
+      "name": "AgentReportSchedule",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "058dc7ab-6eff-4f60-a765-58ceee7ddb31",
+          "name": "AgentReportSchedule",
+          "request": {
+            "name": "AgentReportSchedule",
+            "description": {},
+            "url": {
+              "path": [
+                "agents",
+                ":agentId",
+                "report-schedules",
+                ":publicId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "fields",
+                  "value": "<string>",
+                  "description": "Fields to select. Use \"*\" for all the top-level fields. Or check the \"Success response\" below for other fields.\n\nTo get the fields of a subresource do subresource.field or for multiple fields of one subresource do subresource(field,field)"
+                },
+                {
+                  "disabled": false,
+                  "key": "fields",
+                  "value": "<string>",
+                  "description": "Fields to select. Use \"*\" for all the top-level fields. Or check the \"Success response\" below for other fields.\n\nTo get the fields of a subresource do subresource.field or for multiple fields of one subresource do subresource(field,field)"
+                },
+                {
+                  "disabled": false,
+                  "key": "filters",
+                  "value": "<string>",
+                  "description": "Filter the returned item(s). Format: operator(column,val)\n\nPossible operators are: lt, less, lte, lessorequal, eq, equals, ne, differs, gt, greater, gte, greaterorequal, in, ni, isnull, isnotnull, between, contains.\n\nExample: eq(publicId,\"publicId_val\")"
+                },
+                {
+                  "disabled": false,
+                  "key": "filters",
+                  "value": "<string>",
+                  "description": "Filter the returned item(s). Format: operator(column,val)\n\nPossible operators are: lt, less, lte, lessorequal, eq, equals, ne, differs, gt, greater, gte, greaterorequal, in, ni, isnull, isnotnull, between, contains.\n\nExample: eq(publicId,\"publicId_val\")"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "agentId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "publicId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) Version of the API to use",
+                "key": "Api-Version",
+                "value": "<integer>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) Get your Application ID via support@ixon.cloud",
+                "key": "Api-Application",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) PublicId of the company",
+                "key": "Api-Company",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "Domain that provides the branding",
+                "key": "Api-Branding",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "87e2aede-497c-4d3d-8472-03114185b807",
+              "name": "Success response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "agents",
+                    ":agentId",
+                    "report-schedules",
+                    ":publicId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "fields",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "fields",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "filters",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "filters",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "agentId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "publicId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Version of the API to use",
+                    "key": "Api-Version",
+                    "value": "<integer>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Get your Application ID via support@ixon.cloud",
+                    "key": "Api-Application",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) PublicId of the company",
+                    "key": "Api-Company",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Domain that provides the branding",
+                    "key": "Api-Branding",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"success\",\n  \"type\": \"string\",\n  \"data\": {\n    \"publicId\": \"stringstring\",\n    \"agent\": {\n      \"publicId\": \"string\"\n    },\n    \"asset\": {\n      \"publicId\": \"string\"\n    },\n    \"report\": {\n      \"publicId\": \"string\"\n    },\n    \"start\": \"1977-06-07T10:06:57.279Z\",\n    \"timeZone\": \"string\",\n    \"recurrence\": {\n      \"frequency\": \"weekly\",\n      \"interval\": -66,\n      \"monday\": true,\n      \"tuesday\": true,\n      \"wednesday\": true,\n      \"thursday\": false,\n      \"friday\": false,\n      \"saturday\": true,\n      \"sunday\": false\n    },\n    \"deliveryTime\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "dc3b1f02-49eb-4cd5-adb5-ff98f2d7e01e",
+              "name": "4XX error response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "agents",
+                    ":agentId",
+                    "report-schedules",
+                    ":publicId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "fields",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "fields",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "filters",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "filters",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "agentId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "publicId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Version of the API to use",
+                    "key": "Api-Version",
+                    "value": "<integer>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Get your Application ID via support@ixon.cloud",
+                    "key": "Api-Application",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) PublicId of the company",
+                    "key": "Api-Company",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Domain that provides the branding",
+                    "key": "Api-Branding",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"error\",\n  \"type\": \"Error\",\n  \"data\": [\n    {\n      \"message\": \"string\",\n      \"propertyName\": \"string\",\n      \"listIndex\": 1084\n    },\n    {\n      \"message\": \"string\",\n      \"propertyName\": \"string\",\n      \"listIndex\": 4354\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "15788592-dff2-427f-bc5b-a82290a03429",
+          "name": "AgentReportSchedule",
+          "request": {
+            "name": "AgentReportSchedule",
+            "description": {},
+            "url": {
+              "path": [
+                "agents",
+                ":agentId",
+                "report-schedules",
+                ":publicId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "agentId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "publicId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) Version of the API to use",
+                "key": "Api-Version",
+                "value": "<integer>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) Get your Application ID via support@ixon.cloud",
+                "key": "Api-Application",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) PublicId of the company",
+                "key": "Api-Company",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "Domain that provides the branding",
+                "key": "Api-Branding",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"timeZone\": \"<string>\",\n  \"recurrence\": {\n    \"frequency\": \"<string>\",\n    \"interval\": \"<integer>\",\n    \"monday\": \"<boolean>\",\n    \"tuesday\": \"<boolean>\",\n    \"wednesday\": \"<boolean>\",\n    \"thursday\": \"<boolean>\",\n    \"friday\": \"<boolean>\",\n    \"saturday\": \"<boolean>\",\n    \"sunday\": \"<boolean>\"\n  },\n  \"deliveryTime\": \"<string>\",\n  \"start\": \"<dateTime>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "cd7d7b5d-abd6-4af8-a35e-95d39567da2a",
+              "name": "Success response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "agents",
+                    ":agentId",
+                    "report-schedules",
+                    ":publicId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "agentId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "publicId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Version of the API to use",
+                    "key": "Api-Version",
+                    "value": "<integer>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Get your Application ID via support@ixon.cloud",
+                    "key": "Api-Application",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) PublicId of the company",
+                    "key": "Api-Company",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Domain that provides the branding",
+                    "key": "Api-Branding",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"timeZone\": \"<string>\",\n  \"recurrence\": {\n    \"frequency\": \"<string>\",\n    \"interval\": \"<integer>\",\n    \"monday\": \"<boolean>\",\n    \"tuesday\": \"<boolean>\",\n    \"wednesday\": \"<boolean>\",\n    \"thursday\": \"<boolean>\",\n    \"friday\": \"<boolean>\",\n    \"saturday\": \"<boolean>\",\n    \"sunday\": \"<boolean>\"\n  },\n  \"deliveryTime\": \"<string>\",\n  \"start\": \"<dateTime>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"success\",\n  \"type\": \"string\",\n  \"data\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "fb222b23-f147-49cf-924b-ef553130bdee",
+              "name": "4XX error response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "agents",
+                    ":agentId",
+                    "report-schedules",
+                    ":publicId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "agentId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "publicId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Version of the API to use",
+                    "key": "Api-Version",
+                    "value": "<integer>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Get your Application ID via support@ixon.cloud",
+                    "key": "Api-Application",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) PublicId of the company",
+                    "key": "Api-Company",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Domain that provides the branding",
+                    "key": "Api-Branding",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"timeZone\": \"<string>\",\n  \"recurrence\": {\n    \"frequency\": \"<string>\",\n    \"interval\": \"<integer>\",\n    \"monday\": \"<boolean>\",\n    \"tuesday\": \"<boolean>\",\n    \"wednesday\": \"<boolean>\",\n    \"thursday\": \"<boolean>\",\n    \"friday\": \"<boolean>\",\n    \"saturday\": \"<boolean>\",\n    \"sunday\": \"<boolean>\"\n  },\n  \"deliveryTime\": \"<string>\",\n  \"start\": \"<dateTime>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"error\",\n  \"type\": \"Error\",\n  \"data\": [\n    {\n      \"message\": \"string\",\n      \"propertyName\": \"string\",\n      \"listIndex\": 594\n    },\n    {\n      \"message\": \"string\",\n      \"propertyName\": \"string\",\n      \"listIndex\": 5851\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "988336da-8cfa-4d87-9099-e62094c1859e",
+          "name": "AgentReportSchedule",
+          "request": {
+            "name": "AgentReportSchedule",
+            "description": {},
+            "url": {
+              "path": [
+                "agents",
+                ":agentId",
+                "report-schedules",
+                ":publicId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "agentId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "publicId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) Version of the API to use",
+                "key": "Api-Version",
+                "value": "<integer>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) Get your Application ID via support@ixon.cloud",
+                "key": "Api-Application",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) PublicId of the company",
+                "key": "Api-Company",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "Domain that provides the branding",
+                "key": "Api-Branding",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "DELETE",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "ebe04675-5937-4dcf-bb4e-12661db1710a",
+              "name": "Success response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "agents",
+                    ":agentId",
+                    "report-schedules",
+                    ":publicId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "agentId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "publicId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Version of the API to use",
+                    "key": "Api-Version",
+                    "value": "<integer>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Get your Application ID via support@ixon.cloud",
+                    "key": "Api-Application",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) PublicId of the company",
+                    "key": "Api-Company",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Domain that provides the branding",
+                    "key": "Api-Branding",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"success\",\n  \"type\": \"string\",\n  \"data\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "537e6f40-5942-4d49-9cc7-df8e4ee670fa",
+              "name": "4XX error response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "agents",
+                    ":agentId",
+                    "report-schedules",
+                    ":publicId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "agentId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "publicId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Version of the API to use",
+                    "key": "Api-Version",
+                    "value": "<integer>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Get your Application ID via support@ixon.cloud",
+                    "key": "Api-Application",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) PublicId of the company",
+                    "key": "Api-Company",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Domain that provides the branding",
+                    "key": "Api-Branding",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"error\",\n  \"type\": \"Error\",\n  \"data\": [\n    {\n      \"message\": \"string\",\n      \"propertyName\": \"string\",\n      \"listIndex\": 594\n    },\n    {\n      \"message\": \"string\",\n      \"propertyName\": \"string\",\n      \"listIndex\": 5851\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://portal.ixon.cloud:443/api/",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "3f115d98-20f9-4eaa-b772-a95a98e3d26a",
+    "name": "IXON AccessRecoverList AgentReportSchedule API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "API for the IXON Cloud Platform\n\nContact Support:\n Name: IXON B.V.\n Email: support@ixon.cloud",
+      "type": "text/plain"
+    }
+  }
+}

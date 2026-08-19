@@ -1,0 +1,51 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "IXON AccessRecoverList CompanyTermsOfUsePolicyPublish API",
+    "version": "0.1.294"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "CompanyTermsOfUsePolicyPublish",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "CompanyTermsOfUsePolicyPublish",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://portal.ixon.cloud:443/api/companies/terms-of-use-policies/publish",
+            "headers": [
+              {
+                "name": "Api-Version",
+                "value": ""
+              },
+              {
+                "name": "Api-Application",
+                "value": ""
+              },
+              {
+                "name": "Api-Company",
+                "value": ""
+              },
+              {
+                "name": "Api-Branding",
+                "value": ""
+              }
+            ],
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "CompanyTermsOfUsePolicyPublish"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,150 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "IXON AccessRecoverList MqttBrokerClientList API",
+    "version": "0.1.294"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "MqttBrokerClientList",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "MqttBrokerClientList",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://portal.ixon.cloud:443/api/mqtt-brokers/:brokerId/clients",
+            "headers": [
+              {
+                "name": "Api-Version",
+                "value": ""
+              },
+              {
+                "name": "Api-Application",
+                "value": ""
+              },
+              {
+                "name": "Api-Company",
+                "value": ""
+              },
+              {
+                "name": "Api-Branding",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "brokerId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "MqttBrokerClientList"
+        },
+        {
+          "info": {
+            "name": "MqttBrokerClientList",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://portal.ixon.cloud:443/api/mqtt-brokers/:brokerId/clients",
+            "headers": [
+              {
+                "name": "Api-Version",
+                "value": ""
+              },
+              {
+                "name": "Api-Application",
+                "value": ""
+              },
+              {
+                "name": "Api-Company",
+                "value": ""
+              },
+              {
+                "name": "Api-Branding",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "brokerId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "MqttBrokerClientList"
+        },
+        {
+          "info": {
+            "name": "MqttBrokerClientList",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://portal.ixon.cloud:443/api/mqtt-brokers/:brokerId/clients",
+            "headers": [
+              {
+                "name": "Api-Version",
+                "value": ""
+              },
+              {
+                "name": "Api-Application",
+                "value": ""
+              },
+              {
+                "name": "Api-Company",
+                "value": ""
+              },
+              {
+                "name": "Api-Branding",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "brokerId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "MqttBrokerClientList"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

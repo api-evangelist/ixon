@@ -1,0 +1,63 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "IXON AccessRecoverList AgentEdgeAppInstanceFileUpload API",
+    "version": "0.1.294"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "AgentEdgeAppInstanceFileUpload",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "AgentEdgeAppInstanceFileUpload",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://portal.ixon.cloud:443/api/agents/:agentId/edge-app-instances/:instanceId/files/upload",
+            "headers": [
+              {
+                "name": "Api-Version",
+                "value": ""
+              },
+              {
+                "name": "Api-Application",
+                "value": ""
+              },
+              {
+                "name": "Api-Company",
+                "value": ""
+              },
+              {
+                "name": "Api-Branding",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "agentId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "instanceId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "AgentEdgeAppInstanceFileUpload"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

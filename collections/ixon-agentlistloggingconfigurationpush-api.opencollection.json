@@ -1,0 +1,55 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "IXON AccessRecoverList AgentListLoggingConfigurationPush API",
+    "version": "0.1.294"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "AgentListLoggingConfigurationPush",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "AgentListLoggingConfigurationPush",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://portal.ixon.cloud:443/api/agents/logging-configuration/push",
+            "headers": [
+              {
+                "name": "Api-Version",
+                "value": ""
+              },
+              {
+                "name": "Api-Application",
+                "value": ""
+              },
+              {
+                "name": "Api-Company",
+                "value": ""
+              },
+              {
+                "name": "Api-Branding",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "AgentListLoggingConfigurationPush"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

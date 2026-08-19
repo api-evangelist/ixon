@@ -1,0 +1,47 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "IXON AccessRecoverList MyInviteFinish API",
+    "version": "0.1.294"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "MyInviteFinish",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "MyInviteFinish",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://portal.ixon.cloud:443/api/invites/me/finish",
+            "headers": [
+              {
+                "name": "Api-Version",
+                "value": ""
+              },
+              {
+                "name": "Api-Application",
+                "value": ""
+              },
+              {
+                "name": "Api-Branding",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "MyInviteFinish"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

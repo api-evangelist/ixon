@@ -1,0 +1,112 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "IXON AccessRecoverList MqttBrokerClient API",
+    "version": "0.1.294"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "MqttBrokerClient",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "MqttBrokerClient",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://portal.ixon.cloud:443/api/mqtt-brokers/:brokerId/clients/:publicId",
+            "headers": [
+              {
+                "name": "Api-Version",
+                "value": ""
+              },
+              {
+                "name": "Api-Application",
+                "value": ""
+              },
+              {
+                "name": "Api-Company",
+                "value": ""
+              },
+              {
+                "name": "Api-Branding",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "brokerId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "publicId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "MqttBrokerClient"
+        },
+        {
+          "info": {
+            "name": "MqttBrokerClient",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://portal.ixon.cloud:443/api/mqtt-brokers/:brokerId/clients/:publicId",
+            "headers": [
+              {
+                "name": "Api-Version",
+                "value": ""
+              },
+              {
+                "name": "Api-Application",
+                "value": ""
+              },
+              {
+                "name": "Api-Company",
+                "value": ""
+              },
+              {
+                "name": "Api-Branding",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "brokerId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "publicId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "MqttBrokerClient"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

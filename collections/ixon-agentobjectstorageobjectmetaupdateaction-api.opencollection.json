@@ -1,0 +1,62 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "IXON AccessRecoverList AgentObjectStorageObjectMetaUpdateAction API",
+    "version": "0.1.294"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "AgentObjectStorageObjectMetaUpdateAction",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "AgentObjectStorageObjectMetaUpdateAction",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://portal.ixon.cloud:443/api/agents/:agentId/object-storage/meta",
+            "headers": [
+              {
+                "name": "Api-Version",
+                "value": ""
+              },
+              {
+                "name": "Api-Application",
+                "value": ""
+              },
+              {
+                "name": "Api-Company",
+                "value": ""
+              },
+              {
+                "name": "Api-Branding",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "agentId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "AgentObjectStorageObjectMetaUpdateAction"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

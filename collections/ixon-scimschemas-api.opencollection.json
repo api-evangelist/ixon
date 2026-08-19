@@ -1,0 +1,51 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "IXON AccessRecoverList ScimSchemas API",
+    "version": "0.1.294"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "ScimSchemas",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "ScimSchemas",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://portal.ixon.cloud:443/api/:api-version/:api-application/scim/v2/Schemas",
+            "headers": [
+              {
+                "name": "Api-Version",
+                "value": ""
+              },
+              {
+                "name": "Api-Branding",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "api-version",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "api-application",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "ScimSchemas"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

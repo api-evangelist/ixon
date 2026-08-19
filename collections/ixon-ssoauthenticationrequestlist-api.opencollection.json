@@ -1,0 +1,47 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "IXON AccessRecoverList SsoAuthenticationRequestList API",
+    "version": "0.1.294"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "SsoAuthenticationRequestList",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "SsoAuthenticationRequestList",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://portal.ixon.cloud:443/api/sso/authentication/request",
+            "headers": [
+              {
+                "name": "Api-Version",
+                "value": ""
+              },
+              {
+                "name": "Api-Application",
+                "value": ""
+              },
+              {
+                "name": "Api-Branding",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "SsoAuthenticationRequestList"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

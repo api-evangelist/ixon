@@ -1,0 +1,47 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "IXON AccessRecoverList MyUserOtpAuthDisable API",
+    "version": "0.1.294"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "MyUserOtpAuthDisable",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "MyUserOtpAuthDisable",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://portal.ixon.cloud:443/api/users/me/otp-auth/disable",
+            "headers": [
+              {
+                "name": "Api-Version",
+                "value": ""
+              },
+              {
+                "name": "Api-Application",
+                "value": ""
+              },
+              {
+                "name": "Api-Branding",
+                "value": ""
+              }
+            ],
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "MyUserOtpAuthDisable"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

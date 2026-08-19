@@ -1,0 +1,98 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "IXON AccessRecoverList RouterDisplayScreensaver API",
+    "version": "0.1.294"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "RouterDisplayScreensaver",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "RouterDisplayScreensaver",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://portal.ixon.cloud:443/api/router-display-screensaver/:publicId",
+            "headers": [
+              {
+                "name": "Api-Version",
+                "value": ""
+              },
+              {
+                "name": "Api-Application",
+                "value": ""
+              },
+              {
+                "name": "Api-Company",
+                "value": ""
+              },
+              {
+                "name": "Api-Branding",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "publicId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "RouterDisplayScreensaver"
+        },
+        {
+          "info": {
+            "name": "RouterDisplayScreensaver",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://portal.ixon.cloud:443/api/router-display-screensaver/:publicId",
+            "headers": [
+              {
+                "name": "Api-Version",
+                "value": ""
+              },
+              {
+                "name": "Api-Application",
+                "value": ""
+              },
+              {
+                "name": "Api-Company",
+                "value": ""
+              },
+              {
+                "name": "Api-Branding",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "publicId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "RouterDisplayScreensaver"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

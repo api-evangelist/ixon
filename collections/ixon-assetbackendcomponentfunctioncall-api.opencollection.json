@@ -1,0 +1,62 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "IXON AccessRecoverList AssetBackendComponentFunctionCall API",
+    "version": "0.1.294"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "AssetBackendComponentFunctionCall",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "AssetBackendComponentFunctionCall",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://portal.ixon.cloud:443/api/assets/:assetId/backend-component-function-call",
+            "headers": [
+              {
+                "name": "Api-Version",
+                "value": ""
+              },
+              {
+                "name": "Api-Application",
+                "value": ""
+              },
+              {
+                "name": "Api-Company",
+                "value": ""
+              },
+              {
+                "name": "Api-Branding",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "assetId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "AssetBackendComponentFunctionCall"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

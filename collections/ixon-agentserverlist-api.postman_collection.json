@@ -1,0 +1,1090 @@
+{
+  "item": [
+    {
+      "id": "0b21d03f-8f41-42a7-9cda-23713032dfda",
+      "name": "AgentServerList",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "8a9a888e-f93c-452c-a591-fcedd47a14c0",
+          "name": "AgentServerList",
+          "request": {
+            "name": "AgentServerList",
+            "description": {},
+            "url": {
+              "path": [
+                "agents",
+                ":agentId",
+                "servers"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "fields",
+                  "value": "<string>",
+                  "description": "Fields to select. Use \"*\" for all the top-level fields. Or check the \"Success response\" below for other fields.\n\nTo get the fields of a subresource do subresource.field or for multiple fields of one subresource do subresource(field,field)"
+                },
+                {
+                  "disabled": false,
+                  "key": "fields",
+                  "value": "<string>",
+                  "description": "Fields to select. Use \"*\" for all the top-level fields. Or check the \"Success response\" below for other fields.\n\nTo get the fields of a subresource do subresource.field or for multiple fields of one subresource do subresource(field,field)"
+                },
+                {
+                  "disabled": false,
+                  "key": "filters",
+                  "value": "<string>",
+                  "description": "Filter the returned item(s). Format: operator(column,val)\n\nPossible operators are: lt, less, lte, lessorequal, eq, equals, ne, differs, gt, greater, gte, greaterorequal, in, ni, isnull, isnotnull, between, contains.\n\nExample: eq(publicId,\"publicId_val\")"
+                },
+                {
+                  "disabled": false,
+                  "key": "filters",
+                  "value": "<string>",
+                  "description": "Filter the returned item(s). Format: operator(column,val)\n\nPossible operators are: lt, less, lte, lessorequal, eq, equals, ne, differs, gt, greater, gte, greaterorequal, in, ni, isnull, isnotnull, between, contains.\n\nExample: eq(publicId,\"publicId_val\")"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "agentId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) Version of the API to use",
+                "key": "Api-Version",
+                "value": "<integer>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) Get your Application ID via support@ixon.cloud",
+                "key": "Api-Application",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) PublicId of the company",
+                "key": "Api-Company",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "Domain that provides the branding",
+                "key": "Api-Branding",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "b86ba57f-be7d-4c59-8fd2-815fbff613e7",
+              "name": "Success response. Data could be an object instead of a list when one value is returned",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "agents",
+                    ":agentId",
+                    "servers"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "fields",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "fields",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "filters",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "filters",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "agentId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Version of the API to use",
+                    "key": "Api-Version",
+                    "value": "<integer>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Get your Application ID via support@ixon.cloud",
+                    "key": "Api-Application",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) PublicId of the company",
+                    "key": "Api-Company",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Domain that provides the branding",
+                    "key": "Api-Branding",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"success\",\n  \"type\": \"string\",\n  \"data\": [\n    {\n      \"publicId\": \"stringstring\",\n      \"type\": \"ssh\",\n      \"name\": \"string\",\n      \"port\": 13325,\n      \"username\": \"string\",\n      \"password\": \"stri\",\n      \"hasPassword\": false,\n      \"authDomain\": \",c`j2V.jLy:S{\",\n      \"landingPage\": \"string\",\n      \"connectionQuality\": \"high\",\n      \"readOnly\": false,\n      \"vncRightClickOnTouchHold\": true,\n      \"vncEncoding\": \"hextile\",\n      \"useSsl\": false,\n      \"visibleInMobileApp\": false,\n      \"visibleOnWeb\": false,\n      \"httpAuthenticationType\": \"digest\",\n      \"recordSessions\": true,\n      \"audience\": {\n        \"publicId\": \"string\"\n      },\n      \"requireAccessApproval\": false,\n      \"custom\": {},\n      \"agent\": {\n        \"publicId\": \"string\"\n      },\n      \"device\": {\n        \"publicId\": \"string\"\n      },\n      \"serviceGroup\": \"string\",\n      \"template\": {\n        \"publicId\": \"stringstring\",\n        \"type\": \"http\",\n        \"name\": \"string\",\n        \"port\": 42487,\n        \"username\": \"string\",\n        \"password\": \"string\",\n        \"hasPassword\": false,\n        \"authDomain\": \"_.-0,Ul\",\n        \"landingPage\": \"string\",\n        \"connectionQuality\": \"high\",\n        \"readOnly\": false,\n        \"vncRightClickOnTouchHold\": false,\n        \"vncEncoding\": \"zrle\",\n        \"useSsl\": false,\n        \"visibleInMobileApp\": false,\n        \"visibleOnWeb\": true,\n        \"httpAuthenticationType\": \"basic\",\n        \"recordSessions\": true,\n        \"audience\": {\n          \"publicId\": \"string\"\n        },\n        \"requireAccessApproval\": true,\n        \"custom\": {}\n      }\n    },\n    {\n      \"publicId\": \"stringstring\",\n      \"type\": \"vnc\",\n      \"name\": \"string\",\n      \"port\": 14610,\n      \"username\": \"string\",\n      \"password\": \"string\",\n      \"hasPassword\": true,\n      \"authDomain\": \"jTiC*'W.|:B\",\n      \"landingPage\": \"string\",\n      \"connectionQuality\": \"normal\",\n      \"readOnly\": false,\n      \"vncRightClickOnTouchHold\": false,\n      \"vncEncoding\": \"zywrle\",\n      \"useSsl\": false,\n      \"visibleInMobileApp\": true,\n      \"visibleOnWeb\": false,\n      \"httpAuthenticationType\": \"digest\",\n      \"recordSessions\": false,\n      \"audience\": {\n        \"publicId\": \"string\"\n      },\n      \"requireAccessApproval\": false,\n      \"custom\": {},\n      \"agent\": {\n        \"publicId\": \"string\"\n      },\n      \"device\": {\n        \"publicId\": \"string\"\n      },\n      \"serviceGroup\": \"string\",\n      \"template\": {\n        \"publicId\": \"stringstring\",\n        \"type\": \"rtsp\",\n        \"name\": \"string\",\n        \"port\": 34597,\n        \"username\": \"string\",\n        \"password\": \"string\",\n        \"hasPassword\": false,\n        \"authDomain\": \"HN^fE{,w#U|.GSv\",\n        \"landingPage\": \"string\",\n        \"connectionQuality\": \"normal\",\n        \"readOnly\": true,\n        \"vncRightClickOnTouchHold\": false,\n        \"vncEncoding\": \"raw\",\n        \"useSsl\": true,\n        \"visibleInMobileApp\": false,\n        \"visibleOnWeb\": false,\n        \"httpAuthenticationType\": \"basic\",\n        \"recordSessions\": true,\n        \"audience\": {\n          \"publicId\": \"string\"\n        },\n        \"requireAccessApproval\": false,\n        \"custom\": {}\n      }\n    }\n  ],\n  \"moreAfter\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "43a9142d-d637-4cc3-9afd-984207a57aad",
+              "name": "4XX error response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "agents",
+                    ":agentId",
+                    "servers"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "fields",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "fields",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "filters",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "filters",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "agentId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Version of the API to use",
+                    "key": "Api-Version",
+                    "value": "<integer>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Get your Application ID via support@ixon.cloud",
+                    "key": "Api-Application",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) PublicId of the company",
+                    "key": "Api-Company",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Domain that provides the branding",
+                    "key": "Api-Branding",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"error\",\n  \"type\": \"Error\",\n  \"data\": [\n    {\n      \"message\": \"string\",\n      \"propertyName\": \"string\",\n      \"listIndex\": 8470\n    },\n    {\n      \"message\": \"string\",\n      \"propertyName\": \"string\",\n      \"listIndex\": 943\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "3d877082-46c9-4ac6-b3e2-054b852c8020",
+          "name": "AgentServerList",
+          "request": {
+            "name": "AgentServerList",
+            "description": {},
+            "url": {
+              "path": [
+                "agents",
+                ":agentId",
+                "servers"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "agentId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) Version of the API to use",
+                "key": "Api-Version",
+                "value": "<integer>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) Get your Application ID via support@ixon.cloud",
+                "key": "Api-Application",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) PublicId of the company",
+                "key": "Api-Company",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "Domain that provides the branding",
+                "key": "Api-Branding",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "[\n  {\n    \"type\": \"<string>\",\n    \"name\": \"<string>\",\n    \"port\": \"<integer>\",\n    \"device\": {\n      \"publicId\": \"<string>\"\n    },\n    \"audience\": {\n      \"publicId\": \"<string>\"\n    },\n    \"template\": {\n      \"publicId\": \"<string>\"\n    },\n    \"serviceGroup\": \"<string>\",\n    \"username\": \"<string>\",\n    \"password\": \"<string>\",\n    \"authDomain\": \"<string>\",\n    \"landingPage\": \"<string>\",\n    \"connectionQuality\": \"<string>\",\n    \"readOnly\": \"<boolean>\",\n    \"vncRightClickOnTouchHold\": \"<boolean>\",\n    \"vncEncoding\": \"<string>\",\n    \"useSsl\": \"<boolean>\",\n    \"visibleInMobileApp\": \"<boolean>\",\n    \"visibleOnWeb\": \"<boolean>\",\n    \"httpAuthenticationType\": \"<string>\",\n    \"recordSessions\": \"<boolean>\",\n    \"requireAccessApproval\": \"<boolean>\",\n    \"custom\": \"<object>\"\n  },\n  {\n    \"type\": \"<string>\",\n    \"name\": \"<string>\",\n    \"port\": \"<integer>\",\n    \"device\": {\n      \"publicId\": \"<string>\"\n    },\n    \"audience\": {\n      \"publicId\": \"<string>\"\n    },\n    \"template\": {\n      \"publicId\": \"<string>\"\n    },\n    \"serviceGroup\": \"<string>\",\n    \"username\": \"<string>\",\n    \"password\": \"<string>\",\n    \"authDomain\": \"<string>\",\n    \"landingPage\": \"<string>\",\n    \"connectionQuality\": \"<string>\",\n    \"readOnly\": \"<boolean>\",\n    \"vncRightClickOnTouchHold\": \"<boolean>\",\n    \"vncEncoding\": \"<string>\",\n    \"useSsl\": \"<boolean>\",\n    \"visibleInMobileApp\": \"<boolean>\",\n    \"visibleOnWeb\": \"<boolean>\",\n    \"httpAuthenticationType\": \"<string>\",\n    \"recordSessions\": \"<boolean>\",\n    \"requireAccessApproval\": \"<boolean>\",\n    \"custom\": \"<object>\"\n  }\n]",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "2fd69193-a85e-49c4-bb8c-78e5d0c12ccf",
+              "name": "Success response. Data could be an object instead of a list when one value is returned",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "agents",
+                    ":agentId",
+                    "servers"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "agentId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Version of the API to use",
+                    "key": "Api-Version",
+                    "value": "<integer>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Get your Application ID via support@ixon.cloud",
+                    "key": "Api-Application",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) PublicId of the company",
+                    "key": "Api-Company",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Domain that provides the branding",
+                    "key": "Api-Branding",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"type\": \"<string>\",\n    \"name\": \"<string>\",\n    \"port\": \"<integer>\",\n    \"device\": {\n      \"publicId\": \"<string>\"\n    },\n    \"audience\": {\n      \"publicId\": \"<string>\"\n    },\n    \"template\": {\n      \"publicId\": \"<string>\"\n    },\n    \"serviceGroup\": \"<string>\",\n    \"username\": \"<string>\",\n    \"password\": \"<string>\",\n    \"authDomain\": \"<string>\",\n    \"landingPage\": \"<string>\",\n    \"connectionQuality\": \"<string>\",\n    \"readOnly\": \"<boolean>\",\n    \"vncRightClickOnTouchHold\": \"<boolean>\",\n    \"vncEncoding\": \"<string>\",\n    \"useSsl\": \"<boolean>\",\n    \"visibleInMobileApp\": \"<boolean>\",\n    \"visibleOnWeb\": \"<boolean>\",\n    \"httpAuthenticationType\": \"<string>\",\n    \"recordSessions\": \"<boolean>\",\n    \"requireAccessApproval\": \"<boolean>\",\n    \"custom\": \"<object>\"\n  },\n  {\n    \"type\": \"<string>\",\n    \"name\": \"<string>\",\n    \"port\": \"<integer>\",\n    \"device\": {\n      \"publicId\": \"<string>\"\n    },\n    \"audience\": {\n      \"publicId\": \"<string>\"\n    },\n    \"template\": {\n      \"publicId\": \"<string>\"\n    },\n    \"serviceGroup\": \"<string>\",\n    \"username\": \"<string>\",\n    \"password\": \"<string>\",\n    \"authDomain\": \"<string>\",\n    \"landingPage\": \"<string>\",\n    \"connectionQuality\": \"<string>\",\n    \"readOnly\": \"<boolean>\",\n    \"vncRightClickOnTouchHold\": \"<boolean>\",\n    \"vncEncoding\": \"<string>\",\n    \"useSsl\": \"<boolean>\",\n    \"visibleInMobileApp\": \"<boolean>\",\n    \"visibleOnWeb\": \"<boolean>\",\n    \"httpAuthenticationType\": \"<string>\",\n    \"recordSessions\": \"<boolean>\",\n    \"requireAccessApproval\": \"<boolean>\",\n    \"custom\": \"<object>\"\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"success\",\n  \"type\": \"string\",\n  \"data\": [\n    {\n      \"publicId\": \"stringstring\"\n    },\n    {\n      \"publicId\": \"stringstring\"\n    }\n  ],\n  \"moreAfter\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a88ac484-3eb4-478b-b4ad-9a80aba4922c",
+              "name": "4XX error response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "agents",
+                    ":agentId",
+                    "servers"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "agentId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Version of the API to use",
+                    "key": "Api-Version",
+                    "value": "<integer>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Get your Application ID via support@ixon.cloud",
+                    "key": "Api-Application",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) PublicId of the company",
+                    "key": "Api-Company",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Domain that provides the branding",
+                    "key": "Api-Branding",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"type\": \"<string>\",\n    \"name\": \"<string>\",\n    \"port\": \"<integer>\",\n    \"device\": {\n      \"publicId\": \"<string>\"\n    },\n    \"audience\": {\n      \"publicId\": \"<string>\"\n    },\n    \"template\": {\n      \"publicId\": \"<string>\"\n    },\n    \"serviceGroup\": \"<string>\",\n    \"username\": \"<string>\",\n    \"password\": \"<string>\",\n    \"authDomain\": \"<string>\",\n    \"landingPage\": \"<string>\",\n    \"connectionQuality\": \"<string>\",\n    \"readOnly\": \"<boolean>\",\n    \"vncRightClickOnTouchHold\": \"<boolean>\",\n    \"vncEncoding\": \"<string>\",\n    \"useSsl\": \"<boolean>\",\n    \"visibleInMobileApp\": \"<boolean>\",\n    \"visibleOnWeb\": \"<boolean>\",\n    \"httpAuthenticationType\": \"<string>\",\n    \"recordSessions\": \"<boolean>\",\n    \"requireAccessApproval\": \"<boolean>\",\n    \"custom\": \"<object>\"\n  },\n  {\n    \"type\": \"<string>\",\n    \"name\": \"<string>\",\n    \"port\": \"<integer>\",\n    \"device\": {\n      \"publicId\": \"<string>\"\n    },\n    \"audience\": {\n      \"publicId\": \"<string>\"\n    },\n    \"template\": {\n      \"publicId\": \"<string>\"\n    },\n    \"serviceGroup\": \"<string>\",\n    \"username\": \"<string>\",\n    \"password\": \"<string>\",\n    \"authDomain\": \"<string>\",\n    \"landingPage\": \"<string>\",\n    \"connectionQuality\": \"<string>\",\n    \"readOnly\": \"<boolean>\",\n    \"vncRightClickOnTouchHold\": \"<boolean>\",\n    \"vncEncoding\": \"<string>\",\n    \"useSsl\": \"<boolean>\",\n    \"visibleInMobileApp\": \"<boolean>\",\n    \"visibleOnWeb\": \"<boolean>\",\n    \"httpAuthenticationType\": \"<string>\",\n    \"recordSessions\": \"<boolean>\",\n    \"requireAccessApproval\": \"<boolean>\",\n    \"custom\": \"<object>\"\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"error\",\n  \"type\": \"Error\",\n  \"data\": [\n    {\n      \"message\": \"string\",\n      \"propertyName\": \"string\",\n      \"listIndex\": 7601\n    },\n    {\n      \"message\": \"string\",\n      \"propertyName\": \"string\",\n      \"listIndex\": 2311\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a6ab52be-638b-4199-bfa5-74784edd4ed4",
+          "name": "AgentServerList",
+          "request": {
+            "name": "AgentServerList",
+            "description": {},
+            "url": {
+              "path": [
+                "agents",
+                ":agentId",
+                "servers"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "agentId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) Version of the API to use",
+                "key": "Api-Version",
+                "value": "<integer>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) Get your Application ID via support@ixon.cloud",
+                "key": "Api-Application",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) PublicId of the company",
+                "key": "Api-Company",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "Domain that provides the branding",
+                "key": "Api-Branding",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "[\n  {\n    \"publicId\": \"<string>\",\n    \"device\": {\n      \"publicId\": \"<string>\"\n    },\n    \"serviceGroup\": \"<string>\",\n    \"name\": \"<string>\",\n    \"port\": \"<integer>\",\n    \"username\": \"<string>\",\n    \"password\": \"<string>\",\n    \"authDomain\": \"<string>\",\n    \"landingPage\": \"<string>\",\n    \"connectionQuality\": \"<string>\",\n    \"readOnly\": \"<boolean>\",\n    \"vncRightClickOnTouchHold\": \"<boolean>\",\n    \"vncEncoding\": \"<string>\",\n    \"useSsl\": \"<boolean>\",\n    \"visibleInMobileApp\": \"<boolean>\",\n    \"visibleOnWeb\": \"<boolean>\",\n    \"httpAuthenticationType\": \"<string>\",\n    \"recordSessions\": \"<boolean>\",\n    \"audience\": {\n      \"publicId\": \"<string>\"\n    },\n    \"requireAccessApproval\": \"<boolean>\",\n    \"custom\": \"<object>\"\n  },\n  {\n    \"publicId\": \"<string>\",\n    \"device\": {\n      \"publicId\": \"<string>\"\n    },\n    \"serviceGroup\": \"<string>\",\n    \"name\": \"<string>\",\n    \"port\": \"<integer>\",\n    \"username\": \"<string>\",\n    \"password\": \"<string>\",\n    \"authDomain\": \"<string>\",\n    \"landingPage\": \"<string>\",\n    \"connectionQuality\": \"<string>\",\n    \"readOnly\": \"<boolean>\",\n    \"vncRightClickOnTouchHold\": \"<boolean>\",\n    \"vncEncoding\": \"<string>\",\n    \"useSsl\": \"<boolean>\",\n    \"visibleInMobileApp\": \"<boolean>\",\n    \"visibleOnWeb\": \"<boolean>\",\n    \"httpAuthenticationType\": \"<string>\",\n    \"recordSessions\": \"<boolean>\",\n    \"audience\": {\n      \"publicId\": \"<string>\"\n    },\n    \"requireAccessApproval\": \"<boolean>\",\n    \"custom\": \"<object>\"\n  }\n]",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "5a59cee3-b0d3-4361-b902-19d066f95796",
+              "name": "Success response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "agents",
+                    ":agentId",
+                    "servers"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "agentId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Version of the API to use",
+                    "key": "Api-Version",
+                    "value": "<integer>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Get your Application ID via support@ixon.cloud",
+                    "key": "Api-Application",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) PublicId of the company",
+                    "key": "Api-Company",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Domain that provides the branding",
+                    "key": "Api-Branding",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"publicId\": \"<string>\",\n    \"device\": {\n      \"publicId\": \"<string>\"\n    },\n    \"serviceGroup\": \"<string>\",\n    \"name\": \"<string>\",\n    \"port\": \"<integer>\",\n    \"username\": \"<string>\",\n    \"password\": \"<string>\",\n    \"authDomain\": \"<string>\",\n    \"landingPage\": \"<string>\",\n    \"connectionQuality\": \"<string>\",\n    \"readOnly\": \"<boolean>\",\n    \"vncRightClickOnTouchHold\": \"<boolean>\",\n    \"vncEncoding\": \"<string>\",\n    \"useSsl\": \"<boolean>\",\n    \"visibleInMobileApp\": \"<boolean>\",\n    \"visibleOnWeb\": \"<boolean>\",\n    \"httpAuthenticationType\": \"<string>\",\n    \"recordSessions\": \"<boolean>\",\n    \"audience\": {\n      \"publicId\": \"<string>\"\n    },\n    \"requireAccessApproval\": \"<boolean>\",\n    \"custom\": \"<object>\"\n  },\n  {\n    \"publicId\": \"<string>\",\n    \"device\": {\n      \"publicId\": \"<string>\"\n    },\n    \"serviceGroup\": \"<string>\",\n    \"name\": \"<string>\",\n    \"port\": \"<integer>\",\n    \"username\": \"<string>\",\n    \"password\": \"<string>\",\n    \"authDomain\": \"<string>\",\n    \"landingPage\": \"<string>\",\n    \"connectionQuality\": \"<string>\",\n    \"readOnly\": \"<boolean>\",\n    \"vncRightClickOnTouchHold\": \"<boolean>\",\n    \"vncEncoding\": \"<string>\",\n    \"useSsl\": \"<boolean>\",\n    \"visibleInMobileApp\": \"<boolean>\",\n    \"visibleOnWeb\": \"<boolean>\",\n    \"httpAuthenticationType\": \"<string>\",\n    \"recordSessions\": \"<boolean>\",\n    \"audience\": {\n      \"publicId\": \"<string>\"\n    },\n    \"requireAccessApproval\": \"<boolean>\",\n    \"custom\": \"<object>\"\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"success\",\n  \"type\": \"string\",\n  \"data\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "c66e9b28-3323-4692-b39e-62d2dc494770",
+              "name": "4XX error response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "agents",
+                    ":agentId",
+                    "servers"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "agentId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Version of the API to use",
+                    "key": "Api-Version",
+                    "value": "<integer>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Get your Application ID via support@ixon.cloud",
+                    "key": "Api-Application",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) PublicId of the company",
+                    "key": "Api-Company",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Domain that provides the branding",
+                    "key": "Api-Branding",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"publicId\": \"<string>\",\n    \"device\": {\n      \"publicId\": \"<string>\"\n    },\n    \"serviceGroup\": \"<string>\",\n    \"name\": \"<string>\",\n    \"port\": \"<integer>\",\n    \"username\": \"<string>\",\n    \"password\": \"<string>\",\n    \"authDomain\": \"<string>\",\n    \"landingPage\": \"<string>\",\n    \"connectionQuality\": \"<string>\",\n    \"readOnly\": \"<boolean>\",\n    \"vncRightClickOnTouchHold\": \"<boolean>\",\n    \"vncEncoding\": \"<string>\",\n    \"useSsl\": \"<boolean>\",\n    \"visibleInMobileApp\": \"<boolean>\",\n    \"visibleOnWeb\": \"<boolean>\",\n    \"httpAuthenticationType\": \"<string>\",\n    \"recordSessions\": \"<boolean>\",\n    \"audience\": {\n      \"publicId\": \"<string>\"\n    },\n    \"requireAccessApproval\": \"<boolean>\",\n    \"custom\": \"<object>\"\n  },\n  {\n    \"publicId\": \"<string>\",\n    \"device\": {\n      \"publicId\": \"<string>\"\n    },\n    \"serviceGroup\": \"<string>\",\n    \"name\": \"<string>\",\n    \"port\": \"<integer>\",\n    \"username\": \"<string>\",\n    \"password\": \"<string>\",\n    \"authDomain\": \"<string>\",\n    \"landingPage\": \"<string>\",\n    \"connectionQuality\": \"<string>\",\n    \"readOnly\": \"<boolean>\",\n    \"vncRightClickOnTouchHold\": \"<boolean>\",\n    \"vncEncoding\": \"<string>\",\n    \"useSsl\": \"<boolean>\",\n    \"visibleInMobileApp\": \"<boolean>\",\n    \"visibleOnWeb\": \"<boolean>\",\n    \"httpAuthenticationType\": \"<string>\",\n    \"recordSessions\": \"<boolean>\",\n    \"audience\": {\n      \"publicId\": \"<string>\"\n    },\n    \"requireAccessApproval\": \"<boolean>\",\n    \"custom\": \"<object>\"\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"error\",\n  \"type\": \"Error\",\n  \"data\": [\n    {\n      \"message\": \"string\",\n      \"propertyName\": \"string\",\n      \"listIndex\": 7601\n    },\n    {\n      \"message\": \"string\",\n      \"propertyName\": \"string\",\n      \"listIndex\": 2311\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "7c2a43bd-37e0-43f8-820f-d8a36a36a05f",
+          "name": "AgentServerList",
+          "request": {
+            "name": "AgentServerList",
+            "description": {},
+            "url": {
+              "path": [
+                "agents",
+                ":agentId",
+                "servers"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "agentId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) Version of the API to use",
+                "key": "Api-Version",
+                "value": "<integer>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) Get your Application ID via support@ixon.cloud",
+                "key": "Api-Application",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) PublicId of the company",
+                "key": "Api-Company",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "Domain that provides the branding",
+                "key": "Api-Branding",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "DELETE",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "[\n  {\n    \"publicId\": \"<string>\"\n  },\n  {\n    \"publicId\": \"<string>\"\n  }\n]",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "ddd8deb8-aa36-4a0b-8e91-9c7c2bc1bb8f",
+              "name": "Success response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "agents",
+                    ":agentId",
+                    "servers"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "agentId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Version of the API to use",
+                    "key": "Api-Version",
+                    "value": "<integer>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Get your Application ID via support@ixon.cloud",
+                    "key": "Api-Application",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) PublicId of the company",
+                    "key": "Api-Company",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Domain that provides the branding",
+                    "key": "Api-Branding",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"publicId\": \"<string>\"\n  },\n  {\n    \"publicId\": \"<string>\"\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"success\",\n  \"type\": \"string\",\n  \"data\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "41e35894-68ed-4b74-b8e3-f3819d9a849e",
+              "name": "4XX error response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "agents",
+                    ":agentId",
+                    "servers"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "agentId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Version of the API to use",
+                    "key": "Api-Version",
+                    "value": "<integer>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Get your Application ID via support@ixon.cloud",
+                    "key": "Api-Application",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) PublicId of the company",
+                    "key": "Api-Company",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Domain that provides the branding",
+                    "key": "Api-Branding",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"publicId\": \"<string>\"\n  },\n  {\n    \"publicId\": \"<string>\"\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"error\",\n  \"type\": \"Error\",\n  \"data\": [\n    {\n      \"message\": \"string\",\n      \"propertyName\": \"string\",\n      \"listIndex\": 7601\n    },\n    {\n      \"message\": \"string\",\n      \"propertyName\": \"string\",\n      \"listIndex\": 2311\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://portal.ixon.cloud:443/api/",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "083d510f-9329-4ef6-bccc-ea503e3adc13",
+    "name": "IXON AccessRecoverList AgentServerList API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "API for the IXON Cloud Platform\n\nContact Support:\n Name: IXON B.V.\n Email: support@ixon.cloud",
+      "type": "text/plain"
+    }
+  }
+}

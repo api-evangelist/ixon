@@ -1,0 +1,795 @@
+{
+  "item": [
+    {
+      "id": "7a801344-4018-4bae-b7fd-6e8673522de8",
+      "name": "AgentTemplate",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "f1863a5e-e2f2-4159-b421-911d4593c618",
+          "name": "AgentTemplate",
+          "request": {
+            "name": "AgentTemplate",
+            "description": {},
+            "url": {
+              "path": [
+                "agent-templates",
+                ":publicId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "fields",
+                  "value": "<string>",
+                  "description": "Fields to select. Use \"*\" for all the top-level fields. Or check the \"Success response\" below for other fields.\n\nTo get the fields of a subresource do subresource.field or for multiple fields of one subresource do subresource(field,field)"
+                },
+                {
+                  "disabled": false,
+                  "key": "fields",
+                  "value": "<string>",
+                  "description": "Fields to select. Use \"*\" for all the top-level fields. Or check the \"Success response\" below for other fields.\n\nTo get the fields of a subresource do subresource.field or for multiple fields of one subresource do subresource(field,field)"
+                },
+                {
+                  "disabled": false,
+                  "key": "filters",
+                  "value": "<string>",
+                  "description": "Filter the returned item(s). Format: operator(column,val)\n\nPossible operators are: lt, less, lte, lessorequal, eq, equals, ne, differs, gt, greater, gte, greaterorequal, in, ni, isnull, isnotnull, between, contains.\n\nExample: eq(publicId,\"publicId_val\")"
+                },
+                {
+                  "disabled": false,
+                  "key": "filters",
+                  "value": "<string>",
+                  "description": "Filter the returned item(s). Format: operator(column,val)\n\nPossible operators are: lt, less, lte, lessorequal, eq, equals, ne, differs, gt, greater, gte, greaterorequal, in, ni, isnull, isnotnull, between, contains.\n\nExample: eq(publicId,\"publicId_val\")"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "publicId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) Version of the API to use",
+                "key": "Api-Version",
+                "value": "<integer>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) Get your Application ID via support@ixon.cloud",
+                "key": "Api-Application",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) PublicId of the company",
+                "key": "Api-Company",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "Domain that provides the branding",
+                "key": "Api-Branding",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "baa27fdb-f942-4af5-a7b6-a24d27ba5cc6",
+              "name": "Success response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "agent-templates",
+                    ":publicId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "fields",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "fields",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "filters",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "filters",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "publicId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Version of the API to use",
+                    "key": "Api-Version",
+                    "value": "<integer>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Get your Application ID via support@ixon.cloud",
+                    "key": "Api-Application",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) PublicId of the company",
+                    "key": "Api-Company",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Domain that provides the branding",
+                    "key": "Api-Branding",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"success\",\n  \"type\": \"string\",\n  \"data\": {\n    \"publicId\": \"stringstring\",\n    \"company\": {\n      \"publicId\": \"string\"\n    },\n    \"group\": {\n      \"publicId\": \"string\"\n    },\n    \"name\": \"string\",\n    \"description\": \"string\",\n    \"useStunnel\": true,\n    \"config\": {\n      \"publicId\": \"stringstring\",\n      \"agent\": {\n        \"publicId\": \"string\"\n      },\n      \"configFileServer\": \"string\",\n      \"configPushedOn\": \"1997-07-22T02:44:30.253Z\",\n      \"configFileReported\": \"string\",\n      \"configFileReportedWlanKeyEnabled\": true,\n      \"configFileReportedCellularPasswordEnabled\": true,\n      \"configReportedOn\": \"2012-05-24T17:30:58.742Z\",\n      \"differentConfigs\": true,\n      \"differentWanConfigs\": true,\n      \"stewardConfigFileServer\": \"string\",\n      \"stewardConfigFileReported\": \"string\",\n      \"stewardConfigReportedOn\": \"1985-08-23T11:25:21.090Z\",\n      \"differentStewardConfigs\": true,\n      \"routerLan\": {\n        \"agent\": {\n          \"publicId\": \"string\"\n        },\n        \"ipAddress\": \"string\",\n        \"netMask\": \"string\",\n        \"network\": \"string\",\n        \"dhcpServerEnabled\": true,\n        \"dhcpServerRangeFrom\": \"string\",\n        \"dhcpServerRangeTo\": \"string\",\n        \"gatewayLessRouting\": false,\n        \"forwardLanWan\": \"neither\",\n        \"forwardLanWan2\": \"both\",\n        \"wlanEnable\": true,\n        \"wlanSsid\": \"string\",\n        \"wlanKey\": \"string\",\n        \"wlanChannel\": 1881815769,\n        \"bacnetBbmd\": [\n          \"string\",\n          \"string\"\n        ],\n        \"udpBroadcastRelayPort\": [\n          55678,\n          53044\n        ]\n      },\n      \"routerVpn\": {\n        \"agent\": {\n          \"publicId\": \"string\"\n        },\n        \"sourceNatEnabled\": false\n      },\n      \"routerWan\": {\n        \"agent\": {\n          \"publicId\": \"string\"\n        },\n        \"multiwanPolicy\": \"cell_wifi_eth\",\n        \"ipUseDhcp\": false,\n        \"ipAddress\": \"string\",\n        \"ipGateway\": \"string\",\n        \"ipNetMask\": \"string\",\n        \"dnsServers\": [\n          \"string\",\n          \"string\"\n        ],\n        \"dnsRebindProtectionEnabled\": false,\n        \"cellularApn\": \"string\",\n        \"cellularPincode\": \"string\",\n        \"cellularMtu\": 1457,\n        \"digitalInputMode\": \"disable_vpn_high\",\n        \"wanTrackInterval\": 3020305572,\n        \"wanTrackIps\": [\n          \"string\",\n          \"string\"\n        ],\n        \"wlanTrackInterval\": 1549027661,\n        \"wlanTrackIps\": [\n          \"string\",\n          \"string\"\n        ],\n        \"cellularTrackInterval\": 1652873194,\n        \"cellularTrackIps\": [\n          \"str\",\n          \"string\"\n        ],\n        \"httpProxyAddress\": \"string\",\n        \"httpProxyPort\": 2977102621,\n        \"httpProxyAuthentication\": \"basic\",\n        \"httpProxyUsername\": \"string\",\n        \"httpProxyIsSocks5\": false,\n        \"wlanSsid\": \"string\",\n        \"wlanIpUseDhcp\": false,\n        \"wlanIpAddress\": \"string\",\n        \"wlanIpGateway\": \"string\",\n        \"wlanIpNetMask\": \"string\",\n        \"wlanDnsServers\": [\n          \"string\",\n          \"string\"\n        ],\n        \"cellularUsername\": \"string\"\n      },\n      \"routerDisplay\": {\n        \"agent\": {\n          \"publicId\": \"string\"\n        },\n        \"lockEnabled\": false,\n        \"lockCode\": \"6386\"\n      },\n      \"routerAdditionalSubnets\": [\n        {\n          \"publicId\": \"stringstring\",\n          \"networkAddress\": \"string\",\n          \"networkMask\": \"string\",\n          \"gatewayAddress\": \"string\",\n          \"agent\": {\n            \"publicId\": \"string\"\n          }\n        },\n        {\n          \"publicId\": \"stringstring\",\n          \"networkAddress\": \"string\",\n          \"networkMask\": \"string\",\n          \"gatewayAddress\": \"string\",\n          \"agent\": {\n            \"publicId\": \"string\"\n          }\n        }\n      ],\n      \"routerPortForwards\": [\n        {\n          \"publicId\": \"stringstring\",\n          \"interface\": \"VPN\",\n          \"targetIpAddress\": \"string\",\n          \"targetPort\": 13749,\n          \"externalPort\": 19156,\n          \"agent\": {\n            \"publicId\": \"string\"\n          }\n        },\n        {\n          \"publicId\": \"stringstring\",\n          \"interface\": \"WAN2\",\n          \"targetIpAddress\": \"string\",\n          \"targetPort\": 48362,\n          \"externalPort\": 5487,\n          \"agent\": {\n            \"publicId\": \"string\"\n          }\n        }\n      ],\n      \"routerNtpServers\": [\n        {\n          \"publicId\": \"stringstring\",\n          \"agent\": {\n            \"publicId\": \"string\"\n          },\n          \"server\": \"string\"\n        },\n        {\n          \"publicId\": \"stringstring\",\n          \"agent\": {\n            \"publicId\": \"string\"\n          },\n          \"server\": \"string\"\n        }\n      ]\n    },\n    \"card\": {\n      \"publicId\": \"string\"\n    },\n    \"vpnAudience\": {\n      \"publicId\": \"stringstring\",\n      \"name\": \"string\",\n      \"description\": \"string\",\n      \"custom\": {},\n      \"default\": true,\n      \"type\": \"alarm\"\n    },\n    \"vpnRequireAccessApproval\": true,\n    \"vpnAccessRules\": [\n      {\n        \"publicId\": \"stringstring\",\n        \"agent\": {\n          \"publicId\": \"string\"\n        },\n        \"audience\": {\n          \"publicId\": \"string\"\n        },\n        \"ipAddress\": \"string\",\n        \"netMask\": \"string\"\n      },\n      {\n        \"publicId\": \"stringstring\",\n        \"agent\": {\n          \"publicId\": \"string\"\n        },\n        \"audience\": {\n          \"publicId\": \"string\"\n        },\n        \"ipAddress\": \"string\",\n        \"netMask\": \"string\"\n      }\n    ],\n    \"vpnVisibleInMobileApp\": false,\n    \"vpnVisibleOnWeb\": false,\n    \"dataAudience\": {\n      \"publicId\": \"stringstring\",\n      \"name\": \"strin\",\n      \"description\": \"string\",\n      \"custom\": {},\n      \"default\": true,\n      \"type\": \"alarm\"\n    },\n    \"lanWanAccessRules\": [\n      {\n        \"publicId\": \"stringstring\",\n        \"agent\": {\n          \"publicId\": \"string\"\n        },\n        \"sourceIpAddress\": \"string\",\n        \"sourceMacAddress\": \"b5:72:6C:5F:BF:80\",\n        \"destinationPort\": 59966,\n        \"destinationIpAddress\": \"9.0.95.34\",\n        \"protocol\": \"ospf\",\n        \"description\": \"string\"\n      },\n      {\n        \"publicId\": \"stringstring\",\n        \"agent\": {\n          \"publicId\": \"string\"\n        },\n        \"sourceIpAddress\": \"string\",\n        \"sourceMacAddress\": \"0B:5d:de:8a:F7:E3\",\n        \"destinationPort\": 32063,\n        \"destinationIpAddress\": \"21.154.644.1/3\",\n        \"protocol\": \"udp\",\n        \"description\": \"string\"\n      }\n    ],\n    \"oneToOneNatRules\": [\n      {\n        \"publicId\": \"stringstring\",\n        \"agent\": {\n          \"publicId\": \"string\"\n        },\n        \"type\": \"wlan\",\n        \"virtualIpAddress\": \"string\",\n        \"destinationIpAddress\": \"string\",\n        \"protocol\": \"string\",\n        \"port\": 49599,\n        \"sourceIpAddress\": \"string\",\n        \"description\": \"string\"\n      },\n      {\n        \"publicId\": \"stringstring\",\n        \"agent\": {\n          \"publicId\": \"string\"\n        },\n        \"type\": \"wlan\",\n        \"virtualIpAddress\": \"string\",\n        \"destinationIpAddress\": \"string\",\n        \"protocol\": \"string\",\n        \"port\": 38874,\n        \"sourceIpAddress\": \"string\",\n        \"description\": \"string\"\n      }\n    ],\n    \"devices\": [\n      {\n        \"publicId\": \"stringstring\",\n        \"name\": \"string\",\n        \"ipAddress\": \"string\",\n        \"macAddress\": \"6C:4f:8e:DA:c8:32\",\n        \"customAddress\": \"string\",\n        \"agent\": {\n          \"publicId\": \"string\"\n        },\n        \"dataSources\": [\n          {\n            \"agent\": {\n              \"publicId\": \"string\"\n            },\n            \"continueLoggingOnError\": true,\n            \"device\": {\n              \"publicId\": \"string\"\n            },\n            \"gracePeriod\": 5954,\n            \"publicId\": \"stringstring\",\n            \"name\": \"string\",\n            \"slug\": \"Iu\",\n            \"disabled\": true,\n            \"protocol\": {\n              \"publicId\": \"custom\",\n              \"password\": \"string\"\n            },\n            \"port\": 28658,\n            \"pullDelay\": 2578148752,\n            \"valuesPerHour\": 1571272531,\n            \"mqttTopic\": \"string\",\n            \"mqttBrokerClient\": {\n              \"publicId\": \"string\"\n            }\n          },\n          {\n            \"agent\": {\n              \"publicId\": \"string\"\n            },\n            \"continueLoggingOnError\": false,\n            \"device\": {\n              \"publicId\": \"string\"\n            },\n            \"gracePeriod\": 9965,\n            \"publicId\": \"stringstring\",\n            \"name\": \"string\",\n            \"slug\": \"[sFbj\",\n            \"disabled\": false,\n            \"protocol\": {\n              \"publicId\": \"custom\",\n              \"password\": \"string\"\n            },\n            \"port\": 26030,\n            \"pullDelay\": 1726492787,\n            \"valuesPerHour\": 1798664628,\n            \"mqttTopic\": \"string\",\n            \"mqttBrokerClient\": {\n              \"publicId\": \"string\"\n            }\n          }\n        ]\n      },\n      {\n        \"publicId\": \"stringstring\",\n        \"name\": \"string\",\n        \"ipAddress\": \"string\",\n        \"macAddress\": \"0a:82:D8:C9:c7:90\",\n        \"customAddress\": \"string\",\n        \"agent\": {\n          \"publicId\": \"string\"\n        },\n        \"dataSources\": [\n          {\n            \"agent\": {\n              \"publicId\": \"string\"\n            },\n            \"continueLoggingOnError\": true,\n            \"device\": {\n              \"publicId\": \"string\"\n            },\n            \"gracePeriod\": 5417,\n            \"publicId\": \"stringstring\",\n            \"name\": \"string\",\n            \"slug\": \"yH-fri7UWn6\",\n            \"disabled\": false,\n            \"protocol\": {\n              \"publicId\": \"custom\",\n              \"password\": \"string\"\n            },\n            \"port\": 14179,\n            \"pullDelay\": 3144479184,\n            \"valuesPerHour\": 4198657952,\n            \"mqttTopic\": \"string\",\n            \"mqttBrokerClient\": {\n              \"publicId\": \"string\"\n            }\n          },\n          {\n            \"agent\": {\n              \"publicId\": \"string\"\n            },\n            \"continueLoggingOnError\": true,\n            \"device\": {\n              \"publicId\": \"string\"\n            },\n            \"gracePeriod\": 30468,\n            \"publicId\": \"stringstring\",\n            \"name\": \"string\",\n            \"slug\": \"fODP\",\n            \"disabled\": true,\n            \"protocol\": {\n              \"publicId\": \"custom\",\n              \"password\": \"string\"\n            },\n            \"port\": 34156,\n            \"pullDelay\": 2501313309,\n            \"valuesPerHour\": 32470331,\n            \"mqttTopic\": \"string\",\n            \"mqttBrokerClient\": {\n              \"publicId\": \"string\"\n            }\n          }\n        ]\n      }\n    ],\n    \"servers\": [\n      {\n        \"publicId\": \"stringstring\",\n        \"type\": \"http\",\n        \"name\": \"string\",\n        \"port\": 17078,\n        \"username\": \"string\",\n        \"password\": \"string\",\n        \"hasPassword\": true,\n        \"authDomain\": \"O(gZ.\\\":U9#*v=7)C\",\n        \"landingPage\": \"string\",\n        \"connectionQuality\": \"normal\",\n        \"readOnly\": true,\n        \"vncRightClickOnTouchHold\": false,\n        \"vncEncoding\": \"zrle\",\n        \"useSsl\": false,\n        \"visibleInMobileApp\": true,\n        \"visibleOnWeb\": true,\n        \"httpAuthenticationType\": \"basic\",\n        \"recordSessions\": false,\n        \"audience\": {\n          \"publicId\": \"string\"\n        },\n        \"requireAccessApproval\": true,\n        \"custom\": {},\n        \"agent\": {\n          \"publicId\": \"string\"\n        },\n        \"device\": {\n          \"publicId\": \"string\"\n        },\n        \"serviceGroup\": \"string\",\n        \"template\": {\n          \"publicId\": \"stringstring\",\n          \"type\": \"websocket\",\n          \"name\": \"string\",\n          \"port\": 47814,\n          \"username\": \"string\",\n          \"password\": \"string\",\n          \"hasPassword\": false,\n          \"authDomain\": \"w|>MAx(E.QzalR8H&yY\",\n          \"landingPage\": \"string\",\n          \"connectionQuality\": \"normal\",\n          \"readOnly\": true,\n          \"vncRightClickOnTouchHold\": false,\n          \"vncEncoding\": \"ultra\",\n          \"useSsl\": true,\n          \"visibleInMobileApp\": true,\n          \"visibleOnWeb\": true,\n          \"httpAuthenticationType\": \"basic\",\n          \"recordSessions\": false,\n          \"audience\": {\n            \"publicId\": \"string\"\n          },\n          \"requireAccessApproval\": false,\n          \"custom\": {}\n        }\n      },\n      {\n        \"publicId\": \"stringstring\",\n        \"type\": \"rdp\",\n        \"name\": \"string\",\n        \"port\": 45690,\n        \"username\": \"string\",\n        \"password\": \"string\",\n        \"hasPassword\": false,\n        \"authDomain\": \"O+SM0m'I'j^.8]^7fd\",\n        \"landingPage\": \"string\",\n        \"connectionQuality\": \"high\",\n        \"readOnly\": false,\n        \"vncRightClickOnTouchHold\": true,\n        \"vncEncoding\": \"zrle\",\n        \"useSsl\": true,\n        \"visibleInMobileApp\": false,\n        \"visibleOnWeb\": false,\n        \"httpAuthenticationType\": \"digest\",\n        \"recordSessions\": false,\n        \"audience\": {\n          \"publicId\": \"string\"\n        },\n        \"requireAccessApproval\": false,\n        \"custom\": {},\n        \"agent\": {\n          \"publicId\": \"string\"\n        },\n        \"device\": {\n          \"publicId\": \"string\"\n        },\n        \"serviceGroup\": \"string\",\n        \"template\": {\n          \"publicId\": \"stringstring\",\n          \"type\": \"rdp\",\n          \"name\": \"string\",\n          \"port\": 37641,\n          \"username\": \"string\",\n          \"password\": \"string\",\n          \"hasPassword\": true,\n          \"authDomain\": \"U9RUOi/R|u.E2IRaC\",\n          \"landingPage\": \"string\",\n          \"connectionQuality\": \"normal\",\n          \"readOnly\": true,\n          \"vncRightClickOnTouchHold\": true,\n          \"vncEncoding\": \"hextile\",\n          \"useSsl\": false,\n          \"visibleInMobileApp\": true,\n          \"visibleOnWeb\": false,\n          \"httpAuthenticationType\": \"ntlm\",\n          \"recordSessions\": true,\n          \"audience\": {\n            \"publicId\": \"string\"\n          },\n          \"requireAccessApproval\": true,\n          \"custom\": {}\n        }\n      }\n    ],\n    \"pageLinks\": [\n      {\n        \"publicId\": \"stringstring\",\n        \"agent\": {\n          \"publicId\": \"string\"\n        },\n        \"asset\": {\n          \"publicId\": \"string\"\n        },\n        \"menuItem\": {\n          \"publicId\": \"string\"\n        },\n        \"page\": {\n          \"publicId\": \"string\"\n        },\n        \"audience\": {\n          \"publicId\": \"stringstring\",\n          \"name\": \"string\",\n          \"description\": \"string\",\n          \"custom\": {},\n          \"default\": true,\n          \"type\": \"page\"\n        },\n        \"group\": {\n          \"publicId\": \"stringstring\",\n          \"agent\": {\n            \"publicId\": \"string\"\n          },\n          \"asset\": {\n            \"publicId\": \"string\"\n          },\n          \"menuItem\": {\n            \"publicId\": \"string\"\n          },\n          \"name\": \"string\"\n        },\n        \"order\": 33964,\n        \"custom\": {}\n      },\n      {\n        \"publicId\": \"stringstring\",\n        \"agent\": {\n          \"publicId\": \"string\"\n        },\n        \"asset\": {\n          \"publicId\": \"string\"\n        },\n        \"menuItem\": {\n          \"publicId\": \"string\"\n        },\n        \"page\": {\n          \"publicId\": \"string\"\n        },\n        \"audience\": {\n          \"publicId\": \"stringstring\",\n          \"name\": \"string\",\n          \"description\": \"string\",\n          \"custom\": {},\n          \"default\": true,\n          \"type\": \"page\"\n        },\n        \"group\": {\n          \"publicId\": \"stringstring\",\n          \"agent\": {\n            \"publicId\": \"string\"\n          },\n          \"asset\": {\n            \"publicId\": \"string\"\n          },\n          \"menuItem\": {\n            \"publicId\": \"string\"\n          },\n          \"name\": \"string\"\n        },\n        \"order\": 39739,\n        \"custom\": {}\n      }\n    ],\n    \"type\": {\n      \"publicId\": \"stringstring\",\n      \"additionalSubnets\": true,\n      \"allowDataPublishing\": true,\n      \"allowDemoDevice\": true,\n      \"allowTemplating\": false,\n      \"allowReboot\": true,\n      \"configPush\": true,\n      \"configFileFormat\": 777068494,\n      \"customServers\": true,\n      \"deviceIdFormat\": \"string\",\n      \"httpProxyPort\": 22027,\n      \"latestFirmwareFile\": {\n        \"publicId\": \"stringstring\",\n        \"name\": \"string\",\n        \"description\": \"string\",\n        \"code\": \"string\",\n        \"notes\": \"string\",\n        \"agentType\": {\n          \"publicId\": \"string\"\n        },\n        \"type\": \"firmware\",\n        \"latest\": true,\n        \"custom\": {}\n      },\n      \"name\": \"string\",\n      \"offlineConfiguration\": true,\n      \"openvpnConfigMultiUse\": true,\n      \"purchasePrice\": {\n        \"gratis\": true\n      },\n      \"router\": true,\n      \"stunnelSupport\": true,\n      \"wanPortForwardings\": true,\n      \"custom\": {},\n      \"hasSecondWanPort\": true\n    },\n    \"dataSources\": [\n      {\n        \"agent\": {\n          \"publicId\": \"string\"\n        },\n        \"continueLoggingOnError\": true,\n        \"device\": {\n          \"publicId\": \"string\"\n        },\n        \"gracePeriod\": 53249,\n        \"publicId\": \"stringstring\",\n        \"name\": \"string\",\n        \"slug\": \"3m6ys7VY3cb\",\n        \"disabled\": false,\n        \"protocol\": {\n          \"publicId\": \"custom\",\n          \"password\": \"string\"\n        },\n        \"port\": 2901,\n        \"pullDelay\": 2580476042,\n        \"valuesPerHour\": 3148886614,\n        \"mqttTopic\": \"string\",\n        \"mqttBrokerClient\": {\n          \"publicId\": \"string\"\n        }\n      },\n      {\n        \"agent\": {\n          \"publicId\": \"string\"\n        },\n        \"continueLoggingOnError\": true,\n        \"device\": {\n          \"publicId\": \"string\"\n        },\n        \"gracePeriod\": 23439,\n        \"publicId\": \"stringstring\",\n        \"name\": \"string\",\n        \"slug\": \"z2mD3\",\n        \"disabled\": true,\n        \"protocol\": {\n          \"publicId\": \"custom\",\n          \"password\": \"string\"\n        },\n        \"port\": 56402,\n        \"pullDelay\": 394855684,\n        \"valuesPerHour\": 2717633142,\n        \"mqttTopic\": \"string\",\n        \"mqttBrokerClient\": {\n          \"publicId\": \"string\"\n        }\n      }\n    ],\n    \"vpnProtocol\": \"tcp\",\n    \"updatedOn\": \"1952-01-02T06:21:43.186Z\",\n    \"updatedBy\": {\n      \"publicId\": \"stringstring\",\n      \"name\": \"string\"\n    },\n    \"latestVersion\": {\n      \"publicId\": \"stringstring\",\n      \"createdOn\": \"1975-05-04T05:45:07.234Z\",\n      \"number\": \"string\"\n    },\n    \"custom\": {}\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "3b0ca9f2-c49f-49c3-af2f-cb292afbf4ac",
+              "name": "4XX error response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "agent-templates",
+                    ":publicId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "fields",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "fields",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "filters",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "filters",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "publicId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Version of the API to use",
+                    "key": "Api-Version",
+                    "value": "<integer>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Get your Application ID via support@ixon.cloud",
+                    "key": "Api-Application",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) PublicId of the company",
+                    "key": "Api-Company",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Domain that provides the branding",
+                    "key": "Api-Branding",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"error\",\n  \"type\": \"Error\",\n  \"data\": [\n    {\n      \"message\": \"string\",\n      \"propertyName\": \"string\",\n      \"listIndex\": 9368\n    },\n    {\n      \"message\": \"string\",\n      \"propertyName\": \"string\",\n      \"listIndex\": 7866\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "df31213a-f048-49be-9c60-92759e1c6dd7",
+          "name": "AgentTemplate",
+          "request": {
+            "name": "AgentTemplate",
+            "description": {},
+            "url": {
+              "path": [
+                "agent-templates",
+                ":publicId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "publicId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) Version of the API to use",
+                "key": "Api-Version",
+                "value": "<integer>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) Get your Application ID via support@ixon.cloud",
+                "key": "Api-Application",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) PublicId of the company",
+                "key": "Api-Company",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "Domain that provides the branding",
+                "key": "Api-Branding",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"group\": {\n    \"publicId\": \"<string>\"\n  },\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"useStunnel\": \"<boolean>\",\n  \"card\": {\n    \"publicId\": \"<string>\"\n  },\n  \"vpnAudience\": {\n    \"publicId\": \"<string>\"\n  },\n  \"vpnRequireAccessApproval\": \"<boolean>\",\n  \"vpnVisibleInMobileApp\": \"<boolean>\",\n  \"vpnVisibleOnWeb\": \"<boolean>\",\n  \"dataAudience\": {\n    \"publicId\": \"<string>\"\n  },\n  \"vpnProtocol\": \"<string>\",\n  \"custom\": \"<object>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "0a1dd9ad-0e68-4dd7-b047-1a3afbe3322a",
+              "name": "Success response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "agent-templates",
+                    ":publicId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "publicId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Version of the API to use",
+                    "key": "Api-Version",
+                    "value": "<integer>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Get your Application ID via support@ixon.cloud",
+                    "key": "Api-Application",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) PublicId of the company",
+                    "key": "Api-Company",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Domain that provides the branding",
+                    "key": "Api-Branding",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"group\": {\n    \"publicId\": \"<string>\"\n  },\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"useStunnel\": \"<boolean>\",\n  \"card\": {\n    \"publicId\": \"<string>\"\n  },\n  \"vpnAudience\": {\n    \"publicId\": \"<string>\"\n  },\n  \"vpnRequireAccessApproval\": \"<boolean>\",\n  \"vpnVisibleInMobileApp\": \"<boolean>\",\n  \"vpnVisibleOnWeb\": \"<boolean>\",\n  \"dataAudience\": {\n    \"publicId\": \"<string>\"\n  },\n  \"vpnProtocol\": \"<string>\",\n  \"custom\": \"<object>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"success\",\n  \"type\": \"string\",\n  \"data\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "3e7cd276-e82c-4721-b871-258aaae0b8cc",
+              "name": "4XX error response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "agent-templates",
+                    ":publicId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "publicId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Version of the API to use",
+                    "key": "Api-Version",
+                    "value": "<integer>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Get your Application ID via support@ixon.cloud",
+                    "key": "Api-Application",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) PublicId of the company",
+                    "key": "Api-Company",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Domain that provides the branding",
+                    "key": "Api-Branding",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"group\": {\n    \"publicId\": \"<string>\"\n  },\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"useStunnel\": \"<boolean>\",\n  \"card\": {\n    \"publicId\": \"<string>\"\n  },\n  \"vpnAudience\": {\n    \"publicId\": \"<string>\"\n  },\n  \"vpnRequireAccessApproval\": \"<boolean>\",\n  \"vpnVisibleInMobileApp\": \"<boolean>\",\n  \"vpnVisibleOnWeb\": \"<boolean>\",\n  \"dataAudience\": {\n    \"publicId\": \"<string>\"\n  },\n  \"vpnProtocol\": \"<string>\",\n  \"custom\": \"<object>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"error\",\n  \"type\": \"Error\",\n  \"data\": [\n    {\n      \"message\": \"string\",\n      \"propertyName\": \"string\",\n      \"listIndex\": 3850\n    },\n    {\n      \"message\": \"string\",\n      \"propertyName\": \"string\",\n      \"listIndex\": 5958\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "30ebc6df-69d7-49da-83f1-4fcbc32ef8aa",
+          "name": "AgentTemplate",
+          "request": {
+            "name": "AgentTemplate",
+            "description": {},
+            "url": {
+              "path": [
+                "agent-templates",
+                ":publicId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "publicId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) Version of the API to use",
+                "key": "Api-Version",
+                "value": "<integer>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) Get your Application ID via support@ixon.cloud",
+                "key": "Api-Application",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) PublicId of the company",
+                "key": "Api-Company",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "Domain that provides the branding",
+                "key": "Api-Branding",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "DELETE",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "74bf1605-8211-4ec6-955f-0a4a0ace66c4",
+              "name": "Success response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "agent-templates",
+                    ":publicId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "publicId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Version of the API to use",
+                    "key": "Api-Version",
+                    "value": "<integer>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Get your Application ID via support@ixon.cloud",
+                    "key": "Api-Application",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) PublicId of the company",
+                    "key": "Api-Company",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Domain that provides the branding",
+                    "key": "Api-Branding",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"success\",\n  \"type\": \"string\",\n  \"data\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "06ebea8f-38a5-4413-874b-1e0d89c9fe3c",
+              "name": "4XX error response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "agent-templates",
+                    ":publicId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "publicId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Version of the API to use",
+                    "key": "Api-Version",
+                    "value": "<integer>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Get your Application ID via support@ixon.cloud",
+                    "key": "Api-Application",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) PublicId of the company",
+                    "key": "Api-Company",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Domain that provides the branding",
+                    "key": "Api-Branding",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"error\",\n  \"type\": \"Error\",\n  \"data\": [\n    {\n      \"message\": \"string\",\n      \"propertyName\": \"string\",\n      \"listIndex\": 3850\n    },\n    {\n      \"message\": \"string\",\n      \"propertyName\": \"string\",\n      \"listIndex\": 5958\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://portal.ixon.cloud:443/api/",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "b1cb98d4-7471-402c-a53f-d477cd328cdf",
+    "name": "IXON AccessRecoverList AgentTemplate API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "API for the IXON Cloud Platform\n\nContact Support:\n Name: IXON B.V.\n Email: support@ixon.cloud",
+      "type": "text/plain"
+    }
+  }
+}

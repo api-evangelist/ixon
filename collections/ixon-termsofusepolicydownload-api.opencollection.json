@@ -1,0 +1,50 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "IXON AccessRecoverList TermsOfUsePolicyDownload API",
+    "version": "0.1.294"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "TermsOfUsePolicyDownload",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "TermsOfUsePolicyDownload",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://portal.ixon.cloud:443/api/terms-of-use-policies/:publicId/download",
+            "headers": [
+              {
+                "name": "Api-Version",
+                "value": ""
+              },
+              {
+                "name": "Api-Application",
+                "value": ""
+              },
+              {
+                "name": "Api-Branding",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "publicId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "TermsOfUsePolicyDownload"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

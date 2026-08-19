@@ -1,0 +1,58 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "IXON AccessRecoverList AgentLicenceBundles API",
+    "version": "0.1.294"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "AgentLicenceBundles",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "AgentLicenceBundles",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://portal.ixon.cloud:443/api/agents/:agentId/licence-bundles/activate",
+            "headers": [
+              {
+                "name": "Api-Version",
+                "value": ""
+              },
+              {
+                "name": "Api-Application",
+                "value": ""
+              },
+              {
+                "name": "Api-Company",
+                "value": ""
+              },
+              {
+                "name": "Api-Branding",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "agentId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "AgentLicenceBundles"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

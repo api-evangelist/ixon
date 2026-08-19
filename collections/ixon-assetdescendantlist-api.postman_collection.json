@@ -1,0 +1,291 @@
+{
+  "item": [
+    {
+      "id": "892e5a61-9cc3-4a17-9df5-143c2767e881",
+      "name": "AssetDescendantList",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "55d2ccda-139a-4e9f-a370-6af25265e3aa",
+          "name": "AssetDescendantList",
+          "request": {
+            "name": "AssetDescendantList",
+            "description": {},
+            "url": {
+              "path": [
+                "assets",
+                ":publicId",
+                "descendants"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "fields",
+                  "value": "<string>",
+                  "description": "Fields to select. Use \"*\" for all the top-level fields. Or check the \"Success response\" below for other fields.\n\nTo get the fields of a subresource do subresource.field or for multiple fields of one subresource do subresource(field,field)"
+                },
+                {
+                  "disabled": false,
+                  "key": "fields",
+                  "value": "<string>",
+                  "description": "Fields to select. Use \"*\" for all the top-level fields. Or check the \"Success response\" below for other fields.\n\nTo get the fields of a subresource do subresource.field or for multiple fields of one subresource do subresource(field,field)"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "publicId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) Version of the API to use",
+                "key": "Api-Version",
+                "value": "<integer>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) Get your Application ID via support@ixon.cloud",
+                "key": "Api-Application",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) PublicId of the company",
+                "key": "Api-Company",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "Domain that provides the branding",
+                "key": "Api-Branding",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "7c14e098-c9e2-4f7c-bb60-7e9fbd857ea5",
+              "name": "Success response. Data could be an object instead of a list when one value is returned",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "assets",
+                    ":publicId",
+                    "descendants"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "fields",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "fields",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "publicId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Version of the API to use",
+                    "key": "Api-Version",
+                    "value": "<integer>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Get your Application ID via support@ixon.cloud",
+                    "key": "Api-Application",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) PublicId of the company",
+                    "key": "Api-Company",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Domain that provides the branding",
+                    "key": "Api-Branding",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"success\",\n  \"type\": \"string\",\n  \"data\": [\n    {\n      \"publicId\": \"stringstring\",\n      \"company\": {\n        \"publicId\": \"string\"\n      },\n      \"name\": \"string\",\n      \"description\": \"string\",\n      \"order\": -9110651922600339000,\n      \"resourceVariant\": {\n        \"publicId\": \"stringstring\",\n        \"company\": {\n          \"publicId\": \"string\"\n        },\n        \"name\": \"string\",\n        \"order\": -8320856199754502000\n      },\n      \"slug\": \"string\",\n      \"parent\": {\n        \"publicId\": \"string\"\n      },\n      \"pageLinks\": [\n        {\n          \"publicId\": \"stringstring\",\n          \"agent\": {\n            \"publicId\": \"string\"\n          },\n          \"asset\": {\n            \"publicId\": \"string\"\n          },\n          \"menuItem\": {\n            \"publicId\": \"string\"\n          },\n          \"page\": {\n            \"publicId\": \"string\"\n          },\n          \"audience\": {\n            \"publicId\": \"stringstring\",\n            \"name\": \"string\",\n            \"description\": \"string\",\n            \"custom\": {},\n            \"default\": true,\n            \"type\": \"alarm\"\n          },\n          \"group\": {\n            \"publicId\": \"stringstring\",\n            \"agent\": {\n              \"publicId\": \"string\"\n            },\n            \"asset\": {\n              \"publicId\": \"string\"\n            },\n            \"menuItem\": {\n              \"publicId\": \"string\"\n            },\n            \"name\": \"string\"\n          },\n          \"order\": 19667,\n          \"custom\": {}\n        },\n        {\n          \"publicId\": \"stringstring\",\n          \"agent\": {\n            \"publicId\": \"string\"\n          },\n          \"asset\": {\n            \"publicId\": \"string\"\n          },\n          \"menuItem\": {\n            \"publicId\": \"string\"\n          },\n          \"page\": {\n            \"publicId\": \"string\"\n          },\n          \"audience\": {\n            \"publicId\": \"stringstring\",\n            \"name\": \"string\",\n            \"description\": \"string\",\n            \"custom\": {},\n            \"default\": false,\n            \"type\": \"service\"\n          },\n          \"group\": {\n            \"publicId\": \"stringstring\",\n            \"agent\": {\n              \"publicId\": \"string\"\n            },\n            \"asset\": {\n              \"publicId\": \"string\"\n            },\n            \"menuItem\": {\n              \"publicId\": \"string\"\n            },\n            \"name\": \"string\"\n          },\n          \"order\": 57792,\n          \"custom\": {}\n        }\n      ],\n      \"memberships\": [\n        {\n          \"publicId\": \"stringstring\",\n          \"asset\": {\n            \"publicId\": \"string\"\n          },\n          \"group\": {\n            \"publicId\": \"string\"\n          }\n        },\n        {\n          \"publicId\": \"stringstring\",\n          \"asset\": {\n            \"publicId\": \"string\"\n          },\n          \"group\": {\n            \"publicId\": \"string\"\n          }\n        }\n      ],\n      \"card\": {\n        \"publicId\": \"string\"\n      },\n      \"enabled\": false,\n      \"aiAssistantEnabled\": true,\n      \"aiAssistantUserGreeting\": \"string\",\n      \"custom\": {},\n      \"agent\": {\n        \"publicId\": \"string\"\n      },\n      \"appConfigs\": [\n        {\n          \"publicId\": \"stringstring\",\n          \"app\": {\n            \"publicId\": \"string\"\n          },\n          \"asset\": {\n            \"publicId\": \"string\"\n          },\n          \"values\": \"string\",\n          \"stateValues\": \"string\",\n          \"resources\": [\n            {\n              \"publicId\": \"stringstring\",\n              \"config\": {\n                \"publicId\": \"string\"\n              },\n              \"name\": \"string\",\n              \"resourcePublicId\": \"stringstring\",\n              \"resourceType\": \"AgentDataTag\",\n              \"values\": \"string\",\n              \"stateValues\": \"string\",\n              \"slug\": \"string\"\n            },\n            {\n              \"publicId\": \"stringstring\",\n              \"config\": {\n                \"publicId\": \"string\"\n              },\n              \"name\": \"string\",\n              \"resourcePublicId\": \"stringstring\",\n              \"resourceType\": \"AgentDataTag\",\n              \"values\": \"str\",\n              \"stateValues\": \"string\",\n              \"slug\": \"string\"\n            }\n          ]\n        },\n        {\n          \"publicId\": \"stringstring\",\n          \"app\": {\n            \"publicId\": \"string\"\n          },\n          \"asset\": {\n            \"publicId\": \"string\"\n          },\n          \"values\": \"string\",\n          \"stateValues\": \"string\",\n          \"resources\": [\n            {\n              \"publicId\": \"stringstring\",\n              \"config\": {\n                \"publicId\": \"string\"\n              },\n              \"name\": \"string\",\n              \"resourcePublicId\": \"stringstring\",\n              \"resourceType\": \"AgentDataTag\",\n              \"values\": \"string\",\n              \"stateValues\": \"string\",\n              \"slug\": \"string\"\n            },\n            {\n              \"publicId\": \"stringstring\",\n              \"config\": {\n                \"publicId\": \"string\"\n              },\n              \"name\": \"string\",\n              \"resourcePublicId\": \"stringstring\",\n              \"resourceType\": \"AgentDataTag\",\n              \"values\": \"string\",\n              \"stateValues\": \"string\",\n              \"slug\": \"string\"\n            }\n          ]\n        }\n      ],\n      \"libraryAsset\": {\n        \"publicId\": \"string\"\n      },\n      \"libraryVersion\": {\n        \"publicId\": \"stringstring\",\n        \"name\": \"string\",\n        \"library\": {\n          \"publicId\": \"string\"\n        },\n        \"version\": 1787853507,\n        \"description\": \"s\",\n        \"publishedBy\": {\n          \"publicId\": \"string\"\n        },\n        \"publishedOn\": \"1998-07-18T05:10:17.201Z\",\n        \"renderedYaml\": \"stri\",\n        \"latest\": true\n      },\n      \"isLibraryAsset\": true,\n      \"hasChanges\": true,\n      \"root\": {\n        \"publicId\": \"stringstring\"\n      },\n      \"libraryRoot\": {\n        \"publicId\": \"stringstring\"\n      },\n      \"location\": {\n        \"name\": \"string\",\n        \"latitude\": \"string\",\n        \"longitude\": \"string\"\n      },\n      \"timeZone\": \"string\"\n    },\n    {\n      \"publicId\": \"stringstring\",\n      \"company\": {\n        \"publicId\": \"string\"\n      },\n      \"name\": \"string\",\n      \"description\": \"string\",\n      \"order\": -8837546402280851000,\n      \"resourceVariant\": {\n        \"publicId\": \"stringstring\",\n        \"company\": {\n          \"publicId\": \"string\"\n        },\n        \"name\": \"string\",\n        \"order\": -2902688175276822500\n      },\n      \"slug\": \"string\",\n      \"parent\": {\n        \"publicId\": \"string\"\n      },\n      \"pageLinks\": [\n        {\n          \"publicId\": \"stringstring\",\n          \"agent\": {\n            \"publicId\": \"string\"\n          },\n          \"asset\": {\n            \"publicId\": \"string\"\n          },\n          \"menuItem\": {\n            \"publicId\": \"string\"\n          },\n          \"page\": {\n            \"publicId\": \"string\"\n          },\n          \"audience\": {\n            \"publicId\": \"stringstring\",\n            \"name\": \"string\",\n            \"description\": \"string\",\n            \"custom\": {},\n            \"default\": true,\n            \"type\": \"alarm\"\n          },\n          \"group\": {\n            \"publicId\": \"stringstring\",\n            \"agent\": {\n              \"publicId\": \"string\"\n            },\n            \"asset\": {\n              \"publicId\": \"string\"\n            },\n            \"menuItem\": {\n              \"publicId\": \"string\"\n            },\n            \"name\": \"string\"\n          },\n          \"order\": 29161,\n          \"custom\": {}\n        },\n        {\n          \"publicId\": \"stringstring\",\n          \"agent\": {\n            \"publicId\": \"string\"\n          },\n          \"asset\": {\n            \"publicId\": \"string\"\n          },\n          \"menuItem\": {\n            \"publicId\": \"string\"\n          },\n          \"page\": {\n            \"publicId\": \"string\"\n          },\n          \"audience\": {\n            \"publicId\": \"stringstring\",\n            \"name\": \"string\",\n            \"description\": \"string\",\n            \"custom\": {},\n            \"default\": false,\n            \"type\": \"alarm\"\n          },\n          \"group\": {\n            \"publicId\": \"stringstring\",\n            \"agent\": {\n              \"publicId\": \"string\"\n            },\n            \"asset\": {\n              \"publicId\": \"string\"\n            },\n            \"menuItem\": {\n              \"publicId\": \"string\"\n            },\n            \"name\": \"string\"\n          },\n          \"order\": 5067,\n          \"custom\": {}\n        }\n      ],\n      \"memberships\": [\n        {\n          \"publicId\": \"stringstring\",\n          \"asset\": {\n            \"publicId\": \"string\"\n          },\n          \"group\": {\n            \"publicId\": \"string\"\n          }\n        },\n        {\n          \"publicId\": \"stringstring\",\n          \"asset\": {\n            \"publicId\": \"string\"\n          },\n          \"group\": {\n            \"publicId\": \"string\"\n          }\n        }\n      ],\n      \"card\": {\n        \"publicId\": \"string\"\n      },\n      \"enabled\": true,\n      \"aiAssistantEnabled\": true,\n      \"aiAssistantUserGreeting\": \"string\",\n      \"custom\": {},\n      \"agent\": {\n        \"publicId\": \"string\"\n      },\n      \"appConfigs\": [\n        {\n          \"publicId\": \"stringstring\",\n          \"app\": {\n            \"publicId\": \"string\"\n          },\n          \"asset\": {\n            \"publicId\": \"string\"\n          },\n          \"values\": \"string\",\n          \"stateValues\": \"string\",\n          \"resources\": [\n            {\n              \"publicId\": \"stringstring\",\n              \"config\": {\n                \"publicId\": \"string\"\n              },\n              \"name\": \"string\",\n              \"resourcePublicId\": \"stringstring\",\n              \"resourceType\": \"AgentDataTag\",\n              \"values\": \"string\",\n              \"stateValues\": \"string\",\n              \"slug\": \"str\"\n            },\n            {\n              \"publicId\": \"stringstring\",\n              \"config\": {\n                \"publicId\": \"string\"\n              },\n              \"name\": \"string\",\n              \"resourcePublicId\": \"stringstring\",\n              \"resourceType\": \"AgentDataTag\",\n              \"values\": \"string\",\n              \"stateValues\": \"string\",\n              \"slug\": \"string\"\n            }\n          ]\n        },\n        {\n          \"publicId\": \"stringstring\",\n          \"app\": {\n            \"publicId\": \"string\"\n          },\n          \"asset\": {\n            \"publicId\": \"string\"\n          },\n          \"values\": \"string\",\n          \"stateValues\": \"string\",\n          \"resources\": [\n            {\n              \"publicId\": \"stringstring\",\n              \"config\": {\n                \"publicId\": \"string\"\n              },\n              \"name\": \"string\",\n              \"resourcePublicId\": \"stringstring\",\n              \"resourceType\": \"AgentDataTag\",\n              \"values\": \"string\",\n              \"stateValues\": \"s\",\n              \"slug\": \"strin\"\n            },\n            {\n              \"publicId\": \"stringstring\",\n              \"config\": {\n                \"publicId\": \"string\"\n              },\n              \"name\": \"string\",\n              \"resourcePublicId\": \"stringstring\",\n              \"resourceType\": \"AgentDataTag\",\n              \"values\": \"string\",\n              \"stateValues\": \"string\",\n              \"slug\": \"string\"\n            }\n          ]\n        }\n      ],\n      \"libraryAsset\": {\n        \"publicId\": \"string\"\n      },\n      \"libraryVersion\": {\n        \"publicId\": \"stringstring\",\n        \"name\": \"string\",\n        \"library\": {\n          \"publicId\": \"string\"\n        },\n        \"version\": 2104298828,\n        \"description\": \"string\",\n        \"publishedBy\": {\n          \"publicId\": \"string\"\n        },\n        \"publishedOn\": \"1946-10-30T01:32:27.661Z\",\n        \"renderedYaml\": \"string\",\n        \"latest\": true\n      },\n      \"isLibraryAsset\": false,\n      \"hasChanges\": false,\n      \"root\": {\n        \"publicId\": \"stringstring\"\n      },\n      \"libraryRoot\": {\n        \"publicId\": \"stringstring\"\n      },\n      \"location\": {\n        \"name\": \"string\",\n        \"latitude\": \"string\",\n        \"longitude\": \"string\"\n      },\n      \"timeZone\": \"string\"\n    }\n  ],\n  \"moreAfter\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "849deae5-a4e0-4606-ad12-f2a6ca8d2f03",
+              "name": "4XX error response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "assets",
+                    ":publicId",
+                    "descendants"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "fields",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "fields",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "publicId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Version of the API to use",
+                    "key": "Api-Version",
+                    "value": "<integer>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Get your Application ID via support@ixon.cloud",
+                    "key": "Api-Application",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) PublicId of the company",
+                    "key": "Api-Company",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Domain that provides the branding",
+                    "key": "Api-Branding",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"error\",\n  \"type\": \"Error\",\n  \"data\": [\n    {\n      \"message\": \"string\",\n      \"propertyName\": \"string\",\n      \"listIndex\": 5194\n    },\n    {\n      \"message\": \"string\",\n      \"propertyName\": \"string\",\n      \"listIndex\": 9278\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://portal.ixon.cloud:443/api/",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "d4d4299f-2ae6-46a9-9427-058e0c212f9b",
+    "name": "IXON AccessRecoverList AssetDescendantList API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "API for the IXON Cloud Platform\n\nContact Support:\n Name: IXON B.V.\n Email: support@ixon.cloud",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "IXON AccessRecoverList PageDraft API",
+    "version": "0.1.294"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "PageDraft",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "PageDraft",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://portal.ixon.cloud:443/api/pages/:publicId/draft",
+            "headers": [
+              {
+                "name": "Api-Version",
+                "value": ""
+              },
+              {
+                "name": "Api-Application",
+                "value": ""
+              },
+              {
+                "name": "Api-Company",
+                "value": ""
+              },
+              {
+                "name": "Api-Branding",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "publicId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "PageDraft"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

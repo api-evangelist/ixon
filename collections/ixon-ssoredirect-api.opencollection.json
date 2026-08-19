@@ -1,0 +1,46 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "IXON AccessRecoverList SsoRedirect API",
+    "version": "0.1.294"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "SsoRedirect",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "SsoRedirect",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://portal.ixon.cloud:443/api/sso/redirect/:api-version",
+            "headers": [
+              {
+                "name": "Api-Version",
+                "value": ""
+              },
+              {
+                "name": "Api-Branding",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "api-version",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "SsoRedirect"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

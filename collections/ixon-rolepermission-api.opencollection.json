@@ -1,0 +1,63 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "IXON AccessRecoverList RolePermission API",
+    "version": "0.1.294"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "RolePermission",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "RolePermission",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://portal.ixon.cloud:443/api/roles/:parentId/permissions/:publicId",
+            "headers": [
+              {
+                "name": "Api-Version",
+                "value": ""
+              },
+              {
+                "name": "Api-Application",
+                "value": ""
+              },
+              {
+                "name": "Api-Company",
+                "value": ""
+              },
+              {
+                "name": "Api-Branding",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "parentId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "publicId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "RolePermission"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

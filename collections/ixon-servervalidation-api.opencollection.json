@@ -1,0 +1,39 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "IXON AccessRecoverList ServerValidation API",
+    "version": "0.1.294"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "ServerValidation",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "ServerValidation",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://portal.ixon.cloud:443/api/server-validation",
+            "headers": [
+              {
+                "name": "Api-Version",
+                "value": ""
+              },
+              {
+                "name": "Api-Branding",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "ServerValidation"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

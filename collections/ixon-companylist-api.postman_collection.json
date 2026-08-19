@@ -1,0 +1,689 @@
+{
+  "item": [
+    {
+      "id": "326c11ba-1099-4b5d-b5b6-bd88795ff4d1",
+      "name": "CompanyList",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "9099c06a-4485-420c-bf87-f77921f25b74",
+          "name": "CompanyList",
+          "request": {
+            "name": "CompanyList",
+            "description": {},
+            "url": {
+              "path": [
+                "companies"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "fields",
+                  "value": "<string>",
+                  "description": "Fields to select. Use \"*\" for all the top-level fields. Or check the \"Success response\" below for other fields.\n\nTo get the fields of a subresource do subresource.field or for multiple fields of one subresource do subresource(field,field)"
+                },
+                {
+                  "disabled": false,
+                  "key": "fields",
+                  "value": "<string>",
+                  "description": "Fields to select. Use \"*\" for all the top-level fields. Or check the \"Success response\" below for other fields.\n\nTo get the fields of a subresource do subresource.field or for multiple fields of one subresource do subresource(field,field)"
+                },
+                {
+                  "disabled": false,
+                  "key": "filters",
+                  "value": "<string>",
+                  "description": "Filter the returned item(s). Format: operator(column,val)\n\nPossible operators are: lt, less, lte, lessorequal, eq, equals, ne, differs, gt, greater, gte, greaterorequal, in, ni, isnull, isnotnull, between, contains.\n\nExample: eq(publicId,\"publicId_val\")"
+                },
+                {
+                  "disabled": false,
+                  "key": "filters",
+                  "value": "<string>",
+                  "description": "Filter the returned item(s). Format: operator(column,val)\n\nPossible operators are: lt, less, lte, lessorequal, eq, equals, ne, differs, gt, greater, gte, greaterorequal, in, ni, isnull, isnotnull, between, contains.\n\nExample: eq(publicId,\"publicId_val\")"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) Version of the API to use",
+                "key": "Api-Version",
+                "value": "<integer>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) Get your Application ID via support@ixon.cloud",
+                "key": "Api-Application",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "Domain that provides the branding",
+                "key": "Api-Branding",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "76fb680e-b183-40a3-86ad-dca5292b61e7",
+              "name": "Success response. Data could be an object instead of a list when one value is returned",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "companies"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "fields",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "fields",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "filters",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "filters",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Version of the API to use",
+                    "key": "Api-Version",
+                    "value": "<integer>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Get your Application ID via support@ixon.cloud",
+                    "key": "Api-Application",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Domain that provides the branding",
+                    "key": "Api-Branding",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"success\",\n  \"type\": \"string\",\n  \"data\": [\n    {\n      \"publicId\": \"5929-6673-9666-7488-4325\",\n      \"name\": \"string\",\n      \"custom\": {},\n      \"branding\": {\n        \"publicId\": \"stringstring\",\n        \"name\": \"string\",\n        \"fqdn\": \"(OccE9_|za.-T#/\",\n        \"theme\": {\n          \"primaryColor\": \"#ACdF06\",\n          \"primaryTextColor\": \"#73a0c9\",\n          \"accentColor\": \"9dbCA4\",\n          \"accentTextColor\": \"290329\",\n          \"headerColor\": \"#CbaB1A\",\n          \"headerLineColor\": \"7088Ea\",\n          \"menuColor\": \"eaeA3E\",\n          \"menuTextColor\": \"DA65Ae\",\n          \"pageColor\": \"#3D2dD5\",\n          \"pageTextColor\": \"Cf4Fd1\",\n          \"cardColor\": \"#2a13EA\",\n          \"cardTextColor\": \"#aFd47F\",\n          \"logoHasBackgroundColor\": true,\n          \"logoOnHeaderColorSpec\": \"string\"\n        },\n        \"appleTouchIcon\": \"string\",\n        \"favicon\": \"string\",\n        \"logo\": \"string\",\n        \"logoDark\": \"string\",\n        \"appleAppStoreLink\": \"string\",\n        \"googlePlayStoreLink\": \"string\",\n        \"landingPageComponentTemplate\": {\n          \"publicId\": \"stringstring\",\n          \"company\": {\n            \"publicId\": \"string\"\n          },\n          \"name\": \"string\",\n          \"description\": \"string\",\n          \"version\": \"string\",\n          \"author\": \"string\",\n          \"licence\": \"string\",\n          \"url\": \"string\",\n          \"sheetSettings\": {\n            \"minCols\": 6,\n            \"defaultCols\": 5,\n            \"maxCols\": 1,\n            \"minRows\": 1,\n            \"defaultRows\": 1,\n            \"maxRows\": 7\n          },\n          \"cardSettings\": {\n            \"minHeight\": 32576,\n            \"defaultHeight\": 9884,\n            \"maxHeight\": 22647\n          },\n          \"inputs\": \"string\",\n          \"draft\": {\n            \"publicId\": \"string\"\n          },\n          \"published\": {\n            \"publicId\": \"string\"\n          },\n          \"category\": {\n            \"publicId\": \"stringstring\",\n            \"name\": \"string\",\n            \"order\": 31847\n          },\n          \"configuredVersion\": {\n            \"publicId\": \"stringstring\",\n            \"number\": \"979\",\n            \"mainPath\": \"string\"\n          },\n          \"backendComponent\": {\n            \"publicId\": \"string\"\n          },\n          \"static\": true,\n          \"intent\": [\n            \"landing-page\",\n            \"main-page\"\n          ],\n          \"private\": false\n        },\n        \"custom\": {}\n      },\n      \"customTermsOfUse\": \"sector\",\n      \"customPrivacyStatement\": \"sector\",\n      \"latestTermsOfUse\": {\n        \"publicId\": \"stringstring\",\n        \"company\": {\n          \"publicId\": \"string\"\n        },\n        \"latest\": true,\n        \"version\": \"stri\",\n        \"publishedOn\": \"2005-02-05T01:32:31.781Z\",\n        \"downloadUrl\": \"string\",\n        \"type\": \"termsofuse\",\n        \"languages\": [\n          {\n            \"publicId\": \"stringstring\",\n            \"languageCode\": \"st\",\n            \"body\": \"string\",\n            \"updateSummary\": \"string\",\n            \"policy\": {\n              \"publicId\": \"string\"\n            }\n          },\n          {\n            \"publicId\": \"stringstring\",\n            \"languageCode\": \"st\",\n            \"body\": \"string\",\n            \"updateSummary\": \"string\",\n            \"policy\": {\n              \"publicId\": \"string\"\n            }\n          }\n        ]\n      },\n      \"latestPrivacyStatement\": {\n        \"publicId\": \"stringstring\",\n        \"company\": {\n          \"publicId\": \"string\"\n        },\n        \"latest\": true,\n        \"version\": \"stri\",\n        \"publishedOn\": \"1995-02-13T16:07:18.583Z\",\n        \"downloadUrl\": \"string\",\n        \"type\": \"privacystatement\",\n        \"languages\": [\n          {\n            \"publicId\": \"stringstring\",\n            \"languageCode\": \"st\",\n            \"body\": \"string\",\n            \"updateSummary\": \"string\",\n            \"policy\": {\n              \"publicId\": \"string\"\n            }\n          },\n          {\n            \"publicId\": \"stringstring\",\n            \"languageCode\": \"st\",\n            \"body\": \"string\",\n            \"updateSummary\": \"string\",\n            \"policy\": {\n              \"publicId\": \"string\"\n            }\n          }\n        ]\n      }\n    },\n    {\n      \"publicId\": \"3796-6882-9919-5384-8725\",\n      \"name\": \"string\",\n      \"custom\": {},\n      \"branding\": {\n        \"publicId\": \"stringstring\",\n        \"name\": \"string\",\n        \"fqdn\": \"jM.;xU_MxR5q}\",\n        \"theme\": {\n          \"primaryColor\": \"Ba5eFF\",\n          \"primaryTextColor\": \"feb9Fd\",\n          \"accentColor\": \"#B9e3E8\",\n          \"accentTextColor\": \"#ae5E03\",\n          \"headerColor\": \"#0ef6B6\",\n          \"headerLineColor\": \"ccAfb6\",\n          \"menuColor\": \"F9e82D\",\n          \"menuTextColor\": \"76C2d4\",\n          \"pageColor\": \"f5C6Fd\",\n          \"pageTextColor\": \"a29a9c\",\n          \"cardColor\": \"ffbfeB\",\n          \"cardTextColor\": \"#7aCCa7\",\n          \"logoHasBackgroundColor\": true,\n          \"logoOnHeaderColorSpec\": \"string\"\n        },\n        \"appleTouchIcon\": \"string\",\n        \"favicon\": \"string\",\n        \"logo\": \"string\",\n        \"logoDark\": \"string\",\n        \"appleAppStoreLink\": \"string\",\n        \"googlePlayStoreLink\": \"string\",\n        \"landingPageComponentTemplate\": {\n          \"publicId\": \"stringstring\",\n          \"company\": {\n            \"publicId\": \"string\"\n          },\n          \"name\": \"string\",\n          \"description\": \"string\",\n          \"version\": \"string\",\n          \"author\": \"string\",\n          \"licence\": \"string\",\n          \"url\": \"str\",\n          \"sheetSettings\": {\n            \"minCols\": 4,\n            \"defaultCols\": 1,\n            \"maxCols\": 1,\n            \"minRows\": 3,\n            \"defaultRows\": 6,\n            \"maxRows\": 7\n          },\n          \"cardSettings\": {\n            \"minHeight\": 31177,\n            \"defaultHeight\": 13259,\n            \"maxHeight\": 15319\n          },\n          \"inputs\": \"string\",\n          \"draft\": {\n            \"publicId\": \"string\"\n          },\n          \"published\": {\n            \"publicId\": \"string\"\n          },\n          \"category\": {\n            \"publicId\": \"stringstring\",\n            \"name\": \"string\",\n            \"order\": 10802\n          },\n          \"configuredVersion\": {\n            \"publicId\": \"stringstring\",\n            \"number\": \"120044\",\n            \"mainPath\": \"string\"\n          },\n          \"backendComponent\": {\n            \"publicId\": \"string\"\n          },\n          \"static\": false,\n          \"intent\": [\n            \"asset-configuration\",\n            \"main-page\"\n          ],\n          \"private\": true\n        },\n        \"custom\": {}\n      },\n      \"customTermsOfUse\": \"disabled\",\n      \"customPrivacyStatement\": \"company\",\n      \"latestTermsOfUse\": {\n        \"publicId\": \"stringstring\",\n        \"company\": {\n          \"publicId\": \"string\"\n        },\n        \"latest\": false,\n        \"version\": \"str\",\n        \"publishedOn\": \"1985-07-01T04:23:37.969Z\",\n        \"downloadUrl\": \"string\",\n        \"type\": \"termsofuse\",\n        \"languages\": [\n          {\n            \"publicId\": \"stringstring\",\n            \"languageCode\": \"st\",\n            \"body\": \"string\",\n            \"updateSummary\": \"string\",\n            \"policy\": {\n              \"publicId\": \"string\"\n            }\n          },\n          {\n            \"publicId\": \"stringstring\",\n            \"languageCode\": \"st\",\n            \"body\": \"string\",\n            \"updateSummary\": \"string\",\n            \"policy\": {\n              \"publicId\": \"string\"\n            }\n          }\n        ]\n      },\n      \"latestPrivacyStatement\": {\n        \"publicId\": \"stringstring\",\n        \"company\": {\n          \"publicId\": \"string\"\n        },\n        \"latest\": false,\n        \"version\": \"st\",\n        \"publishedOn\": \"1981-01-27T09:26:57.895Z\",\n        \"downloadUrl\": \"string\",\n        \"type\": \"privacystatement\",\n        \"languages\": [\n          {\n            \"publicId\": \"stringstring\",\n            \"languageCode\": \"st\",\n            \"body\": \"string\",\n            \"updateSummary\": \"string\",\n            \"policy\": {\n              \"publicId\": \"string\"\n            }\n          },\n          {\n            \"publicId\": \"stringstring\",\n            \"languageCode\": \"st\",\n            \"body\": \"string\",\n            \"updateSummary\": \"string\",\n            \"policy\": {\n              \"publicId\": \"string\"\n            }\n          }\n        ]\n      }\n    }\n  ],\n  \"moreAfter\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "d61fed36-ffc7-41bb-a26d-1808b7c8e595",
+              "name": "4XX error response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "companies"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "fields",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "fields",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "filters",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "filters",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Version of the API to use",
+                    "key": "Api-Version",
+                    "value": "<integer>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Get your Application ID via support@ixon.cloud",
+                    "key": "Api-Application",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Domain that provides the branding",
+                    "key": "Api-Branding",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"error\",\n  \"type\": \"Error\",\n  \"data\": [\n    {\n      \"message\": \"string\",\n      \"propertyName\": \"string\",\n      \"listIndex\": 9536\n    },\n    {\n      \"message\": \"string\",\n      \"propertyName\": \"string\",\n      \"listIndex\": 4091\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "059755f0-41e1-4951-bb91-66a9fd95ae39",
+          "name": "CompanyList",
+          "request": {
+            "name": "CompanyList",
+            "description": {},
+            "url": {
+              "path": [
+                "companies"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) Version of the API to use",
+                "key": "Api-Version",
+                "value": "<integer>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) Get your Application ID via support@ixon.cloud",
+                "key": "Api-Application",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "Domain that provides the branding",
+                "key": "Api-Branding",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "[\n  {\n    \"name\": \"<string>\",\n    \"country\": \"<string>\",\n    \"termsOfUsePolicy\": {\n      \"publicId\": \"<string>\"\n    }\n  },\n  {\n    \"name\": \"<string>\",\n    \"country\": \"<string>\",\n    \"termsOfUsePolicy\": {\n      \"publicId\": \"<string>\"\n    }\n  }\n]",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "c61758e3-8ad5-438f-8df2-bbe9d2757d7b",
+              "name": "Success response. Data could be an object instead of a list when one value is returned",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "companies"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Version of the API to use",
+                    "key": "Api-Version",
+                    "value": "<integer>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Get your Application ID via support@ixon.cloud",
+                    "key": "Api-Application",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Domain that provides the branding",
+                    "key": "Api-Branding",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"name\": \"<string>\",\n    \"country\": \"<string>\",\n    \"termsOfUsePolicy\": {\n      \"publicId\": \"<string>\"\n    }\n  },\n  {\n    \"name\": \"<string>\",\n    \"country\": \"<string>\",\n    \"termsOfUsePolicy\": {\n      \"publicId\": \"<string>\"\n    }\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"success\",\n  \"type\": \"string\",\n  \"data\": [\n    {\n      \"publicId\": \"stringstring\"\n    },\n    {\n      \"publicId\": \"stringstring\"\n    }\n  ],\n  \"moreAfter\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "c4fbe2ae-069c-4554-8c8d-3610ebd648c3",
+              "name": "4XX error response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "companies"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Version of the API to use",
+                    "key": "Api-Version",
+                    "value": "<integer>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Get your Application ID via support@ixon.cloud",
+                    "key": "Api-Application",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Domain that provides the branding",
+                    "key": "Api-Branding",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"name\": \"<string>\",\n    \"country\": \"<string>\",\n    \"termsOfUsePolicy\": {\n      \"publicId\": \"<string>\"\n    }\n  },\n  {\n    \"name\": \"<string>\",\n    \"country\": \"<string>\",\n    \"termsOfUsePolicy\": {\n      \"publicId\": \"<string>\"\n    }\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"error\",\n  \"type\": \"Error\",\n  \"data\": [\n    {\n      \"message\": \"string\",\n      \"propertyName\": \"string\",\n      \"listIndex\": 3108\n    },\n    {\n      \"message\": \"string\",\n      \"propertyName\": \"string\",\n      \"listIndex\": 8401\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c8101999-0fb3-4002-b3f9-77e6157324b9",
+          "name": "CompanyList",
+          "request": {
+            "name": "CompanyList",
+            "description": {},
+            "url": {
+              "path": [
+                "companies"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) Version of the API to use",
+                "key": "Api-Version",
+                "value": "<integer>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) Get your Application ID via support@ixon.cloud",
+                "key": "Api-Application",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "Domain that provides the branding",
+                "key": "Api-Branding",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "DELETE",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "[\n  {\n    \"publicId\": \"<string>\"\n  },\n  {\n    \"publicId\": \"<string>\"\n  }\n]",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "599ea945-9363-4b62-8e12-246bab556d5d",
+              "name": "Success response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "companies"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Version of the API to use",
+                    "key": "Api-Version",
+                    "value": "<integer>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Get your Application ID via support@ixon.cloud",
+                    "key": "Api-Application",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Domain that provides the branding",
+                    "key": "Api-Branding",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"publicId\": \"<string>\"\n  },\n  {\n    \"publicId\": \"<string>\"\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"success\",\n  \"type\": \"string\",\n  \"data\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "ebfe5b66-e730-414c-87e5-4a8a2d2f83cb",
+              "name": "4XX error response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "companies"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Version of the API to use",
+                    "key": "Api-Version",
+                    "value": "<integer>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Get your Application ID via support@ixon.cloud",
+                    "key": "Api-Application",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Domain that provides the branding",
+                    "key": "Api-Branding",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"publicId\": \"<string>\"\n  },\n  {\n    \"publicId\": \"<string>\"\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"error\",\n  \"type\": \"Error\",\n  \"data\": [\n    {\n      \"message\": \"string\",\n      \"propertyName\": \"string\",\n      \"listIndex\": 3108\n    },\n    {\n      \"message\": \"string\",\n      \"propertyName\": \"string\",\n      \"listIndex\": 8401\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://portal.ixon.cloud:443/api/",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "2a5af146-7320-4c01-b0e2-350b273c7bad",
+    "name": "IXON AccessRecoverList CompanyList API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "API for the IXON Cloud Platform\n\nContact Support:\n Name: IXON B.V.\n Email: support@ixon.cloud",
+      "type": "text/plain"
+    }
+  }
+}

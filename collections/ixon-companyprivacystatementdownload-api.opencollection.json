@@ -1,0 +1,55 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "IXON AccessRecoverList CompanyPrivacyStatementDownload API",
+    "version": "0.1.294"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "CompanyPrivacyStatementDownload",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "CompanyPrivacyStatementDownload",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://portal.ixon.cloud:443/api/companies/:companyId/privacy-statements/:publicId/download",
+            "headers": [
+              {
+                "name": "Api-Version",
+                "value": ""
+              },
+              {
+                "name": "Api-Application",
+                "value": ""
+              },
+              {
+                "name": "Api-Branding",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "companyId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "publicId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "CompanyPrivacyStatementDownload"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

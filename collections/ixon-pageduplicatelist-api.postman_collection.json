@@ -1,0 +1,293 @@
+{
+  "item": [
+    {
+      "id": "3c312c05-022f-4dc1-a30a-aafbec6ab546",
+      "name": "PageDuplicateList",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "78bc9156-67c4-42b5-ad9b-3ed8114f4ec7",
+          "name": "PageDuplicateList",
+          "request": {
+            "name": "PageDuplicateList",
+            "description": {},
+            "url": {
+              "path": [
+                "pages",
+                "duplicate"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "fields",
+                  "value": "<string>",
+                  "description": "Fields to select. Use \"*\" for all the top-level fields. Or check the \"Success response\" below for other fields.\n\nTo get the fields of a subresource do subresource.field or for multiple fields of one subresource do subresource(field,field)"
+                },
+                {
+                  "disabled": false,
+                  "key": "fields",
+                  "value": "<string>",
+                  "description": "Fields to select. Use \"*\" for all the top-level fields. Or check the \"Success response\" below for other fields.\n\nTo get the fields of a subresource do subresource.field or for multiple fields of one subresource do subresource(field,field)"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) Version of the API to use",
+                "key": "Api-Version",
+                "value": "<integer>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) Get your Application ID via support@ixon.cloud",
+                "key": "Api-Application",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) PublicId of the company",
+                "key": "Api-Company",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "Domain that provides the branding",
+                "key": "Api-Branding",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "[\n  {\n    \"publicId\": \"<string>\"\n  },\n  {\n    \"publicId\": \"<string>\"\n  }\n]",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "545681b2-5753-4a2f-a978-a490d8c5235b",
+              "name": "Success response. Data could be an object instead of a list when one value is returned",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "pages",
+                    "duplicate"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "fields",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "fields",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Version of the API to use",
+                    "key": "Api-Version",
+                    "value": "<integer>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Get your Application ID via support@ixon.cloud",
+                    "key": "Api-Application",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) PublicId of the company",
+                    "key": "Api-Company",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Domain that provides the branding",
+                    "key": "Api-Branding",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"publicId\": \"<string>\"\n  },\n  {\n    \"publicId\": \"<string>\"\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"success\",\n  \"type\": \"string\",\n  \"data\": [\n    {\n      \"publicId\": \"stringstring\",\n      \"name\": \"string\",\n      \"applicationType\": \"card\",\n      \"company\": {\n        \"publicId\": \"string\"\n      },\n      \"group\": {\n        \"publicId\": \"string\"\n      },\n      \"draft\": {\n        \"publicId\": \"stringstring\",\n        \"page\": {\n          \"publicId\": \"string\"\n        },\n        \"title\": \"string\",\n        \"components\": [\n          {\n            \"publicId\": \"stringstring\",\n            \"pageVersion\": {\n              \"publicId\": \"string\"\n            },\n            \"template\": {\n              \"publicId\": \"string\"\n            },\n            \"boundVersion\": {\n              \"template\": {\n                \"publicId\": \"string\"\n              },\n              \"publicId\": \"stringstring\",\n              \"number\": \"929\",\n              \"mainPath\": \"string\",\n              \"notes\": \"string\",\n              \"publishedOn\": \"1967-04-25T03:24:09.761Z\",\n              \"createdOn\": \"2020-07-03T02:46:08.051Z\",\n              \"createdBy\": {\n                \"publicId\": \"stringstring\",\n                \"name\": \"string\"\n              }\n            },\n            \"dimensions\": {\n              \"type\": \"sheet\",\n              \"left\": 0,\n              \"top\": 61,\n              \"cols\": 2,\n              \"rows\": 33,\n              \"mobileHeight\": 54017,\n              \"mobileOrder\": 6769,\n              \"mobileLeft\": 5,\n              \"mobileCols\": 9\n            },\n            \"inputs\": \"string\",\n            \"pagePage\": {\n              \"publicId\": \"stringstring\",\n              \"pageVersion\": {\n                \"publicId\": \"string\"\n              },\n              \"order\": 34199\n            }\n          },\n          {\n            \"publicId\": \"stringstring\",\n            \"pageVersion\": {\n              \"publicId\": \"string\"\n            },\n            \"template\": {\n              \"publicId\": \"string\"\n            },\n            \"boundVersion\": {\n              \"template\": {\n                \"publicId\": \"string\"\n              },\n              \"publicId\": \"stringstring\",\n              \"number\": \"53176\",\n              \"mainPath\": \"string\",\n              \"notes\": \"string\",\n              \"publishedOn\": \"2017-08-01T20:19:05.012Z\",\n              \"createdOn\": \"1969-03-29T18:06:32.922Z\",\n              \"createdBy\": {\n                \"publicId\": \"stringstring\",\n                \"name\": \"string\"\n              }\n            },\n            \"dimensions\": {\n              \"type\": \"sheet\",\n              \"left\": 6,\n              \"top\": 10,\n              \"cols\": 2,\n              \"rows\": 58,\n              \"mobileHeight\": 18494,\n              \"mobileOrder\": 46332,\n              \"mobileLeft\": 8,\n              \"mobileCols\": 6\n            },\n            \"inputs\": \"string\",\n            \"pagePage\": {\n              \"publicId\": \"stringstring\",\n              \"pageVersion\": {\n                \"publicId\": \"string\"\n              },\n              \"order\": 61962\n            }\n          }\n        ],\n        \"previewAgent\": {\n          \"publicId\": \"string\"\n        },\n        \"previewAsset\": {\n          \"publicId\": \"string\"\n        },\n        \"periodSpec\": \"string\",\n        \"periodSelectorEnabled\": false,\n        \"defaultRefreshRate\": 11115,\n        \"createdOn\": \"2019-12-11T18:24:34.687Z\",\n        \"createdBy\": {\n          \"publicId\": \"stringstring\",\n          \"name\": \"string\"\n        },\n        \"updatedOn\": \"1966-07-15T01:37:00.960Z\",\n        \"updatedBy\": {\n          \"publicId\": \"stringstring\",\n          \"name\": \"string\"\n        },\n        \"pagePages\": [\n          {\n            \"publicId\": \"stringstring\",\n            \"pageVersion\": {\n              \"publicId\": \"string\"\n            },\n            \"order\": 4298\n          },\n          {\n            \"publicId\": \"stringstring\",\n            \"pageVersion\": {\n              \"publicId\": \"string\"\n            },\n            \"order\": 39011\n          }\n        ],\n        \"custom\": {}\n      },\n      \"published\": {\n        \"publicId\": \"stringstring\",\n        \"page\": {\n          \"publicId\": \"string\"\n        },\n        \"title\": \"string\",\n        \"components\": [\n          {\n            \"publicId\": \"stringstring\",\n            \"pageVersion\": {\n              \"publicId\": \"string\"\n            },\n            \"template\": {\n              \"publicId\": \"string\"\n            },\n            \"boundVersion\": {\n              \"template\": {\n                \"publicId\": \"string\"\n              },\n              \"publicId\": \"stringstring\",\n              \"number\": \"875\",\n              \"mainPath\": \"string\",\n              \"notes\": \"string\",\n              \"publishedOn\": \"1986-10-04T18:35:09.799Z\",\n              \"createdOn\": \"2000-01-24T20:08:22.313Z\",\n              \"createdBy\": {\n                \"publicId\": \"stringstring\",\n                \"name\": \"string\"\n              }\n            },\n            \"dimensions\": {\n              \"type\": \"sheet\",\n              \"left\": 3,\n              \"top\": 24,\n              \"cols\": 2,\n              \"rows\": 42,\n              \"mobileHeight\": 28738,\n              \"mobileOrder\": 7620,\n              \"mobileLeft\": 10,\n              \"mobileCols\": 9\n            },\n            \"inputs\": \"string\",\n            \"pagePage\": {\n              \"publicId\": \"stringstring\",\n              \"pageVersion\": {},\n              \"order\": 31223\n            }\n          },\n          {\n            \"publicId\": \"stringstring\",\n            \"pageVersion\": {\n              \"publicId\": \"string\"\n            },\n            \"template\": {\n              \"publicId\": \"string\"\n            },\n            \"boundVersion\": {\n              \"template\": {\n                \"publicId\": \"string\"\n              },\n              \"publicId\": \"stringstring\",\n              \"number\": \"79457331\",\n              \"mainPath\": \"string\",\n              \"notes\": \"string\",\n              \"publishedOn\": \"2025-03-22T15:41:59.053Z\",\n              \"createdOn\": \"2021-11-18T17:36:01.044Z\",\n              \"createdBy\": {\n                \"publicId\": \"stringstring\",\n                \"name\": \"string\"\n              }\n            },\n            \"dimensions\": {\n              \"type\": \"sheet\",\n              \"left\": 5,\n              \"top\": 16,\n              \"cols\": 6,\n              \"rows\": 22,\n              \"mobileHeight\": 37209,\n              \"mobileOrder\": 19036,\n              \"mobileLeft\": 7,\n              \"mobileCols\": 2\n            },\n            \"inputs\": \"string\",\n            \"pagePage\": {\n              \"publicId\": \"stringstring\",\n              \"pageVersion\": {},\n              \"order\": 6953\n            }\n          }\n        ],\n        \"previewAgent\": {\n          \"publicId\": \"string\"\n        },\n        \"previewAsset\": {\n          \"publicId\": \"string\"\n        },\n        \"periodSpec\": \"string\",\n        \"periodSelectorEnabled\": false,\n        \"defaultRefreshRate\": 15500,\n        \"createdOn\": \"2019-02-03T14:18:57.915Z\",\n        \"createdBy\": {\n          \"publicId\": \"stringstring\",\n          \"name\": \"s\"\n        },\n        \"updatedOn\": \"1961-01-22T18:42:48.008Z\",\n        \"updatedBy\": {\n          \"publicId\": \"stringstring\",\n          \"name\": \"string\"\n        },\n        \"pagePages\": [\n          {\n            \"publicId\": \"stringstring\",\n            \"pageVersion\": {},\n            \"order\": 42874\n          },\n          {\n            \"publicId\": \"stringstring\",\n            \"pageVersion\": {},\n            \"order\": 10535\n          }\n        ],\n        \"custom\": {}\n      },\n      \"default\": true,\n      \"static\": true,\n      \"orientation\": \"portrait\",\n      \"labels\": [\n        {\n          \"color\": \"#dc65e6\",\n          \"name\": \"string\",\n          \"publicId\": \"stringstring\",\n          \"company\": {\n            \"publicId\": \"string\"\n          }\n        },\n        {\n          \"color\": \"#18EdfB\",\n          \"name\": \"string\",\n          \"publicId\": \"stringstring\",\n          \"company\": {\n            \"publicId\": \"string\"\n          }\n        }\n      ],\n      \"custom\": {}\n    },\n    {\n      \"publicId\": \"stringstring\",\n      \"name\": \"string\",\n      \"applicationType\": \"sheet\",\n      \"company\": {\n        \"publicId\": \"string\"\n      },\n      \"group\": {\n        \"publicId\": \"string\"\n      },\n      \"draft\": {\n        \"publicId\": \"stringstring\",\n        \"page\": {\n          \"publicId\": \"string\"\n        },\n        \"title\": \"string\",\n        \"components\": [\n          {\n            \"publicId\": \"stringstring\",\n            \"pageVersion\": {\n              \"publicId\": \"string\"\n            },\n            \"template\": {\n              \"publicId\": \"string\"\n            },\n            \"boundVersion\": {\n              \"template\": {\n                \"publicId\": \"string\"\n              },\n              \"publicId\": \"stringstring\",\n              \"number\": \"3534126\",\n              \"mainPath\": \"string\",\n              \"notes\": \"string\",\n              \"publishedOn\": \"2004-07-15T13:46:52.222Z\",\n              \"createdOn\": \"2007-02-28T22:58:45.358Z\",\n              \"createdBy\": {\n                \"publicId\": \"stringstring\",\n                \"name\": \"string\"\n              }\n            },\n            \"dimensions\": {\n              \"type\": \"sheet\",\n              \"left\": 8,\n              \"top\": 38,\n              \"cols\": 3,\n              \"rows\": 40,\n              \"mobileHeight\": 9764,\n              \"mobileOrder\": 48597,\n              \"mobileLeft\": 2,\n              \"mobileCols\": 5\n            },\n            \"inputs\": \"string\",\n            \"pagePage\": {\n              \"publicId\": \"stringstring\",\n              \"pageVersion\": {\n                \"publicId\": \"string\"\n              },\n              \"order\": 56175\n            }\n          },\n          {\n            \"publicId\": \"stringstring\",\n            \"pageVersion\": {\n              \"publicId\": \"string\"\n            },\n            \"template\": {\n              \"publicId\": \"string\"\n            },\n            \"boundVersion\": {\n              \"template\": {\n                \"publicId\": \"string\"\n              },\n              \"publicId\": \"stringstring\",\n              \"number\": \"40532330\",\n              \"mainPath\": \"string\",\n              \"notes\": \"string\",\n              \"publishedOn\": \"1962-02-24T10:05:00.331Z\",\n              \"createdOn\": \"1964-12-07T12:16:54.204Z\",\n              \"createdBy\": {\n                \"publicId\": \"stringstring\",\n                \"name\": \"string\"\n              }\n            },\n            \"dimensions\": {\n              \"type\": \"sheet\",\n              \"left\": 5,\n              \"top\": 43,\n              \"cols\": 6,\n              \"rows\": 55,\n              \"mobileHeight\": 27338,\n              \"mobileOrder\": 24530,\n              \"mobileLeft\": 4,\n              \"mobileCols\": 5\n            },\n            \"inputs\": \"string\",\n            \"pagePage\": {\n              \"publicId\": \"stringstring\",\n              \"pageVersion\": {\n                \"publicId\": \"string\"\n              },\n              \"order\": 6890\n            }\n          }\n        ],\n        \"previewAgent\": {\n          \"publicId\": \"string\"\n        },\n        \"previewAsset\": {\n          \"publicId\": \"string\"\n        },\n        \"periodSpec\": \"string\",\n        \"periodSelectorEnabled\": true,\n        \"defaultRefreshRate\": 57653,\n        \"createdOn\": \"1970-02-03T03:38:33.868Z\",\n        \"createdBy\": {\n          \"publicId\": \"stringstring\",\n          \"name\": \"string\"\n        },\n        \"updatedOn\": \"2021-12-26T02:24:01.632Z\",\n        \"updatedBy\": {\n          \"publicId\": \"stringstring\",\n          \"name\": \"string\"\n        },\n        \"pagePages\": [\n          {\n            \"publicId\": \"stringstring\",\n            \"pageVersion\": {\n              \"publicId\": \"string\"\n            },\n            \"order\": 65291\n          },\n          {\n            \"publicId\": \"stringstring\",\n            \"pageVersion\": {\n              \"publicId\": \"string\"\n            },\n            \"order\": 27396\n          }\n        ],\n        \"custom\": {}\n      },\n      \"published\": {\n        \"publicId\": \"stringstring\",\n        \"page\": {\n          \"publicId\": \"string\"\n        },\n        \"title\": \"string\",\n        \"components\": [\n          {\n            \"publicId\": \"stringstring\",\n            \"pageVersion\": {\n              \"publicId\": \"string\"\n            },\n            \"template\": {\n              \"publicId\": \"string\"\n            },\n            \"boundVersion\": {\n              \"template\": {\n                \"publicId\": \"string\"\n              },\n              \"publicId\": \"stringstring\",\n              \"number\": \"706\",\n              \"mainPath\": \"string\",\n              \"notes\": \"string\",\n              \"publishedOn\": \"2020-05-30T21:03:34.589Z\",\n              \"createdOn\": \"2002-04-19T03:45:17.500Z\",\n              \"createdBy\": {\n                \"publicId\": \"stringstring\",\n                \"name\": \"string\"\n              }\n            },\n            \"dimensions\": {\n              \"type\": \"sheet\",\n              \"left\": 10,\n              \"top\": 16,\n              \"cols\": 5,\n              \"rows\": 33,\n              \"mobileHeight\": 17754,\n              \"mobileOrder\": 38001,\n              \"mobileLeft\": 9,\n              \"mobileCols\": 5\n            },\n            \"inputs\": \"string\",\n            \"pagePage\": {\n              \"publicId\": \"stringstring\",\n              \"pageVersion\": {},\n              \"order\": 62732\n            }\n          },\n          {\n            \"publicId\": \"stringstring\",\n            \"pageVersion\": {\n              \"publicId\": \"string\"\n            },\n            \"template\": {\n              \"publicId\": \"string\"\n            },\n            \"boundVersion\": {\n              \"template\": {\n                \"publicId\": \"string\"\n              },\n              \"publicId\": \"stringstring\",\n              \"number\": \"733826\",\n              \"mainPath\": \"string\",\n              \"notes\": \"string\",\n              \"publishedOn\": \"1972-03-24T14:40:32.596Z\",\n              \"createdOn\": \"1992-01-04T04:23:47.017Z\",\n              \"createdBy\": {\n                \"publicId\": \"stringstring\",\n                \"name\": \"string\"\n              }\n            },\n            \"dimensions\": {\n              \"type\": \"sheet\",\n              \"left\": 1,\n              \"top\": 51,\n              \"cols\": 10,\n              \"rows\": 13,\n              \"mobileHeight\": 39366,\n              \"mobileOrder\": 63202,\n              \"mobileLeft\": 9,\n              \"mobileCols\": 5\n            },\n            \"inputs\": \"string\",\n            \"pagePage\": {\n              \"publicId\": \"stringstring\",\n              \"pageVersion\": {},\n              \"order\": 49078\n            }\n          }\n        ],\n        \"previewAgent\": {\n          \"publicId\": \"string\"\n        },\n        \"previewAsset\": {\n          \"publicId\": \"string\"\n        },\n        \"periodSpec\": \"string\",\n        \"periodSelectorEnabled\": false,\n        \"defaultRefreshRate\": 29490,\n        \"createdOn\": \"1952-05-07T12:15:41.457Z\",\n        \"createdBy\": {\n          \"publicId\": \"stringstring\",\n          \"name\": \"string\"\n        },\n        \"updatedOn\": \"2000-05-17T23:01:50.566Z\",\n        \"updatedBy\": {\n          \"publicId\": \"stringstring\",\n          \"name\": \"string\"\n        },\n        \"pagePages\": [\n          {\n            \"publicId\": \"stringstring\",\n            \"pageVersion\": {},\n            \"order\": 28100\n          },\n          {\n            \"publicId\": \"stringstring\",\n            \"pageVersion\": {},\n            \"order\": 58437\n          }\n        ],\n        \"custom\": {}\n      },\n      \"default\": false,\n      \"static\": true,\n      \"orientation\": \"landscape\",\n      \"labels\": [\n        {\n          \"color\": \"#f4EF68\",\n          \"name\": \"string\",\n          \"publicId\": \"stringstring\",\n          \"company\": {\n            \"publicId\": \"string\"\n          }\n        },\n        {\n          \"color\": \"#0dd5B0\",\n          \"name\": \"string\",\n          \"publicId\": \"stringstring\",\n          \"company\": {\n            \"publicId\": \"string\"\n          }\n        }\n      ],\n      \"custom\": {}\n    }\n  ],\n  \"moreAfter\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "68d7110e-08fa-4035-aa82-f360a6a107e6",
+              "name": "4XX error response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "pages",
+                    "duplicate"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "fields",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "fields",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Version of the API to use",
+                    "key": "Api-Version",
+                    "value": "<integer>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Get your Application ID via support@ixon.cloud",
+                    "key": "Api-Application",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) PublicId of the company",
+                    "key": "Api-Company",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Domain that provides the branding",
+                    "key": "Api-Branding",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"publicId\": \"<string>\"\n  },\n  {\n    \"publicId\": \"<string>\"\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"error\",\n  \"type\": \"Error\",\n  \"data\": [\n    {\n      \"message\": \"string\",\n      \"propertyName\": \"string\",\n      \"listIndex\": 3888\n    },\n    {\n      \"message\": \"string\",\n      \"propertyName\": \"string\",\n      \"listIndex\": 3121\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://portal.ixon.cloud:443/api/",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "8cad8ca4-6dc3-418f-a5e2-56894014c816",
+    "name": "IXON AccessRecoverList PageDuplicateList API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "API for the IXON Cloud Platform\n\nContact Support:\n Name: IXON B.V.\n Email: support@ixon.cloud",
+      "type": "text/plain"
+    }
+  }
+}

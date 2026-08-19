@@ -1,0 +1,970 @@
+{
+  "item": [
+    {
+      "id": "30683237-f020-4f6e-857e-ad8bbba7c4a1",
+      "name": "MenuItemList",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "e1640974-a885-4354-92e7-097ad9980852",
+          "name": "MenuItemList",
+          "request": {
+            "name": "MenuItemList",
+            "description": {},
+            "url": {
+              "path": [
+                "menu-items"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "fields",
+                  "value": "<string>",
+                  "description": "Fields to select. Use \"*\" for all the top-level fields. Or check the \"Success response\" below for other fields.\n\nTo get the fields of a subresource do subresource.field or for multiple fields of one subresource do subresource(field,field)"
+                },
+                {
+                  "disabled": false,
+                  "key": "fields",
+                  "value": "<string>",
+                  "description": "Fields to select. Use \"*\" for all the top-level fields. Or check the \"Success response\" below for other fields.\n\nTo get the fields of a subresource do subresource.field or for multiple fields of one subresource do subresource(field,field)"
+                },
+                {
+                  "disabled": false,
+                  "key": "filters",
+                  "value": "<string>",
+                  "description": "Filter the returned item(s). Format: operator(column,val)\n\nPossible operators are: lt, less, lte, lessorequal, eq, equals, ne, differs, gt, greater, gte, greaterorequal, in, ni, isnull, isnotnull, between, contains.\n\nExample: eq(publicId,\"publicId_val\")"
+                },
+                {
+                  "disabled": false,
+                  "key": "filters",
+                  "value": "<string>",
+                  "description": "Filter the returned item(s). Format: operator(column,val)\n\nPossible operators are: lt, less, lte, lessorequal, eq, equals, ne, differs, gt, greater, gte, greaterorequal, in, ni, isnull, isnotnull, between, contains.\n\nExample: eq(publicId,\"publicId_val\")"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) Version of the API to use",
+                "key": "Api-Version",
+                "value": "<integer>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) Get your Application ID via support@ixon.cloud",
+                "key": "Api-Application",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) PublicId of the company",
+                "key": "Api-Company",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "Domain that provides the branding",
+                "key": "Api-Branding",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "49efd0a9-79d0-48ab-b9c9-ad56a73508cb",
+              "name": "Success response. Data could be an object instead of a list when one value is returned",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "menu-items"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "fields",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "fields",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "filters",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "filters",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Version of the API to use",
+                    "key": "Api-Version",
+                    "value": "<integer>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Get your Application ID via support@ixon.cloud",
+                    "key": "Api-Application",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) PublicId of the company",
+                    "key": "Api-Company",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Domain that provides the branding",
+                    "key": "Api-Branding",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"success\",\n  \"type\": \"string\",\n  \"data\": [\n    {\n      \"publicId\": \"stringstring\",\n      \"name\": \"string\",\n      \"page\": {\n        \"publicId\": \"stringstring\",\n        \"name\": \"string\",\n        \"applicationType\": \"report\",\n        \"company\": {\n          \"publicId\": \"string\"\n        },\n        \"group\": {\n          \"publicId\": \"string\"\n        },\n        \"draft\": {\n          \"publicId\": \"stringstring\",\n          \"page\": {\n            \"publicId\": \"string\"\n          },\n          \"title\": \"string\",\n          \"components\": [\n            {\n              \"publicId\": \"stringstring\",\n              \"pageVersion\": {\n                \"publicId\": \"string\"\n              },\n              \"template\": {\n                \"publicId\": \"string\"\n              },\n              \"boundVersion\": {\n                \"template\": {\n                  \"publicId\": \"string\"\n                },\n                \"publicId\": \"stringstring\",\n                \"number\": \"271\",\n                \"mainPath\": \"string\",\n                \"notes\": \"string\",\n                \"publishedOn\": \"1953-08-01T06:33:16.517Z\",\n                \"createdOn\": \"1986-10-14T14:30:44.737Z\",\n                \"createdBy\": {\n                  \"publicId\": \"stringstring\",\n                  \"name\": \"string\"\n                }\n              },\n              \"dimensions\": {\n                \"type\": \"sheet\",\n                \"left\": 5,\n                \"top\": 67,\n                \"cols\": 5,\n                \"rows\": 54,\n                \"mobileHeight\": 59939,\n                \"mobileOrder\": 37186,\n                \"mobileLeft\": 7,\n                \"mobileCols\": 9\n              },\n              \"inputs\": \"string\",\n              \"pagePage\": {\n                \"publicId\": \"stringstring\",\n                \"pageVersion\": {\n                  \"publicId\": \"string\"\n                },\n                \"order\": 17251\n              }\n            },\n            {\n              \"publicId\": \"stringstring\",\n              \"pageVersion\": {\n                \"publicId\": \"string\"\n              },\n              \"template\": {\n                \"publicId\": \"string\"\n              },\n              \"boundVersion\": {\n                \"template\": {\n                  \"publicId\": \"string\"\n                },\n                \"publicId\": \"stringstring\",\n                \"number\": \"05\",\n                \"mainPath\": \"string\",\n                \"notes\": \"string\",\n                \"publishedOn\": \"1965-08-30T08:29:07.447Z\",\n                \"createdOn\": \"1948-03-06T01:24:38.720Z\",\n                \"createdBy\": {\n                  \"publicId\": \"stringstring\",\n                  \"name\": \"string\"\n                }\n              },\n              \"dimensions\": {\n                \"type\": \"sheet\",\n                \"left\": 0,\n                \"top\": 5,\n                \"cols\": 7,\n                \"rows\": 48,\n                \"mobileHeight\": 17968,\n                \"mobileOrder\": 8515,\n                \"mobileLeft\": 6,\n                \"mobileCols\": 5\n              },\n              \"inputs\": \"string\",\n              \"pagePage\": {\n                \"publicId\": \"stringstring\",\n                \"pageVersion\": {\n                  \"publicId\": \"string\"\n                },\n                \"order\": 19692\n              }\n            }\n          ],\n          \"previewAgent\": {\n            \"publicId\": \"string\"\n          },\n          \"previewAsset\": {\n            \"publicId\": \"string\"\n          },\n          \"periodSpec\": \"string\",\n          \"periodSelectorEnabled\": true,\n          \"defaultRefreshRate\": 26582,\n          \"createdOn\": \"2008-11-18T02:53:10.011Z\",\n          \"createdBy\": {\n            \"publicId\": \"stringstring\",\n            \"name\": \"string\"\n          },\n          \"updatedOn\": \"2022-12-15T05:14:47.267Z\",\n          \"updatedBy\": {\n            \"publicId\": \"stringstring\",\n            \"name\": \"string\"\n          },\n          \"pagePages\": [\n            {\n              \"publicId\": \"stringstring\",\n              \"pageVersion\": {\n                \"publicId\": \"string\"\n              },\n              \"order\": 5301\n            },\n            {\n              \"publicId\": \"stringstring\",\n              \"pageVersion\": {\n                \"publicId\": \"string\"\n              },\n              \"order\": 207\n            }\n          ],\n          \"custom\": {}\n        },\n        \"published\": {\n          \"publicId\": \"stringstring\",\n          \"page\": {\n            \"publicId\": \"string\"\n          },\n          \"title\": \"string\",\n          \"components\": [\n            {\n              \"publicId\": \"stringstring\",\n              \"pageVersion\": {\n                \"publicId\": \"string\"\n              },\n              \"template\": {\n                \"publicId\": \"string\"\n              },\n              \"boundVersion\": {\n                \"template\": {\n                  \"publicId\": \"string\"\n                },\n                \"publicId\": \"stringstring\",\n                \"number\": \"164161779\",\n                \"mainPath\": \"string\",\n                \"notes\": \"string\",\n                \"publishedOn\": \"2003-08-23T04:45:17.646Z\",\n                \"createdOn\": \"1958-12-12T01:32:02.696Z\",\n                \"createdBy\": {\n                  \"publicId\": \"stringstring\",\n                  \"name\": \"string\"\n                }\n              },\n              \"dimensions\": {\n                \"type\": \"sheet\",\n                \"left\": 1,\n                \"top\": 47,\n                \"cols\": 5,\n                \"rows\": 32,\n                \"mobileHeight\": 57291,\n                \"mobileOrder\": 24712,\n                \"mobileLeft\": 1,\n                \"mobileCols\": 3\n              },\n              \"inputs\": \"string\",\n              \"pagePage\": {\n                \"publicId\": \"stringstring\",\n                \"pageVersion\": {},\n                \"order\": 58893\n              }\n            },\n            {\n              \"publicId\": \"stringstring\",\n              \"pageVersion\": {\n                \"publicId\": \"string\"\n              },\n              \"template\": {\n                \"publicId\": \"string\"\n              },\n              \"boundVersion\": {\n                \"template\": {\n                  \"publicId\": \"string\"\n                },\n                \"publicId\": \"stringstring\",\n                \"number\": \"1920610322\",\n                \"mainPath\": \"string\",\n                \"notes\": \"string\",\n                \"publishedOn\": \"1991-09-06T06:22:26.539Z\",\n                \"createdOn\": \"1994-05-03T19:27:02.606Z\",\n                \"createdBy\": {\n                  \"publicId\": \"stringstring\",\n                  \"name\": \"string\"\n                }\n              },\n              \"dimensions\": {\n                \"type\": \"sheet\",\n                \"left\": 7,\n                \"top\": 6,\n                \"cols\": 8,\n                \"rows\": 21,\n                \"mobileHeight\": 41376,\n                \"mobileOrder\": 48228,\n                \"mobileLeft\": 2,\n                \"mobileCols\": 6\n              },\n              \"inputs\": \"string\",\n              \"pagePage\": {\n                \"publicId\": \"stringstring\",\n                \"pageVersion\": {},\n                \"order\": 1051\n              }\n            }\n          ],\n          \"previewAgent\": {\n            \"publicId\": \"string\"\n          },\n          \"previewAsset\": {\n            \"publicId\": \"string\"\n          },\n          \"periodSpec\": \"string\",\n          \"periodSelectorEnabled\": false,\n          \"defaultRefreshRate\": 16853,\n          \"createdOn\": \"1953-08-05T03:50:06.761Z\",\n          \"createdBy\": {\n            \"publicId\": \"stringstring\",\n            \"name\": \"string\"\n          },\n          \"updatedOn\": \"1989-12-02T03:06:44.465Z\",\n          \"updatedBy\": {\n            \"publicId\": \"stringstring\",\n            \"name\": \"string\"\n          },\n          \"pagePages\": [\n            {\n              \"publicId\": \"stringstring\",\n              \"pageVersion\": {},\n              \"order\": 29010\n            },\n            {\n              \"publicId\": \"stringstring\",\n              \"pageVersion\": {},\n              \"order\": 1844\n            }\n          ],\n          \"custom\": {}\n        },\n        \"default\": true,\n        \"static\": false,\n        \"orientation\": \"portrait\",\n        \"labels\": [\n          {\n            \"color\": \"#de9ed4\",\n            \"name\": \"string\",\n            \"publicId\": \"stringstring\",\n            \"company\": {\n              \"publicId\": \"string\"\n            }\n          },\n          {\n            \"color\": \"#fc1eaC\",\n            \"name\": \"strin\",\n            \"publicId\": \"stringstring\",\n            \"company\": {\n              \"publicId\": \"string\"\n            }\n          }\n        ],\n        \"custom\": {}\n      },\n      \"pageLinks\": [\n        {\n          \"publicId\": \"stringstring\",\n          \"agent\": {\n            \"publicId\": \"string\"\n          },\n          \"asset\": {\n            \"publicId\": \"string\"\n          },\n          \"menuItem\": {\n            \"publicId\": \"string\"\n          },\n          \"page\": {\n            \"publicId\": \"string\"\n          },\n          \"audience\": {\n            \"publicId\": \"stringstring\",\n            \"name\": \"string\",\n            \"description\": \"string\",\n            \"custom\": {},\n            \"default\": true,\n            \"type\": \"page\"\n          },\n          \"group\": {\n            \"publicId\": \"stringstring\",\n            \"agent\": {\n              \"publicId\": \"string\"\n            },\n            \"asset\": {\n              \"publicId\": \"string\"\n            },\n            \"menuItem\": {\n              \"publicId\": \"string\"\n            },\n            \"name\": \"string\"\n          },\n          \"order\": 57854,\n          \"custom\": {}\n        },\n        {\n          \"publicId\": \"stringstring\",\n          \"agent\": {\n            \"publicId\": \"string\"\n          },\n          \"asset\": {\n            \"publicId\": \"string\"\n          },\n          \"menuItem\": {\n            \"publicId\": \"string\"\n          },\n          \"page\": {\n            \"publicId\": \"string\"\n          },\n          \"audience\": {\n            \"publicId\": \"stringstring\",\n            \"name\": \"string\",\n            \"description\": \"string\",\n            \"custom\": {},\n            \"default\": true,\n            \"type\": \"alarm\"\n          },\n          \"group\": {\n            \"publicId\": \"stringstring\",\n            \"agent\": {\n              \"publicId\": \"string\"\n            },\n            \"asset\": {\n              \"publicId\": \"string\"\n            },\n            \"menuItem\": {\n              \"publicId\": \"string\"\n            },\n            \"name\": \"string\"\n          },\n          \"order\": 39004,\n          \"custom\": {}\n        }\n      ],\n      \"order\": 27304,\n      \"pinned\": false,\n      \"audience\": {\n        \"publicId\": \"stringstring\",\n        \"name\": \"string\",\n        \"description\": \"string\",\n        \"custom\": {},\n        \"default\": false,\n        \"type\": \"alarm\"\n      },\n      \"custom\": {}\n    },\n    {\n      \"publicId\": \"stringstring\",\n      \"name\": \"string\",\n      \"page\": {\n        \"publicId\": \"stringstring\",\n        \"name\": \"string\",\n        \"applicationType\": \"sheet\",\n        \"company\": {\n          \"publicId\": \"string\"\n        },\n        \"group\": {\n          \"publicId\": \"string\"\n        },\n        \"draft\": {\n          \"publicId\": \"stringstring\",\n          \"page\": {\n            \"publicId\": \"string\"\n          },\n          \"title\": \"string\",\n          \"components\": [\n            {\n              \"publicId\": \"stringstring\",\n              \"pageVersion\": {\n                \"publicId\": \"string\"\n              },\n              \"template\": {\n                \"publicId\": \"string\"\n              },\n              \"boundVersion\": {\n                \"template\": {\n                  \"publicId\": \"string\"\n                },\n                \"publicId\": \"stringstring\",\n                \"number\": \"11680\",\n                \"mainPath\": \"string\",\n                \"notes\": \"string\",\n                \"publishedOn\": \"2015-08-02T17:56:21.414Z\",\n                \"createdOn\": \"1996-06-18T03:52:10.414Z\",\n                \"createdBy\": {\n                  \"publicId\": \"stringstring\",\n                  \"name\": \"string\"\n                }\n              },\n              \"dimensions\": {\n                \"type\": \"sheet\",\n                \"left\": 6,\n                \"top\": 0,\n                \"cols\": 9,\n                \"rows\": 42,\n                \"mobileHeight\": 53982,\n                \"mobileOrder\": 20765,\n                \"mobileLeft\": 7,\n                \"mobileCols\": 1\n              },\n              \"inputs\": \"string\",\n              \"pagePage\": {\n                \"publicId\": \"stringstring\",\n                \"pageVersion\": {\n                  \"publicId\": \"string\"\n                },\n                \"order\": 8325\n              }\n            },\n            {\n              \"publicId\": \"stringstring\",\n              \"pageVersion\": {\n                \"publicId\": \"string\"\n              },\n              \"template\": {\n                \"publicId\": \"string\"\n              },\n              \"boundVersion\": {\n                \"template\": {\n                  \"publicId\": \"string\"\n                },\n                \"publicId\": \"stringstring\",\n                \"number\": \"965395\",\n                \"mainPath\": \"string\",\n                \"notes\": \"string\",\n                \"publishedOn\": \"1961-10-03T03:01:54.162Z\",\n                \"createdOn\": \"2000-12-04T22:19:06.520Z\",\n                \"createdBy\": {\n                  \"publicId\": \"stringstring\",\n                  \"name\": \"string\"\n                }\n              },\n              \"dimensions\": {\n                \"type\": \"sheet\",\n                \"left\": 10,\n                \"top\": 70,\n                \"cols\": 1,\n                \"rows\": 1,\n                \"mobileHeight\": 41622,\n                \"mobileOrder\": 58754,\n                \"mobileLeft\": 10,\n                \"mobileCols\": 5\n              },\n              \"inputs\": \"string\",\n              \"pagePage\": {\n                \"publicId\": \"stringstring\",\n                \"pageVersion\": {\n                  \"publicId\": \"string\"\n                },\n                \"order\": 52645\n              }\n            }\n          ],\n          \"previewAgent\": {\n            \"publicId\": \"string\"\n          },\n          \"previewAsset\": {\n            \"publicId\": \"string\"\n          },\n          \"periodSpec\": \"string\",\n          \"periodSelectorEnabled\": false,\n          \"defaultRefreshRate\": 356,\n          \"createdOn\": \"1956-11-05T04:28:36.065Z\",\n          \"createdBy\": {\n            \"publicId\": \"stringstring\",\n            \"name\": \"string\"\n          },\n          \"updatedOn\": \"1949-12-03T23:08:32.220Z\",\n          \"updatedBy\": {\n            \"publicId\": \"stringstring\",\n            \"name\": \"string\"\n          },\n          \"pagePages\": [\n            {\n              \"publicId\": \"stringstring\",\n              \"pageVersion\": {\n                \"publicId\": \"string\"\n              },\n              \"order\": 33259\n            },\n            {\n              \"publicId\": \"stringstring\",\n              \"pageVersion\": {\n                \"publicId\": \"string\"\n              },\n              \"order\": 10986\n            }\n          ],\n          \"custom\": {}\n        },\n        \"published\": {\n          \"publicId\": \"stringstring\",\n          \"page\": {\n            \"publicId\": \"string\"\n          },\n          \"title\": \"string\",\n          \"components\": [\n            {\n              \"publicId\": \"stringstring\",\n              \"pageVersion\": {\n                \"publicId\": \"string\"\n              },\n              \"template\": {\n                \"publicId\": \"string\"\n              },\n              \"boundVersion\": {\n                \"template\": {\n                  \"publicId\": \"string\"\n                },\n                \"publicId\": \"stringstring\",\n                \"number\": \"64485013\",\n                \"mainPath\": \"string\",\n                \"notes\": \"string\",\n                \"publishedOn\": \"1960-07-02T03:15:52.807Z\",\n                \"createdOn\": \"1997-06-05T09:44:50.376Z\",\n                \"createdBy\": {\n                  \"publicId\": \"stringstring\",\n                  \"name\": \"str\"\n                }\n              },\n              \"dimensions\": {\n                \"type\": \"sheet\",\n                \"left\": 4,\n                \"top\": 38,\n                \"cols\": 11,\n                \"rows\": 24,\n                \"mobileHeight\": 60639,\n                \"mobileOrder\": 49851,\n                \"mobileLeft\": 9,\n                \"mobileCols\": 3\n              },\n              \"inputs\": \"string\",\n              \"pagePage\": {\n                \"publicId\": \"stringstring\",\n                \"pageVersion\": {},\n                \"order\": 47245\n              }\n            },\n            {\n              \"publicId\": \"stringstring\",\n              \"pageVersion\": {\n                \"publicId\": \"string\"\n              },\n              \"template\": {\n                \"publicId\": \"string\"\n              },\n              \"boundVersion\": {\n                \"template\": {\n                  \"publicId\": \"string\"\n                },\n                \"publicId\": \"stringstring\",\n                \"number\": \"0969065\",\n                \"mainPath\": \"string\",\n                \"notes\": \"string\",\n                \"publishedOn\": \"2021-07-31T18:38:21.708Z\",\n                \"createdOn\": \"1964-04-19T19:46:57.120Z\",\n                \"createdBy\": {\n                  \"publicId\": \"stringstring\",\n                  \"name\": \"string\"\n                }\n              },\n              \"dimensions\": {\n                \"type\": \"sheet\",\n                \"left\": 10,\n                \"top\": 40,\n                \"cols\": 11,\n                \"rows\": 65,\n                \"mobileHeight\": 20062,\n                \"mobileOrder\": 45025,\n                \"mobileLeft\": 9,\n                \"mobileCols\": 1\n              },\n              \"inputs\": \"string\",\n              \"pagePage\": {\n                \"publicId\": \"stringstring\",\n                \"pageVersion\": {},\n                \"order\": 15961\n              }\n            }\n          ],\n          \"previewAgent\": {\n            \"publicId\": \"string\"\n          },\n          \"previewAsset\": {\n            \"publicId\": \"string\"\n          },\n          \"periodSpec\": \"string\",\n          \"periodSelectorEnabled\": false,\n          \"defaultRefreshRate\": 36348,\n          \"createdOn\": \"1990-04-03T14:37:51.789Z\",\n          \"createdBy\": {\n            \"publicId\": \"stringstring\",\n            \"name\": \"string\"\n          },\n          \"updatedOn\": \"1956-01-02T15:30:09.051Z\",\n          \"updatedBy\": {\n            \"publicId\": \"stringstring\",\n            \"name\": \"string\"\n          },\n          \"pagePages\": [\n            {\n              \"publicId\": \"stringstring\",\n              \"pageVersion\": {},\n              \"order\": 20005\n            },\n            {\n              \"publicId\": \"stringstring\",\n              \"pageVersion\": {},\n              \"order\": 29439\n            }\n          ],\n          \"custom\": {}\n        },\n        \"default\": true,\n        \"static\": true,\n        \"orientation\": \"portrait\",\n        \"labels\": [\n          {\n            \"color\": \"#AAD0eA\",\n            \"name\": \"string\",\n            \"publicId\": \"stringstring\",\n            \"company\": {\n              \"publicId\": \"string\"\n            }\n          },\n          {\n            \"color\": \"#Ffecae\",\n            \"name\": \"string\",\n            \"publicId\": \"stringstring\",\n            \"company\": {\n              \"publicId\": \"string\"\n            }\n          }\n        ],\n        \"custom\": {}\n      },\n      \"pageLinks\": [\n        {\n          \"publicId\": \"stringstring\",\n          \"agent\": {\n            \"publicId\": \"string\"\n          },\n          \"asset\": {\n            \"publicId\": \"string\"\n          },\n          \"menuItem\": {\n            \"publicId\": \"string\"\n          },\n          \"page\": {\n            \"publicId\": \"string\"\n          },\n          \"audience\": {\n            \"publicId\": \"stringstring\",\n            \"name\": \"string\",\n            \"description\": \"string\",\n            \"custom\": {},\n            \"default\": false,\n            \"type\": \"alarm\"\n          },\n          \"group\": {\n            \"publicId\": \"stringstring\",\n            \"agent\": {\n              \"publicId\": \"string\"\n            },\n            \"asset\": {\n              \"publicId\": \"string\"\n            },\n            \"menuItem\": {\n              \"publicId\": \"string\"\n            },\n            \"name\": \"string\"\n          },\n          \"order\": 420,\n          \"custom\": {}\n        },\n        {\n          \"publicId\": \"stringstring\",\n          \"agent\": {\n            \"publicId\": \"string\"\n          },\n          \"asset\": {\n            \"publicId\": \"string\"\n          },\n          \"menuItem\": {\n            \"publicId\": \"string\"\n          },\n          \"page\": {\n            \"publicId\": \"string\"\n          },\n          \"audience\": {\n            \"publicId\": \"stringstring\",\n            \"name\": \"string\",\n            \"description\": \"string\",\n            \"custom\": {},\n            \"default\": true,\n            \"type\": \"page\"\n          },\n          \"group\": {\n            \"publicId\": \"stringstring\",\n            \"agent\": {\n              \"publicId\": \"string\"\n            },\n            \"asset\": {\n              \"publicId\": \"string\"\n            },\n            \"menuItem\": {\n              \"publicId\": \"string\"\n            },\n            \"name\": \"string\"\n          },\n          \"order\": 17126,\n          \"custom\": {}\n        }\n      ],\n      \"order\": 64491,\n      \"pinned\": true,\n      \"audience\": {\n        \"publicId\": \"stringstring\",\n        \"name\": \"string\",\n        \"description\": \"string\",\n        \"custom\": {},\n        \"default\": false,\n        \"type\": \"service\"\n      },\n      \"custom\": {}\n    }\n  ],\n  \"moreAfter\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "42c4ab02-8d32-470b-834c-88724060526c",
+              "name": "4XX error response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "menu-items"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "fields",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "fields",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "filters",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "filters",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Version of the API to use",
+                    "key": "Api-Version",
+                    "value": "<integer>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Get your Application ID via support@ixon.cloud",
+                    "key": "Api-Application",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) PublicId of the company",
+                    "key": "Api-Company",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Domain that provides the branding",
+                    "key": "Api-Branding",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"error\",\n  \"type\": \"Error\",\n  \"data\": [\n    {\n      \"message\": \"string\",\n      \"propertyName\": \"string\",\n      \"listIndex\": 3768\n    },\n    {\n      \"message\": \"string\",\n      \"propertyName\": \"string\",\n      \"listIndex\": 2249\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "930f31a4-b77b-406e-bfbc-dc0fe1458e21",
+          "name": "MenuItemList",
+          "request": {
+            "name": "MenuItemList",
+            "description": {},
+            "url": {
+              "path": [
+                "menu-items"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) Version of the API to use",
+                "key": "Api-Version",
+                "value": "<integer>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) Get your Application ID via support@ixon.cloud",
+                "key": "Api-Application",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) PublicId of the company",
+                "key": "Api-Company",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "Domain that provides the branding",
+                "key": "Api-Branding",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "[\n  {\n    \"publicId\": \"<string>\",\n    \"page\": {\n      \"publicId\": \"<string>\"\n    },\n    \"pageLinks\": [\n      {\n        \"page\": {\n          \"publicId\": \"<string>\"\n        },\n        \"audience\": {\n          \"publicId\": \"<string>\"\n        },\n        \"order\": \"<integer>\",\n        \"custom\": \"<object>\",\n        \"group\": \"<string>\"\n      },\n      {\n        \"page\": {\n          \"publicId\": \"<string>\"\n        },\n        \"audience\": {\n          \"publicId\": \"<string>\"\n        },\n        \"order\": \"<integer>\",\n        \"custom\": \"<object>\",\n        \"group\": \"<string>\"\n      }\n    ],\n    \"name\": \"<string>\",\n    \"order\": \"<integer>\",\n    \"pinned\": \"<boolean>\",\n    \"audience\": {\n      \"publicId\": \"<string>\"\n    },\n    \"custom\": \"<object>\"\n  },\n  {\n    \"publicId\": \"<string>\",\n    \"page\": {\n      \"publicId\": \"<string>\"\n    },\n    \"pageLinks\": [\n      {\n        \"page\": {\n          \"publicId\": \"<string>\"\n        },\n        \"audience\": {\n          \"publicId\": \"<string>\"\n        },\n        \"order\": \"<integer>\",\n        \"custom\": \"<object>\",\n        \"group\": \"<string>\"\n      },\n      {\n        \"page\": {\n          \"publicId\": \"<string>\"\n        },\n        \"audience\": {\n          \"publicId\": \"<string>\"\n        },\n        \"order\": \"<integer>\",\n        \"custom\": \"<object>\",\n        \"group\": \"<string>\"\n      }\n    ],\n    \"name\": \"<string>\",\n    \"order\": \"<integer>\",\n    \"pinned\": \"<boolean>\",\n    \"audience\": {\n      \"publicId\": \"<string>\"\n    },\n    \"custom\": \"<object>\"\n  }\n]",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "17d90560-1ea0-4a5a-a66d-47907e7c859e",
+              "name": "Success response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "menu-items"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Version of the API to use",
+                    "key": "Api-Version",
+                    "value": "<integer>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Get your Application ID via support@ixon.cloud",
+                    "key": "Api-Application",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) PublicId of the company",
+                    "key": "Api-Company",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Domain that provides the branding",
+                    "key": "Api-Branding",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"publicId\": \"<string>\",\n    \"page\": {\n      \"publicId\": \"<string>\"\n    },\n    \"pageLinks\": [\n      {\n        \"page\": {\n          \"publicId\": \"<string>\"\n        },\n        \"audience\": {\n          \"publicId\": \"<string>\"\n        },\n        \"order\": \"<integer>\",\n        \"custom\": \"<object>\",\n        \"group\": \"<string>\"\n      },\n      {\n        \"page\": {\n          \"publicId\": \"<string>\"\n        },\n        \"audience\": {\n          \"publicId\": \"<string>\"\n        },\n        \"order\": \"<integer>\",\n        \"custom\": \"<object>\",\n        \"group\": \"<string>\"\n      }\n    ],\n    \"name\": \"<string>\",\n    \"order\": \"<integer>\",\n    \"pinned\": \"<boolean>\",\n    \"audience\": {\n      \"publicId\": \"<string>\"\n    },\n    \"custom\": \"<object>\"\n  },\n  {\n    \"publicId\": \"<string>\",\n    \"page\": {\n      \"publicId\": \"<string>\"\n    },\n    \"pageLinks\": [\n      {\n        \"page\": {\n          \"publicId\": \"<string>\"\n        },\n        \"audience\": {\n          \"publicId\": \"<string>\"\n        },\n        \"order\": \"<integer>\",\n        \"custom\": \"<object>\",\n        \"group\": \"<string>\"\n      },\n      {\n        \"page\": {\n          \"publicId\": \"<string>\"\n        },\n        \"audience\": {\n          \"publicId\": \"<string>\"\n        },\n        \"order\": \"<integer>\",\n        \"custom\": \"<object>\",\n        \"group\": \"<string>\"\n      }\n    ],\n    \"name\": \"<string>\",\n    \"order\": \"<integer>\",\n    \"pinned\": \"<boolean>\",\n    \"audience\": {\n      \"publicId\": \"<string>\"\n    },\n    \"custom\": \"<object>\"\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"success\",\n  \"type\": \"string\",\n  \"data\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "5ce6876e-6939-40eb-9cf7-4cd65fd5b3fe",
+              "name": "4XX error response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "menu-items"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Version of the API to use",
+                    "key": "Api-Version",
+                    "value": "<integer>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Get your Application ID via support@ixon.cloud",
+                    "key": "Api-Application",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) PublicId of the company",
+                    "key": "Api-Company",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Domain that provides the branding",
+                    "key": "Api-Branding",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"publicId\": \"<string>\",\n    \"page\": {\n      \"publicId\": \"<string>\"\n    },\n    \"pageLinks\": [\n      {\n        \"page\": {\n          \"publicId\": \"<string>\"\n        },\n        \"audience\": {\n          \"publicId\": \"<string>\"\n        },\n        \"order\": \"<integer>\",\n        \"custom\": \"<object>\",\n        \"group\": \"<string>\"\n      },\n      {\n        \"page\": {\n          \"publicId\": \"<string>\"\n        },\n        \"audience\": {\n          \"publicId\": \"<string>\"\n        },\n        \"order\": \"<integer>\",\n        \"custom\": \"<object>\",\n        \"group\": \"<string>\"\n      }\n    ],\n    \"name\": \"<string>\",\n    \"order\": \"<integer>\",\n    \"pinned\": \"<boolean>\",\n    \"audience\": {\n      \"publicId\": \"<string>\"\n    },\n    \"custom\": \"<object>\"\n  },\n  {\n    \"publicId\": \"<string>\",\n    \"page\": {\n      \"publicId\": \"<string>\"\n    },\n    \"pageLinks\": [\n      {\n        \"page\": {\n          \"publicId\": \"<string>\"\n        },\n        \"audience\": {\n          \"publicId\": \"<string>\"\n        },\n        \"order\": \"<integer>\",\n        \"custom\": \"<object>\",\n        \"group\": \"<string>\"\n      },\n      {\n        \"page\": {\n          \"publicId\": \"<string>\"\n        },\n        \"audience\": {\n          \"publicId\": \"<string>\"\n        },\n        \"order\": \"<integer>\",\n        \"custom\": \"<object>\",\n        \"group\": \"<string>\"\n      }\n    ],\n    \"name\": \"<string>\",\n    \"order\": \"<integer>\",\n    \"pinned\": \"<boolean>\",\n    \"audience\": {\n      \"publicId\": \"<string>\"\n    },\n    \"custom\": \"<object>\"\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"error\",\n  \"type\": \"Error\",\n  \"data\": [\n    {\n      \"message\": \"string\",\n      \"propertyName\": \"string\",\n      \"listIndex\": 875\n    },\n    {\n      \"message\": \"string\",\n      \"propertyName\": \"string\",\n      \"listIndex\": 7065\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c0f9084d-5f1d-48c6-b766-9c7c55bf1a1e",
+          "name": "MenuItemList",
+          "request": {
+            "name": "MenuItemList",
+            "description": {},
+            "url": {
+              "path": [
+                "menu-items"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) Version of the API to use",
+                "key": "Api-Version",
+                "value": "<integer>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) Get your Application ID via support@ixon.cloud",
+                "key": "Api-Application",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) PublicId of the company",
+                "key": "Api-Company",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "Domain that provides the branding",
+                "key": "Api-Branding",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "[\n  {\n    \"order\": \"<integer>\",\n    \"page\": {\n      \"publicId\": \"<string>\"\n    },\n    \"pageLinks\": [\n      {\n        \"page\": {\n          \"publicId\": \"<string>\"\n        },\n        \"audience\": {\n          \"publicId\": \"<string>\"\n        },\n        \"order\": \"<integer>\",\n        \"custom\": \"<object>\",\n        \"group\": \"<string>\"\n      },\n      {\n        \"page\": {\n          \"publicId\": \"<string>\"\n        },\n        \"audience\": {\n          \"publicId\": \"<string>\"\n        },\n        \"order\": \"<integer>\",\n        \"custom\": \"<object>\",\n        \"group\": \"<string>\"\n      }\n    ],\n    \"name\": \"<string>\",\n    \"pinned\": \"<boolean>\",\n    \"audience\": {\n      \"publicId\": \"<string>\"\n    },\n    \"custom\": \"<object>\"\n  },\n  {\n    \"order\": \"<integer>\",\n    \"page\": {\n      \"publicId\": \"<string>\"\n    },\n    \"pageLinks\": [\n      {\n        \"page\": {\n          \"publicId\": \"<string>\"\n        },\n        \"audience\": {\n          \"publicId\": \"<string>\"\n        },\n        \"order\": \"<integer>\",\n        \"custom\": \"<object>\",\n        \"group\": \"<string>\"\n      },\n      {\n        \"page\": {\n          \"publicId\": \"<string>\"\n        },\n        \"audience\": {\n          \"publicId\": \"<string>\"\n        },\n        \"order\": \"<integer>\",\n        \"custom\": \"<object>\",\n        \"group\": \"<string>\"\n      }\n    ],\n    \"name\": \"<string>\",\n    \"pinned\": \"<boolean>\",\n    \"audience\": {\n      \"publicId\": \"<string>\"\n    },\n    \"custom\": \"<object>\"\n  }\n]",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "c6dcc368-8edd-45e3-a33c-c902baddf0f7",
+              "name": "Success response. Data could be an object instead of a list when one value is returned",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "menu-items"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Version of the API to use",
+                    "key": "Api-Version",
+                    "value": "<integer>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Get your Application ID via support@ixon.cloud",
+                    "key": "Api-Application",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) PublicId of the company",
+                    "key": "Api-Company",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Domain that provides the branding",
+                    "key": "Api-Branding",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"order\": \"<integer>\",\n    \"page\": {\n      \"publicId\": \"<string>\"\n    },\n    \"pageLinks\": [\n      {\n        \"page\": {\n          \"publicId\": \"<string>\"\n        },\n        \"audience\": {\n          \"publicId\": \"<string>\"\n        },\n        \"order\": \"<integer>\",\n        \"custom\": \"<object>\",\n        \"group\": \"<string>\"\n      },\n      {\n        \"page\": {\n          \"publicId\": \"<string>\"\n        },\n        \"audience\": {\n          \"publicId\": \"<string>\"\n        },\n        \"order\": \"<integer>\",\n        \"custom\": \"<object>\",\n        \"group\": \"<string>\"\n      }\n    ],\n    \"name\": \"<string>\",\n    \"pinned\": \"<boolean>\",\n    \"audience\": {\n      \"publicId\": \"<string>\"\n    },\n    \"custom\": \"<object>\"\n  },\n  {\n    \"order\": \"<integer>\",\n    \"page\": {\n      \"publicId\": \"<string>\"\n    },\n    \"pageLinks\": [\n      {\n        \"page\": {\n          \"publicId\": \"<string>\"\n        },\n        \"audience\": {\n          \"publicId\": \"<string>\"\n        },\n        \"order\": \"<integer>\",\n        \"custom\": \"<object>\",\n        \"group\": \"<string>\"\n      },\n      {\n        \"page\": {\n          \"publicId\": \"<string>\"\n        },\n        \"audience\": {\n          \"publicId\": \"<string>\"\n        },\n        \"order\": \"<integer>\",\n        \"custom\": \"<object>\",\n        \"group\": \"<string>\"\n      }\n    ],\n    \"name\": \"<string>\",\n    \"pinned\": \"<boolean>\",\n    \"audience\": {\n      \"publicId\": \"<string>\"\n    },\n    \"custom\": \"<object>\"\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"success\",\n  \"type\": \"string\",\n  \"data\": [\n    {\n      \"publicId\": \"stringstring\"\n    },\n    {\n      \"publicId\": \"stringstring\"\n    }\n  ],\n  \"moreAfter\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "7b55d8fc-8ffd-4291-ba84-ec6dd8787a54",
+              "name": "4XX error response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "menu-items"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Version of the API to use",
+                    "key": "Api-Version",
+                    "value": "<integer>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Get your Application ID via support@ixon.cloud",
+                    "key": "Api-Application",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) PublicId of the company",
+                    "key": "Api-Company",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Domain that provides the branding",
+                    "key": "Api-Branding",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"order\": \"<integer>\",\n    \"page\": {\n      \"publicId\": \"<string>\"\n    },\n    \"pageLinks\": [\n      {\n        \"page\": {\n          \"publicId\": \"<string>\"\n        },\n        \"audience\": {\n          \"publicId\": \"<string>\"\n        },\n        \"order\": \"<integer>\",\n        \"custom\": \"<object>\",\n        \"group\": \"<string>\"\n      },\n      {\n        \"page\": {\n          \"publicId\": \"<string>\"\n        },\n        \"audience\": {\n          \"publicId\": \"<string>\"\n        },\n        \"order\": \"<integer>\",\n        \"custom\": \"<object>\",\n        \"group\": \"<string>\"\n      }\n    ],\n    \"name\": \"<string>\",\n    \"pinned\": \"<boolean>\",\n    \"audience\": {\n      \"publicId\": \"<string>\"\n    },\n    \"custom\": \"<object>\"\n  },\n  {\n    \"order\": \"<integer>\",\n    \"page\": {\n      \"publicId\": \"<string>\"\n    },\n    \"pageLinks\": [\n      {\n        \"page\": {\n          \"publicId\": \"<string>\"\n        },\n        \"audience\": {\n          \"publicId\": \"<string>\"\n        },\n        \"order\": \"<integer>\",\n        \"custom\": \"<object>\",\n        \"group\": \"<string>\"\n      },\n      {\n        \"page\": {\n          \"publicId\": \"<string>\"\n        },\n        \"audience\": {\n          \"publicId\": \"<string>\"\n        },\n        \"order\": \"<integer>\",\n        \"custom\": \"<object>\",\n        \"group\": \"<string>\"\n      }\n    ],\n    \"name\": \"<string>\",\n    \"pinned\": \"<boolean>\",\n    \"audience\": {\n      \"publicId\": \"<string>\"\n    },\n    \"custom\": \"<object>\"\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"error\",\n  \"type\": \"Error\",\n  \"data\": [\n    {\n      \"message\": \"string\",\n      \"propertyName\": \"string\",\n      \"listIndex\": 875\n    },\n    {\n      \"message\": \"string\",\n      \"propertyName\": \"string\",\n      \"listIndex\": 7065\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "9a0dd8f6-75fe-436b-8b82-d2cffa41bf24",
+          "name": "MenuItemList",
+          "request": {
+            "name": "MenuItemList",
+            "description": {},
+            "url": {
+              "path": [
+                "menu-items"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) Version of the API to use",
+                "key": "Api-Version",
+                "value": "<integer>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) Get your Application ID via support@ixon.cloud",
+                "key": "Api-Application",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) PublicId of the company",
+                "key": "Api-Company",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "Domain that provides the branding",
+                "key": "Api-Branding",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "DELETE",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "[\n  {\n    \"publicId\": \"<string>\"\n  },\n  {\n    \"publicId\": \"<string>\"\n  }\n]",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "bc8a10ac-4fb8-4250-95e2-44f85e47a7ea",
+              "name": "Success response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "menu-items"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Version of the API to use",
+                    "key": "Api-Version",
+                    "value": "<integer>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Get your Application ID via support@ixon.cloud",
+                    "key": "Api-Application",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) PublicId of the company",
+                    "key": "Api-Company",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Domain that provides the branding",
+                    "key": "Api-Branding",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"publicId\": \"<string>\"\n  },\n  {\n    \"publicId\": \"<string>\"\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"success\",\n  \"type\": \"string\",\n  \"data\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b9384ae4-4e61-4e15-88e4-d5c5273cf603",
+              "name": "4XX error response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "menu-items"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Version of the API to use",
+                    "key": "Api-Version",
+                    "value": "<integer>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Get your Application ID via support@ixon.cloud",
+                    "key": "Api-Application",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) PublicId of the company",
+                    "key": "Api-Company",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Domain that provides the branding",
+                    "key": "Api-Branding",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"publicId\": \"<string>\"\n  },\n  {\n    \"publicId\": \"<string>\"\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"error\",\n  \"type\": \"Error\",\n  \"data\": [\n    {\n      \"message\": \"string\",\n      \"propertyName\": \"string\",\n      \"listIndex\": 875\n    },\n    {\n      \"message\": \"string\",\n      \"propertyName\": \"string\",\n      \"listIndex\": 7065\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://portal.ixon.cloud:443/api/",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "7acf20df-aabd-4317-91a6-c325faccaa56",
+    "name": "IXON AccessRecoverList MenuItemList API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "API for the IXON Cloud Platform\n\nContact Support:\n Name: IXON B.V.\n Email: support@ixon.cloud",
+      "type": "text/plain"
+    }
+  }
+}

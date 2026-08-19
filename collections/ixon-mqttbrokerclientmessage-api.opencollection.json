@@ -1,0 +1,67 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "IXON AccessRecoverList MqttBrokerClientMessage API",
+    "version": "0.1.294"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "MqttBrokerClientMessage",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "MqttBrokerClientMessage",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://portal.ixon.cloud:443/api/mqtt-brokers/:brokerId/clients/:publicId/message",
+            "headers": [
+              {
+                "name": "Api-Version",
+                "value": ""
+              },
+              {
+                "name": "Api-Application",
+                "value": ""
+              },
+              {
+                "name": "Api-Company",
+                "value": ""
+              },
+              {
+                "name": "Api-Branding",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "brokerId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "publicId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "MqttBrokerClientMessage"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

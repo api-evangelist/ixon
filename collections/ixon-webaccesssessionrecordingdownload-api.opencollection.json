@@ -1,0 +1,58 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "IXON AccessRecoverList WebaccessSessionRecordingDownload API",
+    "version": "0.1.294"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "WebaccessSessionRecordingDownload",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "WebaccessSessionRecordingDownload",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://portal.ixon.cloud:443/api/web-access/session-recordings/:publicId/download",
+            "headers": [
+              {
+                "name": "Api-Version",
+                "value": ""
+              },
+              {
+                "name": "Api-Application",
+                "value": ""
+              },
+              {
+                "name": "Api-Company",
+                "value": ""
+              },
+              {
+                "name": "Api-Branding",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "publicId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "WebaccessSessionRecordingDownload"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

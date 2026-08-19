@@ -1,0 +1,262 @@
+{
+  "item": [
+    {
+      "id": "9473b176-29bf-4577-aef7-69d72fe2cfd9",
+      "name": "ShellAgentList",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "a9a24a5d-f15c-4b47-95d2-8321b37b04ec",
+          "name": "ShellAgentList",
+          "request": {
+            "name": "ShellAgentList",
+            "description": {},
+            "url": {
+              "path": [
+                "agents",
+                "shell"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) Version of the API to use",
+                "key": "Api-Version",
+                "value": "<integer>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) Get your Application ID via support@ixon.cloud",
+                "key": "Api-Application",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) PublicId of the company",
+                "key": "Api-Company",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "Domain that provides the branding",
+                "key": "Api-Branding",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "[\n  {\n    \"registrationCode\": \"<string>\",\n    \"registrationProfile\": {\n      \"publicId\": \"<string>\"\n    },\n    \"name\": \"<string>\",\n    \"couponCode\": \"<string>\",\n    \"licence\": {\n      \"publicId\": \"<string>\"\n    },\n    \"groups\": [\n      {\n        \"publicId\": \"<string>\"\n      },\n      {\n        \"publicId\": \"<string>\"\n      }\n    ],\n    \"template\": {\n      \"publicId\": \"<string>\"\n    }\n  },\n  {\n    \"registrationCode\": \"<string>\",\n    \"registrationProfile\": {\n      \"publicId\": \"<string>\"\n    },\n    \"name\": \"<string>\",\n    \"couponCode\": \"<string>\",\n    \"licence\": {\n      \"publicId\": \"<string>\"\n    },\n    \"groups\": [\n      {\n        \"publicId\": \"<string>\"\n      },\n      {\n        \"publicId\": \"<string>\"\n      }\n    ],\n    \"template\": {\n      \"publicId\": \"<string>\"\n    }\n  }\n]",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "e4e686fa-d724-4250-b44d-0fdc92ccd564",
+              "name": "Success response. Data could be an object instead of a list when one value is returned",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "agents",
+                    "shell"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Version of the API to use",
+                    "key": "Api-Version",
+                    "value": "<integer>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Get your Application ID via support@ixon.cloud",
+                    "key": "Api-Application",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) PublicId of the company",
+                    "key": "Api-Company",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Domain that provides the branding",
+                    "key": "Api-Branding",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"registrationCode\": \"<string>\",\n    \"registrationProfile\": {\n      \"publicId\": \"<string>\"\n    },\n    \"name\": \"<string>\",\n    \"couponCode\": \"<string>\",\n    \"licence\": {\n      \"publicId\": \"<string>\"\n    },\n    \"groups\": [\n      {\n        \"publicId\": \"<string>\"\n      },\n      {\n        \"publicId\": \"<string>\"\n      }\n    ],\n    \"template\": {\n      \"publicId\": \"<string>\"\n    }\n  },\n  {\n    \"registrationCode\": \"<string>\",\n    \"registrationProfile\": {\n      \"publicId\": \"<string>\"\n    },\n    \"name\": \"<string>\",\n    \"couponCode\": \"<string>\",\n    \"licence\": {\n      \"publicId\": \"<string>\"\n    },\n    \"groups\": [\n      {\n        \"publicId\": \"<string>\"\n      },\n      {\n        \"publicId\": \"<string>\"\n      }\n    ],\n    \"template\": {\n      \"publicId\": \"<string>\"\n    }\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"success\",\n  \"type\": \"string\",\n  \"data\": [\n    {\n      \"publicId\": \"stringstring\",\n      \"conflictingAgents\": [\n        {\n          \"publicId\": \"string\"\n        },\n        {\n          \"publicId\": \"string\"\n        }\n      ]\n    },\n    {\n      \"publicId\": \"stringstring\",\n      \"conflictingAgents\": [\n        {\n          \"publicId\": \"string\"\n        },\n        {\n          \"publicId\": \"string\"\n        }\n      ]\n    }\n  ],\n  \"moreAfter\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "70f1e73f-2e01-41f3-8048-39198a1fe816",
+              "name": "4XX error response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "agents",
+                    "shell"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Version of the API to use",
+                    "key": "Api-Version",
+                    "value": "<integer>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Get your Application ID via support@ixon.cloud",
+                    "key": "Api-Application",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) PublicId of the company",
+                    "key": "Api-Company",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Domain that provides the branding",
+                    "key": "Api-Branding",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"registrationCode\": \"<string>\",\n    \"registrationProfile\": {\n      \"publicId\": \"<string>\"\n    },\n    \"name\": \"<string>\",\n    \"couponCode\": \"<string>\",\n    \"licence\": {\n      \"publicId\": \"<string>\"\n    },\n    \"groups\": [\n      {\n        \"publicId\": \"<string>\"\n      },\n      {\n        \"publicId\": \"<string>\"\n      }\n    ],\n    \"template\": {\n      \"publicId\": \"<string>\"\n    }\n  },\n  {\n    \"registrationCode\": \"<string>\",\n    \"registrationProfile\": {\n      \"publicId\": \"<string>\"\n    },\n    \"name\": \"<string>\",\n    \"couponCode\": \"<string>\",\n    \"licence\": {\n      \"publicId\": \"<string>\"\n    },\n    \"groups\": [\n      {\n        \"publicId\": \"<string>\"\n      },\n      {\n        \"publicId\": \"<string>\"\n      }\n    ],\n    \"template\": {\n      \"publicId\": \"<string>\"\n    }\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"error\",\n  \"type\": \"Error\",\n  \"data\": [\n    {\n      \"message\": \"string\",\n      \"propertyName\": \"string\",\n      \"listIndex\": 7282\n    },\n    {\n      \"message\": \"string\",\n      \"propertyName\": \"string\",\n      \"listIndex\": 2041\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://portal.ixon.cloud:443/api/",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "6a2df14d-26ba-4324-9b32-7d5fa899ac12",
+    "name": "IXON AccessRecoverList ShellAgentList API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "API for the IXON Cloud Platform\n\nContact Support:\n Name: IXON B.V.\n Email: support@ixon.cloud",
+      "type": "text/plain"
+    }
+  }
+}

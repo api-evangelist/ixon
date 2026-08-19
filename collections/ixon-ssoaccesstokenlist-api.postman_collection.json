@@ -1,0 +1,251 @@
+{
+  "item": [
+    {
+      "id": "583ecc28-00f7-4160-a3f1-aac081dc8f4a",
+      "name": "SsoAccessTokenList",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "aac6b58e-27c5-45e2-8d65-270ad4e263da",
+          "name": "SsoAccessTokenList",
+          "request": {
+            "name": "SsoAccessTokenList",
+            "description": {},
+            "url": {
+              "path": [
+                "sso",
+                "access-token"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "fields",
+                  "value": "<string>",
+                  "description": "Fields to select. Use \"*\" for all the top-level fields. Or check the \"Success response\" below for other fields.\n\nTo get the fields of a subresource do subresource.field or for multiple fields of one subresource do subresource(field,field)"
+                },
+                {
+                  "disabled": false,
+                  "key": "fields",
+                  "value": "<string>",
+                  "description": "Fields to select. Use \"*\" for all the top-level fields. Or check the \"Success response\" below for other fields.\n\nTo get the fields of a subresource do subresource.field or for multiple fields of one subresource do subresource(field,field)"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) Version of the API to use",
+                "key": "Api-Version",
+                "value": "<integer>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) Get your Application ID via support@ixon.cloud",
+                "key": "Api-Application",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "Domain that provides the branding",
+                "key": "Api-Branding",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"expiresIn\": \"<integer>\",\n  \"ssoAuthentication\": {\n    \"code\": \"<string>\",\n    \"state\": \"<string>\"\n  },\n  \"trustedDeviceName\": \"<string>\",\n  \"scope\": {\n    \"type\": \"<string>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "67e9049e-1f07-4bf0-b81e-7658e5b36043",
+              "name": "Success response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "sso",
+                    "access-token"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "fields",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "fields",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Version of the API to use",
+                    "key": "Api-Version",
+                    "value": "<integer>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Get your Application ID via support@ixon.cloud",
+                    "key": "Api-Application",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Domain that provides the branding",
+                    "key": "Api-Branding",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"expiresIn\": \"<integer>\",\n  \"ssoAuthentication\": {\n    \"code\": \"<string>\",\n    \"state\": \"<string>\"\n  },\n  \"trustedDeviceName\": \"<string>\",\n  \"scope\": {\n    \"type\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"success\",\n  \"type\": \"string\",\n  \"data\": {\n    \"publicId\": \"stringstring\",\n    \"expiresOn\": \"2000-10-15T20:05:33.459Z\",\n    \"secretId\": \"stringstringstringstringstringst\",\n    \"user\": {\n      \"publicId\": \"stringstring\",\n      \"type\": \"person\",\n      \"name\": \"string\",\n      \"emailAddress\": \"L3W.beo.yMS2GnD.uU#Y|3e$.8b`|.{hglDo^pPz+.c?-7r.xy1v6/Vc.N_4KL^BxqD@I0MBOWiYgkX8efX4zPvzarlZ1GK.GKUF6.7.wRFy.iyoYmasW6DttGcwMnaT7-oX1vthtKcDoCQjA75JH51760iN8LON.yrPOkTAmc9o7rT.li9K9RD8eR5PfNFmP40FnOWRmHDNfFfCkPSHzfv9.H.resmkmyja6bj9gtU6xQoHH2.mC8SONGmmGf\",\n      \"support\": false,\n      \"custom\": {},\n      \"hasPassword\": false,\n      \"externallyManaged\": true,\n      \"language\": \"st\",\n      \"localisation\": \"str\",\n      \"timeZone\": \"string\",\n      \"registeredOn\": \"1946-11-11T13:39:33.348Z\",\n      \"lastSeenOn\": \"2009-08-07T00:12:05.924Z\",\n      \"registeredBy\": {\n        \"publicId\": \"stringstring\",\n        \"name\": \"string\"\n      },\n      \"emailAddressChanges\": [\n        {\n          \"publicId\": \"stringstring\",\n          \"oldEmailAddress\": \"Emij`*NpbC.^5|0-O.3BaHWcJ9xga.ocjg./@7MCOPbZAA47wEFoo1V-sLriypDW99vhEKRFDm1Ifg5B5QDhwGDxXmvW2eQx.5.ZtpYD3ZyHQ1oXZUZyKFzj7fwmN0ipF5ZYHVJliK9J2.G.T\",\n          \"newEmailAddress\": \"Gqxv.mn*JGcN{2D9.WEBNAi5|1S!.c`Z0=S#g*8X.'Y.irsP3%0m.*a@Y.t-YIs4yXEqLGFJzRL9HdxbQYwh20-zCdh9kpqHf7Uo.r.Ia5LVG3eMSIjDDLqlvve7tvvhrWmKWIeyO0ViUxWWw37MnpM0Ikt.Ah6N5bOa74QnzlpI9CvxDmzNALa1MIV6vO4RVjYAQGI4NFt8dQlnmb1Nk5I8h8.bpNUnkKLYdpG-5xvMYnelJaoK5Z4O91K5Yo\",\n          \"expiresOn\": \"1981-08-20T18:13:25.815Z\"\n        },\n        {\n          \"publicId\": \"stringstring\",\n          \"oldEmailAddress\": \"kW9'Ipx}xzJ.SX'g.w.g9=CIP$.v?YI{~tA.t!EFv.!.Y2@aNrJf23o5QQnEcagdGAipOaMq.2IS8w2kKQPWhZSf9OcsjaR9hj5GA.Q.9EMGfuoiQxIgeDejfttHOAond6r-GD08m.1.6.GKB1uMIvt0Pbw-tOhjRn38e0dqpnvERcd7C6hewQRmXvTpQoaUexRzjkx9MPI.T.u.5Bp.CnOlTJTF8bZ-3pDbLengcNGANI\",\n          \"newEmailAddress\": \"P+wY`qt6C`3.J~i1V~=4AX9.WNgVHk.KeGjEl|BPF.z7.nRqL.`05e8virBnK@DpbHiIkfCWk17Po4dTkhKNlb887eUkMm9VJeZ3FFHDkyzg6FzbJ.5l5mi3rP49OVfPo-IW.0ovLlhoHaC3L7CZ7E8uWM2Gsk5sz0S.intF3a7pX9XwA4k1L1LJ31GTEnh-nCmC16gKMa6.z1k3fGSOIo.8.0\",\n          \"expiresOn\": \"1960-04-02T05:34:38.921Z\"\n        }\n      ],\n      \"invites\": [\n        {\n          \"publicId\": \"stringstring\",\n          \"emailAddress\": \"v_~A_c6R.d9PJ0=.'Bpg2/L&8.PZNe.2@C.j.v.EqmeqzoYqJoBsBGi20MB5bAty2vptMJdzF8gIWHoXTiqUs4AVXPJ0DxPKPOImk.D\",\n          \"expiresOn\": \"1998-07-03T13:38:59.049Z\",\n          \"memberships\": [\n            {\n              \"publicId\": \"stringstring\",\n              \"user\": {\n                \"publicId\": \"string\"\n              },\n              \"invite\": {\n                \"publicId\": \"string\"\n              },\n              \"group\": {\n                \"publicId\": \"string\"\n              },\n              \"role\": {\n                \"publicId\": \"string\"\n              },\n              \"expiresOn\": \"1956-04-02T01:01:11.830Z\"\n            },\n            {\n              \"publicId\": \"stringstring\",\n              \"user\": {\n                \"publicId\": \"string\"\n              },\n              \"invite\": {\n                \"publicId\": \"string\"\n              },\n              \"group\": {\n                \"publicId\": \"string\"\n              },\n              \"role\": {\n                \"publicId\": \"string\"\n              },\n              \"expiresOn\": \"2023-09-09T13:56:33.329Z\"\n            }\n          ]\n        },\n        {\n          \"publicId\": \"stringstring\",\n          \"emailAddress\": \"P?_h.nR`SsfP.tTP./4.0DMdy.VZ{kjMyTTRW@f.u.GnsEbehAijdg1nlLENpLphP9VGpUAKyqrj4ckC25o0gJCngfnWfpcy.m0LCCazJjMjys8m6S8dx.Hw.T.8ENjw9DEfDwSi4Y4YclxYaL3TB9fQswyhN-MJutW1MByGDvVgbZ.zReQZALdNU4AsgOielLlfEvvItTp64w8Hpd.oxErvNxav2xxIfaivv77wyFQaFU039y4F2So2Jmg\",\n          \"expiresOn\": \"2002-12-04T08:09:21.368Z\",\n          \"memberships\": [\n            {\n              \"publicId\": \"stringstring\",\n              \"user\": {\n                \"publicId\": \"string\"\n              },\n              \"invite\": {\n                \"publicId\": \"string\"\n              },\n              \"group\": {\n                \"publicId\": \"string\"\n              },\n              \"role\": {\n                \"publicId\": \"string\"\n              },\n              \"expiresOn\": \"2025-08-11T04:10:59.524Z\"\n            },\n            {\n              \"publicId\": \"stringstring\",\n              \"user\": {\n                \"publicId\": \"string\"\n              },\n              \"invite\": {\n                \"publicId\": \"string\"\n              },\n              \"group\": {\n                \"publicId\": \"string\"\n              },\n              \"role\": {\n                \"publicId\": \"string\"\n              },\n              \"expiresOn\": \"2000-01-14T02:35:29.989Z\"\n            }\n          ]\n        }\n      ],\n      \"unreadMessagesCount\": -1249554772,\n      \"otpAuth\": {\n        \"required\": false,\n        \"deviceName\": \"string\",\n        \"registeredOn\": \"2017-08-04T19:50:17.217Z\",\n        \"tokenExpiresOn\": \"2020-11-03T06:43:48.407Z\",\n        \"type\": \"app\"\n      },\n      \"apiApplications\": [\n        {\n          \"publicId\": \"stringstring\",\n          \"name\": \"string\",\n          \"custom\": {}\n        },\n        {\n          \"publicId\": \"stringstring\",\n          \"name\": \"string\",\n          \"custom\": {}\n        }\n      ],\n      \"phoneNumber\": \"+337028569538\",\n      \"acceptedTermsOfUsePolicies\": [\n        {\n          \"publicId\": \"stringstring\",\n          \"policy\": {\n            \"publicId\": \"stringstring\",\n            \"company\": {\n              \"publicId\": \"string\"\n            },\n            \"latest\": false,\n            \"version\": \"str\",\n            \"publishedOn\": \"1948-11-23T13:56:59.861Z\",\n            \"downloadUrl\": \"string\",\n            \"type\": \"termsofuse\",\n            \"languages\": [\n              {\n                \"publicId\": \"stringstring\",\n                \"languageCode\": \"st\",\n                \"body\": \"string\",\n                \"updateSummary\": \"\",\n                \"policy\": {\n                  \"publicId\": \"string\"\n                }\n              },\n              {\n                \"publicId\": \"stringstring\",\n                \"languageCode\": \"st\",\n                \"body\": \"string\",\n                \"updateSummary\": \"string\",\n                \"policy\": {\n                  \"publicId\": \"string\"\n                }\n              }\n            ]\n          },\n          \"company\": {\n            \"publicId\": \"string\"\n          },\n          \"acceptedOn\": \"1964-01-20T09:30:08.549Z\"\n        },\n        {\n          \"publicId\": \"stringstring\",\n          \"policy\": {\n            \"publicId\": \"stringstring\",\n            \"company\": {\n              \"publicId\": \"string\"\n            },\n            \"latest\": false,\n            \"version\": \"s\",\n            \"publishedOn\": \"2013-11-29T14:56:14.081Z\",\n            \"downloadUrl\": \"string\",\n            \"type\": \"termsofuse\",\n            \"languages\": [\n              {\n                \"publicId\": \"stringstring\",\n                \"languageCode\": \"st\",\n                \"body\": \"string\",\n                \"updateSummary\": \"string\",\n                \"policy\": {\n                  \"publicId\": \"string\"\n                }\n              },\n              {\n                \"publicId\": \"stringstring\",\n                \"languageCode\": \"st\",\n                \"body\": \"string\",\n                \"updateSummary\": \"string\",\n                \"policy\": {\n                  \"publicId\": \"string\"\n                }\n              }\n            ]\n          },\n          \"company\": {\n            \"publicId\": \"string\"\n          },\n          \"acceptedOn\": \"1979-05-26T19:26:16.246Z\"\n        }\n      ]\n    },\n    \"ssoIdentityProvider\": {\n      \"publicId\": \"stringstring\",\n      \"companies\": [\n        {\n          \"publicId\": \"string\"\n        },\n        {\n          \"publicId\": \"string\"\n        }\n      ],\n      \"name\": \"string\",\n      \"logo\": \"\"\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a0f6c2d6-471f-4be5-a771-1bfcf7194969",
+              "name": "4XX error response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "sso",
+                    "access-token"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "fields",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "fields",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Version of the API to use",
+                    "key": "Api-Version",
+                    "value": "<integer>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Get your Application ID via support@ixon.cloud",
+                    "key": "Api-Application",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Domain that provides the branding",
+                    "key": "Api-Branding",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"expiresIn\": \"<integer>\",\n  \"ssoAuthentication\": {\n    \"code\": \"<string>\",\n    \"state\": \"<string>\"\n  },\n  \"trustedDeviceName\": \"<string>\",\n  \"scope\": {\n    \"type\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"error\",\n  \"type\": \"Error\",\n  \"data\": [\n    {\n      \"message\": \"string\",\n      \"propertyName\": \"string\",\n      \"listIndex\": 3140\n    },\n    {\n      \"message\": \"string\",\n      \"propertyName\": \"string\",\n      \"listIndex\": 3999\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://portal.ixon.cloud:443/api/",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "00816845-8c32-4cd7-b25b-7efd17c98e6f",
+    "name": "IXON AccessRecoverList SsoAccessTokenList API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "API for the IXON Cloud Platform\n\nContact Support:\n Name: IXON B.V.\n Email: support@ixon.cloud",
+      "type": "text/plain"
+    }
+  }
+}

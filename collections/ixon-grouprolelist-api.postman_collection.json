@@ -1,0 +1,187 @@
+{
+  "item": [
+    {
+      "id": "21fc0b5c-1f62-4c59-ba73-f87ab3ecbd02",
+      "name": "GroupRoleList",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "08c0d7cd-8580-4bba-b185-df82266226e7",
+          "name": "GroupRoleList",
+          "request": {
+            "name": "GroupRoleList",
+            "description": {},
+            "url": {
+              "path": [
+                "groups",
+                "roles"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "fields",
+                  "value": "<string>",
+                  "description": "Fields to select. Use \"*\" for all the top-level fields. Or check the \"Success response\" below for other fields.\n\nTo get the fields of a subresource do subresource.field or for multiple fields of one subresource do subresource(field,field)"
+                },
+                {
+                  "disabled": false,
+                  "key": "fields",
+                  "value": "<string>",
+                  "description": "Fields to select. Use \"*\" for all the top-level fields. Or check the \"Success response\" below for other fields.\n\nTo get the fields of a subresource do subresource.field or for multiple fields of one subresource do subresource(field,field)"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) Version of the API to use",
+                "key": "Api-Version",
+                "value": "<integer>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) Get your Application ID via support@ixon.cloud",
+                "key": "Api-Application",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) PublicId of the company",
+                "key": "Api-Company",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "Domain that provides the branding",
+                "key": "Api-Branding",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "245e9d16-bee1-4ac8-b294-186211243fed",
+              "name": "Success response. Data could be an object instead of a list when one value is returned",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "groups",
+                    "roles"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "fields",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "fields",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Version of the API to use",
+                    "key": "Api-Version",
+                    "value": "<integer>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Get your Application ID via support@ixon.cloud",
+                    "key": "Api-Application",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) PublicId of the company",
+                    "key": "Api-Company",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Domain that provides the branding",
+                    "key": "Api-Branding",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"success\",\n  \"type\": \"string\",\n  \"data\": [\n    {\n      \"group\": {\n        \"publicId\": \"stringstring\",\n        \"name\": \"string\",\n        \"type\": {\n          \"publicId\": \"stringstring\",\n          \"name\": \"string\",\n          \"description\": \"string\",\n          \"order\": 5659129681768008000,\n          \"color\": \"#e9dDA3\",\n          \"custom\": {}\n        },\n        \"custom\": {},\n        \"agent\": {\n          \"publicId\": \"string\"\n        },\n        \"asset\": {\n          \"publicId\": \"string\"\n        },\n        \"parent\": {\n          \"publicId\": \"stringstring\",\n          \"name\": \"string\",\n          \"type\": {\n            \"publicId\": \"stringstring\",\n            \"name\": \"string\",\n            \"description\": \"string\",\n            \"order\": -5965480436969097000,\n            \"color\": \"#2FBAA6\",\n            \"custom\": {}\n          }\n        },\n        \"managedBy\": {\n          \"publicId\": \"stringstring\",\n          \"name\": \"string\",\n          \"type\": {\n            \"publicId\": \"stringstring\",\n            \"name\": \"string\",\n            \"description\": \"string\",\n            \"order\": -4863469529233332000,\n            \"color\": \"CbF1D3\",\n            \"custom\": {}\n          }\n        },\n        \"isCompanyGroup\": false\n      },\n      \"roles\": [\n        {\n          \"publicId\": \"stringstring\",\n          \"name\": \"string\",\n          \"description\": \"string\",\n          \"enforce2fa\": false,\n          \"enforceSso\": false,\n          \"permissions\": [\n            {\n              \"publicId\": \"string\",\n              \"custom\": {}\n            },\n            {\n              \"publicId\": \"string\",\n              \"custom\": {}\n            }\n          ],\n          \"audiences\": [\n            {\n              \"publicId\": \"stringstring\",\n              \"name\": \"string\",\n              \"description\": \"string\",\n              \"custom\": {},\n              \"default\": false,\n              \"type\": \"page\"\n            },\n            {\n              \"publicId\": \"stringstring\",\n              \"name\": \"string\",\n              \"description\": \"string\",\n              \"custom\": {},\n              \"default\": true,\n              \"type\": \"page\"\n            }\n          ],\n          \"custom\": {}\n        },\n        {\n          \"publicId\": \"stringstring\",\n          \"name\": \"string\",\n          \"description\": \"string\",\n          \"enforce2fa\": false,\n          \"enforceSso\": false,\n          \"permissions\": [\n            {\n              \"publicId\": \"str\",\n              \"custom\": {}\n            },\n            {\n              \"publicId\": \"string\",\n              \"custom\": {}\n            }\n          ],\n          \"audiences\": [\n            {\n              \"publicId\": \"stringstring\",\n              \"name\": \"string\",\n              \"description\": \"string\",\n              \"custom\": {},\n              \"default\": false,\n              \"type\": \"page\"\n            },\n            {\n              \"publicId\": \"stringstring\",\n              \"name\": \"string\",\n              \"description\": \"string\",\n              \"custom\": {},\n              \"default\": false,\n              \"type\": \"alarm\"\n            }\n          ],\n          \"custom\": {}\n        }\n      ]\n    },\n    {\n      \"group\": {\n        \"publicId\": \"stringstring\",\n        \"name\": \"string\",\n        \"type\": {\n          \"publicId\": \"stringstring\",\n          \"name\": \"string\",\n          \"description\": \"string\",\n          \"order\": 2048683753492994000,\n          \"color\": \"#86633D\",\n          \"custom\": {}\n        },\n        \"custom\": {},\n        \"agent\": {\n          \"publicId\": \"string\"\n        },\n        \"asset\": {\n          \"publicId\": \"string\"\n        },\n        \"parent\": {\n          \"publicId\": \"stringstring\",\n          \"name\": \"string\",\n          \"type\": {\n            \"publicId\": \"stringstring\",\n            \"name\": \"string\",\n            \"description\": \"string\",\n            \"order\": -3154054778276573000,\n            \"color\": \"#7beacB\",\n            \"custom\": {}\n          }\n        },\n        \"managedBy\": {\n          \"publicId\": \"stringstring\",\n          \"name\": \"string\",\n          \"type\": {\n            \"publicId\": \"stringstring\",\n            \"name\": \"string\",\n            \"description\": \"string\",\n            \"order\": -4372339496025581600,\n            \"color\": \"3aabC9\",\n            \"custom\": {}\n          }\n        },\n        \"isCompanyGroup\": true\n      },\n      \"roles\": [\n        {\n          \"publicId\": \"stringstring\",\n          \"name\": \"string\",\n          \"description\": \"string\",\n          \"enforce2fa\": true,\n          \"enforceSso\": false,\n          \"permissions\": [\n            {\n              \"publicId\": \"string\",\n              \"custom\": {}\n            },\n            {\n              \"publicId\": \"string\",\n              \"custom\": {}\n            }\n          ],\n          \"audiences\": [\n            {\n              \"publicId\": \"stringstring\",\n              \"name\": \"string\",\n              \"description\": \"string\",\n              \"custom\": {},\n              \"default\": false,\n              \"type\": \"alarm\"\n            },\n            {\n              \"publicId\": \"stringstring\",\n              \"name\": \"string\",\n              \"description\": \"string\",\n              \"custom\": {},\n              \"default\": false,\n              \"type\": \"alarm\"\n            }\n          ],\n          \"custom\": {}\n        },\n        {\n          \"publicId\": \"stringstring\",\n          \"name\": \"string\",\n          \"description\": \"string\",\n          \"enforce2fa\": true,\n          \"enforceSso\": false,\n          \"permissions\": [\n            {\n              \"publicId\": \"string\",\n              \"custom\": {}\n            },\n            {\n              \"publicId\": \"string\",\n              \"custom\": {}\n            }\n          ],\n          \"audiences\": [\n            {\n              \"publicId\": \"stringstring\",\n              \"name\": \"string\",\n              \"description\": \"string\",\n              \"custom\": {},\n              \"default\": false,\n              \"type\": \"service\"\n            },\n            {\n              \"publicId\": \"stringstring\",\n              \"name\": \"string\",\n              \"description\": \"string\",\n              \"custom\": {},\n              \"default\": true,\n              \"type\": \"page\"\n            }\n          ],\n          \"custom\": {}\n        }\n      ]\n    }\n  ],\n  \"moreAfter\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://portal.ixon.cloud:443/api/",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "2dbb5603-a3b0-4a70-a0b6-52b4f2f8ebcb",
+    "name": "IXON AccessRecoverList GroupRoleList API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "API for the IXON Cloud Platform\n\nContact Support:\n Name: IXON B.V.\n Email: support@ixon.cloud",
+      "type": "text/plain"
+    }
+  }
+}

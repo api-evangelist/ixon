@@ -1,0 +1,316 @@
+{
+  "item": [
+    {
+      "id": "f09e7884-268a-456c-8c79-8967e41354fc",
+      "name": "WebAccessEntry",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "57e78b21-9886-4362-819f-c4f4a09283b2",
+          "name": "WebAccessEntry",
+          "request": {
+            "name": "WebAccessEntry",
+            "description": {},
+            "url": {
+              "path": [
+                "web-accesses",
+                ":publicId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "fields",
+                  "value": "<string>",
+                  "description": "Fields to select. Use \"*\" for all the top-level fields. Or check the \"Success response\" below for other fields.\n\nTo get the fields of a subresource do subresource.field or for multiple fields of one subresource do subresource(field,field)"
+                },
+                {
+                  "disabled": false,
+                  "key": "fields",
+                  "value": "<string>",
+                  "description": "Fields to select. Use \"*\" for all the top-level fields. Or check the \"Success response\" below for other fields.\n\nTo get the fields of a subresource do subresource.field or for multiple fields of one subresource do subresource(field,field)"
+                },
+                {
+                  "disabled": false,
+                  "key": "filters",
+                  "value": "<string>",
+                  "description": "Filter the returned item(s). Format: operator(column,val)\n\nPossible operators are: lt, less, lte, lessorequal, eq, equals, ne, differs, gt, greater, gte, greaterorequal, in, ni, isnull, isnotnull, between, contains.\n\nExample: eq(publicId,\"publicId_val\")"
+                },
+                {
+                  "disabled": false,
+                  "key": "filters",
+                  "value": "<string>",
+                  "description": "Filter the returned item(s). Format: operator(column,val)\n\nPossible operators are: lt, less, lte, lessorequal, eq, equals, ne, differs, gt, greater, gte, greaterorequal, in, ni, isnull, isnotnull, between, contains.\n\nExample: eq(publicId,\"publicId_val\")"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "publicId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) Version of the API to use",
+                "key": "Api-Version",
+                "value": "<integer>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) Get your Application ID via support@ixon.cloud",
+                "key": "Api-Application",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) PublicId of the company",
+                "key": "Api-Company",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "Domain that provides the branding",
+                "key": "Api-Branding",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "c2b6f62d-936a-4577-aa83-0e316d198ebe",
+              "name": "Success response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "web-accesses",
+                    ":publicId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "fields",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "fields",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "filters",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "filters",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "publicId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Version of the API to use",
+                    "key": "Api-Version",
+                    "value": "<integer>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Get your Application ID via support@ixon.cloud",
+                    "key": "Api-Application",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) PublicId of the company",
+                    "key": "Api-Company",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Domain that provides the branding",
+                    "key": "Api-Branding",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"success\",\n  \"type\": \"string\",\n  \"data\": {\n    \"publicId\": \"string\",\n    \"agent\": {\n      \"publicId\": \"stringstring\",\n      \"name\": \"string\",\n      \"deviceId\": \"string\",\n      \"type\": {\n        \"publicId\": \"stringstring\",\n        \"additionalSubnets\": true,\n        \"allowDataPublishing\": false,\n        \"allowDemoDevice\": false,\n        \"allowTemplating\": true,\n        \"allowReboot\": false,\n        \"configPush\": true,\n        \"configFileFormat\": 3740399656,\n        \"customServers\": false,\n        \"deviceIdFormat\": \"string\",\n        \"httpProxyPort\": 51498,\n        \"latestFirmwareFile\": {\n          \"publicId\": \"stringstring\",\n          \"name\": \"string\",\n          \"description\": \"string\",\n          \"code\": \"string\",\n          \"notes\": \"string\",\n          \"agentType\": {\n            \"publicId\": \"string\"\n          },\n          \"type\": \"firmware\",\n          \"latest\": false,\n          \"custom\": {}\n        },\n        \"name\": \"string\",\n        \"offlineConfiguration\": true,\n        \"openvpnConfigMultiUse\": true,\n        \"purchasePrice\": {\n          \"gratis\": true\n        },\n        \"router\": false,\n        \"stunnelSupport\": false,\n        \"wanPortForwardings\": true,\n        \"custom\": {},\n        \"hasSecondWanPort\": false\n      },\n      \"location\": {\n        \"name\": \"string\",\n        \"latitude\": \"string\",\n        \"longitude\": \"string\"\n      },\n      \"geoLocation\": {\n        \"latitude\": \"string\",\n        \"longitude\": \"string\",\n        \"country\": \"string\",\n        \"city\": \"string\"\n      },\n      \"timeZone\": \"string\",\n      \"custom\": {},\n      \"description\": \"string\",\n      \"useStunnel\": false,\n      \"preferLocationOverGeoip\": true,\n      \"reRegistration\": false,\n      \"replaceRegistration\": true,\n      \"replaceMacAddress\": \"d9:DC:ef:2B:cc:D4\",\n      \"fixedVpnAddress\": \"string\",\n      \"macAddress\": \"str\",\n      \"serialNumber\": \"string\",\n      \"pullCodeGeneratedOn\": \"2026-08-07T22:28:32.709Z\",\n      \"controlKeyGeneratedOn\": \"1997-07-10T15:18:09.313Z\",\n      \"lastSeenAgentUserAgent\": {\n        \"publicId\": \"stringstring\",\n        \"value\": \"string\",\n        \"configName\": \"string\",\n        \"configVersion\": \"string\",\n        \"hardware\": \"string\",\n        \"hardwareCode\": \"string\",\n        \"hardwareVersion\": \"string\",\n        \"firmwareVersion\": \"string\",\n        \"osName\": \"string\",\n        \"osVersion\": \"string\",\n        \"appName\": \"string\",\n        \"appVersion\": \"string\",\n        \"packageName\": \"string\",\n        \"packageVersion\": \"string\",\n        \"libixagentVersion\": \"string\",\n        \"libixloggerVersion\": \"string\",\n        \"logOnTrigger\": true,\n        \"alarming\": false,\n        \"dataMonitoring\": false,\n        \"wifi\": false,\n        \"remoteFirmwareUpgrade\": true,\n        \"staticMapping\": false,\n        \"stewardConfigPush\": true,\n        \"wanInterfaceEth0\": false,\n        \"wanInterfaceWifi0\": true,\n        \"wanInterfaceCell0\": \"neither\",\n        \"multiWan\": true,\n        \"openvpnVersion\": \"string\",\n        \"openvpnOccEnabled\": false,\n        \"openvpnOpensslVersion\": \"string\"\n      },\n      \"networkValues\": [\n        {\n          \"interface\": \"string\",\n          \"name\": \"string\",\n          \"value\": [\n            \"string\",\n            \"string\"\n          ]\n        },\n        {\n          \"interface\": \"string\",\n          \"name\": \"string\",\n          \"value\": [\n            \"string\",\n            \"string\"\n          ]\n        }\n      ],\n      \"networkReportedOn\": \"1960-12-10T07:45:17.378Z\",\n      \"activeStatus\": \"inactive\",\n      \"activationLicence\": {\n        \"publicId\": \"stringstring\",\n        \"type\": {\n          \"publicId\": \"stringstring\",\n          \"usageType\": \"ssh\",\n          \"companyLimit\": 3478817995,\n          \"scope\": \"company\"\n        },\n        \"serialNumber\": \"string\",\n        \"expiresOn\": \"2014-10-11T02:31:16.927Z\",\n        \"activated\": false,\n        \"trial\": false,\n        \"value\": \"string\",\n        \"locked\": true,\n        \"maxRetentionPolicy\": \"string\",\n        \"bundle\": {\n          \"publicId\": \"stringstring\",\n          \"name\": \"string\"\n        }\n      },\n      \"pendingRegistration\": false,\n      \"card\": {\n        \"publicId\": \"string\"\n      },\n      \"activeVpnSession\": {\n        \"rscServer\": {\n          \"publicId\": \"stringstring\",\n          \"name\": \"string\",\n          \"vpnRange\": \"string\",\n          \"supportedLayers\": [\n            \"tun\",\n            \"tun\"\n          ],\n          \"location\": {\n            \"name\": \"string\",\n            \"latitude\": \"string\",\n            \"longitude\": \"string\"\n          }\n        },\n        \"startedOn\": \"1963-05-06T07:28:35.698Z\",\n        \"sessionName\": \"string\",\n        \"vpnAddress\": \"string\",\n        \"closed\": true\n      },\n      \"vpnChangedOn\": \"2020-03-23T02:07:46.715Z\",\n      \"mdrServer\": {\n        \"publicId\": \"stringstring\",\n        \"name\": \"string\"\n      },\n      \"mqttChangedOn\": \"1956-07-24T02:06:14.195Z\",\n      \"loggingMdrServer\": {\n        \"publicId\": \"stringstring\",\n        \"name\": \"string\"\n      },\n      \"loggingMqttChangedOn\": \"1994-08-05T04:32:47.386Z\",\n      \"lsiServer\": {\n        \"publicId\": \"stringstring\",\n        \"name\": \"string\"\n      },\n      \"company\": {\n        \"publicId\": \"4378-0645-1295-3755-3579\",\n        \"name\": \"string\"\n      },\n      \"controlledBy\": {\n        \"publicId\": \"1605-8069-7960-6558-8892\",\n        \"name\": \"string\"\n      },\n      \"vpnAudience\": {\n        \"publicId\": \"stringstring\",\n        \"name\": \"string\",\n        \"description\": \"string\",\n        \"custom\": {},\n        \"default\": false,\n        \"type\": \"service\"\n      },\n      \"vpnRequireAccessApproval\": false,\n      \"vpnAccessRules\": [\n        {\n          \"publicId\": \"stringstring\",\n          \"agent\": {\n            \"publicId\": \"string\"\n          },\n          \"audience\": {\n            \"publicId\": \"string\"\n          },\n          \"ipAddress\": \"string\",\n          \"netMask\": \"string\"\n        },\n        {\n          \"publicId\": \"stringstring\",\n          \"agent\": {\n            \"publicId\": \"string\"\n          },\n          \"audience\": {\n            \"publicId\": \"string\"\n          },\n          \"ipAddress\": \"string\",\n          \"netMask\": \"string\"\n        }\n      ],\n      \"vpnVisibleInMobileApp\": false,\n      \"vpnVisibleOnWeb\": true,\n      \"dataAudience\": {\n        \"publicId\": \"stringstring\",\n        \"name\": \"string\",\n        \"description\": \"string\",\n        \"custom\": {},\n        \"default\": true,\n        \"type\": \"alarm\"\n      },\n      \"memberships\": [\n        {\n          \"publicId\": \"stringstring\",\n          \"agent\": {\n            \"publicId\": \"string\"\n          },\n          \"group\": {\n            \"publicId\": \"string\"\n          }\n        },\n        {\n          \"publicId\": \"stringstring\",\n          \"agent\": {\n            \"publicId\": \"string\"\n          },\n          \"group\": {\n            \"publicId\": \"string\"\n          }\n        }\n      ],\n      \"rateLimiting\": {\n        \"configMqttCommandLimit\": \"lock\",\n        \"configMqttCommandCounter\": 19980,\n        \"configMqttCommandLastHit\": \"2023-05-27T19:22:37.775Z\",\n        \"configMqttDataLimit\": \"lock\",\n        \"configMqttDataCounter\": 16627,\n        \"configMqttDataLastHit\": \"1998-10-03T05:15:45.750Z\",\n        \"configOpenvpnLimit\": \"lock\",\n        \"configOpenvpnCounter\": 24482,\n        \"configOpenvpnLastHit\": \"2023-04-22T15:05:06.119Z\"\n      },\n      \"vpnProtocol\": \"udp\",\n      \"config\": {\n        \"publicId\": \"stringstring\",\n        \"agent\": {\n          \"publicId\": \"string\"\n        },\n        \"configFileServer\": \"string\",\n        \"configPushedOn\": \"1987-05-27T22:42:09.389Z\",\n        \"configFileReported\": \"string\",\n        \"configFileReportedWlanKeyEnabled\": false,\n        \"configFileReportedCellularPasswordEnabled\": false,\n        \"configReportedOn\": \"2010-02-11T21:45:26.392Z\",\n        \"differentConfigs\": false,\n        \"differentWanConfigs\": true,\n        \"stewardConfigFileServer\": \"string\",\n        \"stewardConfigFileReported\": \"string\",\n        \"stewardConfigReportedOn\": \"2014-11-14T04:52:13.774Z\",\n        \"differentStewardConfigs\": false,\n        \"routerLan\": {\n          \"agent\": {\n            \"publicId\": \"string\"\n          },\n          \"ipAddress\": \"string\",\n          \"netMask\": \"string\",\n          \"network\": \"string\",\n          \"dhcpServerEnabled\": false,\n          \"dhcpServerRangeFrom\": \"string\",\n          \"dhcpServerRangeTo\": \"string\",\n          \"gatewayLessRouting\": true,\n          \"forwardLanWan\": \"neither\",\n          \"forwardLanWan2\": \"private\",\n          \"wlanEnable\": true,\n          \"wlanSsid\": \"string\",\n          \"wlanKey\": \"string\",\n          \"wlanChannel\": 3310097028,\n          \"bacnetBbmd\": [\n            \"string\",\n            \"string\"\n          ],\n          \"udpBroadcastRelayPort\": [\n            57254,\n            26061\n          ]\n        },\n        \"routerVpn\": {\n          \"agent\": {\n            \"publicId\": \"string\"\n          },\n          \"sourceNatEnabled\": false\n        },\n        \"routerWan\": {\n          \"agent\": {\n            \"publicId\": \"string\"\n          },\n          \"multiwanPolicy\": \"eth_cell_wifi\",\n          \"ipUseDhcp\": true,\n          \"ipAddress\": \"string\",\n          \"ipGateway\": \"string\",\n          \"ipNetMask\": \"string\",\n          \"dnsServers\": [\n            \"string\",\n            \"string\"\n          ],\n          \"dnsRebindProtectionEnabled\": true,\n          \"cellularApn\": \"string\",\n          \"cellularPincode\": \"stri\",\n          \"cellularMtu\": 1096,\n          \"digitalInputMode\": \"disable_vpn_low\",\n          \"wanTrackInterval\": 1494741448,\n          \"wanTrackIps\": [\n            \"string\",\n            \"string\"\n          ],\n          \"wlanTrackInterval\": 3596223188,\n          \"wlanTrackIps\": [\n            \"string\",\n            \"string\"\n          ],\n          \"cellularTrackInterval\": 2995360930,\n          \"cellularTrackIps\": [\n            \"string\",\n            \"string\"\n          ],\n          \"httpProxyAddress\": \"str\",\n          \"httpProxyPort\": 764025986,\n          \"httpProxyAuthentication\": \"ntlm\",\n          \"httpProxyUsername\": \"string\",\n          \"httpProxyIsSocks5\": false,\n          \"wlanSsid\": \"string\",\n          \"wlanIpUseDhcp\": true,\n          \"wlanIpAddress\": \"string\",\n          \"wlanIpGateway\": \"string\",\n          \"wlanIpNetMask\": \"string\",\n          \"wlanDnsServers\": [\n            \"string\",\n            \"string\"\n          ],\n          \"cellularUsername\": \"string\"\n        },\n        \"routerDisplay\": {\n          \"agent\": {\n            \"publicId\": \"string\"\n          },\n          \"lockEnabled\": true,\n          \"lockCode\": \"7397\"\n        },\n        \"routerAdditionalSubnets\": [\n          {\n            \"publicId\": \"stringstring\",\n            \"networkAddress\": \"string\",\n            \"networkMask\": \"string\",\n            \"gatewayAddress\": \"string\",\n            \"agent\": {\n              \"publicId\": \"string\"\n            }\n          },\n          {\n            \"publicId\": \"stringstring\",\n            \"networkAddress\": \"string\",\n            \"networkMask\": \"string\",\n            \"gatewayAddress\": \"string\",\n            \"agent\": {\n              \"publicId\": \"string\"\n            }\n          }\n        ],\n        \"routerPortForwards\": [\n          {\n            \"publicId\": \"stringstring\",\n            \"interface\": \"WAN2\",\n            \"targetIpAddress\": \"string\",\n            \"targetPort\": 20130,\n            \"externalPort\": 56209,\n            \"agent\": {\n              \"publicId\": \"string\"\n            }\n          },\n          {\n            \"publicId\": \"stringstring\",\n            \"interface\": \"WAN2\",\n            \"targetIpAddress\": \"string\",\n            \"targetPort\": 44863,\n            \"externalPort\": 36772,\n            \"agent\": {\n              \"publicId\": \"string\"\n            }\n          }\n        ],\n        \"routerNtpServers\": [\n          {\n            \"publicId\": \"stringstring\",\n            \"agent\": {\n              \"publicId\": \"string\"\n            },\n            \"server\": \"string\"\n          },\n          {\n            \"publicId\": \"stringstring\",\n            \"agent\": {\n              \"publicId\": \"string\"\n            },\n            \"server\": \"string\"\n          }\n        ]\n      },\n      \"demoDevice\": {\n        \"publicId\": \"stringstring\",\n        \"expiresOn\": \"1954-04-06T16:56:50.568Z\",\n        \"agentType\": {\n          \"publicId\": \"stringstring\",\n          \"additionalSubnets\": true,\n          \"allowDataPublishing\": false,\n          \"allowDemoDevice\": false,\n          \"allowTemplating\": true,\n          \"allowReboot\": true,\n          \"configPush\": false,\n          \"configFileFormat\": 1386170983,\n          \"customServers\": false,\n          \"deviceIdFormat\": \"string\",\n          \"httpProxyPort\": 23362,\n          \"latestFirmwareFile\": {\n            \"publicId\": \"stringstring\",\n            \"name\": \"string\",\n            \"description\": \"string\",\n            \"code\": \"string\",\n            \"notes\": \"string\",\n            \"agentType\": {\n              \"publicId\": \"string\"\n            },\n            \"type\": \"firmware\",\n            \"latest\": true,\n            \"custom\": {}\n          },\n          \"name\": \"string\",\n          \"offlineConfiguration\": true,\n          \"openvpnConfigMultiUse\": false,\n          \"purchasePrice\": {\n            \"gratis\": true\n          },\n          \"router\": true,\n          \"stunnelSupport\": true,\n          \"wanPortForwardings\": true,\n          \"custom\": {},\n          \"hasSecondWanPort\": false\n        },\n        \"dmvServer\": {\n          \"publicId\": \"stringstring\",\n          \"name\": \"string\"\n        }\n      },\n      \"connectedUsers\": [\n        {\n          \"publicId\": \"stringstring\",\n          \"name\": \"string\"\n        },\n        {\n          \"publicId\": \"stringstring\",\n          \"name\": \"string\"\n        }\n      ],\n      \"loggingApp\": {\n        \"licence\": {\n          \"publicId\": \"stringstring\",\n          \"type\": {\n            \"publicId\": \"stringstring\",\n            \"usageType\": \"premium-branding\",\n            \"companyLimit\": 2127354350,\n            \"scope\": \"agent\"\n          },\n          \"serialNumber\": \"string\",\n          \"expiresOn\": \"2013-03-29T13:04:42.878Z\",\n          \"activated\": true,\n          \"trial\": false,\n          \"value\": \"stri\",\n          \"locked\": false,\n          \"maxRetentionPolicy\": \"string\",\n          \"agent\": {\n            \"publicId\": \"stringstring\",\n            \"name\": \"string\",\n            \"deviceId\": \"string\",\n            \"type\": {\n              \"publicId\": \"string\"\n            },\n            \"location\": {\n              \"name\": \"string\",\n              \"latitude\": \"string\",\n              \"longitude\": \"string\"\n            },\n            \"geoLocation\": {\n              \"latitude\": \"string\",\n              \"longitude\": \"string\",\n              \"country\": \"string\",\n              \"city\": \"string\"\n            },\n            \"custom\": {}\n          },\n          \"hasAgent\": true,\n          \"agentType\": {\n            \"publicId\": \"stringstring\",\n            \"additionalSubnets\": false,\n            \"allowDataPublishing\": true,\n            \"allowDemoDevice\": false,\n            \"allowTemplating\": false,\n            \"allowReboot\": true,\n            \"configPush\": true,\n            \"configFileFormat\": 3287865429,\n            \"customServers\": false,\n            \"deviceIdFormat\": \"string\",\n            \"httpProxyPort\": 45487,\n            \"latestFirmwareFile\": {},\n            \"name\": \"string\",\n            \"offlineConfiguration\": false,\n            \"openvpnConfigMultiUse\": true,\n            \"purchasePrice\": {},\n            \"router\": false,\n            \"stunnelSupport\": false,\n            \"wanPortForwardings\": false,\n            \"custom\": {},\n            \"hasSecondWanPort\": true\n          },\n          \"bundle\": {\n            \"publicId\": \"stringstring\",\n            \"name\": \"strin\"\n          }\n        },\n        \"enabled\": false\n      },\n      \"valuesPerHour\": 2110385054,\n      \"alarmingApp\": {\n        \"licence\": {\n          \"publicId\": \"stringstring\",\n          \"type\": {\n            \"publicId\": \"stringstring\",\n            \"usageType\": \"app-engine-level-2\",\n            \"companyLimit\": 1822244098,\n            \"scope\": \"agent\"\n          },\n          \"serialNumber\": \"string\",\n          \"expiresOn\": \"1998-04-01T12:48:53.678Z\",\n          \"activated\": false,\n          \"trial\": true,\n          \"value\": \"string\",\n          \"locked\": false,\n          \"maxRetentionPolicy\": \"string\",\n          \"agent\": {\n            \"publicId\": \"stringstring\",\n            \"name\": \"string\",\n            \"deviceId\": \"string\",\n            \"type\": {\n              \"publicId\": \"string\"\n            },\n            \"location\": {\n              \"name\": \"string\",\n              \"latitude\": \"string\",\n              \"longitude\": \"string\"\n            },\n            \"geoLocation\": {\n              \"latitude\": \"string\",\n              \"longitude\": \"string\",\n              \"country\": \"string\",\n              \"city\": \"string\"\n            },\n            \"custom\": {}\n          },\n          \"hasAgent\": false,\n          \"agentType\": {\n            \"publicId\": \"stringstring\",\n            \"additionalSubnets\": false,\n            \"allowDataPublishing\": true,\n            \"allowDemoDevice\": true,\n            \"allowTemplating\": false,\n            \"allowReboot\": true,\n            \"configPush\": true,\n            \"configFileFormat\": 2654673955,\n            \"customServers\": true,\n            \"deviceIdFormat\": \"string\",\n            \"httpProxyPort\": 18748,\n            \"latestFirmwareFile\": {},\n            \"name\": \"string\",\n            \"offlineConfiguration\": true,\n            \"openvpnConfigMultiUse\": false,\n            \"purchasePrice\": {},\n            \"router\": false,\n            \"stunnelSupport\": false,\n            \"wanPortForwardings\": true,\n            \"custom\": {},\n            \"hasSecondWanPort\": true\n          },\n          \"bundle\": {\n            \"publicId\": \"stringstring\",\n            \"name\": \"string\"\n          }\n        },\n        \"enabled\": true\n      },\n      \"lanWanAccessRules\": [\n        {\n          \"publicId\": \"stringstring\",\n          \"agent\": {\n            \"publicId\": \"string\"\n          },\n          \"sourceIpAddress\": \"string\",\n          \"sourceMacAddress\": \"2C:4c:19:9b:3d:Bc\",\n          \"destinationPort\": 17892,\n          \"destinationIpAddress\": \"99.575.417.3/39\",\n          \"protocol\": \"icmp\",\n          \"description\": \"string\"\n        },\n        {\n          \"publicId\": \"stringstring\",\n          \"agent\": {\n            \"publicId\": \"string\"\n          },\n          \"sourceIpAddress\": \"string\",\n          \"sourceMacAddress\": \"6a:e9:e3:4d:e9:e7\",\n          \"destinationPort\": 20577,\n          \"destinationIpAddress\": \"561.82.456.326/42\",\n          \"protocol\": \"egp\",\n          \"description\": \"string\"\n        }\n      ],\n      \"oneToOneNatRules\": [\n        {\n          \"publicId\": \"stringstring\",\n          \"agent\": {\n            \"publicId\": \"string\"\n          },\n          \"type\": \"wlan\",\n          \"virtualIpAddress\": \"string\",\n          \"destinationIpAddress\": \"string\",\n          \"protocol\": \"string\",\n          \"port\": 10200,\n          \"sourceIpAddress\": \"string\",\n          \"description\": \"string\"\n        },\n        {\n          \"publicId\": \"stringstring\",\n          \"agent\": {\n            \"publicId\": \"string\"\n          },\n          \"type\": \"vpn\",\n          \"virtualIpAddress\": \"string\",\n          \"destinationIpAddress\": \"string\",\n          \"protocol\": \"string\",\n          \"port\": 22120,\n          \"sourceIpAddress\": \"string\",\n          \"description\": \"string\"\n        }\n      ],\n      \"devices\": [\n        {\n          \"publicId\": \"stringstring\",\n          \"name\": \"string\",\n          \"ipAddress\": \"string\",\n          \"macAddress\": \"eD:bB:93:0D:8d:57\",\n          \"customAddress\": \"string\",\n          \"agent\": {\n            \"publicId\": \"string\"\n          },\n          \"dataSources\": [\n            {\n              \"agent\": {\n                \"publicId\": \"string\"\n              },\n              \"continueLoggingOnError\": true,\n              \"device\": {\n                \"publicId\": \"string\"\n              },\n              \"gracePeriod\": 25539,\n              \"publicId\": \"stringstring\",\n              \"name\": \"string\",\n              \"slug\": \"6hyg\",\n              \"disabled\": false,\n              \"protocol\": {\n                \"publicId\": \"custom\",\n                \"password\": \"string\"\n              },\n              \"port\": 9352,\n              \"pullDelay\": 829873934,\n              \"valuesPerHour\": 2742511602,\n              \"mqttTopic\": \"string\",\n              \"mqttBrokerClient\": {\n                \"publicId\": \"string\"\n              }\n            },\n            {\n              \"agent\": {\n                \"publicId\": \"string\"\n              },\n              \"continueLoggingOnError\": true,\n              \"device\": {\n                \"publicId\": \"string\"\n              },\n              \"gracePeriod\": 56781,\n              \"publicId\": \"stringstring\",\n              \"name\": \"string\",\n              \"slug\": \"CN19KQR\",\n              \"disabled\": false,\n              \"protocol\": {\n                \"publicId\": \"custom\",\n                \"password\": \"string\"\n              },\n              \"port\": 19864,\n              \"pullDelay\": 1795985760,\n              \"valuesPerHour\": 2891929558,\n              \"mqttTopic\": \"string\",\n              \"mqttBrokerClient\": {\n                \"publicId\": \"string\"\n              }\n            }\n          ]\n        },\n        {\n          \"publicId\": \"stringstring\",\n          \"name\": \"string\",\n          \"ipAddress\": \"string\",\n          \"macAddress\": \"eD:Cd:bA:09:bA:D9\",\n          \"customAddress\": \"string\",\n          \"agent\": {\n            \"publicId\": \"string\"\n          },\n          \"dataSources\": [\n            {\n              \"agent\": {\n                \"publicId\": \"string\"\n              },\n              \"continueLoggingOnError\": true,\n              \"device\": {\n                \"publicId\": \"string\"\n              },\n              \"gracePeriod\": 44219,\n              \"publicId\": \"stringstring\",\n              \"name\": \"string\",\n              \"slug\": \"y9V\",\n              \"disabled\": true,\n              \"protocol\": {\n                \"publicId\": \"custom\",\n                \"password\": \"string\"\n              },\n              \"port\": 34796,\n              \"pullDelay\": 2070278748,\n              \"valuesPerHour\": 3661054912,\n              \"mqttTopic\": \"string\",\n              \"mqttBrokerClient\": {\n                \"publicId\": \"string\"\n              }\n            },\n            {\n              \"agent\": {\n                \"publicId\": \"string\"\n              },\n              \"continueLoggingOnError\": true,\n              \"device\": {\n                \"publicId\": \"string\"\n              },\n              \"gracePeriod\": 61816,\n              \"publicId\": \"stringstring\",\n              \"name\": \"string\",\n              \"slug\": \"1A\",\n              \"disabled\": true,\n              \"protocol\": {\n                \"publicId\": \"custom\",\n                \"password\": \"string\"\n              },\n              \"port\": 14457,\n              \"pullDelay\": 4184741277,\n              \"valuesPerHour\": 931287067,\n              \"mqttTopic\": \"string\",\n              \"mqttBrokerClient\": {\n                \"publicId\": \"string\"\n              }\n            }\n          ]\n        }\n      ],\n      \"servers\": [\n        {\n          \"publicId\": \"stringstring\",\n          \"type\": \"rdp\",\n          \"name\": \"string\",\n          \"port\": 63804,\n          \"username\": \"string\",\n          \"password\": \"string\",\n          \"hasPassword\": true,\n          \"authDomain\": \"R?:XtY6ug8@.2P+2'\",\n          \"landingPage\": \"string\",\n          \"connectionQuality\": \"normal\",\n          \"readOnly\": true,\n          \"vncRightClickOnTouchHold\": false,\n          \"vncEncoding\": \"rre\",\n          \"useSsl\": true,\n          \"visibleInMobileApp\": false,\n          \"visibleOnWeb\": true,\n          \"httpAuthenticationType\": \"digest\",\n          \"recordSessions\": false,\n          \"audience\": {\n            \"publicId\": \"string\"\n          },\n          \"requireAccessApproval\": true,\n          \"custom\": {},\n          \"agent\": {\n            \"publicId\": \"string\"\n          },\n          \"device\": {\n            \"publicId\": \"string\"\n          },\n          \"serviceGroup\": \"string\",\n          \"template\": {\n            \"publicId\": \"stringstring\",\n            \"type\": \"rdp\",\n            \"name\": \"string\",\n            \"port\": 15933,\n            \"username\": \"string\",\n            \"password\": \"string\",\n            \"hasPassword\": true,\n            \"authDomain\": \"?T.MFR'%_#m+{\",\n            \"landingPage\": \"string\",\n            \"connectionQuality\": \"low\",\n            \"readOnly\": false,\n            \"vncRightClickOnTouchHold\": true,\n            \"vncEncoding\": \"zlib\",\n            \"useSsl\": true,\n            \"visibleInMobileApp\": true,\n            \"visibleOnWeb\": true,\n            \"httpAuthenticationType\": \"basic\",\n            \"recordSessions\": false,\n            \"audience\": {\n              \"publicId\": \"string\"\n            },\n            \"requireAccessApproval\": false,\n            \"custom\": {}\n          }\n        },\n        {\n          \"publicId\": \"stringstring\",\n          \"type\": \"http\",\n          \"name\": \"string\",\n          \"port\": 20967,\n          \"username\": \"string\",\n          \"password\": \"string\",\n          \"hasPassword\": false,\n          \"authDomain\": \"-,.@?5~;oi]MD\",\n          \"landingPage\": \"string\",\n          \"connectionQuality\": \"high\",\n          \"readOnly\": false,\n          \"vncRightClickOnTouchHold\": false,\n          \"vncEncoding\": \"corre\",\n          \"useSsl\": false,\n          \"visibleInMobileApp\": true,\n          \"visibleOnWeb\": true,\n          \"httpAuthenticationType\": \"basic\",\n          \"recordSessions\": true,\n          \"audience\": {\n            \"publicId\": \"string\"\n          },\n          \"requireAccessApproval\": false,\n          \"custom\": {},\n          \"agent\": {\n            \"publicId\": \"string\"\n          },\n          \"device\": {\n            \"publicId\": \"string\"\n          },\n          \"serviceGroup\": \"string\",\n          \"template\": {\n            \"publicId\": \"stringstring\",\n            \"type\": \"websocket\",\n            \"name\": \"string\",\n            \"port\": 44701,\n            \"username\": \"string\",\n            \"password\": \"string\",\n            \"hasPassword\": true,\n            \"authDomain\": \"cm.O-|P8\",\n            \"landingPage\": \"string\",\n            \"connectionQuality\": \"low\",\n            \"readOnly\": true,\n            \"vncRightClickOnTouchHold\": false,\n            \"vncEncoding\": \"ultrazip\",\n            \"useSsl\": false,\n            \"visibleInMobileApp\": false,\n            \"visibleOnWeb\": true,\n            \"httpAuthenticationType\": \"basic\",\n            \"recordSessions\": true,\n            \"audience\": {\n              \"publicId\": \"string\"\n            },\n            \"requireAccessApproval\": true,\n            \"custom\": {}\n          }\n        }\n      ],\n      \"dataSources\": [\n        {\n          \"agent\": {\n            \"publicId\": \"string\"\n          },\n          \"continueLoggingOnError\": false,\n          \"device\": {\n            \"publicId\": \"string\"\n          },\n          \"gracePeriod\": 26054,\n          \"publicId\": \"stringstring\",\n          \"name\": \"string\",\n          \"slug\": \"jgt0p\",\n          \"disabled\": false,\n          \"protocol\": {\n            \"publicId\": \"custom\",\n            \"password\": \"string\"\n          },\n          \"port\": 57519,\n          \"pullDelay\": 2137117222,\n          \"valuesPerHour\": 846151909,\n          \"mqttTopic\": \"string\",\n          \"mqttBrokerClient\": {\n            \"publicId\": \"string\"\n          }\n        },\n        {\n          \"agent\": {\n            \"publicId\": \"string\"\n          },\n          \"continueLoggingOnError\": true,\n          \"device\": {\n            \"publicId\": \"string\"\n          },\n          \"gracePeriod\": 64936,\n          \"publicId\": \"stringstring\",\n          \"name\": \"string\",\n          \"slug\": \"z7\",\n          \"disabled\": false,\n          \"protocol\": {\n            \"publicId\": \"custom\",\n            \"password\": \"string\"\n          },\n          \"port\": 36296,\n          \"pullDelay\": 3687045819,\n          \"valuesPerHour\": 1518631705,\n          \"mqttTopic\": \"str\",\n          \"mqttBrokerClient\": {\n            \"publicId\": \"string\"\n          }\n        }\n      ],\n      \"pageLinks\": [\n        {\n          \"publicId\": \"stringstring\",\n          \"agent\": {\n            \"publicId\": \"string\"\n          },\n          \"asset\": {\n            \"publicId\": \"string\"\n          },\n          \"menuItem\": {\n            \"publicId\": \"string\"\n          },\n          \"page\": {\n            \"publicId\": \"string\"\n          },\n          \"audience\": {\n            \"publicId\": \"stringstring\",\n            \"name\": \"string\",\n            \"description\": \"string\",\n            \"custom\": {},\n            \"default\": true,\n            \"type\": \"service\"\n          },\n          \"group\": {\n            \"publicId\": \"stringstring\",\n            \"agent\": {\n              \"publicId\": \"string\"\n            },\n            \"asset\": {\n              \"publicId\": \"string\"\n            },\n            \"menuItem\": {\n              \"publicId\": \"string\"\n            },\n            \"name\": \"string\"\n          },\n          \"order\": 9324,\n          \"custom\": {}\n        },\n        {\n          \"publicId\": \"stringstring\",\n          \"agent\": {\n            \"publicId\": \"string\"\n          },\n          \"asset\": {\n            \"publicId\": \"string\"\n          },\n          \"menuItem\": {\n            \"publicId\": \"string\"\n          },\n          \"page\": {\n            \"publicId\": \"string\"\n          },\n          \"audience\": {\n            \"publicId\": \"stringstring\",\n            \"name\": \"string\",\n            \"description\": \"string\",\n            \"custom\": {},\n            \"default\": false,\n            \"type\": \"alarm\"\n          },\n          \"group\": {\n            \"publicId\": \"stringstring\",\n            \"agent\": {\n              \"publicId\": \"string\"\n            },\n            \"asset\": {\n              \"publicId\": \"string\"\n            },\n            \"menuItem\": {\n              \"publicId\": \"string\"\n            },\n            \"name\": \"string\"\n          },\n          \"order\": 669,\n          \"custom\": {}\n        }\n      ],\n      \"scheduledAccessRequests\": [\n        {\n          \"publicId\": \"stringstring\",\n          \"agent\": {\n            \"publicId\": \"string\"\n          },\n          \"user\": {\n            \"publicId\": \"stringstring\",\n            \"name\": \"string\"\n          },\n          \"approver\": {\n            \"publicId\": \"stringstring\",\n            \"name\": \"string\"\n          },\n          \"approverCompany\": {\n            \"publicId\": \"string\"\n          },\n          \"vpn\": false,\n          \"servers\": [\n            {\n              \"publicId\": \"stringstring\",\n              \"name\": \"string\"\n            },\n            {\n              \"publicId\": \"stringstring\",\n              \"name\": \"stri\"\n            }\n          ],\n          \"start\": \"1946-11-03T20:19:11.892Z\",\n          \"end\": \"1964-06-10T19:40:43.874Z\",\n          \"status\": \"approved\",\n          \"reason\": \"string\",\n          \"createdOn\": \"1960-03-31T22:27:00.693Z\",\n          \"updatedOn\": \"1977-01-22T17:23:48.351Z\",\n          \"allowedApprovers\": [\n            {\n              \"publicId\": \"stringstring\",\n              \"name\": \"string\"\n            },\n            {\n              \"publicId\": \"stringstring\",\n              \"name\": \"string\"\n            }\n          ],\n          \"reviewExpiresOn\": \"2026-03-31T04:29:38.925Z\"\n        },\n        {\n          \"publicId\": \"stringstring\",\n          \"agent\": {\n            \"publicId\": \"string\"\n          },\n          \"user\": {\n            \"publicId\": \"stringstring\",\n            \"name\": \"string\"\n          },\n          \"approver\": {\n            \"publicId\": \"stringstring\",\n            \"name\": \"string\"\n          },\n          \"approverCompany\": {\n            \"publicId\": \"string\"\n          },\n          \"vpn\": false,\n          \"servers\": [\n            {\n              \"publicId\": \"stringstring\",\n              \"name\": \"string\"\n            },\n            {\n              \"publicId\": \"stringstring\",\n              \"name\": \"string\"\n            }\n          ],\n          \"start\": \"2007-10-12T14:11:11.468Z\",\n          \"end\": \"1953-04-20T19:39:55.949Z\",\n          \"status\": \"revoked\",\n          \"reason\": \"string\",\n          \"createdOn\": \"1967-06-08T07:05:56.478Z\",\n          \"updatedOn\": \"1989-12-23T13:28:52.310Z\",\n          \"allowedApprovers\": [\n            {\n              \"publicId\": \"stringstring\",\n              \"name\": \"string\"\n            },\n            {\n              \"publicId\": \"stringstring\",\n              \"name\": \"string\"\n            }\n          ],\n          \"reviewExpiresOn\": \"2014-07-03T14:51:32.036Z\"\n        }\n      ],\n      \"assets\": [\n        {\n          \"publicId\": \"string\"\n        },\n        {\n          \"publicId\": \"string\"\n        }\n      ],\n      \"registrationProfile\": {\n        \"publicId\": \"3501-7826-0707-5851-8667\",\n        \"name\": \"strin\",\n        \"agentActivationName\": \"string\"\n      },\n      \"vpnLocked\": true,\n      \"webAccessLocked\": false,\n      \"appliedTemplateVersion\": {\n        \"publicId\": \"stringstring\",\n        \"createdOn\": \"2025-08-27T23:58:52.990Z\",\n        \"createdBy\": {\n          \"publicId\": \"stringstring\",\n          \"name\": \"string\"\n        },\n        \"company\": {\n          \"publicId\": \"string\"\n        },\n        \"description\": \"string\",\n        \"agentTemplate\": {\n          \"publicId\": \"string\"\n        },\n        \"number\": \"string\"\n      }\n    },\n    \"agentServer\": {\n      \"publicId\": \"stringstring\",\n      \"type\": \"rdp\",\n      \"name\": \"string\",\n      \"port\": 158,\n      \"username\": \"string\",\n      \"password\": \"string\",\n      \"hasPassword\": true,\n      \"authDomain\": \"]8s!.5iNR!;1OvxFa\",\n      \"landingPage\": \"string\",\n      \"connectionQuality\": \"high\",\n      \"readOnly\": false,\n      \"vncRightClickOnTouchHold\": false,\n      \"vncEncoding\": \"ultra\",\n      \"useSsl\": false,\n      \"visibleInMobileApp\": false,\n      \"visibleOnWeb\": false,\n      \"httpAuthenticationType\": \"ntlm\",\n      \"recordSessions\": true,\n      \"audience\": {\n        \"publicId\": \"string\"\n      },\n      \"requireAccessApproval\": true,\n      \"custom\": {},\n      \"agent\": {\n        \"publicId\": \"string\"\n      },\n      \"device\": {\n        \"publicId\": \"string\"\n      },\n      \"serviceGroup\": \"stri\",\n      \"template\": {\n        \"publicId\": \"stringstring\",\n        \"type\": \"ssh\",\n        \"name\": \"string\",\n        \"port\": 51381,\n        \"username\": \"string\",\n        \"password\": \"string\",\n        \"hasPassword\": true,\n        \"authDomain\": \"q)X'.BPzo4]sD:\",\n        \"landingPage\": \"string\",\n        \"connectionQuality\": \"low\",\n        \"readOnly\": true,\n        \"vncRightClickOnTouchHold\": true,\n        \"vncEncoding\": \"zlibhex\",\n        \"useSsl\": true,\n        \"visibleInMobileApp\": false,\n        \"visibleOnWeb\": true,\n        \"httpAuthenticationType\": \"digest\",\n        \"recordSessions\": true,\n        \"audience\": {\n          \"publicId\": \"string\"\n        },\n        \"requireAccessApproval\": true,\n        \"custom\": {}\n      }\n    },\n    \"closeReason\": \"string\",\n    \"closedOn\": \"1961-01-27T00:26:16.518Z\",\n    \"expiresOn\": \"2006-10-16T23:21:18.692Z\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a8a5c67b-f5d3-42a3-8ec4-04ee990edcea",
+              "name": "4XX error response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "web-accesses",
+                    ":publicId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "fields",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "fields",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "filters",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "filters",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "publicId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Version of the API to use",
+                    "key": "Api-Version",
+                    "value": "<integer>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Get your Application ID via support@ixon.cloud",
+                    "key": "Api-Application",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) PublicId of the company",
+                    "key": "Api-Company",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Domain that provides the branding",
+                    "key": "Api-Branding",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"error\",\n  \"type\": \"Error\",\n  \"data\": [\n    {\n      \"message\": \"string\",\n      \"propertyName\": \"string\",\n      \"listIndex\": 9159\n    },\n    {\n      \"message\": \"string\",\n      \"propertyName\": \"string\",\n      \"listIndex\": 3772\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://portal.ixon.cloud:443/api/",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "cff1ddfc-dda5-4f8e-afdf-171889a29605",
+    "name": "IXON AccessRecoverList WebAccessEntry API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "API for the IXON Cloud Platform\n\nContact Support:\n Name: IXON B.V.\n Email: support@ixon.cloud",
+      "type": "text/plain"
+    }
+  }
+}

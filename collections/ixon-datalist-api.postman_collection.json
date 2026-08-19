@@ -1,0 +1,259 @@
+{
+  "item": [
+    {
+      "id": "2b989279-45bd-491b-9e5b-2b1b4b49f275",
+      "name": "DataList",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "1db27ce5-c145-4519-b923-f94c96cd60f9",
+          "name": "DataList",
+          "request": {
+            "name": "DataList",
+            "description": {},
+            "url": {
+              "path": [
+                "data"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) Version of the API to use",
+                "key": "Api-Version",
+                "value": "<integer>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) Get your Application ID via support@ixon.cloud",
+                "key": "Api-Application",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) PublicId of the company",
+                "key": "Api-Company",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "Domain that provides the branding",
+                "key": "Api-Branding",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "[\n  {\n    \"source\": {\n      \"publicId\": \"<string>\"\n    },\n    \"tags\": [\n      {\n        \"id\": \"<integer>\",\n        \"slug\": \"<string>\",\n        \"queries\": [\n          {\n            \"ref\": \"<string>\",\n            \"postAggr\": \"<string>\",\n            \"postTransform\": \"<string>\",\n            \"limit\": \"<integer>\",\n            \"step\": {},\n            \"offset\": \"<integer>\",\n            \"factor\": \"<string>\",\n            \"operator\": \"<string>\",\n            \"decimals\": \"<integer>\",\n            \"extendedBoundary\": \"<boolean>\",\n            \"order\": \"<string>\"\n          },\n          {\n            \"ref\": \"<string>\",\n            \"postAggr\": \"<string>\",\n            \"postTransform\": \"<string>\",\n            \"limit\": \"<integer>\",\n            \"step\": {},\n            \"offset\": \"<integer>\",\n            \"factor\": \"<string>\",\n            \"operator\": \"<string>\",\n            \"decimals\": \"<integer>\",\n            \"extendedBoundary\": \"<boolean>\",\n            \"order\": \"<string>\"\n          }\n        ]\n      },\n      {\n        \"id\": \"<integer>\",\n        \"slug\": \"<string>\",\n        \"queries\": [\n          {\n            \"ref\": \"<string>\",\n            \"postAggr\": \"<string>\",\n            \"postTransform\": \"<string>\",\n            \"limit\": \"<integer>\",\n            \"step\": {},\n            \"offset\": \"<integer>\",\n            \"factor\": \"<string>\",\n            \"operator\": \"<string>\",\n            \"decimals\": \"<integer>\",\n            \"extendedBoundary\": \"<boolean>\",\n            \"order\": \"<string>\"\n          },\n          {\n            \"ref\": \"<string>\",\n            \"postAggr\": \"<string>\",\n            \"postTransform\": \"<string>\",\n            \"limit\": \"<integer>\",\n            \"step\": {},\n            \"offset\": \"<integer>\",\n            \"factor\": \"<string>\",\n            \"operator\": \"<string>\",\n            \"decimals\": \"<integer>\",\n            \"extendedBoundary\": \"<boolean>\",\n            \"order\": \"<string>\"\n          }\n        ]\n      }\n    ],\n    \"start\": \"<dateTime>\",\n    \"end\": \"<dateTime>\",\n    \"timeZone\": \"<string>\"\n  },\n  {\n    \"source\": {\n      \"publicId\": \"<string>\"\n    },\n    \"tags\": [\n      {\n        \"id\": \"<integer>\",\n        \"slug\": \"<string>\",\n        \"queries\": [\n          {\n            \"ref\": \"<string>\",\n            \"postAggr\": \"<string>\",\n            \"postTransform\": \"<string>\",\n            \"limit\": \"<integer>\",\n            \"step\": {},\n            \"offset\": \"<integer>\",\n            \"factor\": \"<string>\",\n            \"operator\": \"<string>\",\n            \"decimals\": \"<integer>\",\n            \"extendedBoundary\": \"<boolean>\",\n            \"order\": \"<string>\"\n          },\n          {\n            \"ref\": \"<string>\",\n            \"postAggr\": \"<string>\",\n            \"postTransform\": \"<string>\",\n            \"limit\": \"<integer>\",\n            \"step\": {},\n            \"offset\": \"<integer>\",\n            \"factor\": \"<string>\",\n            \"operator\": \"<string>\",\n            \"decimals\": \"<integer>\",\n            \"extendedBoundary\": \"<boolean>\",\n            \"order\": \"<string>\"\n          }\n        ]\n      },\n      {\n        \"id\": \"<integer>\",\n        \"slug\": \"<string>\",\n        \"queries\": [\n          {\n            \"ref\": \"<string>\",\n            \"postAggr\": \"<string>\",\n            \"postTransform\": \"<string>\",\n            \"limit\": \"<integer>\",\n            \"step\": {},\n            \"offset\": \"<integer>\",\n            \"factor\": \"<string>\",\n            \"operator\": \"<string>\",\n            \"decimals\": \"<integer>\",\n            \"extendedBoundary\": \"<boolean>\",\n            \"order\": \"<string>\"\n          },\n          {\n            \"ref\": \"<string>\",\n            \"postAggr\": \"<string>\",\n            \"postTransform\": \"<string>\",\n            \"limit\": \"<integer>\",\n            \"step\": {},\n            \"offset\": \"<integer>\",\n            \"factor\": \"<string>\",\n            \"operator\": \"<string>\",\n            \"decimals\": \"<integer>\",\n            \"extendedBoundary\": \"<boolean>\",\n            \"order\": \"<string>\"\n          }\n        ]\n      }\n    ],\n    \"start\": \"<dateTime>\",\n    \"end\": \"<dateTime>\",\n    \"timeZone\": \"<string>\"\n  }\n]",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "bc5b1b07-d92e-4d91-a650-4e4a67d7be31",
+              "name": "Success response. Data could be an object instead of a list when one value is returned",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Version of the API to use",
+                    "key": "Api-Version",
+                    "value": "<integer>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Get your Application ID via support@ixon.cloud",
+                    "key": "Api-Application",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) PublicId of the company",
+                    "key": "Api-Company",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Domain that provides the branding",
+                    "key": "Api-Branding",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"source\": {\n      \"publicId\": \"<string>\"\n    },\n    \"tags\": [\n      {\n        \"id\": \"<integer>\",\n        \"slug\": \"<string>\",\n        \"queries\": [\n          {\n            \"ref\": \"<string>\",\n            \"postAggr\": \"<string>\",\n            \"postTransform\": \"<string>\",\n            \"limit\": \"<integer>\",\n            \"step\": {},\n            \"offset\": \"<integer>\",\n            \"factor\": \"<string>\",\n            \"operator\": \"<string>\",\n            \"decimals\": \"<integer>\",\n            \"extendedBoundary\": \"<boolean>\",\n            \"order\": \"<string>\"\n          },\n          {\n            \"ref\": \"<string>\",\n            \"postAggr\": \"<string>\",\n            \"postTransform\": \"<string>\",\n            \"limit\": \"<integer>\",\n            \"step\": {},\n            \"offset\": \"<integer>\",\n            \"factor\": \"<string>\",\n            \"operator\": \"<string>\",\n            \"decimals\": \"<integer>\",\n            \"extendedBoundary\": \"<boolean>\",\n            \"order\": \"<string>\"\n          }\n        ]\n      },\n      {\n        \"id\": \"<integer>\",\n        \"slug\": \"<string>\",\n        \"queries\": [\n          {\n            \"ref\": \"<string>\",\n            \"postAggr\": \"<string>\",\n            \"postTransform\": \"<string>\",\n            \"limit\": \"<integer>\",\n            \"step\": {},\n            \"offset\": \"<integer>\",\n            \"factor\": \"<string>\",\n            \"operator\": \"<string>\",\n            \"decimals\": \"<integer>\",\n            \"extendedBoundary\": \"<boolean>\",\n            \"order\": \"<string>\"\n          },\n          {\n            \"ref\": \"<string>\",\n            \"postAggr\": \"<string>\",\n            \"postTransform\": \"<string>\",\n            \"limit\": \"<integer>\",\n            \"step\": {},\n            \"offset\": \"<integer>\",\n            \"factor\": \"<string>\",\n            \"operator\": \"<string>\",\n            \"decimals\": \"<integer>\",\n            \"extendedBoundary\": \"<boolean>\",\n            \"order\": \"<string>\"\n          }\n        ]\n      }\n    ],\n    \"start\": \"<dateTime>\",\n    \"end\": \"<dateTime>\",\n    \"timeZone\": \"<string>\"\n  },\n  {\n    \"source\": {\n      \"publicId\": \"<string>\"\n    },\n    \"tags\": [\n      {\n        \"id\": \"<integer>\",\n        \"slug\": \"<string>\",\n        \"queries\": [\n          {\n            \"ref\": \"<string>\",\n            \"postAggr\": \"<string>\",\n            \"postTransform\": \"<string>\",\n            \"limit\": \"<integer>\",\n            \"step\": {},\n            \"offset\": \"<integer>\",\n            \"factor\": \"<string>\",\n            \"operator\": \"<string>\",\n            \"decimals\": \"<integer>\",\n            \"extendedBoundary\": \"<boolean>\",\n            \"order\": \"<string>\"\n          },\n          {\n            \"ref\": \"<string>\",\n            \"postAggr\": \"<string>\",\n            \"postTransform\": \"<string>\",\n            \"limit\": \"<integer>\",\n            \"step\": {},\n            \"offset\": \"<integer>\",\n            \"factor\": \"<string>\",\n            \"operator\": \"<string>\",\n            \"decimals\": \"<integer>\",\n            \"extendedBoundary\": \"<boolean>\",\n            \"order\": \"<string>\"\n          }\n        ]\n      },\n      {\n        \"id\": \"<integer>\",\n        \"slug\": \"<string>\",\n        \"queries\": [\n          {\n            \"ref\": \"<string>\",\n            \"postAggr\": \"<string>\",\n            \"postTransform\": \"<string>\",\n            \"limit\": \"<integer>\",\n            \"step\": {},\n            \"offset\": \"<integer>\",\n            \"factor\": \"<string>\",\n            \"operator\": \"<string>\",\n            \"decimals\": \"<integer>\",\n            \"extendedBoundary\": \"<boolean>\",\n            \"order\": \"<string>\"\n          },\n          {\n            \"ref\": \"<string>\",\n            \"postAggr\": \"<string>\",\n            \"postTransform\": \"<string>\",\n            \"limit\": \"<integer>\",\n            \"step\": {},\n            \"offset\": \"<integer>\",\n            \"factor\": \"<string>\",\n            \"operator\": \"<string>\",\n            \"decimals\": \"<integer>\",\n            \"extendedBoundary\": \"<boolean>\",\n            \"order\": \"<string>\"\n          }\n        ]\n      }\n    ],\n    \"start\": \"<dateTime>\",\n    \"end\": \"<dateTime>\",\n    \"timeZone\": \"<string>\"\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"success\",\n  \"type\": \"string\",\n  \"data\": [\n    {\n      \"start\": \"1966-06-21T20:32:14.804Z\",\n      \"end\": \"1979-07-12T08:49:17.169Z\",\n      \"timeZone\": \"string\",\n      \"source\": {\n        \"publicId\": \"string\"\n      },\n      \"points\": [\n        {\n          \"time\": \"string\",\n          \"values\": {}\n        },\n        {\n          \"time\": \"strin\",\n          \"values\": {}\n        }\n      ]\n    },\n    {\n      \"start\": \"1962-03-24T18:18:50.346Z\",\n      \"end\": \"1998-05-11T13:29:16.215Z\",\n      \"timeZone\": \"st\",\n      \"source\": {\n        \"publicId\": \"string\"\n      },\n      \"points\": [\n        {\n          \"time\": \"string\",\n          \"values\": {}\n        },\n        {\n          \"time\": \"string\",\n          \"values\": {}\n        }\n      ]\n    }\n  ],\n  \"moreAfter\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "6aa7de29-72b2-42a5-ba35-24c4add9d7c5",
+              "name": "4XX error response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "data"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Version of the API to use",
+                    "key": "Api-Version",
+                    "value": "<integer>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Get your Application ID via support@ixon.cloud",
+                    "key": "Api-Application",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) PublicId of the company",
+                    "key": "Api-Company",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Domain that provides the branding",
+                    "key": "Api-Branding",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"source\": {\n      \"publicId\": \"<string>\"\n    },\n    \"tags\": [\n      {\n        \"id\": \"<integer>\",\n        \"slug\": \"<string>\",\n        \"queries\": [\n          {\n            \"ref\": \"<string>\",\n            \"postAggr\": \"<string>\",\n            \"postTransform\": \"<string>\",\n            \"limit\": \"<integer>\",\n            \"step\": {},\n            \"offset\": \"<integer>\",\n            \"factor\": \"<string>\",\n            \"operator\": \"<string>\",\n            \"decimals\": \"<integer>\",\n            \"extendedBoundary\": \"<boolean>\",\n            \"order\": \"<string>\"\n          },\n          {\n            \"ref\": \"<string>\",\n            \"postAggr\": \"<string>\",\n            \"postTransform\": \"<string>\",\n            \"limit\": \"<integer>\",\n            \"step\": {},\n            \"offset\": \"<integer>\",\n            \"factor\": \"<string>\",\n            \"operator\": \"<string>\",\n            \"decimals\": \"<integer>\",\n            \"extendedBoundary\": \"<boolean>\",\n            \"order\": \"<string>\"\n          }\n        ]\n      },\n      {\n        \"id\": \"<integer>\",\n        \"slug\": \"<string>\",\n        \"queries\": [\n          {\n            \"ref\": \"<string>\",\n            \"postAggr\": \"<string>\",\n            \"postTransform\": \"<string>\",\n            \"limit\": \"<integer>\",\n            \"step\": {},\n            \"offset\": \"<integer>\",\n            \"factor\": \"<string>\",\n            \"operator\": \"<string>\",\n            \"decimals\": \"<integer>\",\n            \"extendedBoundary\": \"<boolean>\",\n            \"order\": \"<string>\"\n          },\n          {\n            \"ref\": \"<string>\",\n            \"postAggr\": \"<string>\",\n            \"postTransform\": \"<string>\",\n            \"limit\": \"<integer>\",\n            \"step\": {},\n            \"offset\": \"<integer>\",\n            \"factor\": \"<string>\",\n            \"operator\": \"<string>\",\n            \"decimals\": \"<integer>\",\n            \"extendedBoundary\": \"<boolean>\",\n            \"order\": \"<string>\"\n          }\n        ]\n      }\n    ],\n    \"start\": \"<dateTime>\",\n    \"end\": \"<dateTime>\",\n    \"timeZone\": \"<string>\"\n  },\n  {\n    \"source\": {\n      \"publicId\": \"<string>\"\n    },\n    \"tags\": [\n      {\n        \"id\": \"<integer>\",\n        \"slug\": \"<string>\",\n        \"queries\": [\n          {\n            \"ref\": \"<string>\",\n            \"postAggr\": \"<string>\",\n            \"postTransform\": \"<string>\",\n            \"limit\": \"<integer>\",\n            \"step\": {},\n            \"offset\": \"<integer>\",\n            \"factor\": \"<string>\",\n            \"operator\": \"<string>\",\n            \"decimals\": \"<integer>\",\n            \"extendedBoundary\": \"<boolean>\",\n            \"order\": \"<string>\"\n          },\n          {\n            \"ref\": \"<string>\",\n            \"postAggr\": \"<string>\",\n            \"postTransform\": \"<string>\",\n            \"limit\": \"<integer>\",\n            \"step\": {},\n            \"offset\": \"<integer>\",\n            \"factor\": \"<string>\",\n            \"operator\": \"<string>\",\n            \"decimals\": \"<integer>\",\n            \"extendedBoundary\": \"<boolean>\",\n            \"order\": \"<string>\"\n          }\n        ]\n      },\n      {\n        \"id\": \"<integer>\",\n        \"slug\": \"<string>\",\n        \"queries\": [\n          {\n            \"ref\": \"<string>\",\n            \"postAggr\": \"<string>\",\n            \"postTransform\": \"<string>\",\n            \"limit\": \"<integer>\",\n            \"step\": {},\n            \"offset\": \"<integer>\",\n            \"factor\": \"<string>\",\n            \"operator\": \"<string>\",\n            \"decimals\": \"<integer>\",\n            \"extendedBoundary\": \"<boolean>\",\n            \"order\": \"<string>\"\n          },\n          {\n            \"ref\": \"<string>\",\n            \"postAggr\": \"<string>\",\n            \"postTransform\": \"<string>\",\n            \"limit\": \"<integer>\",\n            \"step\": {},\n            \"offset\": \"<integer>\",\n            \"factor\": \"<string>\",\n            \"operator\": \"<string>\",\n            \"decimals\": \"<integer>\",\n            \"extendedBoundary\": \"<boolean>\",\n            \"order\": \"<string>\"\n          }\n        ]\n      }\n    ],\n    \"start\": \"<dateTime>\",\n    \"end\": \"<dateTime>\",\n    \"timeZone\": \"<string>\"\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"error\",\n  \"type\": \"Error\",\n  \"data\": [\n    {\n      \"message\": \"string\",\n      \"propertyName\": \"string\",\n      \"listIndex\": 8679\n    },\n    {\n      \"message\": \"string\",\n      \"propertyName\": \"string\",\n      \"listIndex\": 8629\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://portal.ixon.cloud:443/api/",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "574d33a4-0d16-43d5-963d-faee8b5327fd",
+    "name": "IXON AccessRecoverList DataList API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "API for the IXON Cloud Platform\n\nContact Support:\n Name: IXON B.V.\n Email: support@ixon.cloud",
+      "type": "text/plain"
+    }
+  }
+}
