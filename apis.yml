@@ -49,6 +49,8 @@ apis:
   humanURL: https://developer.ixon.cloud/docs
   baseURL: https://portal.ixon.cloud/api/
   tags:
+  - Access Token
+  tags_raw:
   - AccessToken
   properties:
   - type: OpenAPI
@@ -77,6 +79,8 @@ apis:
   humanURL: https://developer.ixon.cloud/docs
   baseURL: https://portal.ixon.cloud/api/
   tags:
+  - Agents
+  tags_raw:
   - Agent
   properties:
   - type: OpenAPI
@@ -1856,6 +1860,8 @@ apis:
   humanURL: https://developer.ixon.cloud/docs
   baseURL: https://portal.ixon.cloud/api/
   tags:
+  - Asset Library
+  tags_raw:
   - AssetLibrary
   properties:
   - type: OpenAPI
@@ -2315,6 +2321,8 @@ apis:
   humanURL: https://developer.ixon.cloud/docs
   baseURL: https://portal.ixon.cloud/api/
   tags:
+  - Audit Log Export
+  tags_raw:
   - AuditLogExport
   properties:
   - type: OpenAPI
@@ -2874,6 +2882,8 @@ apis:
   humanURL: https://developer.ixon.cloud/docs
   baseURL: https://portal.ixon.cloud/api/
   tags:
+  - Custom Property
+  tags_raw:
   - CustomProperty
   properties:
   - type: OpenAPI
@@ -2916,6 +2926,8 @@ apis:
   humanURL: https://developer.ixon.cloud/docs
   baseURL: https://portal.ixon.cloud/api/
   tags:
+  - Data Export
+  tags_raw:
   - DataExport
   properties:
   - type: OpenAPI
@@ -3126,6 +3138,8 @@ apis:
   humanURL: https://developer.ixon.cloud/docs
   baseURL: https://portal.ixon.cloud/api/
   tags:
+  - invite
+  tags_raw:
   - Invite
   properties:
   - type: OpenAPI
@@ -3745,6 +3759,8 @@ apis:
   humanURL: https://developer.ixon.cloud/docs
   baseURL: https://portal.ixon.cloud/api/
   tags:
+  - My User
+  tags_raw:
   - MyUser
   properties:
   - type: OpenAPI
@@ -4644,6 +4660,8 @@ apis:
   humanURL: https://developer.ixon.cloud/docs
   baseURL: https://portal.ixon.cloud/api/
   tags:
+  - (Scim) Schemas
+  tags_raw:
   - ScimSchemas
   properties:
   - type: OpenAPI
@@ -4659,6 +4677,8 @@ apis:
   humanURL: https://developer.ixon.cloud/docs
   baseURL: https://portal.ixon.cloud/api/
   tags:
+  - (Scim) ServiceProviderConfig
+  tags_raw:
   - ScimServiceProviderConfig
   properties:
   - type: OpenAPI
@@ -4701,6 +4721,8 @@ apis:
   humanURL: https://developer.ixon.cloud/docs
   baseURL: https://portal.ixon.cloud/api/
   tags:
+  - Server Time
+  tags_raw:
   - ServerTime
   properties:
   - type: OpenAPI
