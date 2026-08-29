@@ -5,6 +5,17 @@ description: >-
   industrial machines remotely. IXON provides APIs for accessing machine data, remote access management, and industrial
   IoT connectivity.
 type: Index
+deliveryModel:
+  model: unknown
+  open_source: false
+  commercial: false
+  callable_host: false
+  label: Delivery model not determined — needs a product licence on record
+  confidence: low
+  source:
+  - openapi
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: freemium
   onboarding: self-serve
@@ -5200,6 +5211,9 @@ apis:
   - type: APIReference
     url: https://developer.ixon.cloud/v2/reference
 common:
+  - type: CapabilityMap
+    url: capabilities/ixon-capability-edges.yml
+    name: IXON Business Capability Map
   - type: AgenticAccess
     url: agentic-access/ixon-agentic-access.yml
   - type: TrustCenter
