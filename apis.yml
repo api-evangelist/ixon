@@ -60,7 +60,7 @@ apis:
   humanURL: https://developer.ixon.cloud/docs
   baseURL: https://portal.ixon.cloud/api/
   tags:
-  - Access Token
+  - AccessToken
   tags_raw:
   - AccessToken
   properties:
@@ -1871,7 +1871,7 @@ apis:
   humanURL: https://developer.ixon.cloud/docs
   baseURL: https://portal.ixon.cloud/api/
   tags:
-  - Asset Library
+  - AssetLibrary
   tags_raw:
   - AssetLibrary
   properties:
@@ -2318,6 +2318,8 @@ apis:
   humanURL: https://developer.ixon.cloud/docs
   baseURL: https://portal.ixon.cloud/api/
   tags:
+  - Audience List
+  tags_raw:
   - AudienceList
   properties:
   - type: OpenAPI
@@ -2332,7 +2334,7 @@ apis:
   humanURL: https://developer.ixon.cloud/docs
   baseURL: https://portal.ixon.cloud/api/
   tags:
-  - Audit Log Export
+  - AuditLogExport
   tags_raw:
   - AuditLogExport
   properties:
@@ -2893,7 +2895,7 @@ apis:
   humanURL: https://developer.ixon.cloud/docs
   baseURL: https://portal.ixon.cloud/api/
   tags:
-  - Custom Property
+  - CustomProperty
   tags_raw:
   - CustomProperty
   properties:
@@ -3770,7 +3772,7 @@ apis:
   humanURL: https://developer.ixon.cloud/docs
   baseURL: https://portal.ixon.cloud/api/
   tags:
-  - My User
+  - MyUser
   tags_raw:
   - MyUser
   properties:
@@ -4671,7 +4673,7 @@ apis:
   humanURL: https://developer.ixon.cloud/docs
   baseURL: https://portal.ixon.cloud/api/
   tags:
-  - (Scim) Schemas
+  - ScimSchemas
   tags_raw:
   - ScimSchemas
   properties:
@@ -4688,7 +4690,7 @@ apis:
   humanURL: https://developer.ixon.cloud/docs
   baseURL: https://portal.ixon.cloud/api/
   tags:
-  - (Scim) ServiceProviderConfig
+  - ScimServiceProviderConfig
   tags_raw:
   - ScimServiceProviderConfig
   properties:
@@ -4732,7 +4734,7 @@ apis:
   humanURL: https://developer.ixon.cloud/docs
   baseURL: https://portal.ixon.cloud/api/
   tags:
-  - Server Time
+  - ServerTime
   tags_raw:
   - ServerTime
   properties:
@@ -5173,6 +5175,8 @@ apis:
   humanURL: https://developer.ixon.cloud/docs
   baseURL: https://portal.ixon.cloud/api/
   tags:
+  - Webhook Subscription
+  tags_raw:
   - WebhookSubscription
   properties:
   - type: OpenAPI
