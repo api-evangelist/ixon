@@ -60,7 +60,7 @@ apis:
   humanURL: https://developer.ixon.cloud/docs
   baseURL: https://portal.ixon.cloud/api/
   tags:
-  - AccessToken
+  - Access Token
   tags_raw:
   - AccessToken
   properties:
@@ -1871,7 +1871,7 @@ apis:
   humanURL: https://developer.ixon.cloud/docs
   baseURL: https://portal.ixon.cloud/api/
   tags:
-  - AssetLibrary
+  - Asset Library
   tags_raw:
   - AssetLibrary
   properties:
@@ -2895,7 +2895,7 @@ apis:
   humanURL: https://developer.ixon.cloud/docs
   baseURL: https://portal.ixon.cloud/api/
   tags:
-  - CustomProperty
+  - Custom Property
   tags_raw:
   - CustomProperty
   properties:
@@ -3772,7 +3772,7 @@ apis:
   humanURL: https://developer.ixon.cloud/docs
   baseURL: https://portal.ixon.cloud/api/
   tags:
-  - MyUser
+  - My User
   tags_raw:
   - MyUser
   properties:
@@ -4673,7 +4673,7 @@ apis:
   humanURL: https://developer.ixon.cloud/docs
   baseURL: https://portal.ixon.cloud/api/
   tags:
-  - ScimSchemas
+  - (Scim) Schemas
   tags_raw:
   - ScimSchemas
   properties:
@@ -4690,7 +4690,7 @@ apis:
   humanURL: https://developer.ixon.cloud/docs
   baseURL: https://portal.ixon.cloud/api/
   tags:
-  - ScimServiceProviderConfig
+  - (Scim) ServiceProviderConfig
   tags_raw:
   - ScimServiceProviderConfig
   properties:
@@ -4734,7 +4734,7 @@ apis:
   humanURL: https://developer.ixon.cloud/docs
   baseURL: https://portal.ixon.cloud/api/
   tags:
-  - ServerTime
+  - Server Time
   tags_raw:
   - ServerTime
   properties:
