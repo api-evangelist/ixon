@@ -5202,6 +5202,10 @@ apis:
   - type: APIReference
     url: https://developer.ixon.cloud/v2/reference
 common:
+  - type: Pricing
+    url: https://www.ixon.cloud/pricing-edge
+  - type: Plans
+    url: plans/ixon-plans-pricing.yml
   - type: CapabilityMap
     url: capabilities/ixon-capability-edges.yml
     name: IXON Business Capability Map

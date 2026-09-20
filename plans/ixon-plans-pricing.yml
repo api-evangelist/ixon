@@ -1,149 +1,112 @@
-specification: API Commons Plans
-specificationVersion: '0.1'
-schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main/schema/api-commons.yml#/$defs/Plans
-provider: IXON
-providerId: ixon
-created: '2026-05-04'
-# Provenance stamped 2026-08-11: this artifact was written by the API Evangelist
-# bulk sweep dated 2026-05-04, not harvested from the provider. See roadmap#35.
-method: generated
-modified: '2026-05-04'
-tags:
-  - IIoT
-  - Industrial IoT
-  - Machine Connectivity
-  - Remote Access
-description: Machine-readable plans and pricing scaffold for this API provider. Conforms to the API Commons
-  Plans schema. Tier limits and prices are scaffold defaults; replace with provider-published values.
+# Pricing transcribed from the provider's own page — see provenance. Numbers are quoted, not derived.
+generated: '2026-09-20'
+method: searched
+source: https://www.ixon.cloud/pricing-edge
+sources:
+- https://www.ixon.cloud/pricing-edge
+provenance:
+  tool: planning/api-economics/harvest_pricing.py
+  run: 20260920T124425
+  grounding: every price_text was found verbatim in the fetched page text
+audience: business-product
+pricing_basis: usage-other
+published: true
+note: Hardware/device price list for edge gateways, IXagent licenses and accessories; SecureEdge Pro models
+  are quote-only. Cloud platform pricing is on a separate page.
+plan_count: 17
+currency: USD
 plans:
-  - id: ixon-free
-    name: Free
-    type: freemium
-    description: Free entry tier for the IXON API surface. Intended for evaluation, prototyping, and low-volume
-      integrations. Real limits and pricing must be reconciled with the provider's published plan documentation.
-    entries:
-      - label: API Requests
-        description: Monthly API request quota across all included endpoints
-        name: api_requests
-        type: quota
-        metric: requests
-        limit: 1000
-        timeFrame: month
-        geo: global
-        domains:
-          - https://portal.ixon.cloud/api/
-        unit: 1
-        price: '0.00'
-        userMultiplied: false
-      - label: Rate Limit
-        description: Maximum requests per minute on the free tier
-        name: rate_limit
-        type: rate
-        metric: requests_per_minute
-        limit: 10
-        timeFrame: minute
-        geo: global
-        domains:
-          - https://portal.ixon.cloud/api/
-        unit: 1
-        price: '0.00'
-        userMultiplied: false
-    elements:
-      - name: Public Documentation
-      - name: Community Support
-      - name: Sandbox Access
-      - name: IXON Cloud API
-  - id: ixon-pro
-    name: Professional
-    type: paid
-    description: Production tier for IXON. Provides higher quotas, priority support, and access to the
-      broader API portfolio. Pricing placeholder; align with the provider's pricing page.
-    entries:
-      - label: API Requests
-        description: Monthly API request quota
-        name: api_requests
-        type: quota
-        metric: requests
-        limit: 100000
-        timeFrame: month
-        geo: global
-        domains:
-          - https://portal.ixon.cloud/api/
-        unit: 1
-        price: TBD
-        userMultiplied: false
-      - label: Rate Limit
-        description: Maximum requests per minute on the professional tier
-        name: rate_limit
-        type: rate
-        metric: requests_per_minute
-        limit: 100
-        timeFrame: minute
-        geo: global
-        domains:
-          - https://portal.ixon.cloud/api/
-        unit: 1
-        price: '0.00'
-        userMultiplied: false
-      - label: Overage
-        description: Per-request price after monthly quota is exceeded
-        name: overage
-        type: metered
-        metric: requests
-        limit: -1
-        timeFrame: month
-        geo: global
-        domains:
-          - https://portal.ixon.cloud/api/
-        unit: 1000
-        price: TBD
-        userMultiplied: false
-    elements:
-      - name: All Production Endpoints
-      - name: Email Support
-      - name: SLA Targets
-      - name: Webhook Subscriptions
-      - name: IXON Cloud API
-  - id: ixon-enterprise
-    name: Enterprise
-    type: enterprise
-    description: Custom-negotiated tier for IXON. Includes dedicated capacity, contractual SLAs, security
-      review, data residency options, and named technical account management.
-    entries:
-      - label: API Requests
-        description: Negotiated request volume; -1 indicates uncapped subject to fair use
-        name: api_requests
-        type: quota
-        metric: requests
-        limit: -1
-        timeFrame: month
-        geo: configurable
-        domains:
-          - https://portal.ixon.cloud/api/
-        unit: 1
-        price: custom
-        userMultiplied: false
-      - label: Rate Limit
-        description: Negotiated burst and steady-state rate
-        name: rate_limit
-        type: rate
-        metric: requests_per_minute
-        limit: 1000
-        timeFrame: minute
-        geo: configurable
-        domains:
-          - https://portal.ixon.cloud/api/
-        unit: 1
-        price: custom
-        userMultiplied: false
-    elements:
-      - name: Unlimited / Negotiated Volume
-      - name: 24/7 Dedicated Support
-      - name: Contractual SLA
-      - name: Security & Compliance Review
-      - name: Dedicated Account Manager
-      - name: Custom Data Residency
-      - name: IXON Cloud API
-maintainers:
-  - FN: Kin Lane
-    email: kin@apievangelist.com
+- name: IX2400 IXrouter3 Ethernet
+  price_text: $ 610
+  price: 610
+  currency: USD
+  period: one-time
+  unit: device
+- name: IX2405 IXrouter3 4G/LTE
+  price_text: $ 794
+  price: 794
+  currency: USD
+  period: one-time
+  unit: device
+- name: IX2410 IXrouter3 Wi-Fi
+  price_text: $ 705
+  price: 705
+  currency: USD
+  period: one-time
+  unit: device
+- name: IX2415 IXrouter3 4G/LTE & Wi-Fi
+  price_text: $ 888
+  price: 888
+  currency: USD
+  period: one-time
+  unit: device
+- name: IX6000 SecureEdge Pro Ethernet
+  price_text: Request a quote
+  period: none
+  unit: device
+- name: IX6005 SecureEdge Pro 4G/LTE
+  price_text: Request a quote
+  period: none
+  unit: device
+- name: IX6010 SecureEdge Pro Wi-Fi
+  price_text: Request a quote
+  period: none
+  unit: device
+- name: IX6015 SecureEdge Pro 4G/LTE & Wi-Fi
+  price_text: Request a quote
+  period: none
+  unit: device
+- name: IXP504 IXagent - Lifetime license for one device
+  price_text: $ 163
+  price: 163
+  currency: USD
+  period: one-time
+  unit: device license
+- name: IX2201 4G/LTE Pentaband antenna rotatable
+  price_text: $ 18
+  price: 18
+  currency: USD
+  period: one-time
+  unit: item
+- name: IX2202 3G Pentaband antenna magnetic mount with 2m cable
+  price_text: $ 34
+  price: 34
+  currency: USD
+  period: one-time
+  unit: item
+- name: IX2203 3G Pentaband antenna screw mount with 3m cable, IP67
+  price_text: $ 79
+  price: 79
+  currency: USD
+  period: one-time
+  unit: item
+- name: IX2205 4G/LTE Wideband antenna screw mount with 3m cable, IP67
+  price_text: $ 67
+  price: 67
+  currency: USD
+  period: one-time
+  unit: item
+- name: IX2206 4G/LTE Wideband antenna magnetic whip with 3m cable
+  price_text: $ 55
+  price: 55
+  currency: USD
+  period: one-time
+  unit: item
+- name: IX2207 Wall mount power supply for IXrouter - US
+  price_text: $ 40
+  price: 40
+  currency: USD
+  period: one-time
+  unit: item
+- name: IX2211 Wi-Fi antenna screw mount with 3m cable, IP67
+  price_text: $ 67
+  price: 67
+  currency: USD
+  period: one-time
+  unit: item
+- name: IX2212 Dual-Band Wi-Fi antenna 6cm rotatable
+  price_text: $23
+  price: 23
+  currency: USD
+  period: one-time
+  unit: item
