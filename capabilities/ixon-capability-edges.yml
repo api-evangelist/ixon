@@ -1,0 +1,169 @@
+slug: ixon
+provider: IXON
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Software & Technology
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 17
+edges:
+- tag: RolePermission
+  spec_file: ixon-rolepermission-api-openapi.yml
+  capability_id: BC-620.20
+  capability_id_l1: BC-620
+  capability_name: Identity & Access Management
+  confidence: 0.85
+  evidence: DELETE /roles/{parentId}/permissions/{publicId}    RolePermission
+  reason: Explicitly manipulates permissions attached to a role, which is unambiguously access rights
+    administration.
+- tag: RolePermissionList
+  spec_file: ixon-rolepermissionlist-api-openapi.yml
+  capability_id: BC-620.20
+  capability_id_l1: BC-620
+  capability_name: Identity & Access Management
+  confidence: 0.85
+  evidence: POST /roles/{publicId}/permissions    RolePermissionList
+  reason: Assigns and revokes permission sets on roles — core identity and access management functionality.
+- tag: Role
+  spec_file: ixon-role-api-openapi.yml
+  capability_id: BC-620.20
+  capability_id_l1: BC-620
+  capability_name: Identity & Access Management
+  confidence: 0.82
+  evidence: GET /roles/{publicId}    Role ... PATCH /roles/{publicId} ... DELETE /roles/{publicId}
+  reason: CRUD on platform roles is role-based access control administration, i.e. identity and access
+    management for the IoT platform, not a domain business function.
+- tag: MyUserOtpAuthDisable
+  spec_file: ixon-myuserotpauthdisable-api-openapi.yml
+  capability_id: BC-620.20
+  capability_id_l1: BC-620
+  capability_name: Identity & Access Management
+  confidence: 0.8
+  evidence: POST /users/me/otp-auth/disable    MyUserOtpAuthDisable
+  reason: One-time-password (MFA) factor disablement for the authenticated user — authentication factor
+    enrolment is squarely Identity & Access Management. Some ambiguity remains only because it is a narrow
+    self-service auth endpoint.
+- tag: MyUserOtpAuthEnable
+  spec_file: ixon-myuserotpauthenable-api-openapi.yml
+  capability_id: BC-620.20
+  capability_id_l1: BC-620
+  capability_name: Identity & Access Management
+  confidence: 0.8
+  evidence: POST /users/me/otp-auth/enable    MyUserOtpAuthEnable
+  reason: Enables OTP-based multi-factor authentication on the caller's account — authentication credential/factor
+    management, an IAM function. No other candidate capability fits.
+- tag: MyUserOtpAuthSmsEnable
+  spec_file: ixon-myuserotpauthsmsenable-api-openapi.yml
+  capability_id: BC-620.20
+  capability_id_l1: BC-620
+  capability_name: Identity & Access Management
+  confidence: 0.8
+  evidence: POST /users/me/otp-auth-sms/enable    MyUserOtpAuthSmsEnable
+  reason: Enrols SMS as a second authentication factor for the user — MFA factor management within Identity
+    & Access Management; not a messaging/communications capability despite the SMS wording.
+- tag: MyUserOtpAuthVerify
+  spec_file: ixon-myuserotpauthverify-api-openapi.yml
+  capability_id: BC-620.20
+  capability_id_l1: BC-620
+  capability_name: Identity & Access Management
+  confidence: 0.8
+  evidence: POST /users/me/otp-auth/verify    MyUserOtpAuthVerify
+  reason: Verifies a one-time password during MFA enrolment/authentication — authentication factor verification,
+    an IAM function. Purely identity-related, no business-domain reading available.
+- tag: MyUserPassword
+  spec_file: ixon-myuserpassword-api-openapi.yml
+  capability_id: BC-620.20
+  capability_id_l1: BC-620
+  capability_name: Identity & Access Management
+  confidence: 0.8
+  evidence: POST /users/me/password    MyUserPassword
+  reason: Sets/changes the authenticated user's password — credential management, a core Identity & Access
+    Management activity for this IoT platform's user accounts.
+- tag: RoleAudienceList
+  spec_file: ixon-roleaudiencelist-api-openapi.yml
+  capability_id: BC-620.20
+  capability_id_l1: BC-620
+  capability_name: Identity & Access Management
+  confidence: 0.78
+  evidence: POST /roles/{publicId}/audiences    RoleAudienceList
+  reason: Bulk assignment of audiences (scopes) to roles is authorisation configuration within access
+    management.
+- tag: RoleAudience
+  spec_file: ixon-roleaudience-api-openapi.yml
+  capability_id: BC-620.20
+  capability_id_l1: BC-620
+  capability_name: Identity & Access Management
+  confidence: 0.75
+  evidence: DELETE /roles/{parentId}/audiences/{publicId}    RoleAudience
+  reason: Manages the scope/audience attached to an access role, part of the platform's authorisation
+    model; maps to identity and access management. Single delete operation limits certainty.
+- tag: WebhookSubscription
+  spec_file: ixon-webhooksubscription-api-openapi.yml
+  capability_id: BC-4270.80
+  capability_id_l1: BC-4270
+  capability_name: Webhook & Event Subscription Management
+  confidence: 0.72
+  evidence: GET/PATCH/DELETE /webhook-subscriptions/{publicId}    WebhookSubscription
+  reason: Operations manage the lifecycle of individual outbound webhook subscriptions on the platform,
+    which matches Webhook & Event Subscription Management. Confidence tempered because the surface is
+    pure CRUD plumbing with no schema detail beyond error types.
+- tag: WebhookSubscriptionList
+  spec_file: ixon-webhooksubscriptionlist-api-openapi.yml
+  capability_id: BC-4270.80
+  capability_id_l1: BC-4270
+  capability_name: Webhook & Event Subscription Management
+  confidence: 0.72
+  evidence: GET/POST/PATCH/DELETE /webhook-subscriptions    WebhookSubscriptionList
+  reason: Collection-level create/list/update/delete of webhook subscriptions, i.e. subscription lifecycle
+    for outbound events exposed to integrators.
+- tag: AgentRouterAdditionalSubnet
+  spec_file: ixon-agentrouteradditionalsubnet-api-openapi.yml
+  capability_id: BC-600.50
+  capability_id_l1: BC-600
+  capability_name: IT Infrastructure Management
+  confidence: 0.7
+  evidence: GET /agents/{agentId}/router-additional-subnets/{publicId}
+  reason: Configuring additional IP subnets on an industrial router is network infrastructure configuration,
+    which maps to IT Infrastructure Management (compute, storage, network).
+- tag: AgentRouterAdditionalSubnetList
+  spec_file: ixon-agentrouteradditionalsubnetlist-api-openapi.yml
+  capability_id: BC-600.50
+  capability_id_l1: BC-600
+  capability_name: IT Infrastructure Management
+  confidence: 0.7
+  evidence: POST /agents/{agentId}/router-additional-subnets
+  reason: Bulk management of router subnets — network configuration of edge devices, i.e. IT network/infrastructure
+    management.
+- tag: AgentRouterLanConfig
+  spec_file: ixon-agentrouterlanconfig-api-openapi.yml
+  capability_id: BC-600.50
+  capability_id_l1: BC-600
+  capability_name: IT Infrastructure Management
+  confidence: 0.7
+  evidence: PATCH /agents/{agentId}/router-lan-config
+  reason: Editing LAN configuration of an industrial router is explicit network infrastructure configuration.
+- tag: ServiceAccount
+  spec_file: ixon-serviceaccount-api-openapi.yml
+  capability_id: BC-620.20
+  capability_id_l1: BC-620
+  capability_name: Identity & Access Management
+  confidence: 0.7
+  evidence: DELETE /users/service-account/{publicId}
+  reason: Deletion of a service account under /users indicates machine identity credential lifecycle management,
+    mapping to Identity & Access Management; thin context so moderate confidence.
+- tag: ServiceAccountList
+  spec_file: ixon-serviceaccountlist-api-openapi.yml
+  capability_id: BC-620.20
+  capability_id_l1: BC-620
+  capability_name: Identity & Access Management
+  confidence: 0.7
+  evidence: POST /users/service-account
+  reason: Creation and bulk deletion of service accounts is programmatic identity/credential provisioning,
+    i.e. Identity & Access Management; could alternatively be developer credential management, hence moderate
+    confidence.
