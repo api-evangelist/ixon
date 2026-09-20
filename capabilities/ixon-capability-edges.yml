@@ -104,7 +104,8 @@ edges:
   reason: Manages the scope/audience attached to an access role, part of the platform's authorisation
     model; maps to identity and access management. Single delete operation limits certainty.
 - tag: WebhookSubscription
-  spec_file: ixon-webhooksubscription-api-openapi.yml
+  spec_file: ixon-webhook-subscription-api-openapi.yml
+  reanchored_from: ixon-webhooksubscription-api-openapi.yml
   capability_id: BC-4270.80
   capability_id_l1: BC-4270
   capability_name: Webhook & Event Subscription Management
@@ -149,7 +150,8 @@ edges:
   evidence: PATCH /agents/{agentId}/router-lan-config
   reason: Editing LAN configuration of an industrial router is explicit network infrastructure configuration.
 - tag: ServiceAccount
-  spec_file: ixon-serviceaccount-api-openapi.yml
+  spec_file: ixon-service-account-api-openapi.yml
+  reanchored_from: ixon-serviceaccount-api-openapi.yml
   capability_id: BC-620.20
   capability_id_l1: BC-620
   capability_name: Identity & Access Management
