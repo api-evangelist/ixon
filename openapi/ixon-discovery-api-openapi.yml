@@ -1,4 +1,4 @@
-openapi: 3.0.2
+openapi: 3.2.0
 info:
   contact:
     name: IXON B.V.
@@ -8,7 +8,7 @@ info:
   license:
     name: All Rights Reserved
     url: https://www.ixon.cloud/
-  title: IXON AccessRecoverList Discovery API
+  title: IXON Discovery API
   version: 0.1.294
 servers:
 - description: IXON Cloud platform server
@@ -36,15 +36,13 @@ paths:
                   status:
                     type: string
                     default: success
-                    nullable: false
                   type:
                     type: string
-                    nullable: false
                   moreAfter:
-                    type: string
-                    nullable: true
+                    type:
+                    - string
+                    - 'null'
                   data:
-                    nullable: false
                     type: array
                     items:
                       type: object
@@ -52,12 +50,10 @@ paths:
                         rel:
                           maxLength: 255
                           minLength: 1
-                          nullable: false
                           type: string
                         href:
                           maxLength: 255
                           minLength: 0
-                          nullable: false
                           type: string
                         methods:
                           type: array
@@ -68,7 +64,6 @@ paths:
                             - PATCH
                             - POST
                             - PUT
-                            nullable: false
                             type: string
                       required:
                       - rel
@@ -77,8 +72,18 @@ paths:
       parameters:
       - $ref: '#/components/parameters/apiVersion'
       - $ref: '#/components/parameters/apiBrandingOptional'
+      operationId: getRoot
+      x-operation-id-source: derived
 components:
   parameters:
+    apiBrandingOptional:
+      required: false
+      description: Domain that provides the branding
+      name: Api-Branding
+      in: header
+      schema:
+        type: string
+        pattern: .+(\..[^.]+)
     apiVersion:
       required: true
       description: Version of the API to use
@@ -89,14 +94,6 @@ components:
         format: int32
         enum:
         - 2
-    apiBrandingOptional:
-      required: false
-      description: Domain that provides the branding
-      name: Api-Branding
-      in: header
-      schema:
-        type: string
-        pattern: .+(\..[^.]+)
   securitySchemes:
     bearerToken:
       type: http

@@ -1,4 +1,4 @@
-openapi: 3.0.2
+openapi: 3.2.0
 info:
   contact:
     name: IXON B.V.
@@ -8,7 +8,7 @@ info:
   license:
     name: All Rights Reserved
     url: https://www.ixon.cloud/
-  title: IXON AccessRecoverList BackendComponentMessageTriggerList API
+  title: IXON Backend Component Message Trigger List API
   version: 0.1.294
 servers:
 - description: IXON Cloud platform server
@@ -36,15 +36,13 @@ paths:
                   status:
                     type: string
                     default: success
-                    nullable: false
                   type:
                     type: string
-                    nullable: false
                   moreAfter:
-                    type: string
-                    nullable: true
+                    type:
+                    - string
+                    - 'null'
                   data:
-                    nullable: false
                     type: array
                     items:
                       type: object
@@ -52,39 +50,36 @@ paths:
                         publicId:
                           maxLength: 36
                           minLength: 36
-                          nullable: false
                           type: string
                           format: uuid
                         lastTry:
-                          nullable: true
-                          type: string
+                          type:
+                          - string
+                          - 'null'
                           format: date-time
                         nextTry:
-                          nullable: true
-                          type: string
+                          type:
+                          - string
+                          - 'null'
                           format: date-time
                         ok:
-                          nullable: false
                           type: boolean
                         retrying:
-                          nullable: false
                           type: boolean
                         status:
                           maxLength: 100
                           minLength: 2
-                          nullable: true
-                          type: string
+                          type:
+                          - string
+                          - 'null'
                         tryCount:
                           maximum: 4294967295
-                          nullable: false
                           type: integer
                           format: int32
                         subscription:
-                          nullable: false
                           type: object
                           properties:
                             publicId:
-                              nullable: false
                               type: string
         4XX:
           $ref: '#/components/responses/4XXErrorResponse'
@@ -101,16 +96,10 @@ paths:
           type: string
       security:
       - bearerToken: []
+      operationId: getBackendComponentMessageSubscriptionsByPublicIdTriggers
+      x-operation-id-source: derived
 components:
   parameters:
-    apiApplication:
-      required: true
-      description: Get your Application ID via support@ixon.cloud
-      name: Api-Application
-      in: header
-      schema:
-        type: string
-        pattern: ^[0-9a-zA-Z]{12}$
     apiVersion:
       required: true
       description: Version of the API to use
@@ -129,6 +118,14 @@ components:
       schema:
         type: string
         pattern: .+(\..[^.]+)
+    apiApplication:
+      required: true
+      description: Get your Application ID via support@ixon.cloud
+      name: Api-Application
+      in: header
+      schema:
+        type: string
+        pattern: ^[0-9a-zA-Z]{12}$
     fieldsParameter:
       required: false
       description: 'Fields to select. Use "*" for all the top-level fields. Or check the "Success response" below for other fields.
@@ -156,6 +153,23 @@ components:
         type: array
         items:
           type: string
+  schemas:
+    4XXErrorSchema:
+      type: object
+      properties:
+        message:
+          type: string
+        propertyName:
+          type:
+          - string
+          - 'null'
+        listIndex:
+          type:
+          - integer
+          - 'null'
+          format: int32
+      required:
+      - message
   responses:
     4XXErrorResponse:
       description: 4XX error response
@@ -171,32 +185,13 @@ components:
               status:
                 type: string
                 default: error
-                nullable: false
               type:
                 type: string
                 default: Error
-                nullable: false
               data:
-                nullable: false
                 type: array
                 items:
                   $ref: '#/components/schemas/4XXErrorSchema'
-  schemas:
-    4XXErrorSchema:
-      type: object
-      properties:
-        message:
-          nullable: false
-          type: string
-        propertyName:
-          nullable: true
-          type: string
-        listIndex:
-          nullable: true
-          type: integer
-          format: int32
-      required:
-      - message
   securitySchemes:
     bearerToken:
       type: http

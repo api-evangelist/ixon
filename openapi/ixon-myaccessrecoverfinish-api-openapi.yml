@@ -1,4 +1,4 @@
-openapi: 3.0.2
+openapi: 3.2.0
 info:
   contact:
     name: IXON B.V.
@@ -8,7 +8,7 @@ info:
   license:
     name: All Rights Reserved
     url: https://www.ixon.cloud/
-  title: IXON AccessRecoverList MyAccessRecoverFinish API
+  title: IXON My Access Recover Finish API
   version: 0.1.294
 servers:
 - description: IXON Cloud platform server
@@ -36,13 +36,12 @@ paths:
                   status:
                     type: string
                     default: success
-                    nullable: false
                   type:
                     type: string
-                    nullable: false
                   data:
-                    type: object
-                    nullable: true
+                    type:
+                    - object
+                    - 'null'
       parameters:
       - $ref: '#/components/parameters/apiVersion'
       - $ref: '#/components/parameters/apiApplication'
@@ -56,14 +55,14 @@ paths:
               properties:
                 newPassword:
                   minLength: 8
-                  nullable: false
                   type: string
                 deleteAccessTokens:
-                  nullable: false
                   type: boolean
               required:
               - newPassword
               - deleteAccessTokens
+      operationId: postAccessRecoverMeFinish
+      x-operation-id-source: derived
 components:
   parameters:
     apiBrandingRequired:
@@ -74,6 +73,14 @@ components:
       schema:
         type: string
         pattern: .+(\..[^.]+)
+    apiApplication:
+      required: true
+      description: Get your Application ID via support@ixon.cloud
+      name: Api-Application
+      in: header
+      schema:
+        type: string
+        pattern: ^[0-9a-zA-Z]{12}$
     apiVersion:
       required: true
       description: Version of the API to use
@@ -84,14 +91,6 @@ components:
         format: int32
         enum:
         - 2
-    apiApplication:
-      required: true
-      description: Get your Application ID via support@ixon.cloud
-      name: Api-Application
-      in: header
-      schema:
-        type: string
-        pattern: ^[0-9a-zA-Z]{12}$
   securitySchemes:
     bearerToken:
       type: http

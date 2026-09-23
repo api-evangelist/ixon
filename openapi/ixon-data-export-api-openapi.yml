@@ -1,4 +1,4 @@
-openapi: 3.0.2
+openapi: 3.2.0
 info:
   contact:
     name: IXON B.V.
@@ -8,18 +8,18 @@ info:
   license:
     name: All Rights Reserved
     url: https://www.ixon.cloud/
-  title: IXON AccessRecoverList DataExport API
+  title: IXON Data Export API
   version: 0.1.294
 servers:
 - description: IXON Cloud platform server
   url: https://portal.ixon.cloud:443/api/
 tags:
-- name: DataExport
+- name: Data Export
 paths:
   /data-export:
     post:
       tags:
-      - DataExport
+      - Data Export
       summary: DataExport
       responses:
         '201':
@@ -36,13 +36,12 @@ paths:
                   status:
                     type: string
                     default: success
-                    nullable: false
                   type:
                     type: string
-                    nullable: false
                   data:
-                    type: object
-                    nullable: true
+                    type:
+                    - object
+                    - 'null'
         4XX:
           $ref: '#/components/responses/4XXErrorResponse'
       parameters:
@@ -58,52 +57,42 @@ paths:
               type: object
               properties:
                 start:
-                  nullable: false
                   type: string
                   format: date-time
                 end:
-                  nullable: false
                   type: string
                   format: date-time
                 timeZone:
                   maxLength: 255
                   minLength: 1
-                  nullable: false
                   type: string
                 source:
-                  nullable: false
                   type: object
                   properties:
                     publicId:
-                      nullable: false
                       type: string
                 tags:
                   type: array
                   items:
-                    nullable: false
                     type: object
                     properties:
                       id:
                         maximum: 4294967295
-                        nullable: false
                         type: integer
                         format: int32
                       slug:
                         maxLength: 64
                         minLength: 1
-                        nullable: false
                         pattern: ^[a-zA-Z0-9_\[\]-]+$
                         type: string
                       queries:
                         type: array
                         items:
-                          nullable: false
                           type: object
                           properties:
                             ref:
                               maxLength: 255
                               minLength: 1
-                              nullable: false
                               pattern: ^[^{}]*$
                               type: string
                             postAggr:
@@ -119,28 +108,22 @@ paths:
                               - max
                               - min
                               - raw
-                              nullable: false
                               type: string
                             postTransform:
                               enum:
                               - difference
-                              nullable: false
                               type: string
                             limit:
                               maximum: 5000
                               minimum: 1
-                              nullable: false
                               type: integer
                               format: int32
-                            step:
-                              nullable: false
+                            step: {}
                             offset:
                               maximum: 9223372036854776000
-                              nullable: false
                               type: integer
                               format: int32
                             factor:
-                              nullable: false
                               type: string
                             operator:
                               enum:
@@ -148,37 +131,27 @@ paths:
                               - /
                               - +
                               - '-'
-                              nullable: false
                               type: string
                             decimals:
                               maximum: 7
-                              nullable: false
                               type: integer
                               format: int32
                             extendedBoundary:
-                              nullable: false
                               type: boolean
                             order:
                               enum:
                               - asc
                               - desc
-                              nullable: false
                               type: string
               required:
               - source
               - tags
       security:
       - bearerToken: []
+      operationId: postDataExport
+      x-operation-id-source: derived
 components:
   parameters:
-    apiApplication:
-      required: true
-      description: Get your Application ID via support@ixon.cloud
-      name: Api-Application
-      in: header
-      schema:
-        type: string
-        pattern: ^[0-9a-zA-Z]{12}$
     apiVersion:
       required: true
       description: Version of the API to use
@@ -197,6 +170,14 @@ components:
       schema:
         type: string
         pattern: .+(\..[^.]+)
+    apiApplication:
+      required: true
+      description: Get your Application ID via support@ixon.cloud
+      name: Api-Application
+      in: header
+      schema:
+        type: string
+        pattern: ^[0-9a-zA-Z]{12}$
     apiCompany:
       required: true
       description: PublicId of the company
@@ -205,6 +186,23 @@ components:
       schema:
         type: string
         pattern: ^(\d{4}-){4}\d{4}$
+  schemas:
+    4XXErrorSchema:
+      type: object
+      properties:
+        message:
+          type: string
+        propertyName:
+          type:
+          - string
+          - 'null'
+        listIndex:
+          type:
+          - integer
+          - 'null'
+          format: int32
+      required:
+      - message
   responses:
     4XXErrorResponse:
       description: 4XX error response
@@ -220,32 +218,13 @@ components:
               status:
                 type: string
                 default: error
-                nullable: false
               type:
                 type: string
                 default: Error
-                nullable: false
               data:
-                nullable: false
                 type: array
                 items:
                   $ref: '#/components/schemas/4XXErrorSchema'
-  schemas:
-    4XXErrorSchema:
-      type: object
-      properties:
-        message:
-          nullable: false
-          type: string
-        propertyName:
-          nullable: true
-          type: string
-        listIndex:
-          nullable: true
-          type: integer
-          format: int32
-      required:
-      - message
   securitySchemes:
     bearerToken:
       type: http

@@ -1,4 +1,4 @@
-openapi: 3.0.2
+openapi: 3.2.0
 info:
   contact:
     name: IXON B.V.
@@ -8,7 +8,7 @@ info:
   license:
     name: All Rights Reserved
     url: https://www.ixon.cloud/
-  title: IXON AccessRecoverList AgentPageLinkList API
+  title: IXON Agent Page Link List API
   version: 0.1.294
 servers:
 - description: IXON Cloud platform server
@@ -36,15 +36,13 @@ paths:
                   status:
                     type: string
                     default: success
-                    nullable: false
                   type:
                     type: string
-                    nullable: false
                   moreAfter:
-                    type: string
-                    nullable: true
+                    type:
+                    - string
+                    - 'null'
                   data:
-                    nullable: false
                     type: array
                     items:
                       type: object
@@ -52,110 +50,103 @@ paths:
                         publicId:
                           maxLength: 12
                           minLength: 12
-                          nullable: false
                           type: string
                         agent:
-                          nullable: true
-                          type: object
+                          type:
+                          - object
+                          - 'null'
                           properties:
                             publicId:
-                              nullable: false
                               type: string
                         asset:
-                          nullable: true
-                          type: object
+                          type:
+                          - object
+                          - 'null'
                           properties:
                             publicId:
-                              nullable: false
                               type: string
                         menuItem:
-                          nullable: true
-                          type: object
+                          type:
+                          - object
+                          - 'null'
                           properties:
                             publicId:
-                              nullable: false
                               type: string
                         page:
-                          nullable: false
                           type: object
                           properties:
                             publicId:
-                              nullable: false
                               type: string
                         audience:
-                          nullable: true
-                          type: object
+                          type:
+                          - object
+                          - 'null'
                           properties:
                             publicId:
                               maxLength: 12
                               minLength: 12
-                              nullable: false
                               type: string
                             name:
                               maxLength: 255
                               minLength: 1
-                              nullable: false
                               type: string
                             description:
                               maxLength: 255
                               minLength: 0
-                              nullable: true
-                              type: string
+                              type:
+                              - string
+                              - 'null'
                             custom:
-                              nullable: false
                               type: object
                             default:
-                              nullable: false
                               type: boolean
                             type:
                               enum:
                               - alarm
                               - page
                               - service
-                              nullable: true
-                              type: string
+                              type:
+                              - string
+                              - 'null'
                         group:
-                          nullable: true
-                          type: object
+                          type:
+                          - object
+                          - 'null'
                           properties:
                             publicId:
                               maxLength: 12
                               minLength: 12
-                              nullable: false
                               type: string
                             agent:
-                              nullable: true
-                              type: object
+                              type:
+                              - object
+                              - 'null'
                               properties:
                                 publicId:
-                                  nullable: false
                                   type: string
                             asset:
-                              nullable: true
-                              type: object
+                              type:
+                              - object
+                              - 'null'
                               properties:
                                 publicId:
-                                  nullable: false
                                   type: string
                             menuItem:
-                              nullable: true
-                              type: object
+                              type:
+                              - object
+                              - 'null'
                               properties:
                                 publicId:
-                                  nullable: false
                                   type: string
                             name:
                               maxLength: 255
                               minLength: 1
-                              nullable: false
                               type: string
                         order:
                           maximum: 65535
-                          nullable: false
                           type: integer
                           format: int32
                         custom:
-                          nullable: false
                           type: object
         4XX:
           $ref: '#/components/responses/4XXErrorResponse'
@@ -173,6 +164,8 @@ paths:
           type: string
       security:
       - bearerToken: []
+      operationId: getAgentsByAgentIdPageLinks
+      x-operation-id-source: derived
     post:
       tags:
       - AgentPageLinkList
@@ -192,15 +185,13 @@ paths:
                   status:
                     type: string
                     default: success
-                    nullable: false
                   type:
                     type: string
-                    nullable: false
                   moreAfter:
-                    type: string
-                    nullable: true
+                    type:
+                    - string
+                    - 'null'
                   data:
-                    nullable: false
                     type: array
                     items:
                       type: object
@@ -208,7 +199,6 @@ paths:
                         publicId:
                           maxLength: 12
                           minLength: 12
-                          nullable: false
                           type: string
                       required:
                       - publicId
@@ -234,33 +224,27 @@ paths:
                 type: object
                 properties:
                   page:
-                    nullable: false
                     type: object
                     properties:
                       publicId:
-                        nullable: false
                         type: string
                   audience:
-                    nullable: false
                     type: object
                     properties:
                       publicId:
-                        nullable: false
                         type: string
                   group:
-                    nullable: true
-                    type: object
+                    type:
+                    - object
+                    - 'null'
                     properties:
                       publicId:
-                        nullable: false
                         type: string
                   order:
                     maximum: 65535
-                    nullable: false
                     type: integer
                     format: int32
                   custom:
-                    nullable: false
                     type: object
                 required:
                 - page
@@ -268,6 +252,8 @@ paths:
         description: You can give one item or a list of items
       security:
       - bearerToken: []
+      operationId: postAgentsByAgentIdPageLinks
+      x-operation-id-source: derived
     patch:
       tags:
       - AgentPageLinkList
@@ -287,13 +273,12 @@ paths:
                   status:
                     type: string
                     default: success
-                    nullable: false
                   type:
                     type: string
-                    nullable: false
                   data:
-                    type: object
-                    nullable: true
+                    type:
+                    - object
+                    - 'null'
         4XX:
           $ref: '#/components/responses/4XXErrorResponse'
       parameters:
@@ -318,42 +303,37 @@ paths:
                   publicId:
                     maxLength: 12
                     minLength: 12
-                    nullable: false
                     type: string
                   page:
-                    nullable: false
                     type: object
                     properties:
                       publicId:
-                        nullable: false
                         type: string
                   audience:
-                    nullable: false
                     type: object
                     properties:
                       publicId:
-                        nullable: false
                         type: string
                   group:
-                    nullable: true
-                    type: object
+                    type:
+                    - object
+                    - 'null'
                     properties:
                       publicId:
-                        nullable: false
                         type: string
                   order:
                     maximum: 65535
-                    nullable: false
                     type: integer
                     format: int32
                   custom:
-                    nullable: false
                     type: object
                 required:
                 - publicId
         description: You can give one item or a list of items
       security:
       - bearerToken: []
+      operationId: patchAgentsByAgentIdPageLinks
+      x-operation-id-source: derived
     delete:
       tags:
       - AgentPageLinkList
@@ -373,13 +353,12 @@ paths:
                   status:
                     type: string
                     default: success
-                    nullable: false
                   type:
                     type: string
-                    nullable: false
                   data:
-                    type: object
-                    nullable: true
+                    type:
+                    - object
+                    - 'null'
         4XX:
           $ref: '#/components/responses/4XXErrorResponse'
       parameters:
@@ -404,23 +383,16 @@ paths:
                   publicId:
                     maxLength: 12
                     minLength: 12
-                    nullable: false
                     type: string
                 required:
                 - publicId
         description: You can give one item or a list of items
       security:
       - bearerToken: []
+      operationId: deleteAgentsByAgentIdPageLinks
+      x-operation-id-source: derived
 components:
   parameters:
-    apiApplication:
-      required: true
-      description: Get your Application ID via support@ixon.cloud
-      name: Api-Application
-      in: header
-      schema:
-        type: string
-        pattern: ^[0-9a-zA-Z]{12}$
     apiVersion:
       required: true
       description: Version of the API to use
@@ -439,6 +411,14 @@ components:
       schema:
         type: string
         pattern: .+(\..[^.]+)
+    apiApplication:
+      required: true
+      description: Get your Application ID via support@ixon.cloud
+      name: Api-Application
+      in: header
+      schema:
+        type: string
+        pattern: ^[0-9a-zA-Z]{12}$
     fieldsParameter:
       required: false
       description: 'Fields to select. Use "*" for all the top-level fields. Or check the "Success response" below for other fields.
@@ -474,6 +454,23 @@ components:
       schema:
         type: string
         pattern: ^(\d{4}-){4}\d{4}$
+  schemas:
+    4XXErrorSchema:
+      type: object
+      properties:
+        message:
+          type: string
+        propertyName:
+          type:
+          - string
+          - 'null'
+        listIndex:
+          type:
+          - integer
+          - 'null'
+          format: int32
+      required:
+      - message
   responses:
     4XXErrorResponse:
       description: 4XX error response
@@ -489,32 +486,13 @@ components:
               status:
                 type: string
                 default: error
-                nullable: false
               type:
                 type: string
                 default: Error
-                nullable: false
               data:
-                nullable: false
                 type: array
                 items:
                   $ref: '#/components/schemas/4XXErrorSchema'
-  schemas:
-    4XXErrorSchema:
-      type: object
-      properties:
-        message:
-          nullable: false
-          type: string
-        propertyName:
-          nullable: true
-          type: string
-        listIndex:
-          nullable: true
-          type: integer
-          format: int32
-      required:
-      - message
   securitySchemes:
     bearerToken:
       type: http

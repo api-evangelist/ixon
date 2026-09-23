@@ -1,4 +1,4 @@
-openapi: 3.0.2
+openapi: 3.2.0
 info:
   contact:
     name: IXON B.V.
@@ -8,7 +8,7 @@ info:
   license:
     name: All Rights Reserved
     url: https://www.ixon.cloud/
-  title: IXON AccessRecoverList GroupRoleList API
+  title: IXON Group Role List API
   version: 0.1.294
 servers:
 - description: IXON Cloud platform server
@@ -36,260 +36,239 @@ paths:
                   status:
                     type: string
                     default: success
-                    nullable: false
                   type:
                     type: string
-                    nullable: false
                   moreAfter:
-                    type: string
-                    nullable: true
+                    type:
+                    - string
+                    - 'null'
                   data:
-                    nullable: false
                     type: array
                     items:
                       type: object
                       properties:
                         group:
-                          nullable: true
-                          type: object
+                          type:
+                          - object
+                          - 'null'
                           properties:
                             publicId:
                               maxLength: 12
                               minLength: 12
-                              nullable: false
                               type: string
                             name:
                               maxLength: 255
                               minLength: 1
-                              nullable: false
                               type: string
                             type:
-                              nullable: true
-                              type: object
+                              type:
+                              - object
+                              - 'null'
                               properties:
                                 publicId:
                                   maxLength: 12
                                   minLength: 12
-                                  nullable: false
                                   type: string
                                 name:
                                   maxLength: 255
                                   minLength: 1
-                                  nullable: false
                                   type: string
                                 description:
                                   maxLength: 255
                                   minLength: 0
-                                  nullable: true
-                                  type: string
+                                  type:
+                                  - string
+                                  - 'null'
                                 order:
                                   maximum: 9223372036854776000
                                   minimum: -9223372036854776000
-                                  nullable: false
                                   type: integer
                                   format: int32
                                 color:
                                   maxLength: 7
                                   minLength: 6
-                                  nullable: true
                                   pattern: '#?[a-fA-F0-9]{6,6}'
-                                  type: string
+                                  type:
+                                  - string
+                                  - 'null'
                                 custom:
-                                  nullable: false
                                   type: object
                             custom:
-                              nullable: false
                               type: object
                             agent:
-                              nullable: true
-                              type: object
+                              type:
+                              - object
+                              - 'null'
                               properties:
                                 publicId:
-                                  nullable: false
                                   type: string
                             asset:
-                              nullable: true
-                              type: object
+                              type:
+                              - object
+                              - 'null'
                               properties:
                                 publicId:
-                                  nullable: false
                                   type: string
                             parent:
-                              nullable: true
-                              type: object
+                              type:
+                              - object
+                              - 'null'
                               properties:
                                 publicId:
                                   maxLength: 12
                                   minLength: 12
-                                  nullable: false
                                   type: string
                                 name:
                                   maxLength: 255
                                   minLength: 1
-                                  nullable: false
                                   type: string
                                 type:
-                                  nullable: true
-                                  type: object
+                                  type:
+                                  - object
+                                  - 'null'
                                   properties:
                                     publicId:
                                       maxLength: 12
                                       minLength: 12
-                                      nullable: false
                                       type: string
                                     name:
                                       maxLength: 255
                                       minLength: 1
-                                      nullable: false
                                       type: string
                                     description:
                                       maxLength: 255
                                       minLength: 0
-                                      nullable: true
-                                      type: string
+                                      type:
+                                      - string
+                                      - 'null'
                                     order:
                                       maximum: 9223372036854776000
                                       minimum: -9223372036854776000
-                                      nullable: false
                                       type: integer
                                       format: int32
                                     color:
                                       maxLength: 7
                                       minLength: 6
-                                      nullable: true
                                       pattern: '#?[a-fA-F0-9]{6,6}'
-                                      type: string
+                                      type:
+                                      - string
+                                      - 'null'
                                     custom:
-                                      nullable: false
                                       type: object
                             managedBy:
-                              nullable: true
-                              type: object
+                              type:
+                              - object
+                              - 'null'
                               properties:
                                 publicId:
                                   maxLength: 12
                                   minLength: 12
-                                  nullable: false
                                   type: string
                                 name:
                                   maxLength: 255
                                   minLength: 1
-                                  nullable: false
                                   type: string
                                 type:
-                                  nullable: true
-                                  type: object
+                                  type:
+                                  - object
+                                  - 'null'
                                   properties:
                                     publicId:
                                       maxLength: 12
                                       minLength: 12
-                                      nullable: false
                                       type: string
                                     name:
                                       maxLength: 255
                                       minLength: 1
-                                      nullable: false
                                       type: string
                                     description:
                                       maxLength: 255
                                       minLength: 0
-                                      nullable: true
-                                      type: string
+                                      type:
+                                      - string
+                                      - 'null'
                                     order:
                                       maximum: 9223372036854776000
                                       minimum: -9223372036854776000
-                                      nullable: false
                                       type: integer
                                       format: int32
                                     color:
                                       maxLength: 7
                                       minLength: 6
-                                      nullable: true
                                       pattern: '#?[a-fA-F0-9]{6,6}'
-                                      type: string
+                                      type:
+                                      - string
+                                      - 'null'
                                     custom:
-                                      nullable: false
                                       type: object
                             isCompanyGroup:
-                              nullable: false
                               type: boolean
                         roles:
                           type: array
                           items:
-                            nullable: false
                             type: object
                             properties:
                               publicId:
                                 maxLength: 12
                                 minLength: 12
-                                nullable: false
                                 type: string
                               name:
                                 maxLength: 255
                                 minLength: 1
-                                nullable: false
                                 type: string
                               description:
                                 maxLength: 255
                                 minLength: 0
-                                nullable: true
-                                type: string
+                                type:
+                                - string
+                                - 'null'
                               enforce2fa:
-                                nullable: false
                                 type: boolean
                               enforceSso:
-                                nullable: false
                                 type: boolean
                               permissions:
                                 type: array
                                 items:
-                                  nullable: false
                                   type: object
                                   properties:
                                     publicId:
                                       maxLength: 255
                                       minLength: 1
-                                      nullable: false
                                       type: string
                                     custom:
-                                      nullable: false
                                       type: object
                               audiences:
                                 type: array
                                 items:
-                                  nullable: false
                                   type: object
                                   properties:
                                     publicId:
                                       maxLength: 12
                                       minLength: 12
-                                      nullable: false
                                       type: string
                                     name:
                                       maxLength: 255
                                       minLength: 1
-                                      nullable: false
                                       type: string
                                     description:
                                       maxLength: 255
                                       minLength: 0
-                                      nullable: true
-                                      type: string
+                                      type:
+                                      - string
+                                      - 'null'
                                     custom:
-                                      nullable: false
                                       type: object
                                     default:
-                                      nullable: false
                                       type: boolean
                                     type:
                                       enum:
                                       - alarm
                                       - page
                                       - service
-                                      nullable: true
-                                      type: string
+                                      type:
+                                      - string
+                                      - 'null'
                               custom:
-                                nullable: false
                                 type: object
       parameters:
       - $ref: '#/components/parameters/apiVersion'
@@ -299,16 +278,18 @@ paths:
       - $ref: '#/components/parameters/fieldsParameter'
       security:
       - bearerToken: []
+      operationId: getGroupsRoles
+      x-operation-id-source: derived
 components:
   parameters:
-    apiApplication:
-      required: true
-      description: Get your Application ID via support@ixon.cloud
-      name: Api-Application
+    apiBrandingOptional:
+      required: false
+      description: Domain that provides the branding
+      name: Api-Branding
       in: header
       schema:
         type: string
-        pattern: ^[0-9a-zA-Z]{12}$
+        pattern: .+(\..[^.]+)
     apiVersion:
       required: true
       description: Version of the API to use
@@ -319,14 +300,14 @@ components:
         format: int32
         enum:
         - 2
-    apiBrandingOptional:
-      required: false
-      description: Domain that provides the branding
-      name: Api-Branding
+    apiApplication:
+      required: true
+      description: Get your Application ID via support@ixon.cloud
+      name: Api-Application
       in: header
       schema:
         type: string
-        pattern: .+(\..[^.]+)
+        pattern: ^[0-9a-zA-Z]{12}$
     fieldsParameter:
       required: false
       description: 'Fields to select. Use "*" for all the top-level fields. Or check the "Success response" below for other fields.

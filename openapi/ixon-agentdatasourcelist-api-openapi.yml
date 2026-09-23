@@ -1,4 +1,4 @@
-openapi: 3.0.2
+openapi: 3.2.0
 info:
   contact:
     name: IXON B.V.
@@ -8,7 +8,7 @@ info:
   license:
     name: All Rights Reserved
     url: https://www.ixon.cloud/
-  title: IXON AccessRecoverList AgentDataSourceList API
+  title: IXON Agent Data Source List API
   version: 0.1.294
 servers:
 - description: IXON Cloud platform server
@@ -36,59 +36,51 @@ paths:
                   status:
                     type: string
                     default: success
-                    nullable: false
                   type:
                     type: string
-                    nullable: false
                   moreAfter:
-                    type: string
-                    nullable: true
+                    type:
+                    - string
+                    - 'null'
                   data:
-                    nullable: false
                     type: array
                     items:
                       type: object
                       properties:
                         agent:
-                          nullable: false
                           type: object
                           properties:
                             publicId:
-                              nullable: false
                               type: string
                         continueLoggingOnError:
-                          nullable: true
-                          type: boolean
+                          type:
+                          - boolean
+                          - 'null'
                         device:
-                          nullable: false
                           type: object
                           properties:
                             publicId:
-                              nullable: false
                               type: string
                         gracePeriod:
                           maximum: 65535
-                          nullable: true
-                          type: integer
+                          type:
+                          - integer
+                          - 'null'
                           format: int32
                         publicId:
                           maxLength: 12
                           minLength: 12
-                          nullable: false
                           type: string
                         name:
                           maxLength: 255
                           minLength: 1
-                          nullable: false
                           type: string
                         slug:
                           maxLength: 64
                           minLength: 1
-                          nullable: false
                           pattern: ^[a-zA-Z0-9_\[\]-]+$
                           type: string
                         disabled:
-                          nullable: false
                           type: boolean
                         protocol:
                           oneOf:
@@ -97,12 +89,10 @@ paths:
                               publicId:
                                 enum:
                                 - custom
-                                nullable: false
                                 type: string
                               password:
                                 maxLength: 255
                                 minLength: 1
-                                nullable: false
                                 type: string
                             required:
                             - publicId
@@ -112,12 +102,12 @@ paths:
                               publicId:
                                 enum:
                                 - modbus
-                                nullable: false
                                 type: string
                               slave:
                                 maximum: 65535
-                                nullable: true
-                                type: integer
+                                type:
+                                - integer
+                                - 'null'
                                 format: int32
                               format:
                                 enum:
@@ -125,15 +115,17 @@ paths:
                                 - BADC
                                 - CDAB
                                 - DCBA
-                                nullable: true
-                                type: string
+                                type:
+                                - string
+                                - 'null'
                               readMode:
                                 enum:
                                 - single_value
                                 - consecutive_values
                                 - gapped_values
-                                nullable: true
-                                type: string
+                                type:
+                                - string
+                                - 'null'
                             required:
                             - publicId
                           - type: object
@@ -141,23 +133,25 @@ paths:
                               publicId:
                                 enum:
                                 - siemens-step7
-                                nullable: false
                                 type: string
                               pdu:
                                 maximum: 2147483647
                                 minimum: -2147483648
-                                nullable: true
-                                type: integer
+                                type:
+                                - integer
+                                - 'null'
                                 format: int32
                               rack:
                                 maximum: 7
-                                nullable: true
-                                type: integer
+                                type:
+                                - integer
+                                - 'null'
                                 format: int32
                               slot:
                                 maximum: 31
-                                nullable: true
-                                type: integer
+                                type:
+                                - integer
+                                - 'null'
                                 format: int32
                             required:
                             - publicId
@@ -166,38 +160,40 @@ paths:
                               publicId:
                                 enum:
                                 - opc-ua
-                                nullable: false
                                 type: string
                               authenticationType:
                                 enum:
                                 - anonymous
                                 - username
                                 - certificate
-                                nullable: false
                                 type: string
                               username:
                                 maxLength: 255
                                 minLength: 0
-                                nullable: true
-                                type: string
+                                type:
+                                - string
+                                - 'null'
                               password:
                                 maxLength: 255
                                 minLength: 0
-                                nullable: true
-                                type: string
+                                type:
+                                - string
+                                - 'null'
                               securityMode:
                                 enum:
                                 - sign
                                 - signandencrypt
-                                nullable: true
-                                type: string
+                                type:
+                                - string
+                                - 'null'
                               securityPolicy:
                                 enum:
                                 - basic256sha256
                                 - aes128_sha256_rsaoaep
                                 - aes256_sha256_rsapss
-                                nullable: true
-                                type: string
+                                type:
+                                - string
+                                - 'null'
                             required:
                             - publicId
                             - authenticationType
@@ -206,7 +202,6 @@ paths:
                               publicId:
                                 enum:
                                 - ethernet-ip
-                                nullable: false
                                 type: string
                               cpu:
                                 enum:
@@ -215,17 +210,18 @@ paths:
                                 - micrologix
                                 - micrologix800
                                 - omron
-                                nullable: false
                                 type: string
                               rack:
                                 maximum: 65535
-                                nullable: true
-                                type: integer
+                                type:
+                                - integer
+                                - 'null'
                                 format: int32
                               slot:
                                 maximum: 65535
-                                nullable: true
-                                type: integer
+                                type:
+                                - integer
+                                - 'null'
                                 format: int32
                             required:
                             - publicId
@@ -235,7 +231,6 @@ paths:
                               publicId:
                                 enum:
                                 - host
-                                nullable: false
                                 type: string
                             required:
                             - publicId
@@ -244,7 +239,6 @@ paths:
                               publicId:
                                 enum:
                                 - bacnet-ip
-                                nullable: false
                                 type: string
                             required:
                             - publicId
@@ -253,7 +247,6 @@ paths:
                               publicId:
                                 enum:
                                 - mc-protocol
-                                nullable: false
                                 type: string
                               cpu:
                                 enum:
@@ -262,90 +255,103 @@ paths:
                                 - L
                                 - Q
                                 - QNUCPU
-                                nullable: true
-                                type: string
+                                type:
+                                - string
+                                - 'null'
                               protocol:
                                 enum:
                                 - TCP
                                 - UDP
-                                nullable: true
-                                type: string
+                                type:
+                                - string
+                                - 'null'
                               networkNo:
                                 maximum: 255
-                                nullable: true
-                                type: integer
+                                type:
+                                - integer
+                                - 'null'
                                 format: int32
                               pcNo:
                                 maxLength: 2
                                 minLength: 1
-                                nullable: true
                                 pattern: '[A-Za-z0-9]+'
-                                type: string
+                                type:
+                                - string
+                                - 'null'
                               requestDestIoNr:
                                 maxLength: 4
                                 minLength: 1
-                                nullable: true
                                 pattern: '[A-Za-z0-9]+'
-                                type: string
+                                type:
+                                - string
+                                - 'null'
                               requestDestModuleStatNr:
                                 maximum: 255
-                                nullable: true
-                                type: integer
+                                type:
+                                - integer
+                                - 'null'
                                 format: int32
                               authenticationType:
                                 enum:
                                 - none
                                 - password
-                                nullable: true
-                                type: string
+                                type:
+                                - string
+                                - 'null'
                               password:
                                 maxLength: 255
                                 minLength: 0
-                                nullable: true
-                                type: string
+                                type:
+                                - string
+                                - 'null'
                               reconnectDelay:
                                 maximum: 65535
-                                nullable: true
-                                type: integer
+                                type:
+                                - integer
+                                - 'null'
                                 format: int32
                               maxBlocks:
                                 maximum: 65535
-                                nullable: true
-                                type: integer
+                                type:
+                                - integer
+                                - 'null'
                                 format: int32
                               maxPoints:
                                 maximum: 65535
-                                nullable: true
-                                type: integer
+                                type:
+                                - integer
+                                - 'null'
                                 format: int32
                             required:
                             - publicId
                         port:
                           maximum: 65535
-                          nullable: true
-                          type: integer
+                          type:
+                          - integer
+                          - 'null'
                           format: int32
                         pullDelay:
                           maximum: 4294967295
-                          nullable: true
-                          type: integer
+                          type:
+                          - integer
+                          - 'null'
                           format: int32
                         valuesPerHour:
                           maximum: 4294967295
-                          nullable: false
                           type: integer
                           format: int32
                         mqttTopic:
                           maxLength: 255
                           minLength: 1
-                          nullable: true
-                          type: string
+                          type:
+                          - string
+                          - 'null'
                         mqttBrokerClient:
-                          nullable: true
-                          type: object
+                          type:
+                          - object
+                          - 'null'
                           properties:
                             publicId:
-                              nullable: false
                               type: string
         4XX:
           $ref: '#/components/responses/4XXErrorResponse'
@@ -363,6 +369,8 @@ paths:
           type: string
       security:
       - bearerToken: []
+      operationId: getAgentsByAgentIdDataSources
+      x-operation-id-source: derived
     post:
       tags:
       - AgentDataSourceList
@@ -382,15 +390,13 @@ paths:
                   status:
                     type: string
                     default: success
-                    nullable: false
                   type:
                     type: string
-                    nullable: false
                   moreAfter:
-                    type: string
-                    nullable: true
+                    type:
+                    - string
+                    - 'null'
                   data:
-                    nullable: false
                     type: array
                     items:
                       type: object
@@ -398,7 +404,6 @@ paths:
                         publicId:
                           maxLength: 12
                           minLength: 12
-                          nullable: false
                           type: string
                       required:
                       - publicId
@@ -424,33 +429,30 @@ paths:
                 type: object
                 properties:
                   device:
-                    nullable: false
                     type: object
                     properties:
                       publicId:
-                        nullable: false
                         type: string
                   continueLoggingOnError:
-                    nullable: true
-                    type: boolean
+                    type:
+                    - boolean
+                    - 'null'
                   gracePeriod:
                     maximum: 65535
-                    nullable: true
-                    type: integer
+                    type:
+                    - integer
+                    - 'null'
                     format: int32
                   name:
                     maxLength: 255
                     minLength: 1
-                    nullable: false
                     type: string
                   slug:
                     maxLength: 64
                     minLength: 1
-                    nullable: false
                     pattern: ^[a-zA-Z0-9_\[\]-]+$
                     type: string
                   disabled:
-                    nullable: false
                     type: boolean
                   protocol:
                     oneOf:
@@ -459,12 +461,10 @@ paths:
                         publicId:
                           enum:
                           - custom
-                          nullable: false
                           type: string
                         password:
                           maxLength: 255
                           minLength: 1
-                          nullable: false
                           type: string
                       required:
                       - publicId
@@ -474,12 +474,12 @@ paths:
                         publicId:
                           enum:
                           - modbus
-                          nullable: false
                           type: string
                         slave:
                           maximum: 65535
-                          nullable: true
-                          type: integer
+                          type:
+                          - integer
+                          - 'null'
                           format: int32
                         format:
                           enum:
@@ -487,15 +487,17 @@ paths:
                           - BADC
                           - CDAB
                           - DCBA
-                          nullable: true
-                          type: string
+                          type:
+                          - string
+                          - 'null'
                         readMode:
                           enum:
                           - single_value
                           - consecutive_values
                           - gapped_values
-                          nullable: true
-                          type: string
+                          type:
+                          - string
+                          - 'null'
                       required:
                       - publicId
                     - type: object
@@ -503,23 +505,25 @@ paths:
                         publicId:
                           enum:
                           - siemens-step7
-                          nullable: false
                           type: string
                         pdu:
                           maximum: 2147483647
                           minimum: -2147483648
-                          nullable: true
-                          type: integer
+                          type:
+                          - integer
+                          - 'null'
                           format: int32
                         rack:
                           maximum: 7
-                          nullable: true
-                          type: integer
+                          type:
+                          - integer
+                          - 'null'
                           format: int32
                         slot:
                           maximum: 31
-                          nullable: true
-                          type: integer
+                          type:
+                          - integer
+                          - 'null'
                           format: int32
                       required:
                       - publicId
@@ -528,38 +532,40 @@ paths:
                         publicId:
                           enum:
                           - opc-ua
-                          nullable: false
                           type: string
                         authenticationType:
                           enum:
                           - anonymous
                           - username
                           - certificate
-                          nullable: false
                           type: string
                         username:
                           maxLength: 255
                           minLength: 0
-                          nullable: true
-                          type: string
+                          type:
+                          - string
+                          - 'null'
                         password:
                           maxLength: 255
                           minLength: 0
-                          nullable: true
-                          type: string
+                          type:
+                          - string
+                          - 'null'
                         securityMode:
                           enum:
                           - sign
                           - signandencrypt
-                          nullable: true
-                          type: string
+                          type:
+                          - string
+                          - 'null'
                         securityPolicy:
                           enum:
                           - basic256sha256
                           - aes128_sha256_rsaoaep
                           - aes256_sha256_rsapss
-                          nullable: true
-                          type: string
+                          type:
+                          - string
+                          - 'null'
                       required:
                       - publicId
                       - authenticationType
@@ -568,7 +574,6 @@ paths:
                         publicId:
                           enum:
                           - ethernet-ip
-                          nullable: false
                           type: string
                         cpu:
                           enum:
@@ -577,17 +582,18 @@ paths:
                           - micrologix
                           - micrologix800
                           - omron
-                          nullable: false
                           type: string
                         rack:
                           maximum: 65535
-                          nullable: true
-                          type: integer
+                          type:
+                          - integer
+                          - 'null'
                           format: int32
                         slot:
                           maximum: 65535
-                          nullable: true
-                          type: integer
+                          type:
+                          - integer
+                          - 'null'
                           format: int32
                       required:
                       - publicId
@@ -597,7 +603,6 @@ paths:
                         publicId:
                           enum:
                           - host
-                          nullable: false
                           type: string
                       required:
                       - publicId
@@ -606,7 +611,6 @@ paths:
                         publicId:
                           enum:
                           - bacnet-ip
-                          nullable: false
                           type: string
                       required:
                       - publicId
@@ -615,7 +619,6 @@ paths:
                         publicId:
                           enum:
                           - mc-protocol
-                          nullable: false
                           type: string
                         cpu:
                           enum:
@@ -624,85 +627,99 @@ paths:
                           - L
                           - Q
                           - QNUCPU
-                          nullable: true
-                          type: string
+                          type:
+                          - string
+                          - 'null'
                         protocol:
                           enum:
                           - TCP
                           - UDP
-                          nullable: true
-                          type: string
+                          type:
+                          - string
+                          - 'null'
                         networkNo:
                           maximum: 255
-                          nullable: true
-                          type: integer
+                          type:
+                          - integer
+                          - 'null'
                           format: int32
                         pcNo:
                           maxLength: 2
                           minLength: 1
-                          nullable: true
                           pattern: '[A-Za-z0-9]+'
-                          type: string
+                          type:
+                          - string
+                          - 'null'
                         requestDestIoNr:
                           maxLength: 4
                           minLength: 1
-                          nullable: true
                           pattern: '[A-Za-z0-9]+'
-                          type: string
+                          type:
+                          - string
+                          - 'null'
                         requestDestModuleStatNr:
                           maximum: 255
-                          nullable: true
-                          type: integer
+                          type:
+                          - integer
+                          - 'null'
                           format: int32
                         authenticationType:
                           enum:
                           - none
                           - password
-                          nullable: true
-                          type: string
+                          type:
+                          - string
+                          - 'null'
                         password:
                           maxLength: 255
                           minLength: 0
-                          nullable: true
-                          type: string
+                          type:
+                          - string
+                          - 'null'
                         reconnectDelay:
                           maximum: 65535
-                          nullable: true
-                          type: integer
+                          type:
+                          - integer
+                          - 'null'
                           format: int32
                         maxBlocks:
                           maximum: 65535
-                          nullable: true
-                          type: integer
+                          type:
+                          - integer
+                          - 'null'
                           format: int32
                         maxPoints:
                           maximum: 65535
-                          nullable: true
-                          type: integer
+                          type:
+                          - integer
+                          - 'null'
                           format: int32
                       required:
                       - publicId
                   port:
                     maximum: 65535
-                    nullable: true
-                    type: integer
+                    type:
+                    - integer
+                    - 'null'
                     format: int32
                   pullDelay:
                     maximum: 4294967295
-                    nullable: true
-                    type: integer
+                    type:
+                    - integer
+                    - 'null'
                     format: int32
                   mqttTopic:
                     maxLength: 255
                     minLength: 1
-                    nullable: true
-                    type: string
+                    type:
+                    - string
+                    - 'null'
                   mqttBrokerClient:
-                    nullable: true
-                    type: object
+                    type:
+                    - object
+                    - 'null'
                     properties:
                       publicId:
-                        nullable: false
                         type: string
                 required:
                 - device
@@ -712,6 +729,8 @@ paths:
         description: You can give one item or a list of items
       security:
       - bearerToken: []
+      operationId: postAgentsByAgentIdDataSources
+      x-operation-id-source: derived
     patch:
       tags:
       - AgentDataSourceList
@@ -731,13 +750,12 @@ paths:
                   status:
                     type: string
                     default: success
-                    nullable: false
                   type:
                     type: string
-                    nullable: false
                   data:
-                    type: object
-                    nullable: true
+                    type:
+                    - object
+                    - 'null'
         4XX:
           $ref: '#/components/responses/4XXErrorResponse'
       parameters:
@@ -762,36 +780,32 @@ paths:
                   publicId:
                     maxLength: 12
                     minLength: 12
-                    nullable: false
                     type: string
                   continueLoggingOnError:
-                    nullable: true
-                    type: boolean
+                    type:
+                    - boolean
+                    - 'null'
                   device:
-                    nullable: false
                     type: object
                     properties:
                       publicId:
-                        nullable: false
                         type: string
                   gracePeriod:
                     maximum: 65535
-                    nullable: true
-                    type: integer
+                    type:
+                    - integer
+                    - 'null'
                     format: int32
                   name:
                     maxLength: 255
                     minLength: 1
-                    nullable: false
                     type: string
                   slug:
                     maxLength: 64
                     minLength: 1
-                    nullable: false
                     pattern: ^[a-zA-Z0-9_\[\]-]+$
                     type: string
                   disabled:
-                    nullable: false
                     type: boolean
                   protocol:
                     oneOf:
@@ -800,12 +814,10 @@ paths:
                         publicId:
                           enum:
                           - custom
-                          nullable: false
                           type: string
                         password:
                           maxLength: 255
                           minLength: 1
-                          nullable: false
                           type: string
                       required:
                       - publicId
@@ -815,12 +827,12 @@ paths:
                         publicId:
                           enum:
                           - modbus
-                          nullable: false
                           type: string
                         slave:
                           maximum: 65535
-                          nullable: true
-                          type: integer
+                          type:
+                          - integer
+                          - 'null'
                           format: int32
                         format:
                           enum:
@@ -828,15 +840,17 @@ paths:
                           - BADC
                           - CDAB
                           - DCBA
-                          nullable: true
-                          type: string
+                          type:
+                          - string
+                          - 'null'
                         readMode:
                           enum:
                           - single_value
                           - consecutive_values
                           - gapped_values
-                          nullable: true
-                          type: string
+                          type:
+                          - string
+                          - 'null'
                       required:
                       - publicId
                     - type: object
@@ -844,23 +858,25 @@ paths:
                         publicId:
                           enum:
                           - siemens-step7
-                          nullable: false
                           type: string
                         pdu:
                           maximum: 2147483647
                           minimum: -2147483648
-                          nullable: true
-                          type: integer
+                          type:
+                          - integer
+                          - 'null'
                           format: int32
                         rack:
                           maximum: 7
-                          nullable: true
-                          type: integer
+                          type:
+                          - integer
+                          - 'null'
                           format: int32
                         slot:
                           maximum: 31
-                          nullable: true
-                          type: integer
+                          type:
+                          - integer
+                          - 'null'
                           format: int32
                       required:
                       - publicId
@@ -869,38 +885,40 @@ paths:
                         publicId:
                           enum:
                           - opc-ua
-                          nullable: false
                           type: string
                         authenticationType:
                           enum:
                           - anonymous
                           - username
                           - certificate
-                          nullable: false
                           type: string
                         username:
                           maxLength: 255
                           minLength: 0
-                          nullable: true
-                          type: string
+                          type:
+                          - string
+                          - 'null'
                         password:
                           maxLength: 255
                           minLength: 0
-                          nullable: true
-                          type: string
+                          type:
+                          - string
+                          - 'null'
                         securityMode:
                           enum:
                           - sign
                           - signandencrypt
-                          nullable: true
-                          type: string
+                          type:
+                          - string
+                          - 'null'
                         securityPolicy:
                           enum:
                           - basic256sha256
                           - aes128_sha256_rsaoaep
                           - aes256_sha256_rsapss
-                          nullable: true
-                          type: string
+                          type:
+                          - string
+                          - 'null'
                       required:
                       - publicId
                       - authenticationType
@@ -909,7 +927,6 @@ paths:
                         publicId:
                           enum:
                           - ethernet-ip
-                          nullable: false
                           type: string
                         cpu:
                           enum:
@@ -918,17 +935,18 @@ paths:
                           - micrologix
                           - micrologix800
                           - omron
-                          nullable: false
                           type: string
                         rack:
                           maximum: 65535
-                          nullable: true
-                          type: integer
+                          type:
+                          - integer
+                          - 'null'
                           format: int32
                         slot:
                           maximum: 65535
-                          nullable: true
-                          type: integer
+                          type:
+                          - integer
+                          - 'null'
                           format: int32
                       required:
                       - publicId
@@ -938,7 +956,6 @@ paths:
                         publicId:
                           enum:
                           - host
-                          nullable: false
                           type: string
                       required:
                       - publicId
@@ -947,7 +964,6 @@ paths:
                         publicId:
                           enum:
                           - bacnet-ip
-                          nullable: false
                           type: string
                       required:
                       - publicId
@@ -956,7 +972,6 @@ paths:
                         publicId:
                           enum:
                           - mc-protocol
-                          nullable: false
                           type: string
                         cpu:
                           enum:
@@ -965,85 +980,99 @@ paths:
                           - L
                           - Q
                           - QNUCPU
-                          nullable: true
-                          type: string
+                          type:
+                          - string
+                          - 'null'
                         protocol:
                           enum:
                           - TCP
                           - UDP
-                          nullable: true
-                          type: string
+                          type:
+                          - string
+                          - 'null'
                         networkNo:
                           maximum: 255
-                          nullable: true
-                          type: integer
+                          type:
+                          - integer
+                          - 'null'
                           format: int32
                         pcNo:
                           maxLength: 2
                           minLength: 1
-                          nullable: true
                           pattern: '[A-Za-z0-9]+'
-                          type: string
+                          type:
+                          - string
+                          - 'null'
                         requestDestIoNr:
                           maxLength: 4
                           minLength: 1
-                          nullable: true
                           pattern: '[A-Za-z0-9]+'
-                          type: string
+                          type:
+                          - string
+                          - 'null'
                         requestDestModuleStatNr:
                           maximum: 255
-                          nullable: true
-                          type: integer
+                          type:
+                          - integer
+                          - 'null'
                           format: int32
                         authenticationType:
                           enum:
                           - none
                           - password
-                          nullable: true
-                          type: string
+                          type:
+                          - string
+                          - 'null'
                         password:
                           maxLength: 255
                           minLength: 0
-                          nullable: true
-                          type: string
+                          type:
+                          - string
+                          - 'null'
                         reconnectDelay:
                           maximum: 65535
-                          nullable: true
-                          type: integer
+                          type:
+                          - integer
+                          - 'null'
                           format: int32
                         maxBlocks:
                           maximum: 65535
-                          nullable: true
-                          type: integer
+                          type:
+                          - integer
+                          - 'null'
                           format: int32
                         maxPoints:
                           maximum: 65535
-                          nullable: true
-                          type: integer
+                          type:
+                          - integer
+                          - 'null'
                           format: int32
                       required:
                       - publicId
                   port:
                     maximum: 65535
-                    nullable: true
-                    type: integer
+                    type:
+                    - integer
+                    - 'null'
                     format: int32
                   pullDelay:
                     maximum: 4294967295
-                    nullable: true
-                    type: integer
+                    type:
+                    - integer
+                    - 'null'
                     format: int32
                   mqttTopic:
                     maxLength: 255
                     minLength: 1
-                    nullable: true
-                    type: string
+                    type:
+                    - string
+                    - 'null'
                   mqttBrokerClient:
-                    nullable: true
-                    type: object
+                    type:
+                    - object
+                    - 'null'
                     properties:
                       publicId:
-                        nullable: false
                         type: string
                 required:
                 - publicId
@@ -1051,6 +1080,8 @@ paths:
         description: You can give one item or a list of items
       security:
       - bearerToken: []
+      operationId: patchAgentsByAgentIdDataSources
+      x-operation-id-source: derived
     delete:
       tags:
       - AgentDataSourceList
@@ -1070,13 +1101,12 @@ paths:
                   status:
                     type: string
                     default: success
-                    nullable: false
                   type:
                     type: string
-                    nullable: false
                   data:
-                    type: object
-                    nullable: true
+                    type:
+                    - object
+                    - 'null'
         4XX:
           $ref: '#/components/responses/4XXErrorResponse'
       parameters:
@@ -1101,23 +1131,16 @@ paths:
                   publicId:
                     maxLength: 12
                     minLength: 12
-                    nullable: false
                     type: string
                 required:
                 - publicId
         description: You can give one item or a list of items
       security:
       - bearerToken: []
+      operationId: deleteAgentsByAgentIdDataSources
+      x-operation-id-source: derived
 components:
   parameters:
-    apiApplication:
-      required: true
-      description: Get your Application ID via support@ixon.cloud
-      name: Api-Application
-      in: header
-      schema:
-        type: string
-        pattern: ^[0-9a-zA-Z]{12}$
     apiVersion:
       required: true
       description: Version of the API to use
@@ -1136,6 +1159,14 @@ components:
       schema:
         type: string
         pattern: .+(\..[^.]+)
+    apiApplication:
+      required: true
+      description: Get your Application ID via support@ixon.cloud
+      name: Api-Application
+      in: header
+      schema:
+        type: string
+        pattern: ^[0-9a-zA-Z]{12}$
     fieldsParameter:
       required: false
       description: 'Fields to select. Use "*" for all the top-level fields. Or check the "Success response" below for other fields.
@@ -1171,6 +1202,23 @@ components:
       schema:
         type: string
         pattern: ^(\d{4}-){4}\d{4}$
+  schemas:
+    4XXErrorSchema:
+      type: object
+      properties:
+        message:
+          type: string
+        propertyName:
+          type:
+          - string
+          - 'null'
+        listIndex:
+          type:
+          - integer
+          - 'null'
+          format: int32
+      required:
+      - message
   responses:
     4XXErrorResponse:
       description: 4XX error response
@@ -1186,32 +1234,13 @@ components:
               status:
                 type: string
                 default: error
-                nullable: false
               type:
                 type: string
                 default: Error
-                nullable: false
               data:
-                nullable: false
                 type: array
                 items:
                   $ref: '#/components/schemas/4XXErrorSchema'
-  schemas:
-    4XXErrorSchema:
-      type: object
-      properties:
-        message:
-          nullable: false
-          type: string
-        propertyName:
-          nullable: true
-          type: string
-        listIndex:
-          nullable: true
-          type: integer
-          format: int32
-      required:
-      - message
   securitySchemes:
     bearerToken:
       type: http

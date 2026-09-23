@@ -1,4 +1,4 @@
-openapi: 3.0.2
+openapi: 3.2.0
 info:
   contact:
     name: IXON B.V.
@@ -8,7 +8,7 @@ info:
   license:
     name: All Rights Reserved
     url: https://www.ixon.cloud/
-  title: IXON AccessRecoverList AuthTokenChangeNotificationsList API
+  title: IXON Auth Token Change Notifications List API
   version: 0.1.294
 servers:
 - description: IXON Cloud platform server
@@ -36,26 +36,20 @@ paths:
                   status:
                     type: string
                     default: success
-                    nullable: false
                   type:
                     type: string
-                    nullable: false
                   data:
-                    nullable: false
                     type: object
                     properties:
                       publicId:
                         maxLength: 12
                         minLength: 12
-                        nullable: false
                         type: string
                       secretId:
                         maxLength: 64000
                         minLength: 1
-                        nullable: false
                         type: string
                       expiresOn:
-                        nullable: false
                         type: string
                         format: date-time
       parameters:
@@ -72,15 +66,32 @@ paths:
                 expiresIn:
                   maximum: 3600
                   minimum: 60
-                  nullable: false
                   type: integer
                   format: int32
               required:
               - expiresIn
       security:
       - bearerToken: []
+      operationId: postAuthTokensCns
+      x-operation-id-source: derived
 components:
   parameters:
+    apiApplication:
+      required: true
+      description: Get your Application ID via support@ixon.cloud
+      name: Api-Application
+      in: header
+      schema:
+        type: string
+        pattern: ^[0-9a-zA-Z]{12}$
+    apiBrandingOptional:
+      required: false
+      description: Domain that provides the branding
+      name: Api-Branding
+      in: header
+      schema:
+        type: string
+        pattern: .+(\..[^.]+)
     apiVersion:
       required: true
       description: Version of the API to use
@@ -91,22 +102,6 @@ components:
         format: int32
         enum:
         - 2
-    apiBrandingOptional:
-      required: false
-      description: Domain that provides the branding
-      name: Api-Branding
-      in: header
-      schema:
-        type: string
-        pattern: .+(\..[^.]+)
-    apiApplication:
-      required: true
-      description: Get your Application ID via support@ixon.cloud
-      name: Api-Application
-      in: header
-      schema:
-        type: string
-        pattern: ^[0-9a-zA-Z]{12}$
   securitySchemes:
     bearerToken:
       type: http

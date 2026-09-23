@@ -1,4 +1,4 @@
-openapi: 3.0.2
+openapi: 3.2.0
 info:
   contact:
     name: IXON B.V.
@@ -8,7 +8,7 @@ info:
   license:
     name: All Rights Reserved
     url: https://www.ixon.cloud/
-  title: IXON AccessRecoverList AgentAccessRequestApprove API
+  title: IXON Agent Access Request Approve API
   version: 0.1.294
 servers:
 - description: IXON Cloud platform server
@@ -36,33 +36,26 @@ paths:
                   status:
                     type: string
                     default: success
-                    nullable: false
                   type:
                     type: string
-                    nullable: false
                   data:
-                    nullable: false
                     type: object
                     properties:
                       deviceName:
                         maxLength: 255
                         minLength: 1
-                        nullable: false
                         type: string
                       serviceNames:
                         type: array
                         items:
                           maxLength: 255
                           minLength: 1
-                          nullable: false
                           type: string
                       vpn:
-                        nullable: false
                         type: boolean
                       emailAddress:
                         maxLength: 254
                         minLength: 6
-                        nullable: false
                         pattern: ^(?=.{1,254}$)(?=.{1,64}@)[a-zA-Z0-9!#$%&\'*+/=?^_`{|}~-]+(?:\.[a-zA-Z0-9!#$%&\'*+/=?^_`{|}~-]+)*@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$
                         type: string
                     required:
@@ -76,16 +69,18 @@ paths:
       - $ref: '#/components/parameters/apiVersion'
       - $ref: '#/components/parameters/apiApplication'
       - $ref: '#/components/parameters/apiBrandingOptional'
+      operationId: postAgentsAccessRequestsApprove
+      x-operation-id-source: derived
 components:
   parameters:
-    apiApplication:
-      required: true
-      description: Get your Application ID via support@ixon.cloud
-      name: Api-Application
+    apiBrandingOptional:
+      required: false
+      description: Domain that provides the branding
+      name: Api-Branding
       in: header
       schema:
         type: string
-        pattern: ^[0-9a-zA-Z]{12}$
+        pattern: .+(\..[^.]+)
     apiVersion:
       required: true
       description: Version of the API to use
@@ -96,14 +91,31 @@ components:
         format: int32
         enum:
         - 2
-    apiBrandingOptional:
-      required: false
-      description: Domain that provides the branding
-      name: Api-Branding
+    apiApplication:
+      required: true
+      description: Get your Application ID via support@ixon.cloud
+      name: Api-Application
       in: header
       schema:
         type: string
-        pattern: .+(\..[^.]+)
+        pattern: ^[0-9a-zA-Z]{12}$
+  schemas:
+    4XXErrorSchema:
+      type: object
+      properties:
+        message:
+          type: string
+        propertyName:
+          type:
+          - string
+          - 'null'
+        listIndex:
+          type:
+          - integer
+          - 'null'
+          format: int32
+      required:
+      - message
   responses:
     4XXErrorResponse:
       description: 4XX error response
@@ -119,32 +131,13 @@ components:
               status:
                 type: string
                 default: error
-                nullable: false
               type:
                 type: string
                 default: Error
-                nullable: false
               data:
-                nullable: false
                 type: array
                 items:
                   $ref: '#/components/schemas/4XXErrorSchema'
-  schemas:
-    4XXErrorSchema:
-      type: object
-      properties:
-        message:
-          nullable: false
-          type: string
-        propertyName:
-          nullable: true
-          type: string
-        listIndex:
-          nullable: true
-          type: integer
-          format: int32
-      required:
-      - message
   securitySchemes:
     bearerToken:
       type: http

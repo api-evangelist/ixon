@@ -1,4 +1,4 @@
-openapi: 3.0.2
+openapi: 3.2.0
 info:
   contact:
     name: IXON B.V.
@@ -8,19 +8,19 @@ info:
   license:
     name: All Rights Reserved
     url: https://www.ixon.cloud/
-  title: IXON AccessRecoverList ServerTime API
+  title: IXON SCIM Schemas API
   version: 0.1.294
 servers:
 - description: IXON Cloud platform server
   url: https://portal.ixon.cloud:443/api/
 tags:
-- name: ServerTime
+- name: (Scim) Schemas
 paths:
-  /server-time:
+  /{api-version}/{api-application}/scim/v2/Schemas:
     get:
       tags:
-      - ServerTime
-      summary: ServerTime
+      - (Scim) Schemas
+      summary: ScimSchemas
       responses:
         '200':
           description: Success response
@@ -36,23 +36,37 @@ paths:
                   status:
                     type: string
                     default: success
-                    nullable: false
                   type:
                     type: string
-                    nullable: false
                   data:
-                    nullable: false
-                    type: object
-                    properties:
-                      datetime:
-                        nullable: false
-                        type: string
-                        format: date-time
+                    type:
+                    - object
+                    - 'null'
       parameters:
       - $ref: '#/components/parameters/apiVersion'
       - $ref: '#/components/parameters/apiBrandingOptional'
+      - required: true
+        name: api-version
+        in: path
+        schema:
+          type: string
+      - required: true
+        name: api-application
+        in: path
+        schema:
+          type: string
+      operationId: getByApiVersionByApiApplicationScimV2Schemas
+      x-operation-id-source: derived
 components:
   parameters:
+    apiBrandingOptional:
+      required: false
+      description: Domain that provides the branding
+      name: Api-Branding
+      in: header
+      schema:
+        type: string
+        pattern: .+(\..[^.]+)
     apiVersion:
       required: true
       description: Version of the API to use
@@ -63,14 +77,6 @@ components:
         format: int32
         enum:
         - 2
-    apiBrandingOptional:
-      required: false
-      description: Domain that provides the branding
-      name: Api-Branding
-      in: header
-      schema:
-        type: string
-        pattern: .+(\..[^.]+)
   securitySchemes:
     bearerToken:
       type: http

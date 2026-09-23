@@ -1,4 +1,4 @@
-openapi: 3.0.2
+openapi: 3.2.0
 info:
   contact:
     name: IXON B.V.
@@ -8,7 +8,7 @@ info:
   license:
     name: All Rights Reserved
     url: https://www.ixon.cloud/
-  title: IXON AccessRecoverList MyCompanyCustomProperty API
+  title: IXON My Company Custom Property API
   version: 0.1.294
 servers:
 - description: IXON Cloud platform server
@@ -36,13 +36,12 @@ paths:
                   status:
                     type: string
                     default: success
-                    nullable: false
                   type:
                     type: string
-                    nullable: false
                   data:
-                    type: object
-                    nullable: true
+                    type:
+                    - object
+                    - 'null'
         4XX:
           $ref: '#/components/responses/4XXErrorResponse'
       parameters:
@@ -65,15 +64,14 @@ paths:
                 name:
                   maxLength: 255
                   minLength: 1
-                  nullable: false
                   type: string
                 description:
                   maxLength: 255
                   minLength: 1
-                  nullable: true
-                  type: string
+                  type:
+                  - string
+                  - 'null'
                 required:
-                  nullable: false
                   type: boolean
                 validation:
                   oneOf:
@@ -82,7 +80,6 @@ paths:
                       type:
                         enum:
                         - bool
-                        nullable: false
                         type: string
                     required:
                     - type
@@ -91,7 +88,6 @@ paths:
                       type:
                         enum:
                         - datetime
-                        nullable: false
                         type: string
                     required:
                     - type
@@ -100,7 +96,6 @@ paths:
                       type:
                         enum:
                         - emailaddress
-                        nullable: false
                         type: string
                     required:
                     - type
@@ -109,14 +104,12 @@ paths:
                       type:
                         enum:
                         - enum
-                        nullable: false
                         type: string
                       options:
                         type: array
                         items:
                           maxLength: 255
                           minLength: 1
-                          nullable: false
                           pattern: '[^,]+'
                           type: string
                     required:
@@ -126,19 +119,20 @@ paths:
                       type:
                         enum:
                         - int
-                        nullable: false
                         type: string
                       minValue:
                         maximum: 9223372036854776000
                         minimum: -9223372036854776000
-                        nullable: true
-                        type: integer
+                        type:
+                        - integer
+                        - 'null'
                         format: int32
                       maxValue:
                         maximum: 9223372036854776000
                         minimum: -9223372036854776000
-                        nullable: true
-                        type: integer
+                        type:
+                        - integer
+                        - 'null'
                         format: int32
                     required:
                     - type
@@ -147,7 +141,6 @@ paths:
                       type:
                         enum:
                         - locale
-                        nullable: false
                         type: string
                     required:
                     - type
@@ -156,23 +149,25 @@ paths:
                       type:
                         enum:
                         - str
-                        nullable: false
                         type: string
                       minLength:
                         maximum: 65535
-                        nullable: true
-                        type: integer
+                        type:
+                        - integer
+                        - 'null'
                         format: int32
                       maxLength:
                         maximum: 65535
-                        nullable: true
-                        type: integer
+                        type:
+                        - integer
+                        - 'null'
                         format: int32
                       regex:
                         maxLength: 255
                         minLength: 0
-                        nullable: true
-                        type: string
+                        type:
+                        - string
+                        - 'null'
                     required:
                     - type
                   - type: object
@@ -180,7 +175,6 @@ paths:
                       type:
                         enum:
                         - timezone
-                        nullable: false
                         type: string
                     required:
                     - type
@@ -189,7 +183,6 @@ paths:
                       type:
                         enum:
                         - url
-                        nullable: false
                         type: string
                     required:
                     - type
@@ -198,11 +191,12 @@ paths:
                   items:
                     maxLength: 255
                     minLength: 1
-                    nullable: false
                     pattern: '[^,]+'
                     type: string
       security:
       - bearerToken: []
+      operationId: patchCompaniesMeCustomPropertiesByPublicId
+      x-operation-id-source: derived
     delete:
       tags:
       - MyCompanyCustomProperty
@@ -222,13 +216,12 @@ paths:
                   status:
                     type: string
                     default: success
-                    nullable: false
                   type:
                     type: string
-                    nullable: false
                   data:
-                    type: object
-                    nullable: true
+                    type:
+                    - object
+                    - 'null'
         4XX:
           $ref: '#/components/responses/4XXErrorResponse'
       parameters:
@@ -243,16 +236,10 @@ paths:
           type: string
       security:
       - bearerToken: []
+      operationId: deleteCompaniesMeCustomPropertiesByPublicId
+      x-operation-id-source: derived
 components:
   parameters:
-    apiApplication:
-      required: true
-      description: Get your Application ID via support@ixon.cloud
-      name: Api-Application
-      in: header
-      schema:
-        type: string
-        pattern: ^[0-9a-zA-Z]{12}$
     apiVersion:
       required: true
       description: Version of the API to use
@@ -271,6 +258,14 @@ components:
       schema:
         type: string
         pattern: .+(\..[^.]+)
+    apiApplication:
+      required: true
+      description: Get your Application ID via support@ixon.cloud
+      name: Api-Application
+      in: header
+      schema:
+        type: string
+        pattern: ^[0-9a-zA-Z]{12}$
     apiCompany:
       required: true
       description: PublicId of the company
@@ -279,6 +274,23 @@ components:
       schema:
         type: string
         pattern: ^(\d{4}-){4}\d{4}$
+  schemas:
+    4XXErrorSchema:
+      type: object
+      properties:
+        message:
+          type: string
+        propertyName:
+          type:
+          - string
+          - 'null'
+        listIndex:
+          type:
+          - integer
+          - 'null'
+          format: int32
+      required:
+      - message
   responses:
     4XXErrorResponse:
       description: 4XX error response
@@ -294,32 +306,13 @@ components:
               status:
                 type: string
                 default: error
-                nullable: false
               type:
                 type: string
                 default: Error
-                nullable: false
               data:
-                nullable: false
                 type: array
                 items:
                   $ref: '#/components/schemas/4XXErrorSchema'
-  schemas:
-    4XXErrorSchema:
-      type: object
-      properties:
-        message:
-          nullable: false
-          type: string
-        propertyName:
-          nullable: true
-          type: string
-        listIndex:
-          nullable: true
-          type: integer
-          format: int32
-      required:
-      - message
   securitySchemes:
     bearerToken:
       type: http
