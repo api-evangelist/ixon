@@ -234,16 +234,6 @@ paths:
       x-operation-id-source: derived
 components:
   parameters:
-    apiVersion:
-      required: true
-      description: Version of the API to use
-      name: Api-Version
-      in: header
-      schema:
-        type: integer
-        format: int32
-        enum:
-        - 2
     apiBrandingOptional:
       required: false
       description: Domain that provides the branding
@@ -260,18 +250,14 @@ components:
       schema:
         type: string
         pattern: ^[0-9a-zA-Z]{12}$
-    fieldsParameter:
-      required: false
-      description: 'Fields to select. Use "*" for all the top-level fields. Or check the "Success response" below for other fields.
-
-
-        To get the fields of a subresource do subresource.field or for multiple fields of one subresource do subresource(field,field)'
-      name: fields
-      in: query
+    apiCompany:
+      required: true
+      description: PublicId of the company
+      name: Api-Company
+      in: header
       schema:
-        type: array
-        items:
-          type: string
+        type: string
+        pattern: ^(\d{4}-){4}\d{4}$
     filtersParameter:
       required: false
       description: 'Filter the returned item(s). Format: operator(column,val)
@@ -287,31 +273,28 @@ components:
         type: array
         items:
           type: string
-    apiCompany:
+    apiVersion:
       required: true
-      description: PublicId of the company
-      name: Api-Company
+      description: Version of the API to use
+      name: Api-Version
       in: header
       schema:
-        type: string
-        pattern: ^(\d{4}-){4}\d{4}$
-  schemas:
-    4XXErrorSchema:
-      type: object
-      properties:
-        message:
+        type: integer
+        format: int32
+        enum:
+        - 2
+    fieldsParameter:
+      required: false
+      description: 'Fields to select. Use "*" for all the top-level fields. Or check the "Success response" below for other fields.
+
+
+        To get the fields of a subresource do subresource.field or for multiple fields of one subresource do subresource(field,field)'
+      name: fields
+      in: query
+      schema:
+        type: array
+        items:
           type: string
-        propertyName:
-          type:
-          - string
-          - 'null'
-        listIndex:
-          type:
-          - integer
-          - 'null'
-          format: int32
-      required:
-      - message
   responses:
     4XXErrorResponse:
       description: 4XX error response
@@ -334,6 +317,23 @@ components:
                 type: array
                 items:
                   $ref: '#/components/schemas/4XXErrorSchema'
+  schemas:
+    4XXErrorSchema:
+      type: object
+      properties:
+        message:
+          type: string
+        propertyName:
+          type:
+          - string
+          - 'null'
+        listIndex:
+          type:
+          - integer
+          - 'null'
+          format: int32
+      required:
+      - message
   securitySchemes:
     bearerToken:
       type: http

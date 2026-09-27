@@ -50,14 +50,6 @@ paths:
       x-operation-id-source: derived
 components:
   parameters:
-    apiApplication:
-      required: true
-      description: Get your Application ID via support@ixon.cloud
-      name: Api-Application
-      in: header
-      schema:
-        type: string
-        pattern: ^[0-9a-zA-Z]{12}$
     apiBrandingOptional:
       required: false
       description: Domain that provides the branding
@@ -66,6 +58,14 @@ components:
       schema:
         type: string
         pattern: .+(\..[^.]+)
+    apiApplication:
+      required: true
+      description: Get your Application ID via support@ixon.cloud
+      name: Api-Application
+      in: header
+      schema:
+        type: string
+        pattern: ^[0-9a-zA-Z]{12}$
     apiVersion:
       required: true
       description: Version of the API to use

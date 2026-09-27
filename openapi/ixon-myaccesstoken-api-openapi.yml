@@ -241,6 +241,22 @@ paths:
       x-operation-id-source: derived
 components:
   parameters:
+    apiApplication:
+      required: true
+      description: Get your Application ID via support@ixon.cloud
+      name: Api-Application
+      in: header
+      schema:
+        type: string
+        pattern: ^[0-9a-zA-Z]{12}$
+    apiBrandingOptional:
+      required: false
+      description: Domain that provides the branding
+      name: Api-Branding
+      in: header
+      schema:
+        type: string
+        pattern: .+(\..[^.]+)
     apiVersion:
       required: true
       description: Version of the API to use
@@ -251,22 +267,6 @@ components:
         format: int32
         enum:
         - 2
-    apiBrandingOptional:
-      required: false
-      description: Domain that provides the branding
-      name: Api-Branding
-      in: header
-      schema:
-        type: string
-        pattern: .+(\..[^.]+)
-    apiApplication:
-      required: true
-      description: Get your Application ID via support@ixon.cloud
-      name: Api-Application
-      in: header
-      schema:
-        type: string
-        pattern: ^[0-9a-zA-Z]{12}$
     fieldsParameter:
       required: false
       description: 'Fields to select. Use "*" for all the top-level fields. Or check the "Success response" below for other fields.
@@ -279,23 +279,6 @@ components:
         type: array
         items:
           type: string
-  schemas:
-    4XXErrorSchema:
-      type: object
-      properties:
-        message:
-          type: string
-        propertyName:
-          type:
-          - string
-          - 'null'
-        listIndex:
-          type:
-          - integer
-          - 'null'
-          format: int32
-      required:
-      - message
   responses:
     4XXErrorResponse:
       description: 4XX error response
@@ -318,6 +301,23 @@ components:
                 type: array
                 items:
                   $ref: '#/components/schemas/4XXErrorSchema'
+  schemas:
+    4XXErrorSchema:
+      type: object
+      properties:
+        message:
+          type: string
+        propertyName:
+          type:
+          - string
+          - 'null'
+        listIndex:
+          type:
+          - integer
+          - 'null'
+          format: int32
+      required:
+      - message
   securitySchemes:
     bearerToken:
       type: http

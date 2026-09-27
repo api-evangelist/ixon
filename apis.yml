@@ -32,6 +32,10 @@ accessModel:
   method: derived
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/ixon.png
 tags:
+  - Industrial IoT
+  - Machine Connectivity
+  - Remote Access
+tags_raw:
   - IIoT
   - Industrial IoT
   - Machine Connectivity
@@ -5090,8 +5094,6 @@ apis:
   humanURL: https://developer.ixon.cloud/docs
   baseURL: https://portal.ixon.cloud/api/
   tags:
-  - GroupType
-  tags_raw:
   - Group Type
   properties:
   - type: OpenAPI
@@ -5163,8 +5165,6 @@ apis:
   humanURL: https://developer.ixon.cloud/docs
   baseURL: https://portal.ixon.cloud/api/
   tags:
-  - ServiceAccount
-  tags_raw:
   - Service Account
   properties:
   - type: OpenAPI
