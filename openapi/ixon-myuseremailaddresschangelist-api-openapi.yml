@@ -223,16 +223,30 @@ paths:
       x-operation-id-source: derived
 components:
   parameters:
-    apiApplication:
+    fieldsParameter:
+      required: false
+      description: 'Fields to select. Use "*" for all the top-level fields. Or check the "Success response" below for other fields.
+
+
+        To get the fields of a subresource do subresource.field or for multiple fields of one subresource do subresource(field,field)'
+      name: fields
+      in: query
+      schema:
+        type: array
+        items:
+          type: string
+    apiVersion:
       required: true
-      description: Get your Application ID via support@ixon.cloud
-      name: Api-Application
+      description: Version of the API to use
+      name: Api-Version
       in: header
       schema:
-        type: string
-        pattern: ^[0-9a-zA-Z]{12}$
-    apiBrandingOptional:
-      required: false
+        type: integer
+        format: int32
+        enum:
+        - 2
+    apiBrandingRequired:
+      required: true
       description: Domain that provides the branding
       name: Api-Branding
       in: header
@@ -254,36 +268,39 @@ components:
         type: array
         items:
           type: string
-    apiBrandingRequired:
+    apiApplication:
       required: true
+      description: Get your Application ID via support@ixon.cloud
+      name: Api-Application
+      in: header
+      schema:
+        type: string
+        pattern: ^[0-9a-zA-Z]{12}$
+    apiBrandingOptional:
+      required: false
       description: Domain that provides the branding
       name: Api-Branding
       in: header
       schema:
         type: string
         pattern: .+(\..[^.]+)
-    apiVersion:
-      required: true
-      description: Version of the API to use
-      name: Api-Version
-      in: header
-      schema:
-        type: integer
-        format: int32
-        enum:
-        - 2
-    fieldsParameter:
-      required: false
-      description: 'Fields to select. Use "*" for all the top-level fields. Or check the "Success response" below for other fields.
-
-
-        To get the fields of a subresource do subresource.field or for multiple fields of one subresource do subresource(field,field)'
-      name: fields
-      in: query
-      schema:
-        type: array
-        items:
+  schemas:
+    4XXErrorSchema:
+      type: object
+      properties:
+        message:
           type: string
+        propertyName:
+          type:
+          - string
+          - 'null'
+        listIndex:
+          type:
+          - integer
+          - 'null'
+          format: int32
+      required:
+      - message
   responses:
     4XXErrorResponse:
       description: 4XX error response
@@ -306,23 +323,6 @@ components:
                 type: array
                 items:
                   $ref: '#/components/schemas/4XXErrorSchema'
-  schemas:
-    4XXErrorSchema:
-      type: object
-      properties:
-        message:
-          type: string
-        propertyName:
-          type:
-          - string
-          - 'null'
-        listIndex:
-          type:
-          - integer
-          - 'null'
-          format: int32
-      required:
-      - message
   securitySchemes:
     bearerToken:
       type: http

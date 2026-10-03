@@ -55,14 +55,6 @@ paths:
       x-operation-id-source: derived
 components:
   parameters:
-    apiBrandingOptional:
-      required: false
-      description: Domain that provides the branding
-      name: Api-Branding
-      in: header
-      schema:
-        type: string
-        pattern: .+(\..[^.]+)
     apiVersion:
       required: true
       description: Version of the API to use
@@ -73,6 +65,14 @@ components:
         format: int32
         enum:
         - 2
+    apiBrandingOptional:
+      required: false
+      description: Domain that provides the branding
+      name: Api-Branding
+      in: header
+      schema:
+        type: string
+        pattern: .+(\..[^.]+)
   securitySchemes:
     bearerToken:
       type: http

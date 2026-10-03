@@ -65,14 +65,6 @@ paths:
       x-operation-id-source: derived
 components:
   parameters:
-    apiApplication:
-      required: true
-      description: Get your Application ID via support@ixon.cloud
-      name: Api-Application
-      in: header
-      schema:
-        type: string
-        pattern: ^[0-9a-zA-Z]{12}$
     apiBrandingRequired:
       required: true
       description: Domain that provides the branding
@@ -91,6 +83,14 @@ components:
         format: int32
         enum:
         - 2
+    apiApplication:
+      required: true
+      description: Get your Application ID via support@ixon.cloud
+      name: Api-Application
+      in: header
+      schema:
+        type: string
+        pattern: ^[0-9a-zA-Z]{12}$
   securitySchemes:
     bearerToken:
       type: http

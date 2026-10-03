@@ -95,22 +95,6 @@ paths:
       x-operation-id-source: derived
 components:
   parameters:
-    apiBrandingOptional:
-      required: false
-      description: Domain that provides the branding
-      name: Api-Branding
-      in: header
-      schema:
-        type: string
-        pattern: .+(\..[^.]+)
-    apiApplication:
-      required: true
-      description: Get your Application ID via support@ixon.cloud
-      name: Api-Application
-      in: header
-      schema:
-        type: string
-        pattern: ^[0-9a-zA-Z]{12}$
     apiCompany:
       required: true
       description: PublicId of the company
@@ -119,16 +103,13 @@ components:
       schema:
         type: string
         pattern: ^(\d{4}-){4}\d{4}$
-    filtersParameter:
+    fieldsParameter:
       required: false
-      description: 'Filter the returned item(s). Format: operator(column,val)
+      description: 'Fields to select. Use "*" for all the top-level fields. Or check the "Success response" below for other fields.
 
 
-        Possible operators are: lt, less, lte, lessorequal, eq, equals, ne, differs, gt, greater, gte, greaterorequal, in, ni, isnull, isnotnull, between, contains.
-
-
-        Example: eq(publicId,"publicId_val")'
-      name: filters
+        To get the fields of a subresource do subresource.field or for multiple fields of one subresource do subresource(field,field)'
+      name: fields
       in: query
       schema:
         type: array
@@ -144,18 +125,54 @@ components:
         format: int32
         enum:
         - 2
-    fieldsParameter:
+    filtersParameter:
       required: false
-      description: 'Fields to select. Use "*" for all the top-level fields. Or check the "Success response" below for other fields.
+      description: 'Filter the returned item(s). Format: operator(column,val)
 
 
-        To get the fields of a subresource do subresource.field or for multiple fields of one subresource do subresource(field,field)'
-      name: fields
+        Possible operators are: lt, less, lte, lessorequal, eq, equals, ne, differs, gt, greater, gte, greaterorequal, in, ni, isnull, isnotnull, between, contains.
+
+
+        Example: eq(publicId,"publicId_val")'
+      name: filters
       in: query
       schema:
         type: array
         items:
           type: string
+    apiApplication:
+      required: true
+      description: Get your Application ID via support@ixon.cloud
+      name: Api-Application
+      in: header
+      schema:
+        type: string
+        pattern: ^[0-9a-zA-Z]{12}$
+    apiBrandingOptional:
+      required: false
+      description: Domain that provides the branding
+      name: Api-Branding
+      in: header
+      schema:
+        type: string
+        pattern: .+(\..[^.]+)
+  schemas:
+    4XXErrorSchema:
+      type: object
+      properties:
+        message:
+          type: string
+        propertyName:
+          type:
+          - string
+          - 'null'
+        listIndex:
+          type:
+          - integer
+          - 'null'
+          format: int32
+      required:
+      - message
   responses:
     4XXErrorResponse:
       description: 4XX error response
@@ -178,23 +195,6 @@ components:
                 type: array
                 items:
                   $ref: '#/components/schemas/4XXErrorSchema'
-  schemas:
-    4XXErrorSchema:
-      type: object
-      properties:
-        message:
-          type: string
-        propertyName:
-          type:
-          - string
-          - 'null'
-        listIndex:
-          type:
-          - integer
-          - 'null'
-          format: int32
-      required:
-      - message
   securitySchemes:
     bearerToken:
       type: http
