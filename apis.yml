@@ -31,6 +31,9 @@ accessModel:
   generated: '2026-09-03'
   method: derived
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/ixon.png
+x-docs-platform: readme
+x-docs-platform-confidence: high
+x-docs-platform-checked: 2026-10-03
 tags:
   - Industrial IoT
   - Machine Connectivity
@@ -3262,6 +3265,8 @@ apis:
   humanURL: https://developer.ixon.cloud/docs
   baseURL: https://portal.ixon.cloud/api/
   tags:
+  - Menu Item
+  tags_raw:
   - MenuItem
   properties:
   - type: OpenAPI
@@ -5094,6 +5099,8 @@ apis:
   humanURL: https://developer.ixon.cloud/docs
   baseURL: https://portal.ixon.cloud/api/
   tags:
+  - GroupType
+  tags_raw:
   - Group Type
   properties:
   - type: OpenAPI
@@ -5165,6 +5172,8 @@ apis:
   humanURL: https://developer.ixon.cloud/docs
   baseURL: https://portal.ixon.cloud/api/
   tags:
+  - ServiceAccount
+  tags_raw:
   - Service Account
   properties:
   - type: OpenAPI
