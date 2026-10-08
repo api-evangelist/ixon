@@ -5207,6 +5207,10 @@ apis:
   - type: APIReference
     url: https://developer.ixon.cloud/v2/reference
 common:
+  - type: RateLimits
+    url: rate-limits/ixon-rate-limits.yml
+  - type: FinOps
+    url: finops/ixon-finops.yml
   - type: Pricing
     url: https://www.ixon.cloud/pricing-edge
   - type: Plans
