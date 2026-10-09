@@ -19,11 +19,11 @@ artifacts:
     method: derived
     evidence: openapi/ixon-accessrecoverlist-api
   collections/ixon-accesstoken-api.opencollection.json:
-    method: derived
-    evidence: openapi/ixon-accesstoken-api
+    method: unknown
+    evidence: no authorship recorded
   collections/ixon-accesstoken-api.postman_collection.json:
-    method: derived
-    evidence: openapi/ixon-accesstoken-api
+    method: unknown
+    evidence: no authorship recorded
   collections/ixon-accesstokenlist-api.opencollection.json:
     method: derived
     evidence: openapi/ixon-accesstokenlist-api
@@ -769,11 +769,11 @@ artifacts:
     method: derived
     evidence: openapi/ixon-assetdescendantlist-api
   collections/ixon-assetlibrary-api.opencollection.json:
-    method: derived
-    evidence: openapi/ixon-assetlibrary-api
+    method: unknown
+    evidence: no authorship recorded
   collections/ixon-assetlibrary-api.postman_collection.json:
-    method: derived
-    evidence: openapi/ixon-assetlibrary-api
+    method: unknown
+    evidence: no authorship recorded
   collections/ixon-assetlibraryinstancedetach-api.opencollection.json:
     method: derived
     evidence: openapi/ixon-assetlibraryinstancedetach-api
@@ -811,11 +811,11 @@ artifacts:
     method: derived
     evidence: openapi/ixon-assetlibraryversionlist-api
   collections/ixon-assetlist-api.opencollection.json:
-    method: derived
-    evidence: openapi/ixon-assetlist-api
+    method: unknown
+    evidence: no authorship recorded
   collections/ixon-assetlist-api.postman_collection.json:
-    method: derived
-    evidence: openapi/ixon-assetlist-api
+    method: unknown
+    evidence: no authorship recorded
   collections/ixon-assetmembership-api.opencollection.json:
     method: derived
     evidence: openapi/ixon-assetmembership-api
@@ -955,11 +955,11 @@ artifacts:
     method: derived
     evidence: openapi/ixon-audiencedefault-api
   collections/ixon-audiencelist-api.opencollection.json:
-    method: derived
-    evidence: openapi/ixon-audiencelist-api
+    method: unknown
+    evidence: no authorship recorded
   collections/ixon-audiencelist-api.postman_collection.json:
-    method: derived
-    evidence: openapi/ixon-audiencelist-api
+    method: unknown
+    evidence: no authorship recorded
   collections/ixon-auditlogexport-api.opencollection.json:
     method: derived
     evidence: openapi/ixon-auditlogexport-api
@@ -1189,11 +1189,11 @@ artifacts:
     method: derived
     evidence: openapi/ixon-controlleddevicemembershiplist-api
   collections/ixon-customproperty-api.opencollection.json:
-    method: derived
-    evidence: openapi/ixon-customproperty-api
+    method: unknown
+    evidence: no authorship recorded
   collections/ixon-customproperty-api.postman_collection.json:
-    method: derived
-    evidence: openapi/ixon-customproperty-api
+    method: unknown
+    evidence: no authorship recorded
   collections/ixon-custompropertylist-api.opencollection.json:
     method: derived
     evidence: openapi/ixon-custompropertylist-api
@@ -1207,11 +1207,11 @@ artifacts:
     method: derived
     evidence: openapi/ixon-datadeletionrequestlist-api
   collections/ixon-dataexport-api.opencollection.json:
-    method: derived
-    evidence: openapi/ixon-dataexport-api
+    method: unknown
+    evidence: no authorship recorded
   collections/ixon-dataexport-api.postman_collection.json:
-    method: derived
-    evidence: openapi/ixon-dataexport-api
+    method: unknown
+    evidence: no authorship recorded
   collections/ixon-datalist-api.opencollection.json:
     method: derived
     evidence: openapi/ixon-datalist-api
@@ -1279,11 +1279,11 @@ artifacts:
     method: derived
     evidence: openapi/ixon-grouprolelist-api
   collections/ixon-grouptype-api.opencollection.json:
-    method: derived
-    evidence: openapi/ixon-grouptype-api
+    method: unknown
+    evidence: no authorship recorded
   collections/ixon-grouptype-api.postman_collection.json:
-    method: derived
-    evidence: openapi/ixon-grouptype-api
+    method: unknown
+    evidence: no authorship recorded
   collections/ixon-grouptypelist-api.opencollection.json:
     method: derived
     evidence: openapi/ixon-grouptypelist-api
@@ -1561,11 +1561,11 @@ artifacts:
     method: derived
     evidence: openapi/ixon-mysector-api
   collections/ixon-myuser-api.opencollection.json:
-    method: derived
-    evidence: openapi/ixon-myuser-api
+    method: unknown
+    evidence: no authorship recorded
   collections/ixon-myuser-api.postman_collection.json:
-    method: derived
-    evidence: openapi/ixon-myuser-api
+    method: unknown
+    evidence: no authorship recorded
   collections/ixon-myuseremailaddresschange-api.opencollection.json:
     method: derived
     evidence: openapi/ixon-myuseremailaddresschange-api
@@ -1939,17 +1939,17 @@ artifacts:
     method: derived
     evidence: openapi/ixon-routerdisplayscreensaverupload-api
   collections/ixon-scimschemas-api.opencollection.json:
-    method: derived
-    evidence: openapi/ixon-scimschemas-api
+    method: unknown
+    evidence: no authorship recorded
   collections/ixon-scimschemas-api.postman_collection.json:
-    method: derived
-    evidence: openapi/ixon-scimschemas-api
+    method: unknown
+    evidence: no authorship recorded
   collections/ixon-scimserviceproviderconfig-api.opencollection.json:
-    method: derived
-    evidence: openapi/ixon-scimserviceproviderconfig-api
+    method: unknown
+    evidence: no authorship recorded
   collections/ixon-scimserviceproviderconfig-api.postman_collection.json:
-    method: derived
-    evidence: openapi/ixon-scimserviceproviderconfig-api
+    method: unknown
+    evidence: no authorship recorded
   collections/ixon-sector-api.opencollection.json:
     method: derived
     evidence: openapi/ixon-sector-api
@@ -1963,11 +1963,11 @@ artifacts:
     method: derived
     evidence: openapi/ixon-sectorlist-api
   collections/ixon-servertime-api.opencollection.json:
-    method: derived
-    evidence: openapi/ixon-servertime-api
+    method: unknown
+    evidence: no authorship recorded
   collections/ixon-servertime-api.postman_collection.json:
-    method: derived
-    evidence: openapi/ixon-servertime-api
+    method: unknown
+    evidence: no authorship recorded
   collections/ixon-servervalidation-api.opencollection.json:
     method: derived
     evidence: openapi/ixon-servervalidation-api
@@ -1975,11 +1975,11 @@ artifacts:
     method: derived
     evidence: openapi/ixon-servervalidation-api
   collections/ixon-serviceaccount-api.opencollection.json:
-    method: derived
-    evidence: openapi/ixon-serviceaccount-api
+    method: unknown
+    evidence: no authorship recorded
   collections/ixon-serviceaccount-api.postman_collection.json:
-    method: derived
-    evidence: openapi/ixon-serviceaccount-api
+    method: unknown
+    evidence: no authorship recorded
   collections/ixon-serviceaccountlist-api.opencollection.json:
     method: derived
     evidence: openapi/ixon-serviceaccountlist-api
@@ -2071,11 +2071,11 @@ artifacts:
     method: derived
     evidence: openapi/ixon-user-api
   collections/ixon-userlist-api.opencollection.json:
-    method: derived
-    evidence: openapi/ixon-userlist-api
+    method: unknown
+    evidence: no authorship recorded
   collections/ixon-userlist-api.postman_collection.json:
-    method: derived
-    evidence: openapi/ixon-userlist-api
+    method: unknown
+    evidence: no authorship recorded
   collections/ixon-usermembership-api.opencollection.json:
     method: derived
     evidence: openapi/ixon-usermembership-api
@@ -2149,11 +2149,11 @@ artifacts:
     method: derived
     evidence: openapi/ixon-webaccesssessionrecordinglist-api
   collections/ixon-webhooksubscription-api.opencollection.json:
-    method: derived
-    evidence: openapi/ixon-webhooksubscription-api
+    method: unknown
+    evidence: no authorship recorded
   collections/ixon-webhooksubscription-api.postman_collection.json:
-    method: derived
-    evidence: openapi/ixon-webhooksubscription-api
+    method: unknown
+    evidence: no authorship recorded
   collections/ixon-webhooksubscriptionlist-api.opencollection.json:
     method: derived
     evidence: openapi/ixon-webhooksubscriptionlist-api
@@ -2175,55 +2175,10 @@ artifacts:
   finops/ixon-finops.yml:
     method: generated
     evidence: declared in the artifact
-  kin/checks-2026-09-05T072335.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-08-06T210741.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-08-07T135032.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-08-10T093022.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-08-10T111628.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-08-11T211707.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-08-12T193225.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-08-17T064519.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-08-19T080027.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-08-19T082702.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-08-19T114122.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-08-20T165047.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-08-20T191845.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-08-20T205517.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-08-21T110057.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-08-24T064859.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-08-24T171257.yml:
+  front-door-ai/2026-09-17.yml:
+    method: unknown
+    evidence: no authorship recorded
+  kin/checks-2026-09-24T161608.yml:
     method: generated
     evidence: Kin Score snapshot written by score.rb
   kin/score-2026-08-25T125852.yml:
@@ -2310,16 +2265,134 @@ artifacts:
   kin/score-2026-09-05T072335.yml:
     method: generated
     evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-05T144739.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-05T195450.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-05T211839.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-06T011047.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-06T211804.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-06T224210.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-07T200636.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-07T213054.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-08T214843.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-08T232836.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-10T204815.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-10T222408.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-12T062655.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-12T080032.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-12T204651.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-12T221936.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-13T214537.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-14T064754.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-14T210656.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-14T225847.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-15T211329.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-15T230249.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-16T210549.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-16T225339.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-17T211151.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-17T233623.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-18T205255.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-18T231945.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-19T165737.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-19T193153.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-20T205903.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-20T232958.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-21T211425.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-21T233935.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-22T213221.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-23T000603.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-24T064009.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-24T090406.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-24T161608.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
   llms/ixon-llms.txt:
     method: searched
     evidence: 'derive-llms-provenance.py: harvested'
   openapi/_original/ixon-openapi.json:
     method: harvested
-    evidence: fetched from the provider as-is; byte-identical to the source
-  openapi/ixon-accessrecoverlist-api-openapi.yml:
+    evidence: found in openapi/_original/; the fetch URL and bytes were not recorded, so byte-identity
+      to the provider's source is unverified
+  openapi/ixon-access-token-api-openapi.yml:
     method: derived
     evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/ixon-accesstoken-api-openapi.yml:
+  openapi/ixon-accessrecoverlist-api-openapi.yml:
     method: derived
     evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
   openapi/ixon-accesstokenlist-api-openapi.yml:
@@ -2676,6 +2749,12 @@ artifacts:
   openapi/ixon-asset-api-openapi.yml:
     method: derived
     evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
+  openapi/ixon-asset-library-api-openapi.yml:
+    method: derived
+    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
+  openapi/ixon-asset-list-api-openapi.yml:
+    method: derived
+    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
   openapi/ixon-assetappconfig-api-openapi.yml:
     method: derived
     evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
@@ -2694,9 +2773,6 @@ artifacts:
   openapi/ixon-assetdescendantlist-api-openapi.yml:
     method: derived
     evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/ixon-assetlibrary-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
   openapi/ixon-assetlibraryinstancedetach-api-openapi.yml:
     method: derived
     evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
@@ -2713,9 +2789,6 @@ artifacts:
     method: derived
     evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
   openapi/ixon-assetlibraryversionlist-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/ixon-assetlist-api-openapi.yml:
     method: derived
     evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
   openapi/ixon-assetmembership-api-openapi.yml:
@@ -2778,6 +2851,9 @@ artifacts:
   openapi/ixon-audience-api-openapi.yml:
     method: derived
     evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
+  openapi/ixon-audience-list-api-openapi.yml:
+    method: derived
+    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
   openapi/ixon-audienceagentreferencelist-api-openapi.yml:
     method: derived
     evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
@@ -2785,9 +2861,6 @@ artifacts:
     method: derived
     evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
   openapi/ixon-audiencedefault-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/ixon-audiencelist-api-openapi.yml:
     method: derived
     evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
   openapi/ixon-auditlogexport-api-openapi.yml:
@@ -2904,16 +2977,16 @@ artifacts:
   openapi/ixon-controlleddevicemembershiplist-api-openapi.yml:
     method: derived
     evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/ixon-customproperty-api-openapi.yml:
+  openapi/ixon-custom-property-api-openapi.yml:
     method: derived
     evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
   openapi/ixon-custompropertylist-api-openapi.yml:
     method: derived
     evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/ixon-datadeletionrequestlist-api-openapi.yml:
+  openapi/ixon-data-export-api-openapi.yml:
     method: derived
     evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/ixon-dataexport-api-openapi.yml:
+  openapi/ixon-datadeletionrequestlist-api-openapi.yml:
     method: derived
     evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
   openapi/ixon-datalist-api-openapi.yml:
@@ -2940,6 +3013,9 @@ artifacts:
   openapi/ixon-group-api-openapi.yml:
     method: derived
     evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
+  openapi/ixon-group-type-api-openapi.yml:
+    method: derived
+    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
   openapi/ixon-grouplist-api-openapi.yml:
     method: derived
     evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
@@ -2947,9 +3023,6 @@ artifacts:
     method: derived
     evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
   openapi/ixon-grouprolelist-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/ixon-grouptype-api-openapi.yml:
     method: derived
     evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
   openapi/ixon-grouptypelist-api-openapi.yml:
@@ -3039,6 +3112,9 @@ artifacts:
   openapi/ixon-mqttbrokerlist-api-openapi.yml:
     method: derived
     evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
+  openapi/ixon-my-user-api-openapi.yml:
+    method: derived
+    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
   openapi/ixon-myaccessrecover-api-openapi.yml:
     method: derived
     evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
@@ -3088,9 +3164,6 @@ artifacts:
     method: derived
     evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
   openapi/ixon-mysector-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/ixon-myuser-api-openapi.yml:
     method: derived
     evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
   openapi/ixon-myuseremailaddresschange-api-openapi.yml:
@@ -3279,10 +3352,10 @@ artifacts:
   openapi/ixon-routerdisplayscreensaverupload-api-openapi.yml:
     method: derived
     evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/ixon-scimschemas-api-openapi.yml:
+  openapi/ixon-scim-schemas-api-openapi.yml:
     method: derived
     evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/ixon-scimserviceproviderconfig-api-openapi.yml:
+  openapi/ixon-scim-serviceproviderconfig-api-openapi.yml:
     method: derived
     evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
   openapi/ixon-sector-api-openapi.yml:
@@ -3291,13 +3364,13 @@ artifacts:
   openapi/ixon-sectorlist-api-openapi.yml:
     method: derived
     evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/ixon-servertime-api-openapi.yml:
+  openapi/ixon-server-time-api-openapi.yml:
     method: derived
     evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
   openapi/ixon-servervalidation-api-openapi.yml:
     method: derived
     evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/ixon-serviceaccount-api-openapi.yml:
+  openapi/ixon-service-account-api-openapi.yml:
     method: derived
     evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
   openapi/ixon-serviceaccountlist-api-openapi.yml:
@@ -3345,7 +3418,7 @@ artifacts:
   openapi/ixon-user-api-openapi.yml:
     method: derived
     evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/ixon-userlist-api-openapi.yml:
+  openapi/ixon-user-list-api-openapi.yml:
     method: derived
     evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
   openapi/ixon-usermembership-api-openapi.yml:
@@ -3384,7 +3457,7 @@ artifacts:
   openapi/ixon-webaccesssessionrecordinglist-api-openapi.yml:
     method: derived
     evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/ixon-webhooksubscription-api-openapi.yml:
+  openapi/ixon-webhook-subscription-api-openapi.yml:
     method: derived
     evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
   openapi/ixon-webhooksubscriptionlist-api-openapi.yml:
@@ -3394,7 +3467,7 @@ artifacts:
     method: derived
     evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
   plans/ixon-plans-pricing.yml:
-    method: generated
+    method: searched
     evidence: declared in the artifact
   rate-limits/ixon-rate-limits.yml:
     method: generated

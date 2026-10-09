@@ -114,3 +114,149 @@ plans:
   currency: USD
   period: one-time
   unit: item
+x-canonical:
+  generated: '2026-10-08'
+  vocabulary: all/0-working/economics/plans-canonical.yml
+  models:
+  - hybrid
+  - metered
+  - subscription
+  units:
+  - object
+  plans:
+  - name: IX2400 IXrouter3 Ethernet
+    access: other
+    model: hybrid
+    model_how: derived
+    units:
+    - object
+    periods:
+    - one-time
+  - name: IX2405 IXrouter3 4G/LTE
+    access: other
+    model: hybrid
+    model_how: derived
+    units:
+    - object
+    periods:
+    - one-time
+  - name: IX2410 IXrouter3 Wi-Fi
+    access: other
+    model: hybrid
+    model_how: derived
+    units:
+    - object
+    periods:
+    - one-time
+  - name: IX2415 IXrouter3 4G/LTE & Wi-Fi
+    access: other
+    model: hybrid
+    model_how: derived
+    units:
+    - object
+    periods:
+    - one-time
+  - name: IX6000 SecureEdge Pro Ethernet
+    access: other
+    model: metered
+    model_how: derived
+    units:
+    - object
+    periods:
+    - none
+  - name: IX6005 SecureEdge Pro 4G/LTE
+    access: other
+    model: metered
+    model_how: derived
+    units:
+    - object
+    periods:
+    - none
+  - name: IX6010 SecureEdge Pro Wi-Fi
+    access: other
+    model: metered
+    model_how: derived
+    units:
+    - object
+    periods:
+    - none
+  - name: IX6015 SecureEdge Pro 4G/LTE & Wi-Fi
+    access: other
+    model: metered
+    model_how: derived
+    units:
+    - object
+    periods:
+    - none
+  - name: IXP504 IXagent - Lifetime license for one device
+    access: other
+    model: subscription
+    model_how: derived
+    units:
+    - other
+    periods:
+    - one-time
+  - name: IX2201 4G/LTE Pentaband antenna rotatable
+    access: other
+    model: subscription
+    model_how: derived
+    units:
+    - other
+    periods:
+    - one-time
+  - name: IX2202 3G Pentaband antenna magnetic mount with 2m cable
+    access: other
+    model: subscription
+    model_how: derived
+    units:
+    - other
+    periods:
+    - one-time
+  - name: IX2203 3G Pentaband antenna screw mount with 3m cable, IP67
+    access: other
+    model: subscription
+    model_how: derived
+    units:
+    - other
+    periods:
+    - one-time
+  - name: IX2205 4G/LTE Wideband antenna screw mount with 3m cable, IP67
+    access: other
+    model: subscription
+    model_how: derived
+    units:
+    - other
+    periods:
+    - one-time
+  - name: IX2206 4G/LTE Wideband antenna magnetic whip with 3m cable
+    access: other
+    model: subscription
+    model_how: derived
+    units:
+    - other
+    periods:
+    - one-time
+  - name: IX2207 Wall mount power supply for IXrouter - US
+    access: other
+    model: subscription
+    model_how: derived
+    units:
+    - other
+    periods:
+    - one-time
+  - name: IX2211 Wi-Fi antenna screw mount with 3m cable, IP67
+    access: other
+    model: subscription
+    model_how: derived
+    units:
+    - other
+    periods:
+    - one-time
+  - name: IX2212 Dual-Band Wi-Fi antenna 6cm rotatable
+    access: other
+    model: subscription
+    model_how: derived
+    units:
+    - other
+    periods:
+    - one-time
