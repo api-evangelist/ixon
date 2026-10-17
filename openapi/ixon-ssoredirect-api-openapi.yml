@@ -55,6 +55,25 @@ paths:
       operationId: getSsoRedirectByApiVersion
       x-operation-id-source: derived
 components:
+  parameters:
+    apiBrandingOptional:
+      required: false
+      description: Domain that provides the branding
+      name: Api-Branding
+      in: header
+      schema:
+        type: string
+        pattern: .+(\..[^.]+)
+    apiVersion:
+      required: true
+      description: Version of the API to use
+      name: Api-Version
+      in: header
+      schema:
+        type: integer
+        format: int32
+        enum:
+        - 2
   schemas:
     4XXErrorSchema:
       type: object
@@ -94,25 +113,6 @@ components:
                 type: array
                 items:
                   $ref: '#/components/schemas/4XXErrorSchema'
-  parameters:
-    apiVersion:
-      required: true
-      description: Version of the API to use
-      name: Api-Version
-      in: header
-      schema:
-        type: integer
-        format: int32
-        enum:
-        - 2
-    apiBrandingOptional:
-      required: false
-      description: Domain that provides the branding
-      name: Api-Branding
-      in: header
-      schema:
-        type: string
-        pattern: .+(\..[^.]+)
   securitySchemes:
     bearerToken:
       type: http
