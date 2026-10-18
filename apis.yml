@@ -5099,6 +5099,8 @@ apis:
   humanURL: https://developer.ixon.cloud/docs
   baseURL: https://portal.ixon.cloud/api/
   tags:
+  - GroupType
+  tags_raw:
   - Group Type
   properties:
   - type: OpenAPI
@@ -5170,6 +5172,8 @@ apis:
   humanURL: https://developer.ixon.cloud/docs
   baseURL: https://portal.ixon.cloud/api/
   tags:
+  - ServiceAccount
+  tags_raw:
   - Service Account
   properties:
   - type: OpenAPI
